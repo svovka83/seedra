@@ -1,0 +1,114 @@
+// old settings - needs to be remove in next project - start
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+}
+
+// old settings - needs to be remove in next project - end
+
+html {
+	height: 100%;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+	box-sizing: inherit;
+}
+
+/* commented all properties - uncomment in next project */
+
+body {
+	min-height: 100%;
+	line-height: 1.5;
+}
+
+/* take off margin from body and ( blockquote, figure which have any class ) */
+
+body,
+:where(blockquote, figure):where([class]) {
+	margin: 0;
+}
+
+/* take off left padding from ul and ol which have any class */
+
+:where(ul, ol):where([class]) {
+	padding-left: 0;
+}
+
+:where(ul):where([class]) {
+	list-style: none;
+}
+
+/* take off margin from tags below which have any class */
+
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
+	margin-block: 0;
+}
+
+:where(dd):where([class]) {
+	margin-left: 0;
+}
+
+a {
+	display: inline-block;
+	background: transparent;
+	text-decoration: none;
+	color: inherit;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+hr {
+	display: block;
+	height: 1px;
+	border: 0;
+	border-top: 1px solid #cccccc;
+	margin: 1em 0;
+	padding: 0;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+input,
+textarea,
+select,
+button {
+	font: inherit;
+	vertical-align: middle;
+}
+
+// taking off blue input background - change colour to suit your needs -webkit-text-fill-color
+
+input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px transparent inset;
+	-webkit-text-fill-color: #3a3e4b;
+	transition: background-color 9999s ease-in-out 0s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
+}
