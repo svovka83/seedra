@@ -1,8 +1,13 @@
+@use "./variables.scss" as *;
+
 body {
-	// font-family: sans-serif;
-	// font-weight: 400;
-	// font-size: 16px;
+	font-family: "Lexend", sans-serif;
+	font-weight: 400;
+	font-size: 16px;
+	color: $text_primary;
 }
 
 .container {
+	max-width: calc($container-width + 2 * $container-padding);
+	margin-inline: auto;
 }
