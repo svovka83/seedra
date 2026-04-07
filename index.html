@@ -8,6 +8,13 @@
 		<link rel="stylesheet" href="src/scss/styles.scss" />
 	</head>
 	<body>
+		<div class="container" style="padding-top: 40px">
+			<!-- button (titleBtn, classBtn) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/button.njk" import button %}
+			{{ button("Add to card", "btn_add" ) }}
+		</div>
+
 		<script type="module" src="src/js/main.js"></script>
 	</body>
 </html>
