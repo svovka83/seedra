@@ -1,0 +1,21 @@
+@use "../settings/variables.scss" as *;
+
+.discover {
+	font-weight: 500;
+	line-height: 178%;
+	letter-spacing: -3.5%;
+	color: $green_brand;
+	padding: 9px 31px;
+	border: 2px solid $white;
+	border-radius: 8px;
+	background-color: $white;
+	transition: background-color 0.3s ease, border 0.3s ease;
+	&:hover {
+		border: 2px solid $invisible_green;
+		background-color: $invisible_green;
+	}
+	&:active {
+		border: 2px solid $green_brand;
+		background-color: $invisible_green;
+	}
+}

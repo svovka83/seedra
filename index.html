@@ -2,17 +2,34 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>seedra</title>
 		<link rel="stylesheet" href="src/scss/styles.scss" />
 	</head>
 	<body>
 		<div class="container" style="padding-top: 40px">
-			<!-- button (titleBtn, classBtn) -->
+			<!-- button ( classBtn, titleBtn, iconId ) -->
 			<!-- prettier-ignore -->
 			{% from "src/partials/button.njk" import button %}
-			{{ button("Add to card", "btn_add" ) }}
+			{{ button( "btn_text", "Add to cart", "" ) }}
+			{{ button( "btn_icon", "", "cart-icon" ) }}
+			{{ button( "btn_icon-text", "bundles", "cart-icon" ) }}
+
+			<!-- discover ( classLink, titleLink, pathLink ) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/discover.njk" import discover %}
+			{{ discover( "", "Discover", "#!" ) }}
+
+			<!-- search ( classSearch ) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/search.njk" import search %}
+			{{ search( "search_header" ) }}
+			{{ search( "search_banner" ) }}
+
+			<!-- input ( inputLable, placeholder, type, classInput, inputId ) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/input.njk" import input %}
+			{{ input( "Name", "Your name", "", "", "") }}
 		</div>
 
 		<script type="module" src="src/js/main.js"></script>

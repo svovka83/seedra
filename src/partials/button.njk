@@ -1,3 +1,10 @@
-{% macro button ( titleBtn, classBtn ) %}
-  <button class="btn {{classBtn}}">{{titleBtn}}</button>
+{% macro button ( classBtn, titleBtn, iconId ) %}
+  <button class="btn {{classBtn}}">
+    <svg class="btn__icon">
+	    <use xlink:href="/images/sprites.svg#{{iconId}}"></use>
+    </svg>
+    <span class="btn__title">
+      {{titleBtn}}
+    <span>
+  </button>
 {% endmacro %}

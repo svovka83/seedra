@@ -95,12 +95,17 @@ button {
 	font: inherit;
 	vertical-align: middle;
 }
+input,
+textarea {
+	width: 100%;
+	background-color: transparent;
+}
 
 // taking off blue input background - change colour to suit your needs -webkit-text-fill-color
 
 input:-webkit-autofill {
 	-webkit-box-shadow: 0 0 0 1000px transparent inset;
-	-webkit-text-fill-color: #3a3e4b;
+	-webkit-text-fill-color: #1f2533;
 	transition: background-color 9999s ease-in-out 0s;
 }
 

@@ -4,23 +4,81 @@
 	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	font-weight: 500;
-	padding: 11px 33px;
 	border-radius: 8px;
-	line-height: 178%;
-	letter-spacing: -3.5%;
 	cursor: pointer;
 
-	&_add {
-		color: $white;
+	&_text {
+		padding: 11px 33px;
 		border: none;
 		background-color: $green_brand;
-		transition: opacity 0.2s ease;
+		transition: background-color 0.3s ease;
+		.btn__title {
+			font-weight: 500;
+			line-height: 178%;
+			letter-spacing: -3.5%;
+			color: $white;
+		}
+		.btn__icon {
+			display: none;
+		}
 		&:hover {
 			background-color: $hover;
 		}
 		&:active {
 			background-color: $color_primary;
+		}
+	}
+
+	&_icon {
+		padding: 12px;
+		border: 2px solid $light-grey-stroke;
+		background-color: $white;
+		transition: background-color 0.3s ease, border 0.3s ease;
+		.btn__icon {
+			width: 24px;
+			height: 24px;
+			fill: $green_brand;
+		}
+		.btn__title {
+			display: none;
+		}
+		&:hover {
+			background-color: $invisible_green;
+		}
+		&:active {
+			border: 2px solid $green_brand;
+			background-color: $green_brand;
+			.btn__icon {
+				fill: $white;
+			}
+		}
+	}
+
+	&_icon-text {
+		padding: 15px 20px;
+		border: 2px solid $light-grey-stroke;
+		background-color: $white;
+		transition: border 0.3s ease;
+		.btn__title {
+			font-size: 14px;
+			line-height: 178%;
+			text-transform: uppercase;
+			color: $text_primary;
+		}
+		.btn__icon {
+			width: 28px;
+			height: 28px;
+			fill: $green_brand;
+			margin-right: 8px;
+		}
+		&:hover {
+			border: 2px solid $invisible_green;
+		}
+		&:active {
+			border: 2px solid $green_brand;
+			.btn__title {
+				color: $green_brand;
+			}
 		}
 	}
 }
