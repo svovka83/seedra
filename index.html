@@ -2,19 +2,87 @@
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>seedra</title>
-		<script type="module" crossorigin src="/seedra/assets/main-BX2u_xup.js"></script>
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-25_kR5MZ.css">
+		<script type="module" crossorigin src="/seedra/assets/main-Dcs7Mz1B.js"></script>
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-Bi2qY364.css">
 	</head>
 	<body>
 		<div class="container" style="padding-top: 40px">
-			<!-- button (titleBtn, classBtn) -->
+			<!-- button ( classBtn, titleBtn, iconId ) -->
 			<!-- prettier-ignore -->
 			
 			
-  <button class="btn btn_add">Add to card</button>
+  <button class="btn btn_text">
+    <svg class="btn__icon">
+	    <use xlink:href="/seedra/images/sprites.svg#"></use>
+    </svg>
+    <span class="btn__title">
+      Add to cart
+    <span>
+  </button>
+
+			
+  <button class="btn btn_icon">
+    <svg class="btn__icon">
+	    <use xlink:href="/seedra/images/sprites.svg#cart-icon"></use>
+    </svg>
+    <span class="btn__title">
+      
+    <span>
+  </button>
+
+			
+  <button class="btn btn_icon-text">
+    <svg class="btn__icon">
+	    <use xlink:href="/seedra/images/sprites.svg#cart-icon"></use>
+    </svg>
+    <span class="btn__title">
+      bundles
+    <span>
+  </button>
+
+
+			<!-- discover ( classLink, titleLink, pathLink ) -->
+			<!-- prettier-ignore -->
+			
+			
+  <a class="discover " href="#!">
+    Discover
+  </a>
+
+
+			<!-- search ( classSearch ) -->
+			<!-- prettier-ignore -->
+			
+			
+  <div class="search search_header">
+    <input class="search__input" type="text" placeholder="Search">
+    <svg class="search__icon">
+	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
+    </svg>
+    <img class="search__img" src="/seedra/images/icons/funnel.svg" alt="search icon funnel">
+  </div>
+
+			
+  <div class="search search_banner">
+    <input class="search__input" type="text" placeholder="Search">
+    <svg class="search__icon">
+	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
+    </svg>
+    <img class="search__img" src="/seedra/images/icons/funnel.svg" alt="search icon funnel">
+  </div>
+
+
+			<!-- input ( inputLable, placeholder, type, classInput, inputId ) -->
+			<!-- prettier-ignore -->
+			
+			
+  <div class="input-block">
+    <lable  class="lable" for="">Name</lable>
+    <input class="input " id="" type="" placeholder="Your name" />
+    <p class="validation"></p>
+  </div>
 
 		</div>
 
