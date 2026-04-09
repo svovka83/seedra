@@ -14,7 +14,7 @@
 			color: $text_secondary;
 		}
 		&:focus {
-			box-shadow: $shadow;
+			box-shadow: $shadow_input;
 		}
 		&:-webkit-autofill {
 			-webkit-text-fill-color: $text_primary;

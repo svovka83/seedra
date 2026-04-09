@@ -31,7 +31,7 @@
 
 	&_icon {
 		padding: 12px;
-		border: 2px solid $light-grey-stroke;
+		border: 2px solid $light_grey_stroke;
 		background-color: $white;
 		transition: background-color 0.3s ease, border 0.3s ease;
 		.btn__icon {
@@ -56,7 +56,7 @@
 
 	&_icon-text {
 		padding: 15px 20px;
-		border: 2px solid $light-grey-stroke;
+		border: 2px solid $light_grey_stroke;
 		background-color: $white;
 		transition: border 0.3s ease;
 		.btn__title {

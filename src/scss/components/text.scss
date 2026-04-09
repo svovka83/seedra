@@ -1,0 +1,9 @@
+.text {
+	&_light {
+		font-weight: 300;
+		line-height: 28px;
+		@media (max-width: 680px) {
+			font-size: 14px;
+		}
+	}
+}

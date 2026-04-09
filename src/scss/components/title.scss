@@ -1,0 +1,12 @@
+.title {
+	&_h1 {
+		font-weight: 600;
+		font-size: 48px;
+		line-height: 54px;
+		letter-spacing: -5%;
+		@media (max-width: 680px) {
+			font-size: 28px;
+			line-height: 36px;
+		}
+	}
+}

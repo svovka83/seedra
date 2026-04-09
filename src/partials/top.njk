@@ -1,0 +1,23 @@
+{% macro top( topTitle, topText ) %}
+  <div class="top">
+
+    <div class="top__title">
+			<!-- title ( heading, title, classTitle ) -->
+			{% from "./title.njk" import title %}
+			{{ title( "h1", topTitle, "title_h1") }}
+    </div>
+
+    <div class="top__text">
+			<!-- text ( text, classText ) -->
+			{% from "./text.njk" import text %}
+			{{ text( topText, "text_light" ) }}
+    </div>
+
+    <img class="top__leaves top__leaves_leaf-1" src="/images/top/leaf_1.png" alt="top background">
+    <img class="top__leaves top__leaves_leaf-2" src="/images/top/leaf_2.png" alt="top background">
+    <img class="top__leaves top__leaves_leaf-3" src="/images/top/leaf_3.png" alt="top background">
+    <img class="top__leaves top__leaves_leaf-4" src="/images/top/leaf_4.png" alt="top background">
+    <img class="top__leaves top__leaves_leaf-5" src="/images/top/leaf_5.png" alt="top background">
+
+  </div>
+{% endmacro %}

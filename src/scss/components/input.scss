@@ -15,7 +15,7 @@
 	line-height: 28px;
 	padding: 14px 48px 14px 24px;
 	color: $text_primary;
-	border: 1px solid $light-grey-stroke;
+	border: 1px solid $light_grey_stroke;
 	border-radius: 4px;
 	margin-bottom: 6px;
 	transition: box-shadow 0.3s ease;
@@ -23,10 +23,10 @@
 		color: $text_secondary;
 	}
 	&:hover {
-		box-shadow: $shadow;
+		box-shadow: $shadow_input;
 	}
 	&:focus {
-		box-shadow: $shadow;
+		box-shadow: $shadow_input;
 	}
 	&:-webkit-autofill {
 		-webkit-text-fill-color: $text_primary;
