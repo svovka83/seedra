@@ -6,6 +6,9 @@
 
 // components
 
+@use "./components/layout/logo.scss";
+@use "./components/layout/socials.scss";
+@use "./components/layout/menu.scss";
 @use "./components/button.scss";
 @use "./components/discover.scss";
 @use "./components/search.scss";
@@ -13,3 +16,6 @@
 @use "./components/title.scss";
 @use "./components/text.scss";
 @use "./components/top.scss";
+@use "./components/dropdown.scss";
+@use "./components/product-card.scss";
+@use "./components/header.scss";

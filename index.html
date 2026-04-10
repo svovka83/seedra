@@ -7,6 +7,59 @@
 		<link rel="stylesheet" href="src/scss/styles.scss" />
 	</head>
 	<body>
+		<!-- make header a component -->
+		<header class="header">
+			<div class="header__inner container">
+				<div class="header__logo">
+					<!-- logo (  ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/layout/logo.njk" import logo %}
+					{{ logo(  ) }}
+				</div>
+
+				<div class="header__menu">
+					<!-- menu ( classList, classItem ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/layout/menu.njk" import menu %}
+					{{ menu( "menu__list_header" ) }}
+				</div>
+
+				<div class="header__socials">
+					<!-- socials ( classSocials ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/layout/socials.njk" import socials %}
+					{{ socials( "socials_header" ) }}
+				</div>
+
+				<div class="header__search">
+					<!-- search ( classSearch ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/search.njk" import search %}
+					{{ search( "search_header" ) }}
+				</div>
+
+				<!-- cart-block -->
+				<div class="header__cart-block">
+					<a class="header__cart-block-link" href="#!">
+						<svg class="header__cart-block-icon">
+							<use xlink:href="/images/sprites.svg#heart-icon"></use>
+						</svg>
+					</a>
+					<a class="header__cart-block-link" href="#!">
+						<svg class="header__cart-block-icon">
+							<use xlink:href="/images/sprites.svg#cart-icon"></use>
+						</svg>
+					</a>
+				</div>
+
+				<button class="header__burger-menu">
+					<svg class="header__burger-menu-icon">
+						<use xlink:href="/images/sprites.svg#burger-icon"></use>
+					</svg>
+				</button>
+			</div>
+		</header>
+
 		<script type="module" src="src/js/main.js"></script>
 	</body>
 </html>

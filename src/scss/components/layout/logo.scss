@@ -1,0 +1,9 @@
+@use "../../settings/variables.scss" as *;
+
+.logo {
+	.logo-icon {
+		width: 97px;
+		height: 21px;
+		fill: $green_brand;
+	}
+}

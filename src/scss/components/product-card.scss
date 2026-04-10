@@ -1,0 +1,75 @@
+@use "../settings/variables.scss" as *;
+
+// Navigate to Frame 15, Animate instant
+
+.product-card {
+	position: relative;
+	max-width: 350px;
+	padding: 26px 26px 22px;
+	border: 2px solid $light_grey_stroke;
+	border-radius: 8px;
+	.product-card__img {
+		border-radius: 12px;
+		margin-bottom: 25px;
+	}
+	.product-card__content {
+	}
+	&:hover {
+		box-shadow: $shadow_card_hover;
+	}
+}
+
+.product-card__top {
+	display: flex;
+	align-items: center;
+	margin-bottom: 4px;
+	.product-card__ranking {
+		display: inline-flex;
+		column-gap: 1px;
+		margin-right: 14px;
+		.product-card__icon-star {
+			width: 16px;
+			height: 16px;
+			fill: $yellow;
+		}
+	}
+	.product-card__quantity {
+		font-size: 14px;
+		line-height: 178%;
+		letter-spacing: 0%;
+		color: $text_secondary;
+	}
+}
+
+.product-card__title {
+	margin-bottom: 8px;
+}
+
+.product-card__bottom {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	.product-card__price {
+		font-weight: 600;
+		font-size: 28px;
+		line-height: 54px;
+	}
+	.product-card__button {
+	}
+}
+
+.product-card__yellow-heart {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	width: 40px;
+	height: 40px;
+	padding: 7px;
+	border: 1px solid $light_grey_stroke;
+	border-radius: 20px;
+	.product-card__icon-heart {
+		width: 24px;
+		height: 24px;
+		fill: $yellow;
+	}
+}

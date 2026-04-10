@@ -1,0 +1,31 @@
+{% macro dropdown( title, initial ) %}
+  <div class="dropdown">
+    <div class="dropdown__control">
+      <div class="dropdown__title-block">
+        <p class="dropdown__title">{{ title }}</p>
+        <p class="dropdown__initial">{{ initial }}</p>
+      </div>
+      <svg class="dropdown__icon">
+        <use xlink:href="/images/sprites.svg#chevron-icon"></use>
+      </svg>
+    </div>
+    <div class="dropdown__list">
+      <div class="dropdown__option">
+        <span class="dropdown__value">Shipping</span>
+        <span class="dropdown__price">+$10</span>
+      </div>
+      <div class="dropdown__option">
+        <span class="dropdown__value">On foot</span>
+        <span class="dropdown__price">+$10</span>
+      </div>
+      <div class="dropdown__option">
+        <span class="dropdown__value">By car</span>
+        <span class="dropdown__price">+$80</span>
+      </div>
+      <div class="dropdown__option">
+        <span class="dropdown__value">By plane</span>
+        <span class="dropdown__price">+$1850</span>
+      </div>
+    </div>
+	</div>
+{% endmacro %}

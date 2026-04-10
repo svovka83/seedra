@@ -1,0 +1,83 @@
+@use "../settings/variables.scss" as *;
+
+.header {
+	height: 72px;
+	box-shadow: $shadow_header;
+}
+
+.header__inner {
+	display: flex;
+	align-items: center;
+	padding-block: 12px;
+	@media (min-width: 1025px) and (max-width: 1075px) {
+		padding-top: 16px;
+	}
+	.header__logo {
+		margin-top: 9px;
+		margin-right: 64px;
+		@media (max-width: 1024px) {
+			margin-top: -2px;
+			margin-left: 18px;
+		}
+	}
+	.header__menu {
+		margin-right: 45px;
+		@media (max-width: 1024px) {
+			display: none;
+		}
+	}
+	.header__socials {
+		margin-top: 8px;
+		margin-right: 11px;
+		@media (max-width: 1140px) {
+			display: none;
+		}
+	}
+	.header__search {
+		width: 285px;
+		@media (max-width: 1075px) {
+			display: none;
+		}
+	}
+}
+
+.header__cart-block {
+	display: flex;
+	column-gap: 8px;
+	margin-left: auto;
+	translate: 6px 0;
+	@media (max-width: 1024px) {
+		column-gap: 12px;
+		margin-top: -9px;
+		translate: 0 0;
+	}
+	.header__cart-block-link {
+		width: 40px;
+		height: 40px;
+		padding: 8px;
+		@media (max-width: 1024px) {
+			border: 1px solid $light_grey_stroke;
+			border-radius: 20px;
+		}
+		.header__cart-block-icon {
+			width: 24px;
+			height: 24px;
+			stroke: $green_brand;
+		}
+	}
+}
+
+.header__burger-menu {
+	display: none;
+	padding: 12px;
+	margin-left: 17px;
+	@media (max-width: 1024px) {
+		display: block;
+		margin-top: -1px;
+	}
+	.header__burger-menu-icon {
+		width: 24px;
+		height: 24px;
+		stroke: $text_secondary;
+	}
+}

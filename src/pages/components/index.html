@@ -7,7 +7,22 @@
 		<link rel="stylesheet" href="../../scss/styles.scss" />
 	</head>
 	<body>
-		<div class="container" style="padding-top: 40px">
+		<div class="container" style="padding-top: 40px; height: 3000px">
+			<!-- logo (  ) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/layout/logo.njk" import logo %}
+			{{ logo(  ) }}
+
+			<!-- socials ( classSocials ) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/layout/socials.njk" import socials %}
+			{{ socials( "socials_header" ) }}
+
+			<!-- socials ( classSocials ) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/layout/socials.njk" import socials %}
+			{{ socials( "socials_footer" ) }}
+
 			<!-- button ( classBtn, titleBtn, iconId ) -->
 			<!-- prettier-ignore -->
 			{% from "src/partials/button.njk" import button %}
@@ -19,6 +34,16 @@
 			<!-- prettier-ignore -->
 			{% from "src/partials/discover.njk" import discover %}
 			{{ discover( "", "Discover", "#!" ) }}
+
+			<!-- menu ( classList, classItem ) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/layout/menu.njk" import menu %}
+			{{ menu( "menu__list_header" ) }}
+
+			<!-- menu ( classList, classItem ) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/layout/menu.njk" import menu %}
+			{{ menu( "menu__list_footer", "menu__link_active" ) }}
 
 			<!-- search ( classSearch ) -->
 			<!-- prettier-ignore -->
@@ -46,6 +71,16 @@
 			{% from "src/partials/top.njk" import top %}
 			{{ top( "Welcome to our blog",
 			"Here you can find a lot of interesting and useful information that you need in gardening and creating a beautiful garden" ) }}
+
+			<!-- dropdown( title, initial ) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/dropdown.njk" import dropdown %}
+      {{ dropdown( "Type of delievery", "Shipping" ) }}
+
+			<!-- productCard( title, initial ) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/product-card.njk" import productCard %}
+      {{ productCard(  ) }}
 		</div>
 		<script type="module" src="../../js/main.js"></script>
 	</body>
