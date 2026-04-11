@@ -1,8 +1,12 @@
 @use "../settings/variables.scss" as *;
 
 .header {
+	position: sticky;
+	top: 0;
 	height: 72px;
+	background-color: $white;
 	box-shadow: $shadow_header;
+	z-index: 1000;
 }
 
 .header__inner {

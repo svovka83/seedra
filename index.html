@@ -7,58 +7,87 @@
 		<link rel="stylesheet" href="src/scss/styles.scss" />
 	</head>
 	<body>
-		<!-- make header a component -->
-		<header class="header">
-			<div class="header__inner container">
-				<div class="header__logo">
-					<!-- logo (  ) -->
-					<!-- prettier-ignore -->
-					{% from "src/partials/layout/logo.njk" import logo %}
-					{{ logo(  ) }}
-				</div>
+		<!-- header (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/header.njk" import header %}
+    {{ header(  ) }}
 
-				<div class="header__menu">
-					<!-- menu ( classList, classItem ) -->
-					<!-- prettier-ignore -->
-					{% from "src/partials/layout/menu.njk" import menu %}
-					{{ menu( "menu__list_header" ) }}
-				</div>
+		<main class="main-page">
+			<!-- main-top -->
+			<section class="main-top container">
+				<div class="main-top__inner">
+					<div class="main-top__content">
+						<div class="main-top__title">
+							<!-- title ( heading, title, classTitle ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/title.njk" import title %}
+							{{ title( "h1", "SEEDRA Basil Seeds for Indoor and Outdoor Planting", "title_h1") }}
+						</div>
+						<div class="main-top__text">
+							<!-- text ( text, classText ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/text.njk" import text %}
+							{{ text( "Be sure of our quality - the freshest batches of this season. Non-GMO, Heirloom - our seeds were tested and have the best germination ratings. Your easy growing experience is our guarantee", "text_light" ) }}
+						</div>
+						<div class="main-top__prices">
+							<svg class="main-top__icon">
+								<use xlink:href="/images/sprites.svg#fire-icon"></use>
+							</svg>
+							<span class="main-top__new-price">$12.56</span>
+							<span class="main-top__old-price">$15.56</span>
+						</div>
+						<div class="main-top__buttons">
+							<!-- button ( classBtn, titleBtn, iconId ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/button.njk" import button %}
+							{{ button( "btn_text btn_adaptive", "Add to card", "" ) }}
 
-				<div class="header__socials">
-					<!-- socials ( classSocials ) -->
-					<!-- prettier-ignore -->
-					{% from "src/partials/layout/socials.njk" import socials %}
-					{{ socials( "socials_header" ) }}
-				</div>
+							<!-- discover ( classLink, titleLink, pathLink ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/discover.njk" import discover %}
+							{{ discover( "discover_adaptive", "Discover", "#!" ) }}
+						</div>
+					</div>
 
-				<div class="header__search">
-					<!-- search ( classSearch ) -->
-					<!-- prettier-ignore -->
-					{% from "src/partials/search.njk" import search %}
-					{{ search( "search_header" ) }}
-				</div>
+					<img class="main-top__img" src="/images/top/main.png" alt="main top image" />
 
-				<!-- cart-block -->
-				<div class="header__cart-block">
-					<a class="header__cart-block-link" href="#!">
-						<svg class="header__cart-block-icon">
-							<use xlink:href="/images/sprites.svg#heart-icon"></use>
-						</svg>
-					</a>
-					<a class="header__cart-block-link" href="#!">
-						<svg class="header__cart-block-icon">
-							<use xlink:href="/images/sprites.svg#cart-icon"></use>
-						</svg>
-					</a>
+					<img class="main-top__leaf leaf-1" src="/images/top/leaf_1.png" alt="main top leaf" />
+					<img class="main-top__leaf leaf-2" src="/images/top/leaf_2.png" alt="main top leaf" />
+					<img class="main-top__leaf leaf-3" src="/images/top/leaf_3.png" alt="main top leaf" />
+					<img class="main-top__leaf leaf-4" src="/images/top/leaf_6.png" alt="main top leaf" />
+					<img class="main-top__leaf bunch-leaves" src="/images/top/bunch-leaves.png" alt="main top leaf" />
 				</div>
+			</section>
 
-				<button class="header__burger-menu">
-					<svg class="header__burger-menu-icon">
-						<use xlink:href="/images/sprites.svg#burger-icon"></use>
-					</svg>
-				</button>
-			</div>
-		</header>
+			<!-- main-under-top -->
+			<section class="main-under-top container">
+				<div class="main-under-top__inner">
+					<div class="main-under-top__title">
+						<!-- title ( heading, title, classTitle ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/title.njk" import title %}
+						{{ title( "h3", "We sell seeds", "title_h3") }}
+					</div>
+					<div class="main-under-top__text">
+						<!-- text ( text, classText ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/text.njk" import text %}
+						{{ text( "that always sprout and gardening supplies which never break", "text_medium-16" ) }}
+					</div>
+
+					<img class="main-under-top__fruit fruit-1" src="/images/under-top/fruit_1.png" alt="fruit" />
+					<img class="main-under-top__fruit fruit-2" src="/images/under-top/fruit_2.png" alt="fruit" />
+					<img class="main-under-top__fruit fruit-3" src="/images/under-top/fruit_3.png" alt="fruit" />
+					<img class="main-under-top__fruit fruit-4" src="/images/under-top/fruit_4.png" alt="fruit" />
+					<img class="main-under-top__fruit fruit-5" src="/images/under-top/fruit_5.png" alt="fruit" />
+					<img class="main-under-top__fruit fruit-6" src="/images/under-top/fruit_6.png" alt="fruit" />
+					<img class="main-under-top__fruit fruit-7" src="/images/under-top/fruit_7.png" alt="fruit" />
+					<img class="main-under-top__fruit fruit-8" src="/images/under-top/fruit_8.png" alt="fruit" />
+				</div>
+			</section>
+
+			<!-- our-products -->
+		</main>
 
 		<script type="module" src="src/js/main.js"></script>
 	</body>

@@ -19,3 +19,8 @@
 @use "./components/dropdown.scss";
 @use "./components/product-card.scss";
 @use "./components/header.scss";
+
+// main
+
+@use "./pages/main/main-top.scss";
+@use "./pages/main/main-under-top.scss";

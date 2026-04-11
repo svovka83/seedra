@@ -1,6 +1,6 @@
-l{% macro input( inputLable, placeholder, type, classInput, inputId ) %}
+{% macro input( inputLabel, placeholder, type, classInput, inputId ) %}
   <div class="input-block">
-    <lable  class="lable" for="{{ inputId }}">{{ inputLable }}</lable>
+    <label class="label" for="{{ inputId }}">{{ inputLabel }}</label>
     <input class="input {{ classInput }}" id="{{ inputId }}" type="{{ type }}" placeholder="{{ placeholder }}" />
     <p class="validation"></p>
   </div>

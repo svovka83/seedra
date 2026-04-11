@@ -1,0 +1,124 @@
+@use "../../settings/variables.scss" as *;
+
+.main-under-top {
+	text-align: center;
+	&__inner {
+		background-color: #ffe62e17;
+		border-radius: 12px;
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__title {
+		position: relative;
+		padding-top: 24px;
+		margin-bottom: -3px;
+		z-index: 200;
+		@media (max-width: 680px) {
+			padding-top: 35px;
+			margin-bottom: 0px;
+		}
+	}
+
+	&__text {
+		position: relative;
+		padding-bottom: 23px;
+		translate: -3px 0px;
+		z-index: 200;
+		@media (max-width: 680px) {
+			max-width: 282px;
+			margin: 0 auto;
+			padding-bottom: 56px;
+			translate: 0px 0px;
+		}
+	}
+
+	&__fruit {
+		position: absolute;
+		pointer-events: none;
+		user-select: none;
+		z-index: 100;
+	}
+
+	.fruit-1 {
+		top: 0px;
+		right: 120px;
+		@media (max-width: 680px) {
+			top: unset;
+			right: unset;
+			left: -19px;
+			bottom: -8px;
+			transform: rotate(169deg);
+		}
+	}
+
+	.fruit-2 {
+		top: 15px;
+		right: 84px;
+		@media (max-width: 680px) {
+			top: unset;
+			right: 86px;
+			bottom: -11px;
+		}
+	}
+
+	.fruit-3 {
+		right: 0px;
+		bottom: 0px;
+		@media (max-width: 680px) {
+			right: -14px;
+			bottom: -10px;
+		}
+	}
+
+	.fruit-4 {
+		left: 142px;
+		bottom: 0px;
+		@media (max-width: 680px) {
+			display: none;
+		}
+	}
+
+	.fruit-5 {
+		top: 2px;
+		left: 12px;
+		@media (max-width: 680px) {
+			top: unset;
+			left: 7px;
+			bottom: 33px;
+		}
+	}
+
+	.fruit-6 {
+		top: 44px;
+		left: 103px;
+		@media (max-width: 680px) {
+			top: unset;
+			left: 66px;
+			bottom: 4px;
+		}
+	}
+
+	.fruit-7 {
+		right: 123px;
+		bottom: 15px;
+		@media (max-width: 680px) {
+			right: -8px;
+			bottom: 46px;
+		}
+	}
+
+	.fruit-8 {
+		left: 37px;
+		bottom: 0px;
+		@media (max-width: 680px) {
+			display: none;
+		}
+	}
+
+	.fruit-3,
+	.fruit-4,
+	.fruit-7 {
+		filter: blur(2px);
+	}
+}

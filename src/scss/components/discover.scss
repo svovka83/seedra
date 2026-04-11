@@ -18,4 +18,10 @@
 		border: 2px solid $green_brand;
 		background-color: $invisible_green;
 	}
+	&_adaptive {
+		@media (max-width: 768px) {
+			font-size: 14px;
+			padding-block: 8px;
+		}
+	}
 }

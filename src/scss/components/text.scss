@@ -1,3 +1,5 @@
+@use "../settings/variables.scss" as *;
+
 .text {
 	&_light {
 		font-weight: 300;
@@ -5,5 +7,10 @@
 		@media (max-width: 680px) {
 			font-size: 14px;
 		}
+	}
+	&_medium-16 {
+		font-weight: 500;
+		letter-spacing: -3.5%;
+		color: $text_secondary;
 	}
 }

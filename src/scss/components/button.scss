@@ -14,7 +14,6 @@
 		transition: background-color 0.3s ease;
 		.btn__title {
 			font-weight: 500;
-			line-height: 178%;
 			letter-spacing: -3.5%;
 			color: $white;
 		}
@@ -78,6 +77,15 @@
 			border: 2px solid $green_brand;
 			.btn__title {
 				color: $green_brand;
+			}
+		}
+	}
+
+	&_adaptive {
+		@media (max-width: 768px) {
+			padding-block: 10px;
+			.btn__title {
+				font-size: 14px;
 			}
 		}
 	}
