@@ -1,0 +1,20 @@
+.our-products {
+	margin-top: 59px;
+	@media (max-width: 768px) {
+		margin-top: 31px;
+	}
+	&__title-block {
+		display: flex;
+		justify-content: space-between;
+		align-items: start;
+		margin-bottom: 40px;
+		@media (max-width: 768px) {
+			align-items: center;
+			margin-bottom: 21px;
+		}
+	}
+	&__categories {
+	}
+	&__product-cards {
+	}
+}

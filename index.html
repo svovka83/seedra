@@ -87,6 +87,21 @@
 			</section>
 
 			<!-- our-products -->
+			<section class="our-products container">
+				<div class="our-products__title-block">
+					<!-- title ( heading, title, classTitle ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/title.njk" import title %}
+					{{ title( "h2", "Our products.", "title_h2") }}
+
+					<!-- button ( classBtn, titleBtn, iconId ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/button.njk" import button %}
+					{{ button( "btn_view", "View all (12)", "" ) }}
+				</div>
+				<div class="our-products__categories"></div>
+				<div class="our-products__product-cards"></div>
+			</section>
 		</main>
 
 		<script type="module" src="src/js/main.js"></script>

@@ -81,6 +81,33 @@
 		}
 	}
 
+	&_view {
+		padding: 10px 32px;
+		background-color: $white;
+		border: 1px solid $light_grey_stroke;
+		transition: border 0.3s ease;
+		.btn__title {
+			font-weight: 500;
+			letter-spacing: -3.5%;
+			color: $green_brand;
+		}
+		.btn__icon {
+			display: none;
+		}
+		&:hover {
+			border: 1px solid $green_brand;
+		}
+		&:active {
+			border: 1px solid $green_brand;
+		}
+		@media (max-width: 768px) {
+			padding: 8px 23px;
+			.btn__title {
+				font-size: 14px;
+			}
+		}
+	}
+
 	&_adaptive {
 		@media (max-width: 768px) {
 			padding-block: 10px;
