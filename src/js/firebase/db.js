@@ -1,7 +1,8 @@
 import { initializeApp } from "firebase/app";
-import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
+import { getFirestore } from "firebase/firestore";
 
-import { button } from "./components/button";
+import { getCategories } from "./services/get-categories";
+import { getProductStaticCards, getProductSliderCards } from "./services/get-product-cards";
 
 export async function initFirebase() {
 	const firebaseConfig = {
@@ -16,11 +17,7 @@ export async function initFirebase() {
 	const app = initializeApp(firebaseConfig);
 	const db = getFirestore(app);
 
-	const categoryList = document.querySelector(".our-products__categories");
-
-	const categories = await getDocs(collection(db, "categories"));
-
-	categories.forEach((category) => {
-		categoryList.innerHTML += button("btn_icon-text", category.data().name, category.data().iconId);
-	});
+	getCategories(db);
+	getProductStaticCards(db);
+	getProductSliderCards(db);
 }

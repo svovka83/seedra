@@ -16,6 +16,7 @@
 		"vite-plugin-nunjucks": "^0.2.0"
 	},
 	"dependencies": {
-		"firebase": "^12.12.0"
+		"firebase": "^12.12.0",
+		"swiper": "^12.1.3"
 	}
 }
