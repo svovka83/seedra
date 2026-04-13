@@ -5,12 +5,12 @@ import { button } from "./components/button";
 
 export async function initFirebase() {
 	const firebaseConfig = {
-		apiKey: "AIzaSyBSgsPaDJeMHySYwrDrOEL0HM3AB_XrSY8",
-		authDomain: "avada-media-seedra.firebaseapp.com",
-		projectId: "avada-media-seedra",
-		storageBucket: "avada-media-seedra.firebasestorage.app",
-		messagingSenderId: "83080741512",
-		appId: "1:83080741512:web:15c82497323f367e1cd53d",
+		apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+		authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+		projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+		storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+		messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+		appId: import.meta.env.VITE_FIREBASE_APP_ID,
 	};
 
 	const app = initializeApp(firebaseConfig);
