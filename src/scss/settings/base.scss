@@ -1,5 +1,16 @@
 @use "./variables.scss" as *;
 
+:root {
+	// just for svg icons
+	--green_brand: #359740;
+	--white: #ffffff;
+}
+
+/* Chrome, Safari */
+// ::-webkit-scrollbar {
+// 	display: none;
+// }
+
 body {
 	font-family: "Lexend", sans-serif;
 	font-weight: 400;

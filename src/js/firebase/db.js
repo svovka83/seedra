@@ -1,6 +1,8 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore, collection, addDoc, getDocs } from "firebase/firestore";
 
+import { button } from "./components/button";
+
 export async function initFirebase() {
 	const firebaseConfig = {
 		apiKey: "AIzaSyBSgsPaDJeMHySYwrDrOEL0HM3AB_XrSY8",
@@ -14,15 +16,11 @@ export async function initFirebase() {
 	const app = initializeApp(firebaseConfig);
 	const db = getFirestore(app);
 
-	// await addDoc(collection(db, "products"), {
-	// 	name: "Apple",
-	// 	price: 50,
-	// 	category: "fruits",
-	// });
+	const categoryList = document.querySelector(".our-products__categories");
 
-	const categories = document.querySelector(".our-products__categories");
+	const categories = await getDocs(collection(db, "categories"));
 
-	const collections = await getDocs(collection(db, "collections"));
-
-	collections.forEach((collection) => (categories.innerHTML += `<p>${collection.data().name}</p>`));
+	categories.forEach((category) => {
+		categoryList.innerHTML += button("btn_icon-text", category.data().name, category.data().iconId);
+	});
 }
