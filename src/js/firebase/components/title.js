@@ -1,3 +1,3 @@
 export function title(heading, title, className) {
-	return `<${heading} class="${className}">${title}</${heading}>`;
+	return `<${heading} class="title ${className}">${title}</${heading}>`;
 }

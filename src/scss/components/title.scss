@@ -33,6 +33,14 @@
 		line-height: 31.5px;
 		letter-spacing: -2%;
 	}
+	&_h3-mobile {
+		@media (max-width: 768px) {
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 28px;
+			letter-spacing: -1%;
+		}
+	}
 	&_card {
 		font-weight: 500;
 		font-size: 16px;

@@ -3,6 +3,7 @@ import { getFirestore } from "firebase/firestore";
 
 import { getCategories } from "./services/get-categories";
 import { getProductStaticCards, getProductSliderCards } from "./services/get-product-cards";
+import { getBlogStaticCards, getBlogSliderCards } from "./services/get-blogs";
 
 export async function initFirebase() {
 	const firebaseConfig = {
@@ -20,4 +21,6 @@ export async function initFirebase() {
 	getCategories(db);
 	getProductStaticCards(db);
 	getProductSliderCards(db);
+	getBlogStaticCards(db);
+	getBlogSliderCards(db);
 }

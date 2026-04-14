@@ -117,6 +117,31 @@
 			</section>
 
 			<!-- our-blogs -->
+			<section class="our-blogs container">
+				<div class="our-blogs__title-block">
+					<!-- title ( heading, title, classTitle ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/title.njk" import title %}
+					{{ title( "h2", "Our blog.", "title_h2") }}
+
+					<!-- button ( classBtn, titleBtn, iconId ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/button.njk" import button %}
+					{{ button( "btn_blog", "Go to our blog", "" ) }}
+				</div>
+				<div class="our-blogs__content">
+					<div class="our-blogs__content-static">
+						<!-- our-blogs__content getting from firebase -->
+					</div>
+					<div class="our-blogs__content-slider">
+						<div class="swiper-wrapper our-blogs__wrapper">
+							<!-- our-blogs__content getting from firebase -->
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- main-reviews -->
 		</main>
 
 		<script type="module" src="src/js/main.js"></script>
