@@ -1,0 +1,42 @@
+@use "../settings/variables.scss" as *;
+
+.review-card {
+	padding: 35px 39px 41px 34px;
+	border: 1px solid $light_grey_stroke;
+	border-radius: 12px;
+	box-shadow: $shadow_review_card;
+	@media (max-width: 540px) {
+		padding: 19px 12px 24px 22px;
+	}
+	&__top {
+		display: inline-flex;
+		align-items: center;
+		column-gap: 24px;
+		margin-bottom: 28px;
+		@media (max-width: 540px) {
+			column-gap: 19px;
+			margin-bottom: 12px;
+		}
+	}
+	&__img {
+		width: 64px;
+		height: 64px;
+		@media (max-width: 540px) {
+			width: 40px;
+			height: 40px;
+		}
+	}
+	&__name-date {
+	}
+	&__name {
+	}
+	&__date {
+	}
+	&__ranking {
+		margin-bottom: 6px;
+	}
+	&__text {
+		max-width: 460px;
+		user-select: none;
+	}
+}

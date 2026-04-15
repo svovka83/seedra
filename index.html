@@ -142,6 +142,22 @@
 			</section>
 
 			<!-- main-reviews -->
+			<section class="main-reviews big-container">
+				<div class="main-reviews__title">
+					<!-- title ( heading, title, classTitle ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/title.njk" import title %}
+					{{ title( "h2", "What out clients say", "title_h2") }}
+				</div>
+				<div class="main-reviews__slider tiny-container">
+					<div class="swiper-wrapper main-reviews__wrapper">
+						<!-- main-reviews getting from firebase -->
+					</div>
+					<div class="swiper-pagination main-reviews__pagination"></div>
+				</div>
+			</section>
+
+			<!-- main-article -->
 		</main>
 
 		<script type="module" src="src/js/main.js"></script>

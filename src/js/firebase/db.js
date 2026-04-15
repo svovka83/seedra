@@ -2,8 +2,9 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 import { getCategories } from "./services/get-categories";
-import { getProductStaticCards, getProductSliderCards } from "./services/get-product-cards";
+import { getProductStaticCards, getProductSliderCards } from "./services/get-products";
 import { getBlogStaticCards, getBlogSliderCards } from "./services/get-blogs";
+import { getReviewCards } from "./services/get-reviews";
 
 export async function initFirebase() {
 	const firebaseConfig = {
@@ -23,4 +24,5 @@ export async function initFirebase() {
 	getProductSliderCards(db);
 	getBlogStaticCards(db);
 	getBlogSliderCards(db);
+	getReviewCards(db);
 }

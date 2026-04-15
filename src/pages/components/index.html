@@ -8,6 +8,52 @@
 	</head>
 	<body>
 		<div class="container" style="padding-top: 40px; height: 3000px">
+			<!-- review-card -->
+			<div class="review-card">
+				<div class="review-card__top">
+					<img class="review-card__img" src="./public/images/reviews/avatar.png" alt="avatar" />
+					<div class="review-card__name-date">
+						<div class="review-card__name">
+							<!-- text ( text, classText ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/text.njk" import text %}
+							{{ text( "Carla Samantoes-Diego", "text_medium-18" ) }}
+						</div>
+						<div class="review-card__date">
+							<!-- text ( text, classText ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/text.njk" import text %}
+							{{ text( "12.09.2021", "text_regular-14" ) }}
+						</div>
+					</div>
+				</div>
+				<div class="review-card__ranking">
+					<div class="ranking">
+						<svg class="ranking__icon-star">
+							<use xlink:href="./images/sprites.svg#star-full-icon"></use>
+						</svg>
+						<svg class="ranking__icon-star">
+							<use xlink:href="./images/sprites.svg#star-full-icon"></use>
+						</svg>
+						<svg class="ranking__icon-star">
+							<use xlink:href="./images/sprites.svg#star-full-icon"></use>
+						</svg>
+						<svg class="ranking__icon-star">
+							<use xlink:href="./images/sprites.svg#star-full-icon"></use>
+						</svg>
+						<svg class="ranking__icon-star">
+							<use xlink:href="./images/sprites.svg#star-half-icon"></use>
+						</svg>
+					</div>
+				</div>
+				<div class="review-card__text">
+					<!-- text ( text, classText ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/text.njk" import text %}
+					{{ text( "SEEDRA Spinach Seeds - contains 600 seeds in 2 Packs and professional instructions created by PhD Helga George Be sure of our quality - the freshest batches of this season. Non-GMO, Heirloom - our seeds were tested and have the best germination ratings. ", "text_light" ) }}
+				</div>
+			</div>
+
 			<!-- blog-long -->
 			<div class="blog-card blog-card_long">
 				<div class="blog-card__content">

@@ -1,7 +1,8 @@
 import { initDropdownList } from "./common/dropdown.js";
 import { initFirebase } from "./firebase/db.js";
-import { productSlider } from "./sliders/products.js";
-import { blogSlider } from "./sliders/blogs.js";
+import { productSlider } from "./sliders/product-slider.js";
+import { blogSlider } from "./sliders/blog-slider.js";
+import { reviewSlider } from "./sliders/review-slider.js";
 
 // common
 
@@ -15,3 +16,4 @@ initFirebase();
 
 productSlider();
 blogSlider();
+reviewSlider();

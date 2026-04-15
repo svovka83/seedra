@@ -1,6 +1,6 @@
 import { collection, getDocs, addDoc } from "firebase/firestore";
 
-import { productCard } from "../components/product-card";
+import { productCard } from "../../components/product-card";
 
 export async function getProductStaticCards(db) {
 	const productList = document.querySelector(".our-products__product-cards-static");
@@ -16,6 +16,7 @@ export async function getProductStaticCards(db) {
 		);
 	});
 }
+
 export async function getProductSliderCards(db) {
 	const productList = document.querySelector(".swiper-wrapper.our-products__wrapper");
 

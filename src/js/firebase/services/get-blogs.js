@@ -1,6 +1,6 @@
 import { collection, getDocs, addDoc } from "firebase/firestore";
 
-import { blogCard } from "../components/blog-card";
+import { blogCard } from "../../components/blog-card";
 
 export async function getBlogStaticCards(db) {
 	const blogStaticList = document.querySelector(".our-blogs__content-static");

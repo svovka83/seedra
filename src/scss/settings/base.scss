@@ -25,3 +25,15 @@ body {
 	padding-inline: $container-padding;
 	margin-inline: auto;
 }
+
+.big-container {
+	max-width: calc($big-container-width + 2 * $container-padding);
+	padding-inline: $container-padding;
+	margin-inline: auto;
+}
+
+.tiny-container {
+	max-width: calc($tiny-container-width + 2 * $container-padding);
+	padding-inline: $container-padding;
+	margin-inline: auto;
+}

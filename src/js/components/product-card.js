@@ -1,5 +1,6 @@
 import { title } from "./title";
 import { button } from "./button";
+import { ranking } from "./ranking";
 
 export function productCard(name, price, imageUrl, isFire) {
 	return `
@@ -8,23 +9,7 @@ export function productCard(name, price, imageUrl, isFire) {
 
     <div class="product-card__content">
       <div class="product-card__top">
-        <div class="product-card__ranking">
-          <svg class="product-card__icon-star">
-            <use xlink:href="./images/sprites.svg#star-full-icon"></use>
-          </svg>
-          <svg class="product-card__icon-star">
-            <use xlink:href="./images/sprites.svg#star-full-icon"></use>
-          </svg>
-          <svg class="product-card__icon-star">
-            <use xlink:href="./images/sprites.svg#star-full-icon"></use>
-          </svg>
-          <svg class="product-card__icon-star">
-            <use xlink:href="./images/sprites.svg#star-full-icon"></use>
-          </svg>
-          <svg class="product-card__icon-star">
-            <use xlink:href="./images/sprites.svg#star-half-icon"></use>
-          </svg>
-        </div>
+        ${ranking("ranking__icon-star_product")}
         <span class="product-card__quantity">(123)</span>
       </div>
 

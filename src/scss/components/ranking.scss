@@ -1,0 +1,19 @@
+@use "../settings/variables.scss" as *;
+
+.ranking {
+	display: inline-flex;
+	column-gap: 1px;
+	&__icon-star {
+		width: 24px;
+		height: 24px;
+		fill: $yellow;
+		&_product {
+			width: 16px;
+			height: 16px;
+		}
+		&_review {
+			width: 24px;
+			height: 24px;
+		}
+	}
+}

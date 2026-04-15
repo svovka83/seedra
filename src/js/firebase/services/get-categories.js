@@ -1,6 +1,6 @@
 import { collection, getDocs, addDoc } from "firebase/firestore";
 
-import { button } from "../components/button";
+import { button } from "../../components/button";
 
 export async function getCategories(db) {
 	const categoryList = document.querySelector(".our-products__categories");

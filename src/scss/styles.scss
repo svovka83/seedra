@@ -20,6 +20,8 @@
 @use "./components/product-card.scss";
 @use "./components/header.scss";
 @use "./components/blog-card.scss";
+@use "./components/review-card.scss";
+@use "./components/ranking.scss";
 
 // main
 
@@ -27,5 +29,6 @@
 @use "./pages/main/main-under-top.scss";
 @use "./pages/main/our-products.scss";
 @use "./pages/main/our-blogs.scss";
+@use "./pages/main/main-reviews.scss";
 
 // swiper
