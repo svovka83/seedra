@@ -12,7 +12,7 @@
 		{% from "src/partials/header.njk" import header %}
     {{ header(  ) }}
 
-		<main class="main-page">
+		<main class="main-page" id="go-to-top">
 			<!-- main-top -->
 			<section class="main-top container">
 				<div class="main-top__inner">
@@ -174,7 +174,10 @@
 				<img class="article-leaves article-leaves_leaf-4-m" src="/images/article/leaf_4-m.png" alt="leaf" />
 			</section>
 
-			<!-- footer -->
+			<!-- footer (  ) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/footer.njk" import footer %}
+			{{ footer(  ) }}
 		</main>
 
 		<script type="module" src="src/js/main.js"></script>

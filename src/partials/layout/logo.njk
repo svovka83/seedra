@@ -1,6 +1,6 @@
-{% macro logo (  ) %}
-  <a class="logo" href="/seedra/">
-    <svg class="logo-icon">
+{% macro logo ( path, classIcon ) %}
+  <a class="logo" href="{{path}}">
+    <svg class="logo-icon {{classIcon}}">
       <use xlink:href="/images/sprites.svg#logo-icon"></use>
     </svg>
   </a>

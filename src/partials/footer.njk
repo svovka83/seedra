@@ -1,0 +1,48 @@
+{% macro footer() %}
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__menu">
+          <!-- menu ( classList, classItem ) -->
+          <!-- prettier-ignore -->
+          {% from "src/partials/layout/menu.njk" import menu %}
+        {{ menu( "menu__list_footer", "menu__link_active" ) }}
+        </div>
+
+        <div class="footer__logo">
+          <!-- logo ( ( path, classIcon ) ) -->
+          <!-- prettier-ignore -->
+          {% from "src/partials/layout/logo.njk" import logo %}
+        {{ logo( "#go-to-top", "logo-icon_footer" ) }}
+        </div>
+
+        <nav class="policy">
+          <ul class="policy__list">
+            <li class="policy__item">
+              <a class="policy__link" href="#!">Terms&Conditions</a>
+            </li>
+            <li class="policy__item">
+              <a class="policy__link" href="#!">Privacy Policy</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <hr class="footer__hr" />
+      <div class="footer__bottom">
+        <div class="footer__socials">
+          <!-- socials ( classSocials ) -->
+          <!-- prettier-ignore -->
+          {% from "src/partials/layout/socials.njk" import socials %}
+        {{ socials( "socials_footer" ) }}
+        </div>
+
+        <div class="footer__rights">
+          <!-- text ( text, classText ) -->
+          <!-- prettier-ignore -->
+          {% from "src/partials/text.njk" import text %}
+        {{ text( "All rights reserved", "text_regular-14" ) }}
+        </div>
+      </div>
+    </div>
+  </footer>
+{% endmacro %}

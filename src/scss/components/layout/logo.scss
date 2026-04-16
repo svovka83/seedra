@@ -2,8 +2,14 @@
 
 .logo {
 	.logo-icon {
-		width: 97px;
-		height: 21px;
 		fill: $green_brand;
+		&_header {
+			width: 97px;
+			height: 21px;
+		}
+		&_footer {
+			width: 125px;
+			height: 27px;
+		}
 	}
 }
