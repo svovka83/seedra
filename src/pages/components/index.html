@@ -8,6 +8,16 @@
 	</head>
 	<body>
 		<div class="container" style="padding-top: 40px; height: 3000px">
+			<!-- articleContent (  ) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/article-content.njk" import articleContent %}
+			{{ articleContent(  ) }}
+
+			<!-- articlePicture (  ) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/article-picture.njk" import articlePicture %}
+			{{ articlePicture(  ) }}
+
 			<!-- review-card -->
 			<div class="review-card">
 				<div class="review-card__top">

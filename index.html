@@ -158,6 +158,23 @@
 			</section>
 
 			<!-- main-article -->
+			<section class="main-article">
+				<div class="main-article__inner container">
+					<!-- articleContent (  ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/article-content.njk" import articleContent %}
+					{{ articleContent(  ) }}
+
+					<!-- articlePicture (  ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/article-picture.njk" import articlePicture %}
+					{{ articlePicture(  ) }}
+				</div>
+				<img class="article-leaves article-leaves_leaf-4-d" src="/images/article/leaf_4-d.png" alt="leaf" />
+				<img class="article-leaves article-leaves_leaf-4-m" src="/images/article/leaf_4-m.png" alt="leaf" />
+			</section>
+
+			<!-- footer -->
 		</main>
 
 		<script type="module" src="src/js/main.js"></script>

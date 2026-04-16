@@ -1,0 +1,40 @@
+{% macro articleContent (  ) %}
+  <div class="article-content">
+    <div class="article-content__title">
+      <!-- title ( heading, title, classTitle ) -->
+      <!-- prettier-ignore -->
+      {% from "src/partials/title.njk" import title %}
+      {{ title( "h2", "Seedra helps to grow fast and efficiant", "title_h2") }}
+    </div>
+    <div class="article-content__text-1 article-content__text">
+      <!-- text ( text, classText ) -->
+      <!-- prettier-ignore -->
+      {% from "src/partials/text.njk" import text %}
+      {{ text( "SEEDRA Spinach Seeds - contains 600 seeds in 2 Packs and professional instructions created by PhD Helga George", "text_light" ) }}
+    </div>
+    <div class="article-content__text-2 article-content__text">
+      <!-- text ( text, classText ) -->
+      <!-- prettier-ignore -->
+      {% from "src/partials/text.njk" import text %}
+      {{ text( "Be sure of our quality - the freshest batches of this season. Non-GMO, Heirloom - our seeds were tested and have the best germination ratings.", "text_light" ) }}
+    </div>
+    <div class="article-content__text-3 article-content__text">
+      <!-- text ( text, classText ) -->
+      <!-- prettier-ignore -->
+      {% from "src/partials/text.njk" import text %}
+      {{ text( "Your easy growing experience is our guarantee", "text_light" ) }}
+    </div>
+    <div class="article-content__text-4 article-content__text">
+      <!-- text ( text, classText ) -->
+      <!-- prettier-ignore -->
+      {% from "src/partials/text.njk" import text %}
+      {{ text( "Spinach commom culinary uses: salads, soups, smoothies, lasagne, pizza, pies, risotto, and more", "text_light" ) }}
+    </div>
+    <div class="article-content__text-5 article-content__text">
+      <!-- text ( text, classText ) -->
+      <!-- prettier-ignore -->
+      {% from "src/partials/text.njk" import text %}
+      {{ text( "Proudly sourced in the USA - our garden seeds are grown, harvested, and packaged in the USA. We support local farmers and are happy to produce this American-made product", "text_light" ) }}
+    </div>
+  </div>
+{% endmacro %}
