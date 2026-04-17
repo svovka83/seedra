@@ -11,13 +11,23 @@
 	overflow: hidden;
 	@media (max-width: 680px) {
 		min-height: 221px;
-		padding-top: 47px;
-		padding-bottom: 42px;
+		&_blog {
+			padding-top: 47px;
+			padding-bottom: 42px;
+		}
+		&_about {
+			padding-top: 27px;
+			padding-bottom: 26px;
+		}
 	}
 	.top__title {
 		position: relative;
 		margin-bottom: 12px;
 		z-index: 100;
+		@media (max-width: 680px) {
+			max-width: 279px;
+			margin-inline: auto;
+		}
 	}
 	.top__text {
 		position: relative;

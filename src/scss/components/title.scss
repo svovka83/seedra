@@ -27,6 +27,18 @@
 			line-height: 34px;
 		}
 	}
+	&_h2-mobile {
+		font-weight: 600;
+		font-size: 22px;
+		line-height: 34px;
+		letter-spacing: -5%;
+		@media (max-width: 680px) {
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 28px;
+			letter-spacing: -2%;
+		}
+	}
 	&_h3 {
 		font-weight: 600;
 		font-size: 24px;

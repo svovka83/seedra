@@ -1,0 +1,17 @@
+{% macro member( memberImg, memberName, memberPosition ) %}
+  <div class="member">
+    <img class="member__img" src="/images/team/{{ memberImg }}" alt="member avatar" />
+    
+    <div class="member__name">
+      <!-- title ( heading, title, classTitle ) -->
+      {% from "src/partials/title.njk" import title %}
+      {{ title( "h2", memberName, "title_h2-mobile") }}
+    </div>
+
+    <div class="member__position">
+      <!-- text ( text, classText ) -->
+      {% from "src/partials/text.njk" import text %}
+      {{ text( memberPosition, "text_light" ) }}
+    </div>
+  </div>
+{% endmacro %}

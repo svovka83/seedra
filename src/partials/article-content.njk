@@ -1,10 +1,10 @@
-{% macro articleContent (  ) %}
-  <div class="article-content">
+{% macro articleContent ( articleTitle, articleClass ) %}
+  <div class="article-content {{ articleClass }}">
     <div class="article-content__title">
       <!-- title ( heading, title, classTitle ) -->
       <!-- prettier-ignore -->
       {% from "src/partials/title.njk" import title %}
-      {{ title( "h2", "Seedra helps to grow fast and efficiant", "title_h2") }}
+      {{ title( "h2", articleTitle, "title_h2") }}
     </div>
     <div class="article-content__text-1 article-content__text">
       <!-- text ( text, classText ) -->

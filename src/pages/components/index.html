@@ -220,11 +220,11 @@
 			{% from "src/partials/text.njk" import text %}
 			{{ text( "Some text", "text_light" ) }}
 
-			<!-- top ( title, text ) -->
+			<!-- top( topTitle, topText, classTop ) -->
 			<!-- prettier-ignore -->
 			{% from "src/partials/top.njk" import top %}
-			{{ top( "Welcome to our blog",
-			"Here you can find a lot of interesting and useful information that you need in gardening and creating a beautiful garden" ) }}
+			{{ top( "Who we are and what we do",
+			"Here you can find a lot of interesting and useful information that you need in gardening and creating a beautiful garden", "top_about" ) }}
 
 			<!-- dropdown( title, initial ) -->
 			<!-- prettier-ignore -->

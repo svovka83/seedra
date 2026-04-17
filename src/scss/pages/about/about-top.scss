@@ -1,0 +1,8 @@
+.about-top {
+	margin-top: 32px;
+	margin-bottom: 53px;
+	@media (max-width: 680px) {
+		margin-top: 30px;
+		margin-bottom: 25px;
+	}
+}

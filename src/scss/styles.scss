@@ -28,6 +28,7 @@
 @use "./components/categories-tags.scss";
 @use "./components/filters/filter-dropdown.scss";
 @use "./components/checkbox.scss";
+@use "./components/member.scss";
 
 // main
 
@@ -42,3 +43,9 @@
 
 @use "./pages/products/products-search.scss";
 @use "./pages/products/products-content.scss";
+
+// about
+
+@use "./pages/about/about-top.scss";
+@use "./pages/about/about-article.scss";
+@use "./pages/about/about-team.scss";

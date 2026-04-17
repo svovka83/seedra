@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>About Seedra</title>
+		<link rel="stylesheet" href="../../scss/styles.scss" />
+	</head>
+	<body>
+		<!-- header (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/header.njk" import header %}
+    {{ header(  ) }}
+
+		<main class="about-page" id="go-to-top">
+			<!-- about-top -->
+			<section class="about-top container">
+				<!-- top( topTitle, topText, classTop ) -->
+				<!-- prettier-ignore -->
+				{% from "src/partials/top.njk" import top %}
+        {{ top( "Who we are and what we do",
+        "Here you can find a lot of interesting and useful information that you need in gardening and creating a beautiful garden", "top_about" ) }}
+			</section>
+
+			<!-- about-article -->
+			<section class="about-article">
+				<div class="about-article__inner container">
+					<!-- articleContent ( articleTitle ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/article-content.njk" import articleContent %}
+					{{ articleContent( "Seedra helps to grow fast and efficiant" ) }}
+
+					<!-- articlePicture (  ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/article-picture.njk" import articlePicture %}
+					{{ articlePicture(  ) }}
+				</div>
+				<img class="article-leaves article-leaves_leaf-4-d" src="/images/article/leaf_4-d.png" alt="leaf" />
+				<img class="article-leaves article-leaves_leaf-4-m" src="/images/article/leaf_4-m.png" alt="leaf" />
+			</section>
+			<!-- about-article -->
+			<section class="about-article">
+				<div class="about-article__inner about-article__inner_reverse container">
+					<!-- articleContent ( articleTitle ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/article-content.njk" import articleContent %}
+					{{ articleContent( "Our story", "article-content_reverse" ) }}
+
+					<img class="about-article__img" src="/images/article/article_2.jpg" alt="article image" />
+				</div>
+			</section>
+
+			<!-- about-team -->
+			<section class="about-team container">
+				<div class="about-team__title">
+					<!-- title ( heading, title, classTitle ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/title.njk" import title %}
+          {{ title( "h2", "Meet our team", "title_h2") }}
+				</div>
+				<div class="about-team__content">
+					<!-- member( memberImg, memberName, memberPosition ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/member.njk" import member %}
+          {{ member( "member_1.png", "Leslie Alexander", "Nursing Assistant") }}
+          {{ member( "member_2.png", "Robert Fox", "Dog Trainer") }}
+          {{ member( "member_3.png", "Floyd Miles", "Web Designer") }}
+          {{ member( "member_4.png", "Wade Warren", "Medical Assistant") }}
+				</div>
+			</section>
+		</main>
+
+		<!-- footer (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/footer.njk" import footer %}
+		{{ footer(  ) }}
+
+		<script type="module" src="../../js/main.js"></script>
+	</body>
+</html>
