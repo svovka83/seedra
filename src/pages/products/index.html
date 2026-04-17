@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Products</title>
+		<script type="module" crossorigin src="/seedra/assets/main-B6B0rjr1.js"></script>
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-DajZJarv.css">
+	</head>
+	<body>
+		<!-- header (  ) -->
+		<!-- prettier-ignore -->
+		
+    
+  <header class="header">
+    <div class="header__inner container">
+      <div class="header__logo">
+        <!-- logo ( ( path, classIcon ) ) -->
+        <!-- prettier-ignore -->
+        
+        
+  <a class="logo" href="/seedra/">
+    <svg class="logo-icon logo-icon_header">
+      <use xlink:href="/seedra/images/sprites.svg#logo-icon"></use>
+    </svg>
+  </a>
+
+      </div>
+
+      <div class="header__menu">
+        <!-- menu ( classList, classItem ) -->
+        <!-- prettier-ignore -->
+        
+        
+  <nav class="menu">
+    <ul class="menu__list menu__list_header">
+      <li class="menu__item">
+        <a class="menu__link " href="/seedra/src/pages/products/index.html">ALL PRODUCTS</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="#!">ABOUT SEEDRA</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="#!">OUR BLOG</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="#!">CONTACTS</a>
+      </li>
+    </ul>
+  </nav>
+
+      </div>
+
+      <div class="header__socials">
+        <!-- socials ( classSocials ) -->
+        <!-- prettier-ignore -->
+        
+        
+  <div class="socials socials_header">
+    <a class="socials__link" href="#!">
+      <svg class="socials__icon">
+        <use xlink:href="/seedra/images/sprites.svg#instagram-icon"></use>
+      </svg>
+    </a>
+    <a class="socials__link" href="#!">
+      <svg class="socials__icon">
+        <use xlink:href="/seedra/images/sprites.svg#facebook-icon"></use>
+      </svg>
+    </a>
+  </div>
+
+      </div>
+
+      <div class="header__search">
+        <!-- search ( classSearch ) -->
+        <!-- prettier-ignore -->
+        
+        
+  <div class="search search_header">
+    <input class="search__input" type="text" placeholder="Search">
+    <svg class="search__icon">
+	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
+    </svg>
+    <img class="search__img" src="/seedra/images/icons/funnel.svg" alt="search icon funnel">
+  </div>
+
+      </div>
+
+      <!-- cart-block -->
+      <div class="header__cart-block">
+        <a class="header__cart-block-link" href="#!">
+          <svg class="header__cart-block-icon">
+            <use xlink:href="/seedra/images/sprites.svg#heart-icon"></use>
+          </svg>
+        </a>
+        <a class="header__cart-block-link" href="#!">
+          <svg class="header__cart-block-icon">
+            <use xlink:href="/seedra/images/sprites.svg#cart-icon"></use>
+          </svg>
+        </a>
+      </div>
+
+      <button class="header__burger-menu">
+        <svg class="header__burger-menu-icon">
+          <use xlink:href="/seedra/images/sprites.svg#burger-icon"></use>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+
+		<main class="products-page" id="go-to-top">
+			<!-- products-search -->
+			<div class="products-search container">
+				<div class="products-search__search">
+					<!-- search ( classSearch ) -->
+					<!-- prettier-ignore -->
+					
+          
+  <div class="search search_banner">
+    <input class="search__input" type="text" placeholder="Search">
+    <svg class="search__icon">
+	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
+    </svg>
+    <img class="search__img" src="/seedra/images/icons/funnel.svg" alt="search icon funnel">
+  </div>
+
+				</div>
+
+				<div class="products-search__dropdown">
+					<!-- dropdown( title, initial ) -->
+					<!-- prettier-ignore -->
+					
+          
+  <div class="dropdown">
+    <div class="dropdown__control">
+      <div class="dropdown__title-block">
+        <p class="dropdown__title">Sort by</p>
+        <p class="dropdown__initial">Most expensive</p>
+      </div>
+      <svg class="dropdown__icon">
+        <use xlink:href="/seedra/images/sprites.svg#chevron-icon"></use>
+      </svg>
+    </div>
+    <div class="dropdown__list">
+      <div class="dropdown__option">
+        <span class="dropdown__value">Shipping</span>
+        <span class="dropdown__price">+$10</span>
+      </div>
+      <div class="dropdown__option">
+        <span class="dropdown__value">On foot</span>
+        <span class="dropdown__price">+$10</span>
+      </div>
+      <div class="dropdown__option">
+        <span class="dropdown__value">By car</span>
+        <span class="dropdown__price">+$80</span>
+      </div>
+      <div class="dropdown__option">
+        <span class="dropdown__value">By plane</span>
+        <span class="dropdown__price">+$1850</span>
+      </div>
+    </div>
+	</div>
+
+				</div>
+			</div>
+
+			<!-- products-content -->
+			<div class="products-content container">
+				<!-- categories-tags -->
+				<div class="products-content__categories categories-tags">
+					<!-- categories-tags getting from firebase -->
+				</div>
+
+				<button class="products-content__open">open filter</button>
+
+				<div class="products-content__grid">
+					<div class="products-content__filters">
+						<h4 class="products-content__filters-title">Filters</h4>
+						<!-- filterDropdown ( textComponent, classComponent ) -->
+						<!-- prettier-ignore -->
+						
+						
+	<div class="filter-dropdown">
+
+    <button class="filter-dropdown__btn">
+      <span class="filter-dropdown__title">Seed type</span>
+      <svg class="filter-dropdown__icon">
+        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
+      </svg>
+    </button>
+
+    <div class="filter-dropdown__content">
+      <div class="filter-dropdown__inner">
+
+        <!-- checkbox( title ) -->
+		    
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Hybrid</span>
+  </label>
+
+        </div>
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Open Pollinated</span>
+  </label>
+
+        </div>
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Organic Seeds, Plants, and Supplies</span>
+  </label>
+
+        </div>
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Pelleted See</span>
+  </label>
+
+        </div>
+      </div>
+    </div>
+
+	</div>
+
+						
+	<div class="filter-dropdown">
+
+    <button class="filter-dropdown__btn">
+      <span class="filter-dropdown__title">Featured</span>
+      <svg class="filter-dropdown__icon">
+        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
+      </svg>
+    </button>
+
+    <div class="filter-dropdown__content">
+      <div class="filter-dropdown__inner">
+
+        <!-- checkbox( title ) -->
+		    
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Hybrid</span>
+  </label>
+
+        </div>
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Open Pollinated</span>
+  </label>
+
+        </div>
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Organic Seeds, Plants, and Supplies</span>
+  </label>
+
+        </div>
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Pelleted See</span>
+  </label>
+
+        </div>
+      </div>
+    </div>
+
+	</div>
+
+						
+	<div class="filter-dropdown">
+
+    <button class="filter-dropdown__btn">
+      <span class="filter-dropdown__title">Growing Conditions</span>
+      <svg class="filter-dropdown__icon">
+        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
+      </svg>
+    </button>
+
+    <div class="filter-dropdown__content">
+      <div class="filter-dropdown__inner">
+
+        <!-- checkbox( title ) -->
+		    
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Hybrid</span>
+  </label>
+
+        </div>
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Open Pollinated</span>
+  </label>
+
+        </div>
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Organic Seeds, Plants, and Supplies</span>
+  </label>
+
+        </div>
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Pelleted See</span>
+  </label>
+
+        </div>
+      </div>
+    </div>
+
+	</div>
+
+						
+	<div class="filter-dropdown">
+
+    <button class="filter-dropdown__btn">
+      <span class="filter-dropdown__title">Use</span>
+      <svg class="filter-dropdown__icon">
+        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
+      </svg>
+    </button>
+
+    <div class="filter-dropdown__content">
+      <div class="filter-dropdown__inner">
+
+        <!-- checkbox( title ) -->
+		    
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Hybrid</span>
+  </label>
+
+        </div>
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Open Pollinated</span>
+  </label>
+
+        </div>
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Organic Seeds, Plants, and Supplies</span>
+  </label>
+
+        </div>
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Pelleted See</span>
+  </label>
+
+        </div>
+      </div>
+    </div>
+
+	</div>
+
+						
+	<div class="filter-dropdown">
+
+    <button class="filter-dropdown__btn">
+      <span class="filter-dropdown__title">Additional Characteristic</span>
+      <svg class="filter-dropdown__icon">
+        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
+      </svg>
+    </button>
+
+    <div class="filter-dropdown__content">
+      <div class="filter-dropdown__inner">
+
+        <!-- checkbox( title ) -->
+		    
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Hybrid</span>
+  </label>
+
+        </div>
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Open Pollinated</span>
+  </label>
+
+        </div>
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Organic Seeds, Plants, and Supplies</span>
+  </label>
+
+        </div>
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Pelleted See</span>
+  </label>
+
+        </div>
+      </div>
+    </div>
+
+	</div>
+
+					</div>
+					<div class="products-content__products">
+						<!-- products getting from firebase -->
+					</div>
+				</div>
+			</div>
+
+			<!-- footer (  ) -->
+			<!-- prettier-ignore -->
+			
+			
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__menu">
+          <!-- menu ( classList, classItem ) -->
+          <!-- prettier-ignore -->
+          
+        
+  <nav class="menu">
+    <ul class="menu__list menu__list_footer">
+      <li class="menu__item">
+        <a class="menu__link menu__link_active" href="/seedra/src/pages/products/index.html">ALL PRODUCTS</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="#!">ABOUT SEEDRA</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="#!">OUR BLOG</a>
+      </li>
+      <li class="menu__item">
+        <a class="menu__link" href="#!">CONTACTS</a>
+      </li>
+    </ul>
+  </nav>
+
+        </div>
+
+        <div class="footer__logo">
+          <!-- logo ( ( path, classIcon ) ) -->
+          <!-- prettier-ignore -->
+          
+        
+  <a class="logo" href="#go-to-top">
+    <svg class="logo-icon logo-icon_footer">
+      <use xlink:href="/seedra/images/sprites.svg#logo-icon"></use>
+    </svg>
+  </a>
+
+        </div>
+
+        <nav class="policy">
+          <ul class="policy__list">
+            <li class="policy__item">
+              <a class="policy__link" href="#!">Terms&Conditions</a>
+            </li>
+            <li class="policy__item">
+              <a class="policy__link" href="#!">Privacy Policy</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <hr class="footer__hr" />
+      <div class="footer__bottom">
+        <div class="footer__socials">
+          <!-- socials ( classSocials ) -->
+          <!-- prettier-ignore -->
+          
+        
+  <div class="socials socials_footer">
+    <a class="socials__link" href="#!">
+      <svg class="socials__icon">
+        <use xlink:href="/seedra/images/sprites.svg#instagram-icon"></use>
+      </svg>
+    </a>
+    <a class="socials__link" href="#!">
+      <svg class="socials__icon">
+        <use xlink:href="/seedra/images/sprites.svg#facebook-icon"></use>
+      </svg>
+    </a>
+  </div>
+
+        </div>
+
+        <div class="footer__rights">
+          <!-- text ( text, classText ) -->
+          <!-- prettier-ignore -->
+          
+        
+  <p class="text text_regular-14">All rights reserved</p>
+
+        </div>
+      </div>
+    </div>
+  </footer>
+
+		</main>
+
+	</body>
+</html>
