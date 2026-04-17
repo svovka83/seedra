@@ -5,5 +5,6 @@ export function showFilterSidebar() {
 
 	openFilterSidebar.addEventListener("click", () => {
 		content.classList.toggle("products-content__grid_open");
+		filters.classList.toggle("products-content__filters_open");
 	});
 }

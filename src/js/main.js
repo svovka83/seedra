@@ -6,12 +6,6 @@ import { productSlider } from "./sliders/product-slider.js";
 import { blogSlider } from "./sliders/blog-slider.js";
 import { reviewSlider } from "./sliders/review-slider.js";
 
-// common
-
-initDropdownList();
-showFilterSidebar();
-filterDropdown();
-
 // firebase
 
 initFirebase();
@@ -21,3 +15,9 @@ initFirebase();
 productSlider();
 blogSlider();
 reviewSlider();
+
+// common
+
+initDropdownList();
+showFilterSidebar();
+filterDropdown();

@@ -17,6 +17,10 @@
 		}
 	}
 	&__filters {
+		display: block;
+		&_open {
+			display: none;
+		}
 	}
 	&__filters-title {
 		font-size: 14px;
