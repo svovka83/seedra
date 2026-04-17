@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Products</title>
+		<link rel="stylesheet" href="../../scss/styles.scss" />
+	</head>
+	<body>
+		<!-- header (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/header.njk" import header %}
+    {{ header(  ) }}
+
+		<main class="products-page" id="go-to-top">
+			<!-- products-search -->
+			<div class="products-search container">
+				<div class="products-search__search">
+					<!-- search ( classSearch ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/search.njk" import search %}
+          {{ search( "search_banner" ) }}
+				</div>
+
+				<div class="products-search__dropdown">
+					<!-- dropdown( title, initial ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/dropdown.njk" import dropdown %}
+          {{ dropdown( "Sort by", "Most expensive" ) }}
+				</div>
+			</div>
+
+			<!-- products-content -->
+			<div class="products-content container">
+				<!-- categories-tags -->
+				<div class="products-content__categories categories-tags">
+					<!-- categories-tags getting from firebase -->
+				</div>
+
+				<div class="products-content__grid">
+					<div class="products-content__filters">
+						<h4 class="products-content__filters-title">Filters</h4>
+						<!-- filterDropdown ( textComponent, classComponent ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/filters/filter-dropdown.njk" import filterDropdown %}
+						{{ filterDropdown( "Seed type", "Hybrid", "Open Pollinated", "Organic Seeds, Plants, and Supplies", "Pelleted See" ) }}
+						{{ filterDropdown( "Featured", "Hybrid", "Open Pollinated", "Organic Seeds, Plants, and Supplies", "Pelleted See" ) }}
+						{{ filterDropdown( "Growing Conditions", "Hybrid", "Open Pollinated", "Organic Seeds, Plants, and Supplies", "Pelleted See" ) }}
+						{{ filterDropdown( "Use", "Hybrid", "Open Pollinated", "Organic Seeds, Plants, and Supplies", "Pelleted See" ) }}
+						{{ filterDropdown( "Additional Characteristic", "Hybrid", "Open Pollinated", "Organic Seeds, Plants, and Supplies", "Pelleted See" ) }}
+					</div>
+					<div class="products-content__products">
+						<!-- products getting from firebase -->
+					</div>
+				</div>
+
+				<button class="products-content__open">open filter</button>
+			</div>
+
+			<!-- footer (  ) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/footer.njk" import footer %}
+			{{ footer(  ) }}
+		</main>
+
+		<script type="module" src="../../js/main.js"></script>
+	</body>
+</html>

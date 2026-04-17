@@ -1,7 +1,7 @@
 @use "../settings/variables.scss" as *;
 
 .footer {
-	padding-top: 32px;
+	padding-top: 31px;
 	box-shadow: $shadow_footer;
 	@media (max-width: 768px) {
 		padding-top: 27px;

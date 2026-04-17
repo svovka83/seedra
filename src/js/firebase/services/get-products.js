@@ -8,6 +8,7 @@ export async function getProductStaticCards(db) {
 	const products = await getDocs(collection(db, "products"));
 
 	products.forEach((product) => {
+		if (product.data().id > 6) return;
 		productList.innerHTML += productCard(
 			product.data().name,
 			product.data().price,
@@ -27,7 +28,25 @@ export async function getProductSliderCards(db) {
 			product.data().name,
 			product.data().price,
 			product.data().imageUrl,
-			product.data().isFire
+			product.data().isFire,
+			"product-card_slider",
+			"product-card__yellow-heart_slider"
 		)}</div>`;
+	});
+}
+
+export async function getAllProducts(db) {
+	const productList = document.querySelector(".products-content__products");
+
+	const products = await getDocs(collection(db, "products"));
+
+	products.forEach((product) => {
+		productList.innerHTML += productCard(
+			product.data().name,
+			product.data().price,
+			product.data().imageUrl,
+			product.data().isFire,
+			"product-card_mobile"
+		);
 	});
 }

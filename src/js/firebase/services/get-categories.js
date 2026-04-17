@@ -3,7 +3,7 @@ import { collection, getDocs, addDoc } from "firebase/firestore";
 import { button } from "../../components/button";
 
 export async function getCategories(db) {
-	const categoryList = document.querySelector(".our-products__categories");
+	const categoryList = document.querySelector(".categories-tags");
 
 	const categories = await getDocs(collection(db, "categories"));
 

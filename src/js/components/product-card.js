@@ -2,9 +2,11 @@ import { title } from "./title";
 import { button } from "./button";
 import { ranking } from "./ranking";
 
-export function productCard(name, price, imageUrl, isFire) {
+export function productCard(name, price, imageUrl, isFire, classCard, classHeart) {
+	const base = import.meta.env.BASE_URL;
+
 	return `
-  <div class="product-card">
+  <div class="product-card ${classCard}">
     <img class="product-card__img" src="${imageUrl}" alt="product card image" />
 
     <div class="product-card__content">
@@ -19,7 +21,7 @@ export function productCard(name, price, imageUrl, isFire) {
 
       <div class="product-card__bottom">
         <svg class="${isFire ? "product-card__icon" : "product-card__no-fire"}">
-          <use xlink:href="./images/sprites.svg#fire-icon"></use>
+          <use xlink:href="${base}images/sprites.svg#fire-icon"></use>
         </svg>
 
         <span class="product-card__price">$${price / 100}</span>
@@ -32,9 +34,9 @@ export function productCard(name, price, imageUrl, isFire) {
       </div>
     </div>
 
-    <div class="product-card__yellow-heart">
+    <div class="product-card__yellow-heart ${classHeart}">
       <svg class="product-card__icon-heart">
-        <use xlink:href="./images/sprites.svg#heart-icon"></use>
+        <use xlink:href="${base}images/sprites.svg#heart-icon"></use>
       </svg>
     </div>
 

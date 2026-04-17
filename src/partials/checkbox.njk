@@ -1,0 +1,11 @@
+{% macro checkbox( title ) %}
+  <label class="checkbox">
+    <input type="checkbox" class="checkbox__input" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">{{ title }}</span>
+  </label>
+{% endmacro %}

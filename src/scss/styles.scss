@@ -25,6 +25,9 @@
 @use "./components/article-content.scss";
 @use "./components/article-picture.scss";
 @use "./components/footer.scss";
+@use "./components/categories-tags.scss";
+@use "./components/filters/filter-dropdown.scss";
+@use "./components/checkbox.scss";
 
 // main
 
@@ -35,4 +38,7 @@
 @use "./pages/main/main-reviews.scss";
 @use "./pages/main/main-article.scss";
 
-// swiper
+// products
+
+@use "./pages/products/products-search.scss";
+@use "./pages/products/products-content.scss";

@@ -1,0 +1,46 @@
+@use "../../settings/variables.scss" as *;
+
+.filter-dropdown {
+	&__btn {
+		width: 254px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 6px;
+		padding-bottom: 7px;
+		border-top: 1px solid $light_grey_stroke;
+		cursor: pointer;
+	}
+	&__title {
+		font-weight: 500;
+		letter-spacing: -3.5%;
+	}
+	&__icon {
+		width: 24px;
+		height: 24px;
+		stroke: $text_secondary;
+		fill: $white;
+		transition: transform 0.3s ease;
+		&_open {
+			transform: rotate(180deg);
+		}
+	}
+	&__content {
+		display: grid;
+		grid-template-rows: 0fr; /* 🔥 закрито */
+		transition: grid-template-rows 0.3s ease, padding-top 0.3s ease;
+	}
+	&__inner {
+		overflow: hidden;
+	}
+	&__option {
+		margin-bottom: 8px;
+	}
+}
+
+.filter-dropdown.open .filter-dropdown__content {
+	grid-template-rows: 1fr; /* 🔥 відкрито */
+	width: 254px;
+	padding-top: 16px;
+	border-top: 1px solid $light_grey_stroke;
+}

@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 import { getCategories } from "./services/get-categories";
-import { getProductStaticCards, getProductSliderCards } from "./services/get-products";
+import { getProductStaticCards, getProductSliderCards, getAllProducts } from "./services/get-products";
 import { getBlogStaticCards, getBlogSliderCards } from "./services/get-blogs";
 import { getReviewCards } from "./services/get-reviews";
 
@@ -22,6 +22,7 @@ export async function initFirebase() {
 	getCategories(db);
 	getProductStaticCards(db);
 	getProductSliderCards(db);
+	getAllProducts(db);
 	getBlogStaticCards(db);
 	getBlogSliderCards(db);
 	getReviewCards(db);

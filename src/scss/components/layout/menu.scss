@@ -8,6 +8,10 @@
 			.menu__link {
 				font-size: 14px;
 				color: $text_secondary;
+				transition: color 0.2s ease-in-out;
+				&:hover {
+					color: $text_primary;
+				}
 				&_active {
 					font-weight: 500;
 					letter-spacing: -3.5%;

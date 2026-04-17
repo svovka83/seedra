@@ -1,0 +1,38 @@
+@use "../settings/variables.scss" as *;
+
+.checkbox {
+	width: 200px;
+	display: flex;
+	align-items: center;
+	column-gap: 9px;
+	cursor: pointer;
+	&__input {
+		display: none;
+	}
+	&__text {
+		font-size: 14px;
+		color: $text_secondary;
+	}
+	&__box {
+		width: 20px;
+		height: 20px;
+		border: 1px solid $light_grey_stroke;
+		border-radius: 6px;
+	}
+	&__icon {
+		width: 18px;
+		height: 20px;
+
+		fill: $white;
+		stroke: $white;
+	}
+
+	.checkbox__input:checked + .checkbox__box {
+		border: 1px solid $green_brand;
+		background-color: #35974014;
+		.checkbox__icon {
+			fill: $white;
+			stroke: $green_brand;
+		}
+	}
+}

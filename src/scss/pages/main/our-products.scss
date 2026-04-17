@@ -16,11 +16,6 @@
 		}
 	}
 	&__categories {
-		max-width: 1110px;
-		display: flex;
-		column-gap: 16px;
-		scrollbar-width: none;
-		overflow-x: auto;
 		margin-bottom: 32px;
 		@media (max-width: 768px) {
 			margin-bottom: 28px;
