@@ -4,6 +4,7 @@ import { button } from "../../components/button";
 
 export async function getCategories(db) {
 	const categoryList = document.querySelector(".categories-tags");
+	if (!categoryList) return;
 
 	const categories = await getDocs(collection(db, "categories"));
 

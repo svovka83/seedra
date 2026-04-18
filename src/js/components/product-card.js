@@ -2,11 +2,11 @@ import { title } from "./title";
 import { button } from "./button";
 import { ranking } from "./ranking";
 
-export function productCard(name, price, imageUrl, isFire, classCard, classHeart) {
+export function productCard(id, name, price, imageUrl, isFire, classCard, classHeart) {
 	const base = import.meta.env.BASE_URL;
 
 	return `
-  <div class="product-card ${classCard}">
+  <div class="product-card ${classCard}" id="${id}">
     <img class="product-card__img" src="${imageUrl}" alt="product card image" />
 
     <div class="product-card__content">

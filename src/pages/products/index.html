@@ -42,14 +42,14 @@
 				<div class="products-content__grid">
 					<div class="products-content__filters">
 						<h4 class="products-content__filters-title">Filters</h4>
-						<!-- filterDropdown ( textComponent, classComponent ) -->
+						<!-- filterDropdown( title, option1, value1, option2, option3 ,option4 ) -->
 						<!-- prettier-ignore -->
 						{% from "src/partials/filters/filter-dropdown.njk" import filterDropdown %}
-						{{ filterDropdown( "Seed type", "Hybrid", "Open Pollinated", "Organic Seeds, Plants, and Supplies", "Pelleted See" ) }}
-						{{ filterDropdown( "Featured", "Hybrid", "Open Pollinated", "Organic Seeds, Plants, and Supplies", "Pelleted See" ) }}
-						{{ filterDropdown( "Growing Conditions", "Hybrid", "Open Pollinated", "Organic Seeds, Plants, and Supplies", "Pelleted See" ) }}
-						{{ filterDropdown( "Use", "Hybrid", "Open Pollinated", "Organic Seeds, Plants, and Supplies", "Pelleted See" ) }}
-						{{ filterDropdown( "Additional Characteristic", "Hybrid", "Open Pollinated", "Organic Seeds, Plants, and Supplies", "Pelleted See" ) }}
+						{{ filterDropdown( "Seed type", "Hybrid", "hybrid", "Open Pollinated", "pollinated", "Organic Seeds, Plants, and Supplies", "organic", "Pelleted See", "pelleted" ) }}
+						{{ filterDropdown( "Featured", "Hybrid", "", "Open Pollinated", "Organic Seeds, Plants, and Supplies", "", "Pelleted See", "" ) }}
+						{{ filterDropdown( "Growing Conditions", "Hybrid", "", "Open Pollinated", "", "Organic Seeds, Plants, and Supplies", "", "Pelleted See", "" ) }}
+						{{ filterDropdown( "Use", "Hybrid", "", "Open Pollinated", "", "Organic Seeds, Plants, and Supplies", "", "Pelleted See", "" ) }}
+						{{ filterDropdown( "Additional Characteristic", "Hybrid", "", "Open Pollinated", "", "Organic Seeds, Plants, and Supplies", "", "Pelleted See", "" ) }}
 					</div>
 					<div class="products-content__products">
 						<!-- products getting from firebase -->

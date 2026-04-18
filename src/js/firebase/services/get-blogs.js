@@ -4,6 +4,7 @@ import { blogCard } from "../../components/blog-card";
 
 export async function getBlogStaticCards(db) {
 	const blogStaticList = document.querySelector(".our-blogs__content-static");
+	if (!blogStaticList) return;
 
 	const blogs = await getDocs(collection(db, "blogs"));
 	const blogsArr = blogs.docs;
@@ -30,6 +31,7 @@ export async function getBlogStaticCards(db) {
 
 export async function getBlogSliderCards(db) {
 	const blogSliderList = document.querySelector(".swiper-wrapper.our-blogs__wrapper");
+	if (!blogSliderList) return;
 
 	const blogs = await getDocs(collection(db, "blogs"));
 

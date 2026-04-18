@@ -6,6 +6,7 @@ import { reviewCard } from "../../components/review-card";
 
 export async function getReviewCards(db) {
 	const reviewList = document.querySelector(".swiper-wrapper.main-reviews__wrapper");
+	if (!reviewList) return;
 
 	const reviews = await getDocs(collection(db, "reviews"));
 
