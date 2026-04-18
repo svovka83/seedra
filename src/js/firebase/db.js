@@ -5,6 +5,7 @@ import { getCategories } from "./services/get-categories";
 import { getProductStaticCards, getProductSliderCards } from "./services/get-products-main";
 import { getFilterProducts } from "./services/get-products-filter";
 import { getBlogStaticCards, getBlogSliderCards } from "./services/get-blogs";
+import { getFilterBlogs } from "./services/get-filter-blogs";
 import { getReviewCards } from "./services/get-reviews";
 
 export async function initFirebase() {
@@ -26,5 +27,6 @@ export async function initFirebase() {
 	getFilterProducts(db);
 	getBlogStaticCards(db);
 	getBlogSliderCards(db);
+	getFilterBlogs(db);
 	getReviewCards(db);
 }

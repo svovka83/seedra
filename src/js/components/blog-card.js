@@ -2,16 +2,18 @@ import { title } from "./title";
 import { text } from "./text";
 import { discover } from "./discover";
 
-export function blogCard(name, content, imageUrl, size, imageUrlMobile) {
+export function blogCard(name, content, imageUrl, date, size, imageUrlMobile) {
+	const base = import.meta.env.BASE_URL;
+
 	return `
     <div class="blog-card blog-card${size}">
       <div class="blog-card__content">
 
         <div class="blog-card__date">
           <svg class="blog-card__date-icon">
-            <use xlink:href="./images/sprites.svg#clock-icon"></use>
+            <use xlink:href="${base}images/sprites.svg#clock-icon"></use>
           </svg>
-          <span class="blog-card__date-time">12.09.2021</span>
+          <span class="blog-card__date-time">${date}</span>
         </div>
 
         <div class="blog-card__title">

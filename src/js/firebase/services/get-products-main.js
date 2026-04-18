@@ -1,5 +1,4 @@
 import { collection, getDocs, query, limit } from "firebase/firestore";
-
 import { productCard } from "../../components/product-card";
 
 export async function getProductStaticCards(db) {
@@ -28,6 +27,7 @@ export async function getProductSliderCards(db) {
 
 	products.forEach((product) => {
 		productList.innerHTML += `<div class="swiper-slide">${productCard(
+			product.id,
 			product.data().name,
 			product.data().price,
 			product.data().imageUrl,

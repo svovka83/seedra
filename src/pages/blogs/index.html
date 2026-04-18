@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Our Blogs</title>
+		<link rel="stylesheet" href="../../scss/styles.scss" />
+	</head>
+	<body>
+		<!-- header (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/header.njk" import header %}
+    {{ header(  ) }}
+
+		<main class="blogs-main" id="go-to-top">
+			<!-- blogs-top -->
+			<section class="blogs-top container">
+				<!-- top( topTitle, topText, classTop ) -->
+				<!-- prettier-ignore -->
+				{% from "src/partials/top.njk" import top %}
+        {{ top( "Welcome to our blog",
+        "Here you can find a lot of interesting and useful information that you need in gardening and creating a beautiful garden", "top_blogs" ) }}
+			</section>
+
+			<!-- blogs-search -->
+			<div class="blogs-search container">
+				<div class="blogs-search__search">
+					<!-- search ( classSearch ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/search.njk" import search %}
+          {{ search( "search_banner" ) }}
+				</div>
+
+				<div class="blogs-search__dropdown">
+					<!-- dropdown( title, initial ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/dropdown.njk" import dropdown %}
+          {{ dropdown( "Sort by", "Recently" ) }}
+				</div>
+			</div>
+
+			<!-- blogs-content -->
+			<div class="blogs-content container">
+				<!-- blogs are getting from firebase -->
+			</div>
+		</main>
+
+		<!-- footer (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/footer.njk" import footer %}
+		{{ footer(  ) }}
+		<script type="module" src="../../js/main.js"></script>
+	</body>
+</html>
