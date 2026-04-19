@@ -15,10 +15,16 @@
 		&_open {
 			display: block;
 		}
+		@media (max-width: 768px) {
+			grid-template-columns: auto;
+		}
 	}
 	&__filters {
 		display: block;
 		&_open {
+			display: none;
+		}
+		@media (max-width: 768px) {
 			display: none;
 		}
 	}
@@ -45,5 +51,8 @@
 	}
 	&__open {
 		cursor: pointer;
+		@media (max-width: 768px) {
+			display: none;
+		}
 	}
 }

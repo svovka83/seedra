@@ -23,10 +23,11 @@
 				</div>
 
 				<div class="products-search__dropdown">
-					<!-- dropdown( title, initial ) -->
+					<!-- dropdown( title, initial, initialID, listID, classPrice, option1, option2 ) -->
 					<!-- prettier-ignore -->
 					{% from "src/partials/dropdown.njk" import dropdown %}
-          {{ dropdown( "Sort by", "Most expensive" ) }}
+          {{ dropdown( "Sort by", "Most expensive", "filter-sort", "filter-sort-list", "dropdown__price_without",
+					"Most expensive", "The cheapest", "Newly", "Old" ) }}
 				</div>
 			</div>
 
@@ -37,7 +38,7 @@
 					<!-- categories-tags getting from firebase -->
 				</div>
 
-				<button class="products-content__open">open filter</button>
+				<button class="products-content__open">open filters</button>
 
 				<div class="products-content__grid">
 					<div class="products-content__filters">

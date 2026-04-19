@@ -1,30 +1,30 @@
-{% macro dropdown( title, initial ) %}
+{% macro dropdown( title, initial, initialID, listID, classPrice, option1, option2, option3, option4 ) %}
   <div class="dropdown">
     <div class="dropdown__control">
       <div class="dropdown__title-block">
         <p class="dropdown__title">{{ title }}</p>
-        <p class="dropdown__initial">{{ initial }}</p>
+        <p class="dropdown__initial" id="{{ initialID }}">{{ initial }}</p>
       </div>
       <svg class="dropdown__icon">
         <use xlink:href="/images/sprites.svg#chevron-icon"></use>
       </svg>
     </div>
-    <div class="dropdown__list">
+    <div class="dropdown__list" id="{{ listID }}">
       <div class="dropdown__option">
-        <span class="dropdown__value">Shipping</span>
-        <span class="dropdown__price">+$10</span>
+        <span class="dropdown__value">{{ option1 }}</span>
+        <span class="dropdown__price {{classPrice}}">+$10</span>
       </div>
       <div class="dropdown__option">
-        <span class="dropdown__value">On foot</span>
-        <span class="dropdown__price">+$10</span>
+        <span class="dropdown__value">{{ option2 }}</span>
+        <span class="dropdown__price {{classPrice}}">+$10</span>
       </div>
       <div class="dropdown__option">
-        <span class="dropdown__value">By car</span>
-        <span class="dropdown__price">+$80</span>
+        <span class="dropdown__value">{{ option3 }}</span>
+        <span class="dropdown__price {{classPrice}}">+$80</span>
       </div>
       <div class="dropdown__option">
-        <span class="dropdown__value">By plane</span>
-        <span class="dropdown__price">+$1850</span>
+        <span class="dropdown__value">{{ option4 }}</span>
+        <span class="dropdown__price {{classPrice}}">+$1850</span>
       </div>
     </div>
 	</div>

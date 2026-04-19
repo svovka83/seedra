@@ -26,17 +26,6 @@
 		height: 24px;
 		fill: $text_secondary;
 	}
-	.search__img {
-		position: absolute;
-		display: none;
-		width: 18px;
-		height: 18px;
-		top: 17px;
-		right: 18px;
-		@media (max-width: 680px) {
-			display: block;
-		}
-	}
 	&_header {
 		.search__input {
 			font-size: 14px;
@@ -54,14 +43,14 @@
 	&_banner {
 		.search__input {
 			padding: 17px 70px 18px 70px;
-			@media (max-width: 680px) {
+			@media (max-width: 768px) {
 				padding: 12px 50px 12px 67px;
 			}
 		}
 		.search__icon {
 			top: 19.5px;
 			left: 30px;
-			@media (max-width: 680px) {
+			@media (max-width: 768px) {
 				top: 14.5px;
 				left: 27px;
 			}
@@ -73,7 +62,7 @@
 			height: 18px;
 			top: 17px;
 			right: 18px;
-			@media (max-width: 680px) {
+			@media (max-width: 768px) {
 				display: block;
 			}
 		}

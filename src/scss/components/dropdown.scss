@@ -88,6 +88,9 @@
 			line-height: 25px;
 			letter-spacing: -4%;
 			color: $green_brand;
+			&_without {
+				display: none;
+			}
 		}
 	}
 }
