@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Products</title>
-		<script type="module" crossorigin src="/seedra/assets/main-CejAksBh.js"></script>
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-BDEJRNsu.css">
+		<script type="module" crossorigin src="/seedra/assets/main-BQ59CwG8.js"></script>
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-DH55NUqf.css">
 	</head>
 	<body>
 		<!-- header (  ) -->
@@ -41,7 +41,7 @@
         <a class="menu__link" href="/seedra/src/pages/about/index.html">ABOUT SEEDRA</a>
       </li>
       <li class="menu__item">
-        <a class="menu__link" href="#!">OUR BLOG</a>
+        <a class="menu__link" href="/seedra/src/pages/blogs/index.html">OUR BLOG</a>
       </li>
       <li class="menu__item">
         <a class="menu__link" href="#!">CONTACTS</a>
@@ -109,7 +109,7 @@
   </header>
 
 
-		<main class="products-page" id="go-to-top">
+		<main class="products-main" id="go-to-top">
 			<!-- products-search -->
 			<div class="products-search container">
 				<div class="products-search__search">
@@ -128,7 +128,7 @@
 				</div>
 
 				<div class="products-search__dropdown">
-					<!-- dropdown( title, initial ) -->
+					<!-- dropdown( title, initial, initialID, listID, classPrice, option1, option2 ) -->
 					<!-- prettier-ignore -->
 					
           
@@ -136,28 +136,28 @@
     <div class="dropdown__control">
       <div class="dropdown__title-block">
         <p class="dropdown__title">Sort by</p>
-        <p class="dropdown__initial">Most expensive</p>
+        <p class="dropdown__initial" id="filter-sort">Most expensive</p>
       </div>
       <svg class="dropdown__icon">
         <use xlink:href="/seedra/images/sprites.svg#chevron-icon"></use>
       </svg>
     </div>
-    <div class="dropdown__list">
+    <div class="dropdown__list" id="filter-sort-list">
       <div class="dropdown__option">
-        <span class="dropdown__value">Shipping</span>
-        <span class="dropdown__price">+$10</span>
+        <span class="dropdown__value">Most expensive</span>
+        <span class="dropdown__price dropdown__price_without">+$10</span>
       </div>
       <div class="dropdown__option">
-        <span class="dropdown__value">On foot</span>
-        <span class="dropdown__price">+$10</span>
+        <span class="dropdown__value">The cheapest</span>
+        <span class="dropdown__price dropdown__price_without">+$10</span>
       </div>
       <div class="dropdown__option">
-        <span class="dropdown__value">By car</span>
-        <span class="dropdown__price">+$80</span>
+        <span class="dropdown__value">Newly</span>
+        <span class="dropdown__price dropdown__price_without">+$80</span>
       </div>
       <div class="dropdown__option">
-        <span class="dropdown__value">By plane</span>
-        <span class="dropdown__price">+$1850</span>
+        <span class="dropdown__value">Old</span>
+        <span class="dropdown__price dropdown__price_without">+$1850</span>
       </div>
     </div>
 	</div>
@@ -172,7 +172,7 @@
 					<!-- categories-tags getting from firebase -->
 				</div>
 
-				<button class="products-content__open">open filter</button>
+				<button class="products-content__open">open filters</button>
 
 				<div class="products-content__grid">
 					<div class="products-content__filters">
@@ -573,7 +573,7 @@
         <a class="menu__link" href="/seedra/src/pages/about/index.html">ABOUT SEEDRA</a>
       </li>
       <li class="menu__item">
-        <a class="menu__link" href="#!">OUR BLOG</a>
+        <a class="menu__link" href="/seedra/src/pages/blogs/index.html">OUR BLOG</a>
       </li>
       <li class="menu__item">
         <a class="menu__link" href="#!">CONTACTS</a>
