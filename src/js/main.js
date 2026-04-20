@@ -5,10 +5,15 @@ import { initFirebase } from "./firebase/db.js";
 import { productSlider } from "./sliders/product-slider.js";
 import { blogSlider } from "./sliders/blog-slider.js";
 import { reviewSlider } from "./sliders/review-slider.js";
+import { updateProgress } from "./common/price-range.js";
 
 // firebase
 
 initFirebase();
+
+// range
+
+updateProgress();
 
 // sliders
 

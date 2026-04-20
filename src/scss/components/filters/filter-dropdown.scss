@@ -22,6 +22,7 @@
 		fill: $white;
 		transition: transform 0.3s ease;
 		&_open {
+			stroke: $green-brand;
 			transform: rotate(180deg);
 		}
 	}

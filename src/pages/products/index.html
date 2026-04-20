@@ -38,24 +38,55 @@
 					<!-- categories-tags getting from firebase -->
 				</div>
 
-				<button class="products-content__open">open filters</button>
-
 				<div class="products-content__grid">
 					<div class="products-content__filters">
 						<h4 class="products-content__filters-title">Filters</h4>
-						<!-- filterDropdown( title, option1, value1, option2, option3 ,option4 ) -->
+						<!-- filterDropdown( title, option1, value1, option2, value2, option3, value3, option4, value4 ) -->
+						<!-- filterDropdownPrice( title ) -->
 						<!-- prettier-ignore -->
 						{% from "src/partials/filters/filter-dropdown.njk" import filterDropdown %}
+						{% from "src/partials/filters/filter-dropdown-price.njk" import filterDropdownPrice %}
+
 						{{ filterDropdown( "Seed type", "Hybrid", "hybrid", "Open Pollinated", "pollinated", "Organic Seeds, Plants, and Supplies", "organic", "Pelleted See", "pelleted" ) }}
-						{{ filterDropdown( "Featured", "Hybrid", "", "Open Pollinated", "Organic Seeds, Plants, and Supplies", "", "Pelleted See", "" ) }}
+
+						{{ filterDropdown( "Featured", "Hybrid", "", "Open Pollinated", "", "Organic Seeds, Plants, and Supplies", "", "Pelleted See", "" ) }}
+
+						{{ filterDropdownPrice( "Price" ) }}
+
 						{{ filterDropdown( "Growing Conditions", "Hybrid", "", "Open Pollinated", "", "Organic Seeds, Plants, and Supplies", "", "Pelleted See", "" ) }}
+
 						{{ filterDropdown( "Use", "Hybrid", "", "Open Pollinated", "", "Organic Seeds, Plants, and Supplies", "", "Pelleted See", "" ) }}
+
 						{{ filterDropdown( "Additional Characteristic", "Hybrid", "", "Open Pollinated", "", "Organic Seeds, Plants, and Supplies", "", "Pelleted See", "" ) }}
+
+						<!-- price-range -->
+						<div class="price-range" data-min="0" data-max="1000">
+							<div class="price-range__inputs">
+								<div class="price-range__field">
+									<span class="price-range__label">From</span>
+									<input type="number" class="price-range__input price-range__input--min" />
+								</div>
+								<span class="price-range__separator"></span>
+								<div class="price-range__field">
+									<span class="price-range__label">To</span>
+									<input type="number" class="price-range__input price-range__input--max" />
+								</div>
+							</div>
+
+							<div class="price-range__slider">
+								<div class="price-range__track"></div>
+								<div class="price-range__progress"></div>
+
+								<input type="range" class="price-range__range price-range__range--min" />
+								<input type="range" class="price-range__range price-range__range--max" />
+							</div>
+						</div>
 					</div>
 					<div class="products-content__products">
 						<!-- products getting from firebase -->
 					</div>
 				</div>
+				<button class="products-content__open">open filters</button>
 			</div>
 
 			<!-- footer (  ) -->
