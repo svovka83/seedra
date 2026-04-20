@@ -47,15 +47,5 @@
 				display: none;
 			}
 		}
-		&-slider {
-			display: none;
-			@media (max-width: 690px) {
-				display: block;
-				overflow: hidden;
-				.swiper-slide:first-of-type .blog-card__img {
-					right: -26px;
-				}
-			}
-		}
 	}
 }

@@ -2,7 +2,7 @@ import { title } from "./title";
 import { text } from "./text";
 import { discover } from "./discover";
 
-export function blogCard(name, content, imageUrl, date, size, imageUrlMobile) {
+export function blogCard(id, name, content, imageUrl, date, size, imageUrlMobile) {
 	const base = import.meta.env.BASE_URL;
 
 	return `
@@ -25,7 +25,7 @@ export function blogCard(name, content, imageUrl, date, size, imageUrlMobile) {
         </div>
 
         <div class="blog-card__button">
-          ${discover("", "Read", "#!")}
+          ${discover("", "Read", `${base}src/pages/one-blog/index.html?id=${id}`)}
         </div>
       </div>
 

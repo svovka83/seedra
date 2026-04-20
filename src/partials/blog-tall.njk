@@ -1,0 +1,36 @@
+{% macro tallBlog( imageUrl, size, blogLink ) %}
+  <div class="blog-card {{ size }}">
+    <div class="blog-card__content">
+
+      <div class="blog-card__date">
+        <svg class="blog-card__date-icon">
+          <use xlink:href="/images/sprites.svg#clock-icon"></use>
+        </svg>
+        <span class="blog-card__date-time">12.09.2021</span>
+      </div>
+
+      <div class="blog-card__title">
+        <!-- title ( heading, title, classTitle ) -->
+        {% from "src/partials/title.njk" import title %}
+        {{ title( "h3", "How to plant spinach correctly in winter", "title_h3") }}
+      </div>
+
+      <div class="blog-card__text">
+      	<!-- text ( text, classText ) -->
+		    {% from "src/partials/text.njk" import text %}
+        {{ text( "In most areas, successive sowing can be done from early spring until early winter, but more often during hotter months...", "text_regular-14" ) }}
+      </div>
+
+      <div class="blog-card__button">
+      	<!-- discover ( classLink, titleLink, pathLink ) -->
+        {% from "src/partials/discover.njk" import discover %}
+        {{ discover( "", "Read", blogLink ) }}
+      </div>
+    </div>
+
+    <picture class="blog-card__picture">
+      <source srcset="${imageUrlMobile}" media="(max-width: 690px)" />
+      <img class="blog-card__img" src="{{ imageUrl }}" alt="blogcard image" />
+    </picture>
+  </div>
+{% endmacro %}

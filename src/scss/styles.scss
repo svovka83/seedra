@@ -29,6 +29,7 @@
 @use "./components/filters/filter-dropdown.scss";
 @use "./components/checkbox.scss";
 @use "./components/member.scss";
+@use "./components/utils/blog-slider.scss";
 
 // main
 
@@ -49,6 +50,13 @@
 @use "./pages/blogs/blogs-top.scss";
 @use "./pages/blogs/blogs-search.scss";
 @use "./pages/blogs/blogs-content.scss";
+
+// one-blog
+
+@use "./pages/one-blog/one-blog-top.scss";
+@use "./pages/one-blog/one-blog-timeline.scss";
+@use "./pages/one-blog/one-blog-content.scss";
+@use "./pages/one-blog/one-blog-socials.scss";
 
 // about
 

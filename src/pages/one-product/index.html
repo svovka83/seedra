@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>One product</title>
+		<link rel="stylesheet" href="../../scss/styles.scss" />
+	</head>
+	<body>
+		<!-- header (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/header.njk" import header %}
+    {{ header(  ) }}
+
+		<main class="one-product-main" id="go-to-top">
+			<!-- one-product-breadcrumbs -->
+		</main>
+
+		<!-- footer (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/footer.njk" import footer %}
+		{{ footer(  ) }}
+		<script type="module" src="../../js/main.js"></script>
+	</body>
+</html>

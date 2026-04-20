@@ -42,6 +42,7 @@ export async function getFilterBlogs(db) {
 		}
 
 		blogFilterList.innerHTML += blogCard(
+			blog.id,
 			blog.data().title,
 			blog.data().text,
 			blog.data().imageUrl,

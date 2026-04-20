@@ -2,7 +2,7 @@ import Swiper from "swiper";
 import "swiper/css";
 
 export function blogSlider() {
-	new Swiper(".our-blogs__content-slider", {
+	new Swiper(".blog-slider", {
 		slidesPerView: 1.08,
 		spaceBetween: 11,
 		speed: 500,

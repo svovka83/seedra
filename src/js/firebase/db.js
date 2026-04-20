@@ -7,6 +7,7 @@ import { getFilterProducts } from "./services/get-products-filter";
 import { getBlogStaticCards, getBlogSliderCards } from "./services/get-blogs";
 import { getFilterBlogs } from "./services/get-filter-blogs";
 import { getReviewCards } from "./services/get-reviews";
+import { oneBlogTop } from "../pages/one-blog";
 
 export async function initFirebase() {
 	const firebaseConfig = {
@@ -29,4 +30,5 @@ export async function initFirebase() {
 	getBlogSliderCards(db);
 	getFilterBlogs(db);
 	getReviewCards(db);
+	oneBlogTop(db);
 }

@@ -6,7 +6,7 @@ export function productCard(id, name, price, imageUrl, isFire, classCard, classH
 	const base = import.meta.env.BASE_URL;
 
 	return `
-  <div class="product-card ${classCard}" id="${id}">
+  <a class="product-card ${classCard}" id="${id}" href="${base}src/pages/one-product/index.html?id=${id}">
     <img class="product-card__img" src="${imageUrl}" alt="product card image" />
 
     <div class="product-card__content">
@@ -40,6 +40,6 @@ export function productCard(id, name, price, imageUrl, isFire, classCard, classH
       </svg>
     </div>
 
-  </div>
+  </a>
   `;
 }

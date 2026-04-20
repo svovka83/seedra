@@ -1,7 +1,7 @@
-export function discover(classLink, titleLink, pathLink) {
+export function discover(classDiscover, titleDiscover, pathDiscover) {
 	return `
-  <a class="discover ${classLink}" href="${pathLink}">
-    ${titleLink}
+  <a class="discover ${classDiscover}" href="${pathDiscover}">
+    ${titleDiscover}
   </a>
   `;
 }

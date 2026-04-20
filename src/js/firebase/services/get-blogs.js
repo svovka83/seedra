@@ -27,6 +27,7 @@ export async function getBlogStaticCards(db) {
 		}
 
 		blogStaticList.innerHTML += blogCard(
+			blog.id,
 			blog.data().title,
 			blog.data().text,
 			blog.data().imageUrl,
@@ -37,7 +38,7 @@ export async function getBlogStaticCards(db) {
 }
 
 export async function getBlogSliderCards(db) {
-	const blogSliderList = document.querySelector(".swiper-wrapper.our-blogs__wrapper");
+	const blogSliderList = document.querySelector(".swiper-wrapper.blogs-slider__wrapper");
 	if (!blogSliderList) return;
 
 	const q = query(collection(db, "blogs"), limit(8));
@@ -45,6 +46,7 @@ export async function getBlogSliderCards(db) {
 
 	blogs.forEach((blog) => {
 		blogSliderList.innerHTML += `<div class="swiper-slide">${blogCard(
+			blog.id,
 			blog.data().title,
 			blog.data().text,
 			blog.data().imageUrl,
