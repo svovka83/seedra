@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Cart</title>
+		<link rel="stylesheet" href="../../scss/styles.scss" />
+	</head>
+	<body style="display: grid; grid-template-rows: auto 1fr auto">
+		<!--  style="display: grid; grid-template-rows: auto 1fr auto" -->
+
+		<!-- header (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/header.njk" import header %}
+    {{ header(  ) }}
+
+		<main class="cart-main container" id="go-to-top">
+			<!-- cart-products -->
+			<section class="cart-products">
+				<div class="cart-products__title-block">
+					<div class="cart-products__title">
+						<!-- title ( heading, title, classTitle ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/title.njk" import title %}
+						{{ title( "h2", "Your cart.", "title_h2") }}
+					</div>
+					<div class="cart-products__items">
+						<span class="cart-products__quantity"></span>
+						<span class="cart-products__text">items</span>
+					</div>
+				</div>
+				<hr class="cart-products__hr" />
+				<div class="cart-products__headings">
+					<span class="cart-products__heading1">PRODUCT DETAILS</span>
+					<span class="cart-products__heading2">AMOUNT</span>
+					<span class="cart-products__heading3">PRICE</span>
+					<span class="cart-products__heading4">TOTAL</span>
+				</div>
+				<div class="cart-products__products">
+					<!-- products come from firebse -->
+					<div class="cart-product">
+						<img class="cart-product__img" src="/images/cart/cart_1.png" alt="cart product image" />
+						<h4 class="cart-product__name">
+							SEEDRA Corn - Bodacious Hybrid Seeds for Indoor and Outdoor Planting
+						</h4>
+
+						<!-- counter -->
+						<div class="product-counter">
+							<button class="product-counter__minus">
+								<svg class="product-counter__icon">
+									<use href="/images/sprites.svg#minus-icon"></use>
+								</svg>
+							</button>
+							<button class="product-counter__quantity">2</button>
+							<button class="product-counter__plus">
+								<svg class="product-counter__icon">
+									<use href="/images/sprites.svg#plus-icon"></use>
+								</svg>
+							</button>
+						</div>
+
+						<span class="cart-product__price">$12.56</span>
+						<span class="cart-product__total">$24.56</span>
+
+						<button class="cart-product__delete">
+							<svg class="cart-product__delete-icon">
+								<use href="/images/sprites.svg#close-icon"></use>
+							</svg>
+						</button>
+					</div>
+					<div class="cart-product">
+						<img class="cart-product__img" src="/images/cart/cart_1.png" alt="cart product image" />
+						<h4 class="cart-product__name">
+							SEEDRA Corn - Bodacious Hybrid Seeds for Indoor and Outdoor Planting
+						</h4>
+
+						<!-- counter -->
+						<div class="product-counter">
+							<button class="product-counter__minus">
+								<svg class="product-counter__icon">
+									<use href="/images/sprites.svg#minus-icon"></use>
+								</svg>
+							</button>
+							<button class="product-counter__quantity">2</button>
+							<button class="product-counter__plus">
+								<svg class="product-counter__icon">
+									<use href="/images/sprites.svg#plus-icon"></use>
+								</svg>
+							</button>
+						</div>
+
+						<span class="cart-product__price">$12.56</span>
+						<span class="cart-product__total">$24.56</span>
+					</div>
+					<div class="cart-product">
+						<img class="cart-product__img" src="/images/cart/cart_1.png" alt="cart product image" />
+						<h4 class="cart-product__name">
+							SEEDRA Corn - Bodacious Hybrid Seeds for Indoor and Outdoor Planting
+						</h4>
+
+						<!-- counter -->
+						<div class="product-counter">
+							<button class="product-counter__minus">
+								<svg class="product-counter__icon">
+									<use href="/images/sprites.svg#minus-icon"></use>
+								</svg>
+							</button>
+							<button class="product-counter__quantity">2</button>
+							<button class="product-counter__plus">
+								<svg class="product-counter__icon">
+									<use href="/images/sprites.svg#plus-icon"></use>
+								</svg>
+							</button>
+						</div>
+
+						<span class="cart-product__price">$12.56</span>
+						<span class="cart-product__total">$24.56</span>
+					</div>
+				</div>
+				<div class="cart-products__shopping">
+					<!-- discover ( classLink, titleLink, pathLink ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/discover.njk" import discover %}
+					{{ discover( "discover_shopping", "Continue shopping", "#!" ) }}
+				</div>
+			</section>
+
+			<!-- cart-summary -->
+			<section class="cart-summary">
+				<h4 class="cart-summary__title">Order summary</h4>
+				<div class="cart-summary__price-block">
+					<div class="cart-summary__items">
+						<span class="cart-summary__quantity"></span>
+						<span class="cart-summary__text">3 ITEMS</span>
+					</div>
+					<div class="cart-summary__price">$12.56</div>
+				</div>
+				<div class="cart-summary__dropdown">
+					<!-- dropdown( title, initial, initialID, listID, classPrice, option1, option2, option3, option4  -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/dropdown.njk" import dropdown %}
+					{{ dropdown( "Type of delievery", "Shipping") }}
+				</div>
+
+				<div class="cart-summary__input">
+					<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/input.njk" import input %}
+					{{ input( "Promocode", "Promocode", "text", "", "") }}
+				</div>
+
+				<hr class="cart-summary__hr" />
+
+				<div class="cart-summary__total-price-block">
+					<span class="cart-summary__text">Total amount</span>
+					<div class="cart-summary__total-price">$12.56</div>
+				</div>
+
+				<div class="cart-summary__continue">
+					<!-- discover ( classLink, titleLink, pathLink ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/discover.njk" import discover %}
+					{{ discover( "discover_continue", "Continue", "#!" ) }}
+				</div>
+			</section>
+		</main>
+
+		<!-- footer (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/footer.njk" import footer %}
+		{{ footer(  ) }}
+
+		<script type="module" src="../../js/main.js"></script>
+	</body>
+</html>

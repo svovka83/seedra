@@ -1,0 +1,49 @@
+@use "../settings/variables.scss" as *;
+
+.cart-product {
+	position: relative;
+	display: grid;
+	grid-template-columns: 64px 1fr 133px 102px 56px;
+	align-items: center;
+	padding-block: 23px;
+	border-bottom: 1px solid $light_grey_stroke;
+	&__img {
+		width: 64px;
+		height: 64px;
+		border: 1px solid $light_grey_stroke;
+		border-radius: 12px;
+	}
+	&__name {
+		max-width: 286px;
+		font-weight: 400;
+		font-size: 14px;
+		padding-left: 16px;
+	}
+	&__price {
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 25px;
+		letter-spacing: -4%;
+	}
+	&__total {
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 25px;
+		letter-spacing: -4%;
+	}
+	&__delete {
+		position: absolute;
+		top: 20px;
+		left: -6px;
+		width: 22px;
+		height: 22px;
+		border-radius: 11px;
+		background-color: $danger;
+	}
+	&__delete-icon {
+		width: 16px;
+		height: 16px;
+		stroke: $white;
+		translate: 0 -1px;
+	}
+}

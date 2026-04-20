@@ -1,0 +1,47 @@
+@use "../../settings/variables.scss" as *;
+
+.cart-products {
+	max-width: 699px;
+	width: 100%;
+	.cart-product:last-of-type {
+		border-bottom: none;
+	}
+	&__title-block {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__items {
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 31.5px;
+		letter-spacing: -2%;
+		color: $text_secondary;
+	}
+	&__hr {
+		margin-block: 22px;
+		border: 1px solid $light_grey_stroke;
+	}
+	&__headings {
+		display: grid;
+		grid-template-columns: 1fr 133px 102px 56px;
+		color: $text_secondary;
+		font-size: 14px;
+		margin-bottom: 2px;
+	}
+	&__heading1 {
+	}
+	&__heading2 {
+	}
+	&__heading3 {
+	}
+	&__heading4 {
+	}
+	&__products {
+	}
+	&__products {
+		margin-bottom: 27px;
+	}
+	&__shopping {
+	}
+}

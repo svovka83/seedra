@@ -31,6 +31,8 @@
 @use "./components/member.scss";
 @use "./components/utils/blog-slider.scss";
 @use "./components/filter-price.scss";
+@use "./components/cart-product.scss";
+@use "./components/product-counter.scss";
 
 // main
 
@@ -58,6 +60,12 @@
 @use "./pages/one-blog/one-blog-timeline.scss";
 @use "./pages/one-blog/one-blog-content.scss";
 @use "./pages/one-blog/one-blog-socials.scss";
+
+// cart
+
+@use "./pages/cart/cart-main.scss";
+@use "./pages/cart/cart-products.scss";
+@use "./pages/cart/cart-summary.scss";
 
 // about
 

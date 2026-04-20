@@ -18,6 +18,30 @@
 		border: 2px solid $green_brand;
 		background-color: $invisible_green;
 	}
+	&_continue {
+		width: 100%;
+		text-align: center;
+		padding: 11px 31px;
+		color: $white;
+		background-color: $green_brand;
+		&:hover {
+			background-color: $green_brand;
+			opacity: 0.8;
+		}
+	}
+	&_shopping {
+		padding: 11px 33px;
+		color: $text_secondary;
+		background-color: $white;
+		border: 1px solid $light_grey_stroke;
+		transition: background-color 0.3s ease;
+		&:hover {
+			color: $text_primary;
+			border: 1px solid $light_grey_stroke;
+			background-color: $light_grey_stroke;
+			opacity: 0.8;
+		}
+	}
 	&_adaptive {
 		@media (max-width: 768px) {
 			font-size: 14px;

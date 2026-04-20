@@ -1,0 +1,28 @@
+@use "../settings/variables.scss" as *;
+
+.product-counter {
+	width: 104px;
+	height: 44px;
+	border: 1px solid $light_grey_stroke;
+	border-radius: 11px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	column-gap: 6px;
+	&__minus {
+	}
+	&__quantity {
+		width: 36px;
+		height: 36px;
+		font-weight: 500;
+		letter-spacing: -3.5%;
+		color: $green_brand;
+		border-radius: 6px;
+		background-color: $invisible_green;
+	}
+	&__icon {
+		width: 16px;
+		height: 16px;
+		stroke: $green_brand;
+	}
+}
