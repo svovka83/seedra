@@ -39,25 +39,27 @@
 				</div>
 
 				<div class="products-content__grid">
+					<!-- products filter -->
 					<div class="products-content__filters">
 						<h4 class="products-content__filters-title">Filters</h4>
-						<!-- filterDropdown( title, option1, value1, option2, value2, option3, value3, option4, value4 ) -->
+						<!-- filterDropdown( title, appearance1, appearance2, appearance3, appearance4,
+																	option1, value1, option2, value2, option3, value3, option4, value4 ) -->
 						<!-- filterDropdownPrice( title ) -->
 						<!-- prettier-ignore -->
 						{% from "src/partials/filters/filter-dropdown.njk" import filterDropdown %}
 						{% from "src/partials/filters/filter-dropdown-price.njk" import filterDropdownPrice %}
 
-						{{ filterDropdown( "Seed type", "Hybrid", "hybrid", "Open Pollinated", "pollinated", "Organic Seeds, Plants, and Supplies", "organic", "Pelleted See", "pelleted" ) }}
+						{{ filterDropdown( "Seed type", "", "", "", "", "Hybrid", "hybrid", "Open Pollinated", "pollinated", "Organic Seeds, Plants, and Supplies", "organic", "Pelleted See", "pelleted" ) }}
 
-						{{ filterDropdown( "Featured", "Hybrid", "", "Open Pollinated", "", "Organic Seeds, Plants, and Supplies", "", "Pelleted See", "" ) }}
+						{{ filterDropdown( "Featured", "", "", "", "", "Pack", "", "Bag", "", "Sack", "", "Barrel", "" ) }}
 
 						{{ filterDropdownPrice( "Price" ) }}
 
-						{{ filterDropdown( "Growing Conditions", "Hybrid", "", "Open Pollinated", "", "Organic Seeds, Plants, and Supplies", "", "Pelleted See", "" ) }}
+						{{ filterDropdown( "Growing Conditions", "", "", "", "checkbox_none", "Slow", "", "Normal", "", "Fast", "" ) }}
 
-						{{ filterDropdown( "Use", "Hybrid", "", "Open Pollinated", "", "Organic Seeds, Plants, and Supplies", "", "Pelleted See", "" ) }}
+						{{ filterDropdown( "Use", "", "", "checkbox_none", "checkbox_none", "At home", "", "In garder", "" ) }}
 
-						{{ filterDropdown( "Additional Characteristic", "Hybrid", "", "Open Pollinated", "", "Organic Seeds, Plants, and Supplies", "", "Pelleted See", "" ) }}
+						{{ filterDropdown( "Additional Characteristic", "", "", "", "checkbox_none", "Sweet", "", "Sour", "", "Bitter", "" ) }}
 
 						<!-- price-range -->
 						<div class="price-range" data-min="0" data-max="1000">
@@ -82,6 +84,7 @@
 							</div>
 						</div>
 					</div>
+					<!-- products content -->
 					<div class="products-content__products">
 						<!-- products getting from firebase -->
 					</div>

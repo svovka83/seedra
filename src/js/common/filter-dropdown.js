@@ -1,6 +1,5 @@
 export function filterDropdown() {
 	const dropdowns = document.querySelectorAll(".filter-dropdown");
-	// const chevron = document.querySelector(".filter-dropdown__icon");
 
 	dropdowns.forEach((dropdown) => {
 		dropdown.querySelector(".filter-dropdown__btn").addEventListener("click", () => {

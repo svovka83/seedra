@@ -18,16 +18,16 @@ export function deleteFromCart(db) {
 			Toastify({
 				text: `Product ${productId} removed from cart. 🛒`,
 				duration: 4000,
-				gravity: "top",
-				position: "center",
+				gravity: "bottom",
+				position: "right",
 				backgroundColor: "#ffcf55",
 			}).showToast();
 		} catch (e) {
 			Toastify({
 				text: "It was an error while removing the product. 🛒",
 				duration: 4000,
-				gravity: "top",
-				position: "center",
+				gravity: "bottom",
+				position: "right",
 				backgroundColor: "#e55c5c",
 			}).showToast();
 			console.error("Error deleting:", e);

@@ -1,4 +1,5 @@
-{% macro filterDropdown( title, option1, value1, option2, value2, option3, value3, option4, value4 ) %}
+{% macro filterDropdown( title, appearance1, appearance2, appearance3, appearance4,
+option1, value1, option2, value2, option3, value3, option4, value4 ) %}
 	<div class="filter-dropdown">
 
     <button class="filter-dropdown__btn">
@@ -15,19 +16,19 @@
 		    {% from "src/partials/checkbox.njk" import checkbox %}
 
         <div class="filter-dropdown__option">
-          {{ checkbox( option1, value1 ) }}
+          {{ checkbox( option1, value1, appearance1 ) }}
         </div>
 
         <div class="filter-dropdown__option">
-          {{ checkbox( option2, value2 ) }}
+          {{ checkbox( option2, value2, appearance2 ) }}
         </div>
 
         <div class="filter-dropdown__option">
-          {{ checkbox( option3, value3 ) }}
+          {{ checkbox( option3, value3, appearance3 ) }}
         </div>
         
         <div class="filter-dropdown__option">
-          {{ checkbox( option4, value4 ) }}
+          {{ checkbox( option4, value4, appearance4 ) }}
         </div>
       </div>
     </div>

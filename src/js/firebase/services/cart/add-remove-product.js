@@ -29,8 +29,8 @@ export function addRemoveProduct(db) {
 				Toastify({
 					text: `Product ${productId} added to cart. 🛒`,
 					duration: 4000,
-					gravity: "top",
-					position: "center",
+					gravity: "bottom",
+					position: "right",
 					backgroundColor: "#359740",
 				}).showToast();
 			} else {
@@ -41,8 +41,8 @@ export function addRemoveProduct(db) {
 				Toastify({
 					text: `Product ${productId} removed from cart. 🛒`,
 					duration: 4000,
-					gravity: "top",
-					position: "center",
+					gravity: "bottom",
+					position: "right",
 					backgroundColor: "#ffcf55",
 				}).showToast();
 			}
@@ -50,8 +50,8 @@ export function addRemoveProduct(db) {
 			Toastify({
 				text: "It was an error while adding the product. 🛒",
 				duration: 4000,
-				gravity: "top",
-				position: "center",
+				gravity: "bottom",
+				position: "right",
 				backgroundColor: "#e55c5c",
 			}).showToast();
 			console.error("Error adding:", e);

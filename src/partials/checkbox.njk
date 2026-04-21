@@ -1,5 +1,5 @@
-{% macro checkbox( title, value ) %}
-  <label class="checkbox">
+{% macro checkbox( title, value, appearance ) %}
+  <label class="checkbox {{ appearance }}">
     <input type="checkbox" class="checkbox__input" id="{{ value }}" value="{{ value }}" />
     <div class="checkbox__box">
       <svg class="checkbox__icon">

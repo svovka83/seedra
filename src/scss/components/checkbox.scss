@@ -6,6 +6,9 @@
 	align-items: center;
 	column-gap: 9px;
 	cursor: pointer;
+	&_none {
+		display: none;
+	}
 	&__input {
 		display: none;
 	}
