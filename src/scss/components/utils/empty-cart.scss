@@ -1,0 +1,17 @@
+@use "../../settings/variables.scss" as *;
+
+.empty-cart {
+	text-align: center;
+	margin-top: 40px;
+	&__title {
+		font-size: 24px;
+		color: $text_secondary;
+		margin-bottom: 32px;
+	}
+	&__icon {
+		width: 64px;
+		height: 64px;
+		fill: $text_secondary;
+		stroke: $text_secondary;
+	}
+}

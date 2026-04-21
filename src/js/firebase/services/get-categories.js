@@ -1,4 +1,4 @@
-import { collection, getDocs, addDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 import { button } from "../../components/button";
 
