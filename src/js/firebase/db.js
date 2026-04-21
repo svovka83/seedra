@@ -8,8 +8,9 @@ import { getBlogStaticCards, getBlogSliderCards } from "./services/get-blogs";
 import { getFilterBlogs } from "./services/get-filter-blogs";
 import { getReviewCards } from "./services/get-reviews";
 import { oneBlogTop } from "../pages/one-blog";
-import { getCart } from "./services/get-cart";
-import { addToCart } from "./services/add-to-cart";
+import { getCart } from "./services/cart/get-cart";
+import { addRemoveProduct } from "./services/cart/add-remove-product";
+import { deleteFromCart } from "./services/cart/remove-from-cart";
 
 export async function initFirebase() {
 	const firebaseConfig = {
@@ -34,5 +35,6 @@ export async function initFirebase() {
 	getReviewCards(db);
 	oneBlogTop(db);
 	getCart(db);
-	addToCart(db);
+	addRemoveProduct(db);
+	deleteFromCart(db);
 }

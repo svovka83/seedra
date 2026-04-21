@@ -1,0 +1,7 @@
+{% macro textarea( textareaLabel, placeholder, textareaId ) %}
+  <div class="textarea-block">
+    <label class="textarea-label" for="{{ textareaId }}">{{ textareaLabel }}</label>
+    <textarea class="textarea-input" id="{{ textareaId }}" placeholder="{{ placeholder }}"></textarea>
+    <p class="validation"></p>
+  </div>
+{% endmacro %}

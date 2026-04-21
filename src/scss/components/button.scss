@@ -41,14 +41,11 @@
 		.btn__title {
 			display: none;
 		}
-		&:hover {
-			background-color: $invisible_green;
-		}
-		&:active {
+		&-active {
 			border: 2px solid $green_brand;
 			background-color: $green_brand;
 			.btn__icon {
-				fill: $white;
+				stroke: $white;
 			}
 		}
 	}

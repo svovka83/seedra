@@ -100,6 +100,10 @@ textarea {
 	background-color: transparent;
 }
 
+textarea {
+	resize: none;
+}
+
 // taking off blue input background - change colour to suit your needs -webkit-text-fill-color
 
 input:-webkit-autofill {

@@ -45,6 +45,7 @@ export async function getFilterProducts(db) {
 		snapshot.forEach((product) => {
 			productsString += productCard(
 				product.id,
+				product.data().checked,
 				product.data().name,
 				product.data().price,
 				product.data().imageUrl,

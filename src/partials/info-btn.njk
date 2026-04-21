@@ -1,0 +1,7 @@
+{% macro infoBtn( iconId, pathInfo ) %}
+  <a class="info" href="{{ pathInfo }}">
+    <svg class="info__icon">
+	    <use href="/images/sprites.svg#{{ iconId }}"></use>
+    </svg>
+  </a>
+{% endmacro %}

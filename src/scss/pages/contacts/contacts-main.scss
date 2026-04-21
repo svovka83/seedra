@@ -1,0 +1,45 @@
+@use "../../settings/variables.scss" as *;
+
+.contacts-main {
+	max-width: 1140px;
+	width: 100%;
+	padding-block: 32px;
+}
+
+.contacts {
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	padding-top: 32px;
+	padding-bottom: 32px;
+	padding-left: 59px;
+	padding-right: 40px;
+	background-color: $light_green;
+	border-radius: 24px;
+	overflow: hidden;
+	@media (max-width: 940px) {
+		flex-direction: column;
+		align-items: center;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	&__leaves {
+		position: absolute;
+		&_leaf-1 {
+			top: 35px;
+			right: 0px;
+		}
+		&_leaf-2 {
+			top: -49px;
+			left: -63px;
+		}
+		&_leaf-3 {
+			top: 15px;
+			right: -26px;
+		}
+		&_leaf-4 {
+			top: -34px;
+			right: 79px;
+		}
+	}
+}

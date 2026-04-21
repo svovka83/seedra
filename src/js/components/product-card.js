@@ -1,8 +1,8 @@
 import { title } from "./title";
-import { button } from "./button";
+import { buttonCart } from "./button-cart";
 import { ranking } from "./ranking";
 
-export function productCard(id, name, price, imageUrl, isFire, classCard, classHeart) {
+export function productCard(id, checked, name, price, imageUrl, isFire, classCard, classHeart) {
 	const base = import.meta.env.BASE_URL;
 
 	return `
@@ -29,7 +29,7 @@ export function productCard(id, name, price, imageUrl, isFire, classCard, classH
         <span class="${isFire ? "product-card__old-price" : "product-card__no-fire"}" >$15.56</span>
 
         <div class="product-card__button">
-          ${button("btn_icon", "", "cart-icon")}
+          ${buttonCart("btn_icon", "", checked)}
         </div>
       </div>
     </div>
