@@ -4,10 +4,10 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Cart</title>
-		<script type="module" crossorigin src="/seedra/assets/main-Cd1Gr8q6.js"></script>
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-DJtTnLQb.css">
+		<script type="module" crossorigin src="/seedra/assets/main-B6evDarb.js"></script>
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-BNX_dc4H.css">
 	</head>
-	<body>
+	<body style="display: grid; grid-template-rows: auto 1fr auto">
 		<!-- header (  ) -->
 		<!-- prettier-ignore -->
 		
@@ -44,7 +44,7 @@
         <a class="menu__link" href="/seedra/src/pages/blogs/index.html">OUR BLOG</a>
       </li>
       <li class="menu__item">
-        <a class="menu__link" href="#!">CONTACTS</a>
+        <a class="menu__link" href="/seedra/src/pages/contacts/index.html">CONTACTS</a>
       </li>
     </ul>
   </nav>
@@ -109,7 +109,125 @@
   </header>
 
 
-		<main class="cart-main" id="go-to-top"></main>
+		<main class="cart-main container" id="go-to-top">
+			<!-- cart-products -->
+			<section class="cart-products">
+				<div class="cart-products__title-block">
+					<div class="cart-products__title">
+						<!-- title ( heading, title, classTitle ) -->
+						<!-- prettier-ignore -->
+						
+						
+  <h2 class="title title_h2">Your cart.</h2>
+
+					</div>
+					<div class="cart-products__items">
+						<span class="cart-products__quantity"></span>
+						<span class="cart-products__text">items</span>
+					</div>
+				</div>
+				<hr class="cart-products__hr" />
+				<div class="cart-products__headings">
+					<span class="cart-products__heading1">PRODUCT DETAILS</span>
+					<span class="cart-products__heading2">AMOUNT</span>
+					<span class="cart-products__heading3">PRICE</span>
+					<span class="cart-products__heading4">TOTAL</span>
+				</div>
+				<div class="cart-products__products">
+					<!-- products come from firebse -->
+				</div>
+				<div class="cart-products__shopping">
+					<!-- discover ( classLink, titleLink, pathLink ) -->
+					<!-- prettier-ignore -->
+					
+					
+  <a class="discover discover_shopping" href="#!">
+    Continue shopping
+  </a>
+
+				</div>
+			</section>
+
+			<!-- cart-summary -->
+			<section class="cart-summary">
+				<h4 class="cart-summary__title">Order summary</h4>
+				<div class="cart-summary__price-block">
+					<div class="cart-summary__items">
+						<span class="cart-summary__quantity"></span>
+						<span class="cart-summary__text">3 ITEMS</span>
+					</div>
+					<div class="cart-summary__price">$12.56</div>
+				</div>
+				<div class="cart-summary__dropdown">
+					<!-- dropdown( title, initial, initialID, listID, classPrice, option1, option2, option3, option4  -->
+					<!-- prettier-ignore -->
+					
+					
+  <div class="dropdown">
+    <div class="dropdown__control">
+      <div class="dropdown__title-block">
+        <p class="dropdown__title">Type of delievery</p>
+        <p class="dropdown__initial" id="">Shipping</p>
+      </div>
+      <svg class="dropdown__icon">
+        <use xlink:href="/seedra/images/sprites.svg#chevron-icon"></use>
+      </svg>
+    </div>
+    
+    <div class="dropdown__list" id="">
+      <div class="dropdown__option">
+        <span class="dropdown__value"></span>
+        <span class="dropdown__price ">+$10</span>
+      </div>
+      <div class="dropdown__option">
+        <span class="dropdown__value"></span>
+        <span class="dropdown__price ">+$10</span>
+      </div>
+      <div class="dropdown__option">
+        <span class="dropdown__value"></span>
+        <span class="dropdown__price ">+$80</span>
+      </div>
+      <div class="dropdown__option">
+        <span class="dropdown__value"></span>
+        <span class="dropdown__price ">+$1850</span>
+      </div>
+    </div>
+	</div>
+
+				</div>
+
+				<div class="cart-summary__input">
+					<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
+					<!-- prettier-ignore -->
+					
+					
+  <div class="input-block">
+    <label class="label" for="">Promocode</label>
+    <input class="input " id="" type="text" placeholder="Promocode" />
+    <p class="validation"></p>
+  </div>
+
+				</div>
+
+				<hr class="cart-summary__hr" />
+
+				<div class="cart-summary__total-price-block">
+					<span class="cart-summary__text">Total amount</span>
+					<div class="cart-summary__total-price">$12.56</div>
+				</div>
+
+				<div class="cart-summary__continue">
+					<!-- discover ( classLink, titleLink, pathLink ) -->
+					<!-- prettier-ignore -->
+					
+					
+  <a class="discover discover_continue" href="#!">
+    Continue
+  </a>
+
+				</div>
+			</section>
+		</main>
 
 		<!-- footer (  ) -->
 		<!-- prettier-ignore -->
@@ -135,7 +253,7 @@
         <a class="menu__link" href="/seedra/src/pages/blogs/index.html">OUR BLOG</a>
       </li>
       <li class="menu__item">
-        <a class="menu__link" href="#!">CONTACTS</a>
+        <a class="menu__link" href="/seedra/src/pages/contacts/index.html">CONTACTS</a>
       </li>
     </ul>
   </nav>
@@ -199,6 +317,7 @@
       </div>
     </div>
   </footer>
+
 
 	</body>
 </html>
