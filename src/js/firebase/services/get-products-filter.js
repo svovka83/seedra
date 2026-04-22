@@ -62,7 +62,6 @@ export async function getFilterProducts(db) {
 
 	dropdownSortList.addEventListener("click", () => {
 		getFilterProducts(db);
-		console.log(dropdownSort.textContent);
 	});
 }
 
