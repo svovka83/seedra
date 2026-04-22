@@ -1,5 +1,5 @@
 import { onSnapshot, collection, query, limit } from "firebase/firestore";
-import { productCard } from "../../components/product-card";
+import { productCard } from "../../components/product/product-card";
 
 export async function getProductStaticCards(db) {
 	const productList = document.querySelector(".our-products__product-cards-static");

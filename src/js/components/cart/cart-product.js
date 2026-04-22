@@ -1,6 +1,6 @@
 import { productCounter } from "./product-counter";
 
-export function cartProduct(id, name, imageUrl, price) {
+export function cartProduct(id, name, imageUrl, quantity, price, total) {
 	const base = import.meta.env.BASE_URL;
 
 	return `
@@ -9,10 +9,10 @@ export function cartProduct(id, name, imageUrl, price) {
     
     <h4 class="cart-product__name">${name}</h4>
 
-    ${productCounter()}
+    ${productCounter(quantity)}
 
-    <span class="cart-product__price">${price}</span>
-    <span class="cart-product__total">$24.56</span>
+    <span class="cart-product__price">$${price / 100}</span>
+    <span class="cart-product__total">$${total / 100}</span>
 
     <button class="cart-product__delete">
       <svg class="cart-product__delete-icon">

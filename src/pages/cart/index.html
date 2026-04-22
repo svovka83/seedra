@@ -23,7 +23,9 @@
 						{{ title( "h2", "Your cart.", "title_h2") }}
 					</div>
 					<div class="cart-products__items">
-						<span class="cart-products__quantity"></span>
+						<span class="cart-products__quantity">
+							<!-- quantity comes from firebse -->
+						</span>
 						<span class="cart-products__text">items</span>
 					</div>
 				</div>
@@ -50,30 +52,36 @@
 				<h4 class="cart-summary__title">Order summary</h4>
 				<div class="cart-summary__price-block">
 					<div class="cart-summary__items">
-						<span class="cart-summary__quantity"></span>
-						<span class="cart-summary__text">3 ITEMS</span>
+						<span class="cart-summary__quantity">
+							<!-- quantity comes from firebse -->
+						</span>
+						<span class="cart-summary__text">ITEMS</span>
 					</div>
-					<div class="cart-summary__price">$12.56</div>
+					<p class="cart-summary__price">
+						$<span id="cart-summary__price"><!-- quantity comes from firebse --></span>
+					</p>
 				</div>
 				<div class="cart-summary__dropdown">
-					<!-- dropdown( title, initial, initialID, listID, classPrice, option1, option2, option3, option4  -->
+					<!-- dropdown( title, initial, initialID, listID, classPrice, option1, option2, option3, option4 ) -->
 					<!-- prettier-ignore -->
 					{% from "src/partials/dropdown.njk" import dropdown %}
-					{{ dropdown( "Type of delievery", "Shipping") }}
+					{{ dropdown( "Type of delievery", "Shipping", "add-shipping", "", "", "Shipping", "On foot", "By car", "By plane") }}
 				</div>
 
 				<div class="cart-summary__input">
 					<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
 					<!-- prettier-ignore -->
 					{% from "src/partials/input.njk" import input %}
-					{{ input( "Promocode", "Promocode", "text", "", "") }}
+					{{ input( "Promocode", "Promocode", "text", "", "promocode") }}
 				</div>
 
 				<hr class="cart-summary__hr" />
 
-				<div class="cart-summary__total-price-block">
+				<div class="cart-summary__amount-block">
 					<span class="cart-summary__text">Total amount</span>
-					<div class="cart-summary__total-price">$12.56</div>
+					<p class="cart-summary__amount">
+						$<span id="cart-summary__amount"><!-- quantity comes from firebse --></span>
+					</p>
 				</div>
 
 				<div class="cart-summary__continue">

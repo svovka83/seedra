@@ -11,6 +11,12 @@ import { oneBlogTop } from "../pages/one-blog";
 import { getCart } from "./services/cart/get-cart";
 import { addRemoveProduct } from "./services/cart/add-remove-product";
 import { deleteFromCart } from "./services/cart/remove-from-cart";
+import { addQuantity } from "./services/cart/add-quantity";
+import { subtractQuantity } from "./services/cart/subtract-quantity";
+import { itemsQuantity } from "../components/cart/items-quantity";
+import { totalPrice } from "../components/cart/total-price";
+import { addShipping } from "../components/cart/add-shipping";
+import { promocode } from "../components/cart/promocode";
 
 export async function initFirebase() {
 	const firebaseConfig = {
@@ -37,4 +43,10 @@ export async function initFirebase() {
 	getCart(db);
 	addRemoveProduct(db);
 	deleteFromCart(db);
+	addQuantity(db);
+	subtractQuantity(db);
+	itemsQuantity(db);
+	totalPrice(db);
+	addShipping(db);
+	promocode(db);
 }

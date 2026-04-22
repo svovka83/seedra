@@ -1,4 +1,4 @@
-export function buttonCart(classBtn, titleBtn, checked) {
+export function buttonCard(classBtn, titleBtn, checked) {
 	const base = import.meta.env.BASE_URL;
 
 	return `

@@ -12,19 +12,33 @@ export function addRemoveProduct(db) {
 		const productId = product.id;
 
 		try {
-			const ref = doc(db, "products", productId);
-			const snapshot = await getDoc(ref);
-			const checker = snapshot.data().checked;
+			const refProduct = doc(db, "products", productId);
+			const snapshotProduct = await getDoc(refProduct);
+			const checker = snapshotProduct.data().checked;
+			const productPrice = snapshotProduct.data().price;
+
+			const refTotal = doc(db, "total", "14");
+			const snapshotTotal = await getDoc(refTotal);
 
 			if (!checker) {
 				await setDoc(doc(db, "cart", productId), {
-					name: product.querySelector(".product-card__title").textContent,
-					price: product.querySelector(".product-card__price").textContent,
+					name: snapshotProduct.data().name,
+					price: snapshotProduct.data().price,
+					total: snapshotProduct.data().price,
 					imageUrl: product.querySelector(".product-card__img").src,
+					quantity: 1,
 					createdAt: Date.now(),
 				});
 				await updateDoc(doc(db, "products", productId), {
 					checked: true,
+				});
+
+				const newPrice = snapshotTotal.data().price + productPrice;
+				const newAmount = snapshotTotal.data().amount + productPrice;
+
+				await updateDoc(doc(db, "total", "14"), {
+					price: newPrice,
+					amount: newAmount,
 				});
 				Toastify({
 					text: `Product ${productId} added to cart. 🛒`,
@@ -34,9 +48,24 @@ export function addRemoveProduct(db) {
 					backgroundColor: "#359740",
 				}).showToast();
 			} else {
+				const refCart = doc(db, "cart", productId);
+				const snapshotCart = await getDoc(refCart);
+				const cartTotal = snapshotCart.data().total;
+
+				const refTotal = doc(db, "total", "14");
+				const snapshotTotal = await getDoc(refTotal);
+
 				await deleteDoc(doc(db, "cart", productId));
 				await updateDoc(doc(db, "products", productId), {
 					checked: false,
+				});
+
+				const newPrice = snapshotTotal.data().price - cartTotal;
+				const newAmount = snapshotTotal.data().amount - cartTotal;
+
+				await updateDoc(doc(db, "total", "14"), {
+					price: newPrice,
+					amount: newAmount,
 				});
 				Toastify({
 					text: `Product ${productId} removed from cart. 🛒`,

@@ -1,5 +1,5 @@
 import { collection, getDocs, query, orderBy, where, limit, onSnapshot, addDoc } from "firebase/firestore";
-import { productCard } from "../../components/product-card";
+import { productCard } from "../../components/product/product-card";
 import { attachFilterListeners } from "./filters/attach-filter-listeners";
 
 let unsubscribe = null;

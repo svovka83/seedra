@@ -1,5 +1,5 @@
 import { collection, onSnapshot, query, getDocs } from "firebase/firestore";
-import { cartProduct } from "../../../components/cart-product";
+import { cartProduct } from "../../../components/cart/cart-product";
 import { emptyCart } from "../../../utils/empty-cart";
 
 export async function getCart(db) {
@@ -19,7 +19,14 @@ export async function getCart(db) {
 		let html = "";
 
 		snapshot.forEach((product) => {
-			html += cartProduct(product.id, product.data().name, product.data().imageUrl, product.data().price);
+			html += cartProduct(
+				product.id,
+				product.data().name,
+				product.data().imageUrl,
+				product.data().quantity,
+				product.data().price,
+				product.data().total
+			);
 		});
 
 		cartList.innerHTML = html;

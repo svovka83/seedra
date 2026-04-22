@@ -18,9 +18,26 @@
 		border-radius: 6px;
 		background-color: $invisible_green;
 	}
+	&__minus {
+		cursor: pointer;
+	}
+	&__minus-disabled {
+		user-select: none;
+		cursor: not-allowed;
+	}
+	&__plus {
+		cursor: pointer;
+	}
 	&__icon {
 		width: 16px;
 		height: 16px;
 		stroke: $green_brand;
+	}
+	&__icon-disabled {
+		width: 16px;
+		height: 16px;
+		stroke: $light_grey_stroke;
+		user-select: none;
+		cursor: not-allowed;
 	}
 }
