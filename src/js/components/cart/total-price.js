@@ -4,6 +4,7 @@ export async function totalPrice(db) {
 	const summaryPrice = document.getElementById("cart-summary__price");
 	const summaryAmount = document.getElementById("cart-summary__amount");
 	const currentShipping = document.getElementById("add-shipping");
+	const promocode = document.getElementById("promocode");
 	if (!summaryPrice) return;
 	if (!summaryAmount) return;
 	if (!currentShipping) return;
@@ -12,7 +13,9 @@ export async function totalPrice(db) {
 
 	onSnapshot(ref, (snapshot) => {
 		summaryPrice.innerHTML = snapshot.data().price / 100;
-		summaryAmount.innerHTML = snapshot.data().amount / 100;
+		summaryAmount.innerHTML =
+			((snapshot.data().price + snapshot.data().shippingPrice) * snapshot.data().discount) / 100;
 		currentShipping.innerHTML = snapshot.data().shippingName;
+		promocode.value = snapshot.data().promocode;
 	});
 }

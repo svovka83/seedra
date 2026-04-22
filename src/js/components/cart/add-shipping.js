@@ -22,13 +22,7 @@ export function addShipping(db) {
 				shipping = 10000;
 			} else shipping = 0;
 
-			let newAmount;
-
-			if (snapshotTotal.data().promocode === "avada media") {
-				newAmount = (snapshotTotal.data().price + shipping) / 2;
-			} else {
-				newAmount = snapshotTotal.data().price + shipping;
-			}
+			const newAmount = (snapshotTotal.data().price + shipping) * snapshotTotal.data().discount;
 
 			await updateDoc(doc(db, "total", "14"), {
 				shippingName: typeShipping,

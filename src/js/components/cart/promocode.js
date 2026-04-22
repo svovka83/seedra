@@ -14,14 +14,16 @@ export function promocode(db) {
 			let discount;
 
 			if (inputPromocode === "avada media") {
-				discount = 2;
+				discount = 0.5;
 			} else {
 				discount = 1;
 			}
 
-			const newAmount = (snapshotTotal.data().price + snapshotTotal.data().shippingPrice) / discount;
+			const newAmount = (snapshotTotal.data().price + snapshotTotal.data().shippingPrice) * discount;
 
 			await updateDoc(doc(db, "total", "14"), {
+				discount: discount,
+				promocode: inputPromocode,
 				amount: newAmount,
 			});
 		} catch (e) {
