@@ -34,13 +34,56 @@
 						{{ cartNavigator( "cart-navigator__point_not-active", "" ) }}
 					</div>
 				</div>
+				<div class="payment-info__title">
+					<!-- title ( heading, title, classTitle ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/title.njk" import title %}
+					{{ title( "h3", "Personal info", "title_h3 title_h3-mobile-checkout") }}
+				</div>
 				<div class="payment-info__type">
 					<!-- text ( text, classText ) -->
 					<!-- prettier-ignore -->
 					{% from "src/partials/text.njk" import text %}
 					{{ text( "Card type", "text_regular-14" ) }}
 				</div>
-				<div class="payment-info__cards"></div>
+				<div class="payment-info__cards">
+					<label class="payment-info__cards-block">
+						<input type="radio" name="payment-card" />
+						<div class="payment-info__cards-item">
+							<img
+								class="payment-info__cards-img"
+								src="/public/images/payment/apple.png"
+								alt="payment card" />
+						</div>
+					</label>
+					<label class="payment-info__cards-block">
+						<input type="radio" name="payment-card" />
+						<div class="payment-info__cards-item">
+							<img
+								class="payment-info__cards-img"
+								src="/public/images/payment/visa.png"
+								alt="payment card" />
+						</div>
+					</label>
+					<label class="payment-info__cards-block">
+						<input type="radio" name="payment-card" />
+						<div class="payment-info__cards-item">
+							<img
+								class="payment-info__cards-img"
+								src="/public/images/payment/mastercard.png"
+								alt="payment card" />
+						</div>
+					</label>
+					<label class="payment-info__cards-block">
+						<input type="radio" name="payment-card" />
+						<div class="payment-info__cards-item">
+							<img
+								class="payment-info__cards-img"
+								src="/public/images/payment/paypal.png"
+								alt="payment card" />
+						</div>
+					</label>
+				</div>
 				<div class="payment-info__form">
 					<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
 					<!-- prettier-ignore -->
@@ -54,10 +97,20 @@
 				<div class="cart-summary__amount-block">
 					<span class="cart-summary__text">Total amount</span>
 					<p class="cart-summary__amount">
-						$<span id="cart-summary__amount"><!-- quantity comes from firebse --></span>
+						$<span id="cart-summary__amount1"><!-- quantity comes from firebse --></span>
 					</p>
 				</div>
-				<div class="payment-info__button"></div>
+				<button class="payment-info__button">
+					<p class="payment-info__button-amount">
+						$<span id="cart-summary__amount2"><!-- quantity comes from firebse --></span>
+					</p>
+					<span class="payment-info__button-text">Continue</span>
+					<a class="payment-info__button-link" href="/seedra/src/pages/checkout/index.html">
+						<svg class="payment-info__button-icon">
+							<use href="/images/sprites.svg#arrow-back"></use>
+						</svg>
+					</a>
+				</button>
 			</section>
 		</main>
 
