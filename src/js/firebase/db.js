@@ -17,6 +17,8 @@ import { itemsQuantity } from "../components/cart/items-quantity";
 import { totalPrice } from "../components/cart/total-price";
 import { addShipping } from "../components/cart/add-shipping";
 import { promocode } from "../components/cart/promocode";
+import { getCheckout } from "./services/checkout/get-checkout";
+import { getPayment } from "./services/payment/get-payment";
 
 export async function initFirebase() {
 	const firebaseConfig = {
@@ -49,4 +51,6 @@ export async function initFirebase() {
 	totalPrice(db);
 	addShipping(db);
 	promocode(db);
+	getCheckout(db);
+	getPayment(db);
 }

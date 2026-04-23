@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Payment</title>
+		<link rel="stylesheet" href="../../scss/styles.scss" />
+	</head>
+	<body style="display: grid; grid-template-rows: auto 1fr auto">
+		<!-- header (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/header.njk" import header %}
+    {{ header(  ) }}
+
+		<main class="payment-main container" id="go-to-top">
+			<!-- payment-info -->
+			<section class="payment-info">
+				<div class="payment-info__top">
+					<a class="payment-info__link" href="/seedra/src/pages/checkout/index.html">
+						<svg class="payment-info__top-icon">
+							<use href="/images/sprites.svg#arrow-back"></use>
+						</svg>
+					</a>
+					<div class="payment-info__top-title">
+						<!-- title ( heading, title, classTitle ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/title.njk" import title %}
+						{{ title( "h2", "Payment info", "title_h2") }}
+					</div>
+					<div class="payment-info__top-navigation">
+						<!-- cartNavigator( classCheckout, classPayment ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/utils/cart-navigator.njk" import cartNavigator %}
+						{{ cartNavigator( "cart-navigator__point_not-active", "" ) }}
+					</div>
+				</div>
+				<div class="payment-info__type">
+					<!-- text ( text, classText ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/text.njk" import text %}
+					{{ text( "Card type", "text_regular-14" ) }}
+				</div>
+				<div class="payment-info__cards"></div>
+				<div class="payment-info__form">
+					<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/input.njk" import input %}
+					{{ input( "Card number", "0000 0000 0000 0000", "text", "", "") }}
+					{{ input( "Expiring date", "01/01", "text", "", "") }}
+					{{ input( "CCV", "123", "text", "", "") }}
+				</div>
+				<hr class="payment-info__hr" />
+				<!-- it might be a component -->
+				<div class="cart-summary__amount-block">
+					<span class="cart-summary__text">Total amount</span>
+					<p class="cart-summary__amount">
+						$<span id="cart-summary__amount"><!-- quantity comes from firebse --></span>
+					</p>
+				</div>
+				<div class="payment-info__button"></div>
+			</section>
+		</main>
+
+		<!-- footer (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/footer.njk" import footer %}
+		{{ footer(  ) }}
+
+		<script type="module" src="../../js/main.js"></script>
+	</body>
+</html>

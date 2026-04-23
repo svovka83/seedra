@@ -37,6 +37,8 @@
 @use "./components/info-btn.scss";
 @use "./components/textarea.scss";
 @use "./components/utils/toast.scss";
+@use "./components/checkout/checkout-cart.scss";
+@use "./components/utils/cart-navigator.scss";
 
 // main
 
@@ -70,6 +72,16 @@
 @use "./pages/cart/cart-main.scss";
 @use "./pages/cart/cart-products.scss";
 @use "./pages/cart/cart-summary.scss";
+
+// checkout
+
+@use "./pages/checkout/checkout-main.scss";
+@use "./pages/checkout/checkout-form.scss";
+@use "./pages/checkout/checkout-carts.scss";
+
+// payment
+
+@use "./pages/payment/payment-info.scss";
 
 // about
 

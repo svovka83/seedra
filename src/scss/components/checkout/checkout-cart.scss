@@ -1,0 +1,21 @@
+@use "../../settings/variables.scss" as *;
+
+.checkout-cart {
+	&__name {
+		font-size: 14px;
+		color: $text_secondary;
+	}
+	&__name {
+		margin-bottom: 4px;
+	}
+	&__total {
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 25px;
+		letter-spacing: -4%;
+	}
+	&__hr {
+		margin-top: 7px;
+		margin-bottom: 6px;
+	}
+}

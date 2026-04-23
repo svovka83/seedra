@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Checkout</title>
+		<link rel="stylesheet" href="../../scss/styles.scss" />
+	</head>
+	<body style="display: grid; grid-template-rows: auto 1fr auto">
+		<!-- header (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/header.njk" import header %}
+    {{ header(  ) }}
+
+		<main class="checkout-main container" id="go-to-top">
+			<section class="checkout">
+				<!-- checkout-form -->
+				<div class="checkout-form">
+					<div class="checkout-form__top">
+						<a class="checkout-form__link" href="/seedra/src/pages/cart/index.html">
+							<svg class="checkout-form__top-icon">
+								<use href="/images/sprites.svg#arrow-back"></use>
+							</svg>
+						</a>
+						<div class="checkout-form__top-title">
+							<!-- title ( heading, title, classTitle ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/title.njk" import title %}
+							{{ title( "h2", "Checkout", "title_h2") }}
+						</div>
+						<div class="checkout-form__top-navigation">
+							<!-- cartNavigator( classCheckout, classPayment ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/utils/cart-navigator.njk" import cartNavigator %}
+							{{ cartNavigator( "", "cart-navigator__point_not-active" ) }}
+						</div>
+					</div>
+
+					<div class="checkout-form__title">
+						<!-- title ( heading, title, classTitle ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/title.njk" import title %}
+						{{ title( "h3", "Personal info", "title_h3 title_h3-mobile-checkout") }}
+					</div>
+
+					<div class="checkout-form__grid">
+						<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/input.njk" import input %}
+						{{ input( "Name", "Your name", "text", "", "") }}
+						{{ input( "Phone number", "Your number", "text", "", "") }}
+					</div>
+
+					<div class="checkout-form__title">
+						<!-- title ( heading, title, classTitle ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/title.njk" import title %}
+						{{ title( "h3", "Adress", "title_h3 title_h3-mobile-checkout") }}
+					</div>
+
+					<div class="checkout-form__grid">
+						<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/input.njk" import input %}
+						{{ input( "State", "Name of state", "text", "", "") }}
+						{{ input( "City", "Name of city", "text", "", "") }}
+						{{ input( "Adress", "1901 Thornridge Cir. Shiloh, Hawaii 81063", "text", "", "") }}
+						{{ input( "ZIP code", "ZIP code", "text", "", "") }}
+					</div>
+
+					<div class="checkout-form__continue">
+						<!-- discover ( classLink, titleLink, pathLink ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/discover.njk" import discover %}
+						{{ discover( "discover_continue", "Continue", "/seedra/src/pages/payment/index.html" ) }}
+					</div>
+				</div>
+
+				<!-- checkout-cart -->
+				<div class="checkout-carts">
+					<h4 class="checkout-carts__title">Your cart</h4>
+
+					<div class="checkout-carts__products">
+						<!-- products come from firebase -->
+					</div>
+
+					<!-- it might be a component -->
+					<div class="cart-summary__amount-block">
+						<span class="cart-summary__text">Total amount</span>
+						<p class="cart-summary__amount">
+							$<span id="cart-summary__amount"><!-- quantity comes from firebse --></span>
+						</p>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<!-- footer (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/footer.njk" import footer %}
+		{{ footer(  ) }}
+
+		<script type="module" src="../../js/main.js"></script>
+	</body>
+</html>

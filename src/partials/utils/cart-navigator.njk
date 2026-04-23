@@ -1,0 +1,6 @@
+{% macro cartNavigator( classCheckout, classPayment ) %}
+  <div class="cart-navigator">
+    <a href="/seedra/src/pages/checkout/index.html" class="cart-navigator__point {{ classCheckout }}"></a>
+    <a href="/seedra/src/pages/payment/index.html" class="cart-navigator__point {{ classPayment }}"></a>
+  </div>
+{% endmacro %}

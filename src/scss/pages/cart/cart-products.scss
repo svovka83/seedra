@@ -1,8 +1,10 @@
 @use "../../settings/variables.scss" as *;
 
 .cart-products {
-	max-width: 699px;
-	width: 100%;
+	flex-basis: 699px;
+	@media (max-width: 1024px) {
+		flex-basis: unset;
+	}
 	.cart-product:last-of-type {
 		border-bottom: none;
 	}
@@ -10,6 +12,9 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		@media (max-width: 580px) {
+			margin-bottom: -6px;
+		}
 	}
 	&__items {
 		font-weight: 600;
@@ -17,6 +22,12 @@
 		line-height: 31.5px;
 		letter-spacing: -2%;
 		color: $text_secondary;
+		@media (max-width: 580px) {
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 178%;
+			letter-spacing: -3.5%;
+		}
 	}
 	&__hr {
 		margin-block: 22px;
@@ -28,6 +39,9 @@
 		color: $text_secondary;
 		font-size: 14px;
 		margin-bottom: 2px;
+		@media (max-width: 580px) {
+			display: none;
+		}
 	}
 	&__heading1 {
 	}
@@ -38,10 +52,11 @@
 	&__heading4 {
 	}
 	&__products {
-	}
-	&__products {
 		margin-bottom: 27px;
 	}
 	&__shopping {
+		@media (max-width: 1024px) {
+			display: none;
+		}
 	}
 }

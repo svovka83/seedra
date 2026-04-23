@@ -56,4 +56,17 @@
 		line-height: 25px;
 		letter-spacing: -4%;
 	}
+	@media (max-width: 580px) {
+		translate: 0 -11px;
+		padding: 31px 30px 38px 29px;
+		&__input {
+			display: none;
+		}
+		&__hr {
+			margin-bottom: 22px;
+		}
+		&__amount-block {
+			margin-bottom: 24px;
+		}
+	}
 }

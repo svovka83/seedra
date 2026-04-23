@@ -21,7 +21,7 @@ export async function getFilterProducts(db) {
 	if (unsubscribe) unsubscribe();
 
 	const selectedTypes = [];
-	const constraints = [limit(9)];
+	const constraints = [];
 
 	if (dropdownSort.textContent === "Most expensive") constraints.push(orderBy("price", "desc"));
 	if (dropdownSort.textContent === "The cheapest") constraints.push(orderBy("price", "asc"));

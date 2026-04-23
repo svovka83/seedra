@@ -22,6 +22,7 @@
 						{% from "src/partials/title.njk" import title %}
 						{{ title( "h2", "Your cart.", "title_h2") }}
 					</div>
+
 					<div class="cart-products__items">
 						<span class="cart-products__quantity">
 							<!-- quantity comes from firebse -->
@@ -77,6 +78,7 @@
 
 				<hr class="cart-summary__hr" />
 
+				<!-- it might be a component -->
 				<div class="cart-summary__amount-block">
 					<span class="cart-summary__text">Total amount</span>
 					<p class="cart-summary__amount">
@@ -88,7 +90,7 @@
 					<!-- discover ( classLink, titleLink, pathLink ) -->
 					<!-- prettier-ignore -->
 					{% from "src/partials/discover.njk" import discover %}
-					{{ discover( "discover_continue", "Continue", "#!" ) }}
+					{{ discover( "discover_continue", "Continue", "/seedra/src/pages/checkout/index.html" ) }}
 				</div>
 			</section>
 		</main>

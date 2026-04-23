@@ -6,4 +6,11 @@
 	column-gap: 61px;
 	margin-top: 33px;
 	margin-bottom: 32px;
+	@media (max-width: 1024px) {
+		flex-direction: column;
+	}
+	@media (max-width: 580px) {
+		margin-top: 30px;
+		margin-bottom: 37px;
+	}
 }

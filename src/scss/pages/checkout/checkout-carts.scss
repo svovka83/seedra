@@ -1,0 +1,22 @@
+@use "../../settings/variables.scss" as *;
+
+.checkout-carts {
+	flex-basis: 350px;
+	padding: 22px 30px 12px 30px;
+	border: 1px solid $light_grey_stroke;
+	border-radius: 12px;
+	box-shadow: $shadow_header;
+	&__title {
+		font-weight: 700;
+		font-size: 18px;
+		line-height: 28px;
+		letter-spacing: -2%;
+		margin-bottom: 16px;
+	}
+	&__products {
+		margin-bottom: 36px;
+	}
+	@media (max-width: 768px) {
+		display: none;
+	}
+}

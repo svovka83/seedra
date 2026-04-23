@@ -1,0 +1,13 @@
+@use "../../settings/variables.scss" as *;
+
+.checkout-main {
+	max-width: 1140px;
+	width: 100%;
+	padding-block: 34px;
+}
+
+.checkout {
+	display: flex;
+	align-items: flex-start;
+	column-gap: 30px;
+}

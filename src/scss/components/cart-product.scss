@@ -3,10 +3,14 @@
 .cart-product {
 	position: relative;
 	display: grid;
-	grid-template-columns: 64px 1fr 133px 102px 56px;
+	grid-template-columns: 1fr 133px 102px 56px;
 	align-items: center;
 	padding-block: 23px;
 	border-bottom: 1px solid $light_grey_stroke;
+	&__title-block {
+		display: flex;
+		align-items: center;
+	}
 	&__img {
 		width: 64px;
 		height: 64px;
@@ -14,10 +18,11 @@
 		border-radius: 12px;
 	}
 	&__name {
-		max-width: 286px;
+		max-width: 291px;
 		font-weight: 400;
 		font-size: 14px;
 		padding-left: 16px;
+		padding-right: 5px;
 	}
 	&__price {
 		font-weight: 500;
@@ -46,5 +51,49 @@
 		height: 16px;
 		stroke: $white;
 		translate: 0 -1px;
+	}
+	&__heading {
+		display: none;
+		color: $text_secondary;
+		font-size: 14px;
+	}
+	@media (max-width: 580px) {
+		display: block;
+		padding: 53px 16px 2px 20px;
+		margin-bottom: 16px;
+		border: 1px solid $light_grey_stroke;
+		border-radius: 12px;
+		&__title-block {
+			flex-direction: row-reverse;
+			justify-content: space-between;
+			margin-bottom: 12px;
+		}
+		&__img {
+			width: 64px;
+			height: 64px;
+			border: 1px solid $light_grey_stroke;
+			border-radius: 12px;
+		}
+		&__name {
+			max-width: 200px;
+			padding-left: 0;
+		}
+		&__counter,
+		&__price,
+		&__total {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-bottom: 18px;
+		}
+		&__delete {
+			position: absolute;
+			top: 14px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+		&__heading {
+			display: block;
+		}
 	}
 }

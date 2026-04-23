@@ -55,6 +55,14 @@
 		line-height: 31.5px;
 		letter-spacing: -2%;
 	}
+	&_h3-mobile-checkout {
+		@media (max-width: 520px) {
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 25px;
+			letter-spacing: -4%;
+		}
+	}
 	&_h3-mobile {
 		@media (max-width: 768px) {
 			font-weight: 700;

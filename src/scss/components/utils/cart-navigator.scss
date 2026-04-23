@@ -1,0 +1,17 @@
+@use "../../settings/variables.scss" as *;
+
+.cart-navigator {
+	display: inline-flex;
+	align-items: center;
+	column-gap: 3px;
+	&__point {
+		display: inline-block;
+		width: 22px;
+		height: 6px;
+		background-color: $green_brand;
+		border-radius: 3px;
+		&_not-active {
+			opacity: 0.2;
+		}
+	}
+}
