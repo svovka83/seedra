@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>One product</title>
+		<title>Checkout</title>
 		<script type="module" crossorigin src="/seedra/assets/main-DbtYI-1L.js"></script>
 		<link rel="stylesheet" crossorigin href="/seedra/assets/main-Bs3t9hbF.css">
 	</head>
-	<body>
+	<body style="display: grid; grid-template-rows: auto 1fr auto">
 		<!-- header (  ) -->
 		<!-- prettier-ignore -->
 		
@@ -109,8 +109,138 @@
   </header>
 
 
-		<main class="one-product-main" id="go-to-top">
-			<!-- one-product-breadcrumbs -->
+		<main class="checkout-main container" id="go-to-top">
+			<section class="checkout">
+				<!-- checkout-form -->
+				<div class="checkout-form">
+					<div class="checkout-form__top">
+						<a class="checkout-form__link" href="/seedra/src/pages/cart/index.html">
+							<svg class="checkout-form__top-icon">
+								<use href="/seedra/images/sprites.svg#arrow-back"></use>
+							</svg>
+						</a>
+						<div class="checkout-form__top-title">
+							<!-- title ( heading, title, classTitle ) -->
+							<!-- prettier-ignore -->
+							
+							
+  <h2 class="title title_h2">Checkout</h2>
+
+						</div>
+						<div class="checkout-form__top-navigation">
+							<!-- cartNavigator( classCheckout, classPayment ) -->
+							<!-- prettier-ignore -->
+							
+							
+  <div class="cart-navigator">
+    <a href="/seedra/src/pages/checkout/index.html" class="cart-navigator__point "></a>
+    <a href="/seedra/src/pages/payment/index.html" class="cart-navigator__point cart-navigator__point_not-active"></a>
+  </div>
+
+						</div>
+					</div>
+
+					<div class="checkout-form__title">
+						<!-- title ( heading, title, classTitle ) -->
+						<!-- prettier-ignore -->
+						
+						
+  <h3 class="title title_h3 title_h3-mobile-checkout">Personal info</h3>
+
+					</div>
+
+					<div class="checkout-form__grid">
+						<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
+						<!-- prettier-ignore -->
+						
+						
+  <div class="input-block">
+    <label class="label" for="">Name</label>
+    <input class="input " id="" type="text" placeholder="Your name" />
+    <p class="validation"></p>
+  </div>
+
+						
+  <div class="input-block">
+    <label class="label" for="">Phone number</label>
+    <input class="input " id="" type="text" placeholder="Your number" />
+    <p class="validation"></p>
+  </div>
+
+					</div>
+
+					<div class="checkout-form__title">
+						<!-- title ( heading, title, classTitle ) -->
+						<!-- prettier-ignore -->
+						
+						
+  <h3 class="title title_h3 title_h3-mobile-checkout">Adress</h3>
+
+					</div>
+
+					<div class="checkout-form__grid">
+						<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
+						<!-- prettier-ignore -->
+						
+						
+  <div class="input-block">
+    <label class="label" for="">State</label>
+    <input class="input " id="" type="text" placeholder="Name of state" />
+    <p class="validation"></p>
+  </div>
+
+						
+  <div class="input-block">
+    <label class="label" for="">City</label>
+    <input class="input " id="" type="text" placeholder="Name of city" />
+    <p class="validation"></p>
+  </div>
+
+						
+  <div class="input-block">
+    <label class="label" for="">Adress</label>
+    <input class="input " id="" type="text" placeholder="1901 Thornridge Cir. Shiloh, Hawaii 81063" />
+    <p class="validation"></p>
+  </div>
+
+						
+  <div class="input-block">
+    <label class="label" for="">ZIP code</label>
+    <input class="input " id="" type="text" placeholder="ZIP code" />
+    <p class="validation"></p>
+  </div>
+
+					</div>
+
+					<div class="checkout-form__continue">
+						<!-- discover ( classLink, titleLink, pathLink ) -->
+						<!-- prettier-ignore -->
+						
+						
+  <a class="discover discover_continue" href="/seedra/src/pages/payment/index.html">
+    Continue
+  </a>
+
+					</div>
+				</div>
+
+				<!-- checkout-cart -->
+				<div class="checkout-carts">
+					<h4 class="checkout-carts__title">Your cart</h4>
+
+					<div class="checkout-carts__products">
+						<!-- products come from firebase -->
+					</div>
+
+					<!-- it might be a component -->
+					<div class="cart-summary__amount-block">
+						<span class="cart-summary__text">Total amount</span>
+						<p class="cart-summary__amount">
+							$<span id="cart-summary__amount"><!-- quantity comes from firebse --></span>
+						</p>
+					</div>
+				</div>
+			</section>
 		</main>
 
 		<!-- footer (  ) -->
@@ -201,6 +331,7 @@
       </div>
     </div>
   </footer>
+
 
 	</body>
 </html>

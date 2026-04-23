@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>One product</title>
+		<title>Payment</title>
 		<script type="module" crossorigin src="/seedra/assets/main-DbtYI-1L.js"></script>
 		<link rel="stylesheet" crossorigin href="/seedra/assets/main-Bs3t9hbF.css">
 	</head>
-	<body>
+	<body style="display: grid; grid-template-rows: auto 1fr auto">
 		<!-- header (  ) -->
 		<!-- prettier-ignore -->
 		
@@ -109,8 +109,80 @@
   </header>
 
 
-		<main class="one-product-main" id="go-to-top">
-			<!-- one-product-breadcrumbs -->
+		<main class="payment-main container" id="go-to-top">
+			<!-- payment-info -->
+			<section class="payment-info">
+				<div class="payment-info__top">
+					<a class="payment-info__link" href="/seedra/src/pages/checkout/index.html">
+						<svg class="payment-info__top-icon">
+							<use href="/seedra/images/sprites.svg#arrow-back"></use>
+						</svg>
+					</a>
+					<div class="payment-info__top-title">
+						<!-- title ( heading, title, classTitle ) -->
+						<!-- prettier-ignore -->
+						
+						
+  <h2 class="title title_h2">Payment info</h2>
+
+					</div>
+					<div class="payment-info__top-navigation">
+						<!-- cartNavigator( classCheckout, classPayment ) -->
+						<!-- prettier-ignore -->
+						
+						
+  <div class="cart-navigator">
+    <a href="/seedra/src/pages/checkout/index.html" class="cart-navigator__point cart-navigator__point_not-active"></a>
+    <a href="/seedra/src/pages/payment/index.html" class="cart-navigator__point "></a>
+  </div>
+
+					</div>
+				</div>
+				<div class="payment-info__type">
+					<!-- text ( text, classText ) -->
+					<!-- prettier-ignore -->
+					
+					
+  <p class="text text_regular-14">Card type</p>
+
+				</div>
+				<div class="payment-info__cards"></div>
+				<div class="payment-info__form">
+					<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
+					<!-- prettier-ignore -->
+					
+					
+  <div class="input-block">
+    <label class="label" for="">Card number</label>
+    <input class="input " id="" type="text" placeholder="0000 0000 0000 0000" />
+    <p class="validation"></p>
+  </div>
+
+					
+  <div class="input-block">
+    <label class="label" for="">Expiring date</label>
+    <input class="input " id="" type="text" placeholder="01/01" />
+    <p class="validation"></p>
+  </div>
+
+					
+  <div class="input-block">
+    <label class="label" for="">CCV</label>
+    <input class="input " id="" type="text" placeholder="123" />
+    <p class="validation"></p>
+  </div>
+
+				</div>
+				<hr class="payment-info__hr" />
+				<!-- it might be a component -->
+				<div class="cart-summary__amount-block">
+					<span class="cart-summary__text">Total amount</span>
+					<p class="cart-summary__amount">
+						$<span id="cart-summary__amount"><!-- quantity comes from firebse --></span>
+					</p>
+				</div>
+				<div class="payment-info__button"></div>
+			</section>
 		</main>
 
 		<!-- footer (  ) -->
@@ -201,6 +273,7 @@
       </div>
     </div>
   </footer>
+
 
 	</body>
 </html>
