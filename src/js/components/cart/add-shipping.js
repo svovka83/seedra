@@ -1,11 +1,16 @@
+// it's very important code making on my own - needs to learn and use
+
 import { getDoc, doc, updateDoc } from "firebase/firestore";
 
 export function addShipping(db) {
-	document.addEventListener("click", async (e) => {
-		const option = e.target.closest(".dropdown__option");
-		if (!option) return;
+	const optionList = document.getElementById("type-shipping");
+	if (!optionList) return;
 
-		const typeOption = option.querySelector(".dropdown__value");
+	optionList.addEventListener("click", async (e) => {
+		const typeOptions = e.target.closest(".dropdown__option");
+		const typeOption = typeOptions.querySelector(".dropdown__value");
+		if (!typeOption) return;
+
 		const typeShipping = typeOption.textContent;
 
 		try {
