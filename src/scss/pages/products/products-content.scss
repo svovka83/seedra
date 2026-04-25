@@ -1,4 +1,7 @@
+@use "../../settings/variables.scss" as *;
+
 .products-content {
+	position: relative;
 	margin-bottom: 81px;
 	@media (max-width: 768px) {
 		margin-bottom: 48px;
@@ -7,6 +10,39 @@
 		margin-bottom: 24px;
 		@media (max-width: 768px) {
 			margin-bottom: 24px;
+		}
+	}
+	&__modal {
+		// max-height: 70vh;
+		// overflow-y: auto;
+		position: absolute;
+		left: 50%;
+		transform: translate(-50%, 0);
+		padding: 28px 30px 28px 30px;
+		background-color: $white;
+		border: 1px solid $light_green;
+		border-radius: 8px;
+		box-shadow: $shadow_mobile-filter1, $shadow_mobile-filter2;
+		z-index: 300;
+		visibility: hidden;
+		opacity: 0;
+		transition: opacity 0.5s ease, visibility 0.5s ease;
+		&_open {
+			visibility: visible;
+			opacity: 1;
+		}
+		&-triangle-pointer {
+			position: absolute;
+			top: -8px;
+			left: 50%;
+			transform: translate(-50%, 0);
+			width: 16px;
+			height: 16px;
+			background-color: $white;
+			border-top: 1px solid $light_grey_stroke;
+			border-left: 1px solid $light_grey_stroke;
+			transform: rotate(45deg);
+			z-index: 350;
 		}
 	}
 	&__grid {

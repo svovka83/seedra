@@ -1,8 +1,8 @@
-export function button(classBtn, titleBtn, iconId) {
+export function button(caregoryId, classBtn, titleBtn, iconId) {
 	const base = import.meta.env.BASE_URL;
 
 	return `
-  <button class="btn ${classBtn}">
+  <button class="btn ${classBtn}" id="${caregoryId}">
     <svg class="btn__icon">
       <use href="${base}images/sprites.svg#${iconId}"></use>
     </svg>

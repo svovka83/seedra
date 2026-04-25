@@ -29,6 +29,8 @@ import { clearAllCart } from "./services/cart/clear-all-cart";
 import { getCheckout } from "./services/checkout/get-checkout";
 import { getPayment } from "./services/payment/get-payment";
 
+import { openModalCategory } from "../modals/open-modal-category";
+
 export async function initFirebase() {
 	const firebaseConfig = {
 		apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -72,4 +74,6 @@ export async function initFirebase() {
 
 	getCheckout(db);
 	getPayment(db);
+
+	openModalCategory(db);
 }

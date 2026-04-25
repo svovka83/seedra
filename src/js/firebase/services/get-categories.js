@@ -9,6 +9,6 @@ export async function getCategories(db) {
 	const categories = await getDocs(collection(db, "categories"));
 
 	categories.forEach((category) => {
-		categoryList.innerHTML += button("btn_icon-text", category.data().name, category.data().iconId);
+		categoryList.innerHTML += button(category.id, "btn_icon-text", category.data().name, category.data().iconId);
 	});
 }

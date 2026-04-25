@@ -16,7 +16,7 @@ export default defineConfig({
 				payment: resolve(__dirname, "src/pages/payment/index.html"),
 				// blogs: resolve(__dirname, "src/pages/blogs/index.html"),
 				// oneBlog: resolve(__dirname, "src/pages/one-blog/index.html"),
-				// about: resolve(__dirname, "src/pages/about/index.html"),
+				about: resolve(__dirname, "src/pages/about/index.html"),
 				// contact: resolve(__dirname, "src/pages/contact/index.html"),
 			},
 		},

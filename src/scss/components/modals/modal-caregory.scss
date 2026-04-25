@@ -1,0 +1,84 @@
+@use "../../settings/variables.scss" as *;
+
+.modal-category {
+	&__title {
+		font-weight: 600;
+		font-size: 24px;
+		line-height: 31.5px;
+		letter-spacing: -2%;
+		color: $text_primary;
+		margin-bottom: 16px;
+		text-transform: capitalize;
+		@media (max-width: 560px) {
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 178%;
+			letter-spacing: -3.5%;
+			text-transform: uppercase;
+			color: $text_primary;
+		}
+	}
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 150px);
+		gap: 10px;
+		@media (max-width: 560px) {
+			grid-template-columns: 280px;
+		}
+	}
+	&__item {
+		color: $text_secondary;
+		cursor: pointer;
+		&:hover {
+			color: $text_primary;
+		}
+		@media (max-width: 560px) {
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 178%;
+			letter-spacing: -3.5%;
+			text-transform: uppercase;
+			color: $text_primary;
+		}
+	}
+	&__hr-mobile {
+		display: none;
+		@media (max-width: 560px) {
+			display: block;
+		}
+	}
+	&__hr {
+		width: 100%;
+		border: 1px solid $light_grey_stroke;
+		&_none {
+			display: none;
+		}
+		@media (max-width: 560px) {
+			display: none;
+		}
+	}
+	&__view-all {
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 28px;
+		color: $text_secondary;
+		cursor: pointer;
+		&_none {
+			display: none;
+		}
+		&:hover {
+			color: $text_primary;
+		}
+		@media (max-width: 560px) {
+			display: none;
+		}
+	}
+	@media (max-width: 560px) {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 178%;
+		letter-spacing: -3.5%;
+		text-transform: uppercase;
+		color: $text_primary;
+	}
+}

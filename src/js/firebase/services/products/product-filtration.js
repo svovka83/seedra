@@ -46,7 +46,6 @@ export function productFiltration(db) {
 	// sort by type listener
 
 	checkboxHybrid.addEventListener("click", () => {
-		console.log(checkboxHybrid.value);
 		if (checkboxHybrid.checked) {
 			selectedTypes.push(checkboxHybrid.value);
 		} else {
@@ -106,5 +105,35 @@ export function productFiltration(db) {
 			selectedUses.splice(currentIndex, 1);
 		}
 		getProducts(db, currentSortOrder, selectedTypes, selectedUses);
+	});
+
+	// sort by modal one product id listener
+
+	document.addEventListener("click", async (e) => {
+		const oneProduct = e.target.closest(".modal-category__item");
+		if (!oneProduct) return;
+
+		const oneProductId = oneProduct.id;
+
+		const modalWindow = document.getElementById("modal-category-list");
+		if (!modalWindow) return;
+
+		getProducts(db, currentSortOrder, selectedTypes, selectedUses, oneProductId);
+		modalWindow.classList.remove("products-content__modal_open");
+	});
+
+	// sort by modal all products listener
+
+	document.addEventListener("click", async (e) => {
+		const allProducts = e.target.closest(".modal-category__view-all");
+		if (!allProducts) return;
+
+		const viewAllProducts = allProducts.querySelector(".modal-category__view-all-text").textContent;
+
+		const modalWindow = document.getElementById("modal-category-list");
+		if (!modalWindow) return;
+
+		getProducts(db, currentSortOrder, selectedTypes, selectedUses, "", viewAllProducts);
+		modalWindow.classList.remove("products-content__modal_open");
 	});
 }
