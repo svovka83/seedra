@@ -137,10 +137,13 @@
   <symbol id="arrow-back" viewBox="0 0 19 19">
     <path d="M9.375 0.625L0.625 9.375M0.625 9.375L9.375 18.125M0.625 9.375H18.125" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
-  <!-- <symbol id="name-icon" viewBox="0 0 32 32">
+  <symbol id="close-modal-icon" viewBox="0 0 24 24">
+    <path d="M7 7L17 17M7 17L17 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <!-- <symbol id="name-icon" viewBox="0 0 24 24">
   </symbol> -->
 </svg>
 
 <!-- <svg class="class-icon">
 	<use href="/images/sprites.svg#id-icon"></use>
-</svg> stroke="#70737C" -->
+</svg>  stroke="#70737C" -->

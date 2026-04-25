@@ -39,6 +39,7 @@
 @use "./components/utils/toast.scss";
 @use "./components/checkout/checkout-cart.scss";
 @use "./components/utils/cart-navigator.scss";
+@use "./components/modal-cart-product.scss";
 
 // main
 
@@ -94,3 +95,8 @@
 @use "./pages/contacts/contacts-main.scss";
 @use "./pages/contacts/contacts-content.scss";
 @use "./pages/contacts/contacts-form.scss";
+
+// modals
+
+@use "./components/modals/mobile-filter.scss";
+@use "./components/modals/modal-cart.scss";

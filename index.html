@@ -173,12 +173,33 @@
 				<img class="article-leaves article-leaves_leaf-4-d" src="/images/article/leaf_4-d.png" alt="leaf" />
 				<img class="article-leaves article-leaves_leaf-4-m" src="/images/article/leaf_4-m.png" alt="leaf" />
 			</section>
-
-			<!-- footer (  ) -->
-			<!-- prettier-ignore -->
-			{% from "src/partials/footer.njk" import footer %}
-			{{ footer(  ) }}
 		</main>
+
+		<!-- footer (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/footer.njk" import footer %}
+		{{ footer(  ) }}
+
+		<!-- modal-cart -->
+		<div class="modal-cart" id="modal-cart">
+			<div class="modal-cart__products">
+				<!-- products come from firebse -->
+			</div>
+			<div class="modal-cart__button-block">
+				<button class="modal-cart__clear" id="modal-cart__clear">Clear</button>
+				<div class="modal-cart__proceed">
+					<!-- discover ( classLink, titleLink, pathLink ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/discover.njk" import discover %}
+					{{ discover( "discover_continue", "Proceed to payment", "/seedra/src/pages/cart/index.html" ) }}
+				</div>
+			</div>
+			<button class="modal-cart__close" id="close-modal-cart">
+				<svg class="modal-cart__close-icon">
+					<use href="/images/sprites.svg#close-modal-icon"></use>
+				</svg>
+			</button>
+		</div>
 
 		<script type="module" src="src/js/main.js"></script>
 	</body>

@@ -16,10 +16,10 @@
 			<!-- products-search -->
 			<div class="products-search container">
 				<div class="products-search__search">
-					<!-- search ( classSearch ) -->
+					<!-- search ( classSearch, searchId ) -->
 					<!-- prettier-ignore -->
 					{% from "src/partials/search.njk" import search %}
-          {{ search( "search_banner" ) }}
+          {{ search( "search_banner", "open-mobile-filter" ) }}
 				</div>
 
 				<div class="products-search__dropdown">
@@ -42,24 +42,24 @@
 					<!-- products filter -->
 					<div class="products-content__filters">
 						<h4 class="products-content__filters-title">Filters</h4>
-						<!-- filterDropdown( title, appearance1, appearance2, appearance3, appearance4,
-																	option1, value1, option2, value2, option3, value3, option4, value4 ) -->
+						<!-- filterDropdown( title, classBtn, classContent, appearance1, appearance2, appearance3, appearance4,
+																option1, id1, value1, option2, id2, value2, option3, id3, value3, option4, id4, value4 ) -->
 						<!-- filterDropdownPrice( title ) -->
 						<!-- prettier-ignore -->
 						{% from "src/partials/filters/filter-dropdown.njk" import filterDropdown %}
 						{% from "src/partials/filters/filter-dropdown-price.njk" import filterDropdownPrice %}
 
-						{{ filterDropdown( "Seed type", "", "", "", "", "Hybrid", "hybrid", "Open Pollinated", "pollinated", "Organic Seeds, Plants, and Supplies", "organic", "Pelleted See", "pelleted" ) }}
+						{{ filterDropdown( "Seed type", "", "", "", "", "", "", "Hybrid", "hybrid", "hybrid", "Open Pollinated", "pollinated", "pollinated", "Organic Seeds, Plants, and Supplies", "organic", "organic", "Pelleted See", "pelleted", "pelleted" ) }}
 
-						{{ filterDropdown( "Featured", "", "", "", "", "Pack", "", "Bag", "", "Sack", "", "Barrel", "" ) }}
+						{{ filterDropdown( "Featured", "", "", "", "", "", "", "Pack", "", "", "Bag", "", "", "Sack", "", "", "Barrel", "", "" ) }}
 
 						{{ filterDropdownPrice( "Price" ) }}
 
-						{{ filterDropdown( "Growing Conditions", "", "", "", "checkbox_none", "Slow", "", "Normal", "", "Fast", "" ) }}
+						{{ filterDropdown( "Growing Conditions", "", "", "", "", "", "checkbox_none", "Slow", "", "", "Normal", "", "", "Fast", "", "" ) }}
 
-						{{ filterDropdown( "Use", "", "", "checkbox_none", "checkbox_none", "At home", "", "In garder", "" ) }}
+						{{ filterDropdown( "Use", "", "", "", "", "checkbox_none", "checkbox_none", "At home", "at-home", "at-home", "In garder", "in-garden", "in-garden" ) }}
 
-						{{ filterDropdown( "Additional Characteristic", "", "", "", "checkbox_none", "Sweet", "", "Sour", "", "Bitter", "" ) }}
+						{{ filterDropdown( "Additional Characteristic", "", "", "", "", "", "checkbox_none", "Sweet", "", "", "Sour", "", "", "Bitter", "", "" ) }}
 
 						<!-- price-range -->
 						<div class="price-range" data-min="0" data-max="1000">
@@ -91,12 +91,58 @@
 				</div>
 				<button class="products-content__open">open filters</button>
 			</div>
-
-			<!-- footer (  ) -->
-			<!-- prettier-ignore -->
-			{% from "src/partials/footer.njk" import footer %}
-			{{ footer(  ) }}
 		</main>
+
+		<!-- footer (  ) -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/footer.njk" import footer %}
+		{{ footer(  ) }}
+
+		<!-- modal-mobile-filter -->
+		<div class="mobile-filter" id="mobile-filter">
+			<h4 class="products-content__filters-title">Filters</h4>
+			<!-- filterDropdown( title, classBtn, classContent, appearance1, appearance2, appearance3, appearance4,
+													option1, id1, value1, option2, id2, value2, option3, id3, value3, option4, id4, value4 ) -->
+			<!-- filterDropdownPrice( title ) -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/filters/filter-dropdown.njk" import filterDropdown %}
+			{% from "src/partials/filters/filter-dropdown-price.njk" import filterDropdownPrice %}
+
+			{{ filterDropdown( "Seed type", "filter-dropdown__btn_mobile", "filter-dropdown__content_mobile", "", "", "", "", "Hybrid", "hybrid-mob", "hybrid", "Open Pollinated", "pollinated-mob", "pollinated", "Organic Seeds, Plants, and Supplies", "organic-mob", "organic", "Pelleted See", "pelleted-mob", "pelleted" ) }}
+
+			{{ filterDropdown( "Featured", "filter-dropdown__btn_mobile", "filter-dropdown__content_mobile", "", "", "", "", "Pack", "", "", "Bag", "", "", "Sack", "", "", "Barrel", "", "" ) }}
+
+			{{ filterDropdownPrice( "Price", "filter-dropdown__btn_mobile", "filter-dropdown__content_mobile" ) }}
+
+			{{ filterDropdown( "Growing Conditions", "filter-dropdown__btn_mobile", "filter-dropdown__content_mobile", "", "", "", "checkbox_none", "Slow", "", "", "Normal", "", "", "Fast", "", "" ) }}
+
+			{{ filterDropdown( "Use", "filter-dropdown__btn_mobile", "filter-dropdown__content_mobile", "", "", "checkbox_none", "checkbox_none", "At home", "at-home-mob", "at-home", "In garder", "in-garden-mob", "in-garden" ) }}
+
+			{{ filterDropdown( "Additional Characteristic", "filter-dropdown__btn_mobile", "filter-dropdown__content_mobile", "", "", "", "checkbox_none", "Sweet", "", "", "Sour", "", "", "Bitter", "", "" ) }}
+
+			<span class="triangle-pointer"></span>
+		</div>
+
+		<!-- modal-cart -->
+		<div class="modal-cart" id="modal-cart">
+			<div class="modal-cart__products">
+				<!-- products come from firebse -->
+			</div>
+			<div class="modal-cart__button-block">
+				<button class="modal-cart__clear" id="modal-cart__clear">Clear</button>
+				<div class="modal-cart__proceed">
+					<!-- discover ( classLink, titleLink, pathLink ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/discover.njk" import discover %}
+					{{ discover( "discover_continue", "Proceed to payment", "/seedra/src/pages/cart/index.html" ) }}
+				</div>
+			</div>
+			<button class="modal-cart__close" id="close-modal-cart">
+				<svg class="modal-cart__close-icon">
+					<use href="/images/sprites.svg#close-modal-icon"></use>
+				</svg>
+			</button>
+		</div>
 
 		<script type="module" src="../../js/main.js"></script>
 	</body>

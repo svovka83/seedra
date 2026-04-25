@@ -1,14 +1,14 @@
-{% macro filterDropdownPrice( title ) %}
+{% macro filterDropdownPrice( title, classBtn, classContent ) %}
 	<div class="filter-dropdown">
 
-    <button class="filter-dropdown__btn">
+    <button class="filter-dropdown__btn {{ classBtn }}">
       <span class="filter-dropdown__title">{{ title }}</span>
       <svg class="filter-dropdown__icon">
         <use href="/images/sprites.svg#chevron-icon"></use>
       </svg>
     </button>
 
-    <div class="filter-dropdown__content">
+    <div class="filter-dropdown__content {{ classContent }}">
       <div class="filter-dropdown__inner">
 
        

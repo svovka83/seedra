@@ -6,6 +6,8 @@ import { productSlider } from "./sliders/product-slider.js";
 import { blogSlider } from "./sliders/blog-slider.js";
 import { reviewSlider } from "./sliders/review-slider.js";
 import { priceRange } from "./common/price-range.js";
+import { openMobileFilter } from "./modals/open-mobile-filter.js";
+import { openModalCart } from "./modals/open-modal-cart.js";
 
 // firebase
 
@@ -14,6 +16,11 @@ initFirebase();
 // range
 
 priceRange();
+
+// modals
+
+openMobileFilter();
+openModalCart();
 
 // sliders
 

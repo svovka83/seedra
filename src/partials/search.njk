@@ -1,9 +1,9 @@
-{% macro search ( classSearch ) %}
+{% macro search ( classSearch, searchId ) %}
   <div class="search {{classSearch}}">
     <input class="search__input" type="text" placeholder="Search">
     <svg class="search__icon">
 	    <use xlink:href="/images/sprites.svg#search-icon"></use>
     </svg>
-    <img class="search__img" src="/images/icons/funnel.svg" alt="search icon funnel">
+    <img class="search__img" src="/images/icons/funnel.svg" id="{{ searchId }}" alt="search icon funnel">
   </div>
 {% endmacro %}

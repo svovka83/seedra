@@ -1,5 +1,3 @@
-// it's very important code making on my own - needs to learn and use
-
 import { getDoc, doc, updateDoc } from "firebase/firestore";
 
 export function addShipping(db) {
