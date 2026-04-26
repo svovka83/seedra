@@ -144,6 +144,14 @@
 			}
 		}
 	}
+	&_disabled {
+		opacity: 0.5;
+		user-select: none;
+		cursor: not-allowed;
+		&:hover {
+			background-color: $green_brand;
+		}
+	}
 }
 
 // _view and _blog get together about padding leaft-right

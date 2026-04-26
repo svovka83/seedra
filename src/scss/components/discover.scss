@@ -6,9 +6,9 @@
 	letter-spacing: -3.5%;
 	color: $green_brand;
 	padding: 9px 31px;
+	background-color: $white;
 	border: 2px solid $white;
 	border-radius: 8px;
-	background-color: $white;
 	transition: background-color 0.3s ease, border 0.3s ease;
 	&:hover {
 		border: 2px solid $invisible_green;
@@ -26,8 +26,8 @@
 		background-color: $green_brand;
 		transition: opacity 0.3s ease;
 		&:hover {
-			background-color: $green_brand;
 			opacity: 0.8;
+			background-color: $green_brand;
 		}
 	}
 	&_shopping {
@@ -48,5 +48,10 @@
 			font-size: 14px;
 			padding-block: 8px;
 		}
+	}
+	&_disabled {
+		opacity: 0.5;
+		pointer-events: none;
+		user-select: none;
 	}
 }

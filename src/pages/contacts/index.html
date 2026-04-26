@@ -50,31 +50,31 @@
 				</div>
 
 				<!-- contacts-form -->
-				<form class="contacts-form" action="#!">
+				<form class="contacts-form" action="#!" id="contacts-form">
 					<div class="contacts-form__name">
 						<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
 						<!-- prettier-ignore -->
 						{% from "src/partials/input.njk" import input %}
-						{{ input( "Name", "Your name", "text", "", "") }}
+						{{ input( "Name", "Your name", "text", "", "contacts-name") }}
 					</div>
 					<div class="contacts-form__email">
 						<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
 						<!-- prettier-ignore -->
 						{% from "src/partials/input.njk" import input %}
-						{{ input( "E-mail", "Your email", "text", "", "") }}
+						{{ input( "E-mail", "Your email", "text", "", "contacts-email") }}
 					</div>
 					<div class="contacts-form__message">
 						<!-- textarea( textareaLabel, placeholder, textareaId ) -->
 						<!-- prettier-ignore -->
 						{% from "src/partials/textarea.njk" import textarea %}
-						{{ textarea( "Message", "Your message", "") }}
+						{{ textarea( "Message", "Your message", "contacts-comment") }}
 					</div>
 					<div class="contacts-form__bottom">
 						<div class="contacts-form__bottom-button">
 							<!-- button ( classBtn, titleBtn, iconId ) -->
 							<!-- prettier-ignore -->
 							{% from "src/partials/button.njk" import button %}
-							{{ button( "btn_text", "Send request", "" ) }}
+							{{ button( "btn_text btn_disabled", "Send request", "" ) }}
 						</div>
 
 						<div class="contacts-form__bottom-text">

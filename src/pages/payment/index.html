@@ -40,77 +40,79 @@
 					{% from "src/partials/title.njk" import title %}
 					{{ title( "h3", "Personal info", "title_h3 title_h3-mobile-checkout") }}
 				</div>
-				<div class="payment-info__type">
-					<!-- text ( text, classText ) -->
-					<!-- prettier-ignore -->
-					{% from "src/partials/text.njk" import text %}
-					{{ text( "Card type", "text_regular-14" ) }}
-				</div>
-				<div class="payment-info__cards">
-					<label class="payment-info__cards-block">
-						<input type="radio" name="payment-card" />
-						<div class="payment-info__cards-item">
-							<img
-								class="payment-info__cards-img"
-								src="/public/images/payment/apple.png"
-								alt="payment card" />
-						</div>
-					</label>
-					<label class="payment-info__cards-block">
-						<input type="radio" name="payment-card" />
-						<div class="payment-info__cards-item">
-							<img
-								class="payment-info__cards-img"
-								src="/public/images/payment/visa.png"
-								alt="payment card" />
-						</div>
-					</label>
-					<label class="payment-info__cards-block">
-						<input type="radio" name="payment-card" />
-						<div class="payment-info__cards-item">
-							<img
-								class="payment-info__cards-img"
-								src="/public/images/payment/mastercard.png"
-								alt="payment card" />
-						</div>
-					</label>
-					<label class="payment-info__cards-block">
-						<input type="radio" name="payment-card" />
-						<div class="payment-info__cards-item">
-							<img
-								class="payment-info__cards-img"
-								src="/public/images/payment/paypal.png"
-								alt="payment card" />
-						</div>
-					</label>
-				</div>
-				<div class="payment-info__form">
-					<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
-					<!-- prettier-ignore -->
-					{% from "src/partials/input.njk" import input %}
-					{{ input( "Card number", "0000 0000 0000 0000", "text", "", "") }}
-					{{ input( "Expiring date", "01/01", "text", "", "") }}
-					{{ input( "CCV", "123", "text", "", "") }}
-				</div>
-				<hr class="payment-info__hr" />
-				<!-- it might be a component -->
-				<div class="cart-summary__amount-block">
-					<span class="cart-summary__text">Total amount</span>
-					<p class="cart-summary__amount">
-						$<span id="cart-summary__amount1"><!-- quantity comes from firebse --></span>
-					</p>
-				</div>
-				<button class="payment-info__button">
-					<p class="payment-info__button-amount">
-						$<span id="cart-summary__amount2"><!-- quantity comes from firebse --></span>
-					</p>
-					<span class="payment-info__button-text">Continue</span>
-					<a class="payment-info__button-link" href="/seedra/src/pages/checkout/index.html">
-						<svg class="payment-info__button-icon">
-							<use href="/images/sprites.svg#arrow-back"></use>
-						</svg>
-					</a>
-				</button>
+				<form class="payment-info__payment-form" action="#!" id="payment-form">
+					<div class="payment-info__type">
+						<!-- text ( text, classText ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/text.njk" import text %}
+						{{ text( "Card type", "text_regular-14" ) }}
+					</div>
+					<div class="payment-info__cards">
+						<label class="payment-info__cards-block">
+							<input type="radio" name="payment-card" />
+							<div class="payment-info__cards-item">
+								<img
+									class="payment-info__cards-img"
+									src="/images/payment/apple.png"
+									alt="payment card" />
+							</div>
+						</label>
+						<label class="payment-info__cards-block">
+							<input type="radio" name="payment-card" />
+							<div class="payment-info__cards-item">
+								<img
+									class="payment-info__cards-img"
+									src="/images/payment/visa.png"
+									alt="payment card" />
+							</div>
+						</label>
+						<label class="payment-info__cards-block">
+							<input type="radio" name="payment-card" />
+							<div class="payment-info__cards-item">
+								<img
+									class="payment-info__cards-img"
+									src="/images/payment/mastercard.png"
+									alt="payment card" />
+							</div>
+						</label>
+						<label class="payment-info__cards-block">
+							<input type="radio" name="payment-card" />
+							<div class="payment-info__cards-item">
+								<img
+									class="payment-info__cards-img"
+									src="/images/payment/paypal.png"
+									alt="payment card" />
+							</div>
+						</label>
+					</div>
+					<div class="payment-info__form">
+						<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/input.njk" import input %}
+						{{ input( "Card number", "0000 0000 0000 0000", "text", "", "payment-card") }}
+						{{ input( "Expiring date", "01/01", "text", "", "payment-date") }}
+						{{ input( "CCV", "123", "text", "", "payment-ccv") }}
+					</div>
+					<hr class="payment-info__hr" />
+					<!-- it might be a component -->
+					<div class="cart-summary__amount-block">
+						<span class="cart-summary__text">Total amount</span>
+						<p class="cart-summary__amount">
+							$<span id="cart-summary__amount1"><!-- quantity comes from firebse --></span>
+						</p>
+					</div>
+					<button class="payment-info__button payment-info__button_disabled">
+						<p class="payment-info__button-amount">
+							$<span id="cart-summary__amount2"><!-- quantity comes from firebse --></span>
+						</p>
+						<span class="payment-info__button-text">Continue</span>
+						<a class="payment-info__button-link" href="/seedra/src/pages/checkout/index.html">
+							<svg class="payment-info__button-icon">
+								<use href="/images/sprites.svg#arrow-back"></use>
+							</svg>
+						</a>
+					</button>
+				</form>
 			</section>
 		</main>
 

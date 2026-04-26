@@ -36,44 +36,46 @@
 						</div>
 					</div>
 
-					<div class="checkout-form__title">
-						<!-- title ( heading, title, classTitle ) -->
-						<!-- prettier-ignore -->
-						{% from "src/partials/title.njk" import title %}
-						{{ title( "h3", "Personal info", "title_h3 title_h3-mobile-checkout") }}
-					</div>
+					<form class="checkout-form__form" action="#!" id="checkout-form">
+						<div class="checkout-form__title">
+							<!-- title ( heading, title, classTitle ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/title.njk" import title %}
+							{{ title( "h3", "Personal info", "title_h3 title_h3-mobile-checkout") }}
+						</div>
 
-					<div class="checkout-form__grid">
-						<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
-						<!-- prettier-ignore -->
-						{% from "src/partials/input.njk" import input %}
-						{{ input( "Name", "Your name", "text", "", "") }}
-						{{ input( "Phone number", "Your number", "text", "", "") }}
-					</div>
+						<div class="checkout-form__grid">
+							<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/input.njk" import input %}
+							{{ input( "Name", "Your name", "text", "", "checkout-name") }}
+							{{ input( "Phone number", "Your number", "text", "", "checkout-phone") }}
+						</div>
 
-					<div class="checkout-form__title">
-						<!-- title ( heading, title, classTitle ) -->
-						<!-- prettier-ignore -->
-						{% from "src/partials/title.njk" import title %}
-						{{ title( "h3", "Adress", "title_h3 title_h3-mobile-checkout") }}
-					</div>
+						<div class="checkout-form__title">
+							<!-- title ( heading, title, classTitle ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/title.njk" import title %}
+							{{ title( "h3", "Adress", "title_h3 title_h3-mobile-checkout") }}
+						</div>
 
-					<div class="checkout-form__grid">
-						<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
-						<!-- prettier-ignore -->
-						{% from "src/partials/input.njk" import input %}
-						{{ input( "State", "Name of state", "text", "", "") }}
-						{{ input( "City", "Name of city", "text", "", "") }}
-						{{ input( "Adress", "1901 Thornridge Cir. Shiloh, Hawaii 81063", "text", "", "") }}
-						{{ input( "ZIP code", "ZIP code", "text", "", "") }}
-					</div>
+						<div class="checkout-form__grid">
+							<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/input.njk" import input %}
+							{{ input( "State", "Name of state", "text", "", "checkout-state") }}
+							{{ input( "City", "Name of city", "text", "", "checkout-city") }}
+							{{ input( "Adress", "1901 Thornridge Cir. Shiloh, Hawaii 81063", "text", "", "checkout-address") }}
+							{{ input( "ZIP code", "ZIP code", "text", "", "checkout-zip-code") }}
+						</div>
 
-					<div class="checkout-form__continue">
-						<!-- discover ( classLink, titleLink, pathLink ) -->
-						<!-- prettier-ignore -->
-						{% from "src/partials/discover.njk" import discover %}
-						{{ discover( "discover_continue", "Continue", "/seedra/src/pages/payment/index.html" ) }}
-					</div>
+						<div class="checkout-form__continue">
+							<!-- discover ( classLink, titleLink, pathLink ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/discover.njk" import discover %}
+							{{ discover( "discover_continue discover_disabled", "Continue", "/seedra/src/pages/payment/index.html" ) }}
+						</div>
+					</form>
 				</div>
 
 				<!-- checkout-cart -->

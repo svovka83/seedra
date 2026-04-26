@@ -34,19 +34,15 @@
 	&_error {
 		color: $danger;
 	}
-	&_success {
-		border-bottom: 1px solid green;
-	}
 }
 
 .validation {
+	position: absolute;
+	top: 86px;
 	font-size: 14px;
 	line-height: 178%;
 	letter-spacing: 0%;
 	&_error {
 		color: $danger;
-	}
-	&_success {
-		color: green;
 	}
 }

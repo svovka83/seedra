@@ -9,31 +9,34 @@ import { reviewSlider } from "./sliders/review-slider.js";
 import { priceRange } from "./common/price-range.js";
 import { openMobileFilter } from "./modals/open-mobile-filter.js";
 import { openModalCart } from "./modals/open-modal-cart.js";
+import { contactsValidation } from "./validation/contacts-validation.js";
+import { checkoutValidation } from "./validation/checkout-validation.js";
+import { paymentValidation } from "./validation/payment-validation.js";
 
 // firebase
-
 initFirebase();
 
 // range
-
 priceRange();
 
 // modals
-
 openMobileFilter();
 openModalCart();
+
+// dropdown
 oneProductDropdown();
 
-// sliders
+// validations
+contactsValidation();
+checkoutValidation();
+paymentValidation();
 
+// sliders
 productSlider();
 blogSlider();
 reviewSlider();
 
 // common
-
 initDropdownList();
 showFilterSidebar();
 filterDropdown();
-
-// temporary event is here
