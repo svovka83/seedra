@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Payment</title>
-		<script type="module" crossorigin src="/seedra/assets/main-D751tvzS.js"></script>
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-Bs3t9hbF.css">
+		<script type="module" crossorigin src="/seedra/assets/main-D8WtiC0F.js"></script>
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-DNsu_wzd.css">
 	</head>
 	<body style="display: grid; grid-template-rows: auto 1fr auto">
 		<!-- header (  ) -->
@@ -81,7 +81,7 @@
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
-    <img class="search__img" src="/seedra/images/icons/funnel.svg" alt="search icon funnel">
+    <img class="search__img" src="/seedra/images/icons/funnel.svg" id="" alt="search icon funnel">
   </div>
 
       </div>
@@ -90,19 +90,19 @@
       <div class="header__cart-block">
         <a class="header__cart-block-link" href="#!">
           <svg class="header__cart-block-icon">
-            <use xlink:href="/seedra/images/sprites.svg#heart-icon"></use>
+            <use href="/seedra/images/sprites.svg#heart-icon"></use>
           </svg>
         </a>
-        <a class="header__cart-block-link" href="/seedra/src/pages/cart/index.html">
+        <button class="header__cart-block-link" id="open-modal-cart">
           <svg class="header__cart-block-icon">
-            <use xlink:href="/seedra/images/sprites.svg#cart-icon"></use>
+            <use href="/seedra/images/sprites.svg#cart-icon"></use>
           </svg>
-        </a>
+        </button>
       </div>
 
       <button class="header__burger-menu">
         <svg class="header__burger-menu-icon">
-          <use xlink:href="/seedra/images/sprites.svg#burger-icon"></use>
+          <use href="/seedra/images/sprites.svg#burger-icon"></use>
         </svg>
       </button>
     </div>
@@ -138,50 +138,107 @@
 
 					</div>
 				</div>
-				<div class="payment-info__type">
-					<!-- text ( text, classText ) -->
+				<div class="payment-info__title">
+					<!-- title ( heading, title, classTitle ) -->
 					<!-- prettier-ignore -->
 					
 					
+  <h3 class="title title_h3 title_h3-mobile-checkout">Personal info</h3>
+
+				</div>
+				<form class="payment-info__payment-form" action="#!" id="payment-form">
+					<div class="payment-info__type">
+						<!-- text ( text, classText ) -->
+						<!-- prettier-ignore -->
+						
+						
   <p class="text text_regular-14">Card type</p>
 
-				</div>
-				<div class="payment-info__cards"></div>
-				<div class="payment-info__form">
-					<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
-					<!-- prettier-ignore -->
-					
-					
+					</div>
+					<div class="payment-info__cards">
+						<label class="payment-info__cards-block">
+							<input type="radio" name="payment-card" />
+							<div class="payment-info__cards-item">
+								<img
+									class="payment-info__cards-img"
+									src="/seedra/images/payment/apple.png"
+									alt="payment card" />
+							</div>
+						</label>
+						<label class="payment-info__cards-block">
+							<input type="radio" name="payment-card" />
+							<div class="payment-info__cards-item">
+								<img
+									class="payment-info__cards-img"
+									src="/seedra/images/payment/visa.png"
+									alt="payment card" />
+							</div>
+						</label>
+						<label class="payment-info__cards-block">
+							<input type="radio" name="payment-card" />
+							<div class="payment-info__cards-item">
+								<img
+									class="payment-info__cards-img"
+									src="/seedra/images/payment/mastercard.png"
+									alt="payment card" />
+							</div>
+						</label>
+						<label class="payment-info__cards-block">
+							<input type="radio" name="payment-card" />
+							<div class="payment-info__cards-item">
+								<img
+									class="payment-info__cards-img"
+									src="/seedra/images/payment/paypal.png"
+									alt="payment card" />
+							</div>
+						</label>
+					</div>
+					<div class="payment-info__form">
+						<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
+						<!-- prettier-ignore -->
+						
+						
   <div class="input-block">
-    <label class="label" for="">Card number</label>
-    <input class="input " id="" type="text" placeholder="0000 0000 0000 0000" />
+    <label class="label" for="payment-card">Card number</label>
+    <input class="input " id="payment-card" type="text" placeholder="0000 0000 0000 0000" />
     <p class="validation"></p>
   </div>
 
-					
+						
   <div class="input-block">
-    <label class="label" for="">Expiring date</label>
-    <input class="input " id="" type="text" placeholder="01/01" />
+    <label class="label" for="payment-date">Expiring date</label>
+    <input class="input " id="payment-date" type="text" placeholder="01/01" />
     <p class="validation"></p>
   </div>
 
-					
+						
   <div class="input-block">
-    <label class="label" for="">CCV</label>
-    <input class="input " id="" type="text" placeholder="123" />
+    <label class="label" for="payment-ccv">CCV</label>
+    <input class="input " id="payment-ccv" type="text" placeholder="123" />
     <p class="validation"></p>
   </div>
 
-				</div>
-				<hr class="payment-info__hr" />
-				<!-- it might be a component -->
-				<div class="cart-summary__amount-block">
-					<span class="cart-summary__text">Total amount</span>
-					<p class="cart-summary__amount">
-						$<span id="cart-summary__amount"><!-- quantity comes from firebse --></span>
-					</p>
-				</div>
-				<div class="payment-info__button"></div>
+					</div>
+					<hr class="payment-info__hr" />
+					<!-- it might be a component -->
+					<div class="cart-summary__amount-block">
+						<span class="cart-summary__text">Total amount</span>
+						<p class="cart-summary__amount">
+							$<span id="cart-summary__amount1"><!-- quantity comes from firebse --></span>
+						</p>
+					</div>
+					<button class="payment-info__button payment-info__button_disabled">
+						<p class="payment-info__button-amount">
+							$<span id="cart-summary__amount2"><!-- quantity comes from firebse --></span>
+						</p>
+						<span class="payment-info__button-text">Continue</span>
+						<a class="payment-info__button-link" href="/seedra/src/pages/checkout/index.html">
+							<svg class="payment-info__button-icon">
+								<use href="/seedra/images/sprites.svg#arrow-back"></use>
+							</svg>
+						</a>
+					</button>
+				</form>
 			</section>
 		</main>
 

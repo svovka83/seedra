@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Checkout</title>
-		<script type="module" crossorigin src="/seedra/assets/main-D751tvzS.js"></script>
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-Bs3t9hbF.css">
+		<script type="module" crossorigin src="/seedra/assets/main-D8WtiC0F.js"></script>
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-DNsu_wzd.css">
 	</head>
 	<body style="display: grid; grid-template-rows: auto 1fr auto">
 		<!-- header (  ) -->
@@ -81,7 +81,7 @@
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
-    <img class="search__img" src="/seedra/images/icons/funnel.svg" alt="search icon funnel">
+    <img class="search__img" src="/seedra/images/icons/funnel.svg" id="" alt="search icon funnel">
   </div>
 
       </div>
@@ -90,19 +90,19 @@
       <div class="header__cart-block">
         <a class="header__cart-block-link" href="#!">
           <svg class="header__cart-block-icon">
-            <use xlink:href="/seedra/images/sprites.svg#heart-icon"></use>
+            <use href="/seedra/images/sprites.svg#heart-icon"></use>
           </svg>
         </a>
-        <a class="header__cart-block-link" href="/seedra/src/pages/cart/index.html">
+        <button class="header__cart-block-link" id="open-modal-cart">
           <svg class="header__cart-block-icon">
-            <use xlink:href="/seedra/images/sprites.svg#cart-icon"></use>
+            <use href="/seedra/images/sprites.svg#cart-icon"></use>
           </svg>
-        </a>
+        </button>
       </div>
 
       <button class="header__burger-menu">
         <svg class="header__burger-menu-icon">
-          <use xlink:href="/seedra/images/sprites.svg#burger-icon"></use>
+          <use href="/seedra/images/sprites.svg#burger-icon"></use>
         </svg>
       </button>
     </div>
@@ -140,88 +140,90 @@
 						</div>
 					</div>
 
-					<div class="checkout-form__title">
-						<!-- title ( heading, title, classTitle ) -->
-						<!-- prettier-ignore -->
-						
-						
+					<form class="checkout-form__form" action="#!" id="checkout-form">
+						<div class="checkout-form__title">
+							<!-- title ( heading, title, classTitle ) -->
+							<!-- prettier-ignore -->
+							
+							
   <h3 class="title title_h3 title_h3-mobile-checkout">Personal info</h3>
 
-					</div>
+						</div>
 
-					<div class="checkout-form__grid">
-						<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
-						<!-- prettier-ignore -->
-						
-						
+						<div class="checkout-form__grid">
+							<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
+							<!-- prettier-ignore -->
+							
+							
   <div class="input-block">
-    <label class="label" for="">Name</label>
-    <input class="input " id="" type="text" placeholder="Your name" />
+    <label class="label" for="checkout-name">Name</label>
+    <input class="input " id="checkout-name" type="text" placeholder="Your name" />
     <p class="validation"></p>
   </div>
 
-						
+							
   <div class="input-block">
-    <label class="label" for="">Phone number</label>
-    <input class="input " id="" type="text" placeholder="Your number" />
+    <label class="label" for="checkout-phone">Phone number</label>
+    <input class="input " id="checkout-phone" type="text" placeholder="Your number" />
     <p class="validation"></p>
   </div>
 
-					</div>
+						</div>
 
-					<div class="checkout-form__title">
-						<!-- title ( heading, title, classTitle ) -->
-						<!-- prettier-ignore -->
-						
-						
+						<div class="checkout-form__title">
+							<!-- title ( heading, title, classTitle ) -->
+							<!-- prettier-ignore -->
+							
+							
   <h3 class="title title_h3 title_h3-mobile-checkout">Adress</h3>
 
-					</div>
+						</div>
 
-					<div class="checkout-form__grid">
-						<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
-						<!-- prettier-ignore -->
-						
-						
+						<div class="checkout-form__grid">
+							<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
+							<!-- prettier-ignore -->
+							
+							
   <div class="input-block">
-    <label class="label" for="">State</label>
-    <input class="input " id="" type="text" placeholder="Name of state" />
+    <label class="label" for="checkout-state">State</label>
+    <input class="input " id="checkout-state" type="text" placeholder="Name of state" />
     <p class="validation"></p>
   </div>
 
-						
+							
   <div class="input-block">
-    <label class="label" for="">City</label>
-    <input class="input " id="" type="text" placeholder="Name of city" />
+    <label class="label" for="checkout-city">City</label>
+    <input class="input " id="checkout-city" type="text" placeholder="Name of city" />
     <p class="validation"></p>
   </div>
 
-						
+							
   <div class="input-block">
-    <label class="label" for="">Adress</label>
-    <input class="input " id="" type="text" placeholder="1901 Thornridge Cir. Shiloh, Hawaii 81063" />
+    <label class="label" for="checkout-address">Adress</label>
+    <input class="input " id="checkout-address" type="text" placeholder="1901 Thornridge Cir. Shiloh, Hawaii 81063" />
     <p class="validation"></p>
   </div>
 
-						
+							
   <div class="input-block">
-    <label class="label" for="">ZIP code</label>
-    <input class="input " id="" type="text" placeholder="ZIP code" />
+    <label class="label" for="checkout-zip-code">ZIP code</label>
+    <input class="input " id="checkout-zip-code" type="text" placeholder="ZIP code" />
     <p class="validation"></p>
   </div>
 
-					</div>
+						</div>
 
-					<div class="checkout-form__continue">
-						<!-- discover ( classLink, titleLink, pathLink ) -->
-						<!-- prettier-ignore -->
-						
-						
-  <a class="discover discover_continue" href="/seedra/src/pages/payment/index.html">
+						<div class="checkout-form__continue">
+							<!-- discover ( classLink, titleLink, pathLink ) -->
+							<!-- prettier-ignore -->
+							
+							
+  <a class="discover discover_continue discover_disabled" href="/seedra/src/pages/payment/index.html">
     Continue
   </a>
 
-					</div>
+						</div>
+					</form>
 				</div>
 
 				<!-- checkout-cart -->

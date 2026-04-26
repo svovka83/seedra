@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Seedra</title>
-		<script type="module" crossorigin src="/seedra/assets/main-D751tvzS.js"></script>
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-Bs3t9hbF.css">
+		<script type="module" crossorigin src="/seedra/assets/main-D8WtiC0F.js"></script>
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-DNsu_wzd.css">
 	</head>
 	<body>
 		<!-- header (  ) -->
@@ -81,7 +81,7 @@
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
-    <img class="search__img" src="/seedra/images/icons/funnel.svg" alt="search icon funnel">
+    <img class="search__img" src="/seedra/images/icons/funnel.svg" id="" alt="search icon funnel">
   </div>
 
       </div>
@@ -90,19 +90,19 @@
       <div class="header__cart-block">
         <a class="header__cart-block-link" href="#!">
           <svg class="header__cart-block-icon">
-            <use xlink:href="/seedra/images/sprites.svg#heart-icon"></use>
+            <use href="/seedra/images/sprites.svg#heart-icon"></use>
           </svg>
         </a>
-        <a class="header__cart-block-link" href="/seedra/src/pages/cart/index.html">
+        <button class="header__cart-block-link" id="open-modal-cart">
           <svg class="header__cart-block-icon">
-            <use xlink:href="/seedra/images/sprites.svg#cart-icon"></use>
+            <use href="/seedra/images/sprites.svg#cart-icon"></use>
           </svg>
-        </a>
+        </button>
       </div>
 
       <button class="header__burger-menu">
         <svg class="header__burger-menu-icon">
-          <use xlink:href="/seedra/images/sprites.svg#burger-icon"></use>
+          <use href="/seedra/images/sprites.svg#burger-icon"></use>
         </svg>
       </button>
     </div>
@@ -389,11 +389,12 @@
 				<img class="article-leaves article-leaves_leaf-4-d" src="/seedra/images/article/leaf_4-d.png" alt="leaf" />
 				<img class="article-leaves article-leaves_leaf-4-m" src="/seedra/images/article/leaf_4-m.png" alt="leaf" />
 			</section>
+		</main>
 
-			<!-- footer (  ) -->
-			<!-- prettier-ignore -->
-			
-			
+		<!-- footer (  ) -->
+		<!-- prettier-ignore -->
+		
+		
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
@@ -479,7 +480,31 @@
     </div>
   </footer>
 
-		</main>
+
+		<!-- modal-cart -->
+		<div class="modal-cart" id="modal-cart">
+			<div class="modal-cart__products">
+				<!-- products come from firebse -->
+			</div>
+			<div class="modal-cart__button-block">
+				<button class="modal-cart__clear" id="modal-cart__clear">Clear</button>
+				<div class="modal-cart__proceed">
+					<!-- discover ( classLink, titleLink, pathLink ) -->
+					<!-- prettier-ignore -->
+					
+					
+  <a class="discover discover_continue" href="/seedra/src/pages/cart/index.html">
+    Proceed to payment
+  </a>
+
+				</div>
+			</div>
+			<button class="modal-cart__close" id="close-modal-cart">
+				<svg class="modal-cart__close-icon">
+					<use href="/seedra/images/sprites.svg#close-modal-icon"></use>
+				</svg>
+			</button>
+		</div>
 
 	</body>
 </html>

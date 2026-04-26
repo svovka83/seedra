@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Products</title>
-		<script type="module" crossorigin src="/seedra/assets/main-D751tvzS.js"></script>
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-Bs3t9hbF.css">
+		<script type="module" crossorigin src="/seedra/assets/main-D8WtiC0F.js"></script>
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-DNsu_wzd.css">
 	</head>
 	<body>
 		<!-- header (  ) -->
@@ -81,7 +81,7 @@
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
-    <img class="search__img" src="/seedra/images/icons/funnel.svg" alt="search icon funnel">
+    <img class="search__img" src="/seedra/images/icons/funnel.svg" id="" alt="search icon funnel">
   </div>
 
       </div>
@@ -90,19 +90,19 @@
       <div class="header__cart-block">
         <a class="header__cart-block-link" href="#!">
           <svg class="header__cart-block-icon">
-            <use xlink:href="/seedra/images/sprites.svg#heart-icon"></use>
+            <use href="/seedra/images/sprites.svg#heart-icon"></use>
           </svg>
         </a>
-        <a class="header__cart-block-link" href="/seedra/src/pages/cart/index.html">
+        <button class="header__cart-block-link" id="open-modal-cart">
           <svg class="header__cart-block-icon">
-            <use xlink:href="/seedra/images/sprites.svg#cart-icon"></use>
+            <use href="/seedra/images/sprites.svg#cart-icon"></use>
           </svg>
-        </a>
+        </button>
       </div>
 
       <button class="header__burger-menu">
         <svg class="header__burger-menu-icon">
-          <use xlink:href="/seedra/images/sprites.svg#burger-icon"></use>
+          <use href="/seedra/images/sprites.svg#burger-icon"></use>
         </svg>
       </button>
     </div>
@@ -113,7 +113,7 @@
 			<!-- products-search -->
 			<div class="products-search container">
 				<div class="products-search__search">
-					<!-- search ( classSearch ) -->
+					<!-- search ( classSearch, searchId ) -->
 					<!-- prettier-ignore -->
 					
           
@@ -122,7 +122,7 @@
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
-    <img class="search__img" src="/seedra/images/icons/funnel.svg" alt="search icon funnel">
+    <img class="search__img" src="/seedra/images/icons/funnel.svg" id="open-mobile-filter" alt="search icon funnel">
   </div>
 
 				</div>
@@ -173,12 +173,17 @@
 					<!-- categories-tags getting from firebase -->
 				</div>
 
+				<!-- modal-category -->
+				<div class="products-content__modal" id="modal-category-list">
+					<!-- categories come from firebase -->
+				</div>
+
 				<div class="products-content__grid">
 					<!-- products filter -->
 					<div class="products-content__filters">
 						<h4 class="products-content__filters-title">Filters</h4>
-						<!-- filterDropdown( title, appearance1, appearance2, appearance3, appearance4,
-																	option1, value1, option2, value2, option3, value3, option4, value4 ) -->
+						<!-- filterDropdown( title, classBtn, classContent, appearance1, appearance2, appearance3, appearance4,
+																option1, id1, value1, option2, id2, value2, option3, id3, value3, option4, id4, value4 ) -->
 						<!-- filterDropdownPrice( title ) -->
 						<!-- prettier-ignore -->
 						
@@ -187,17 +192,17 @@
 						
 	<div class="filter-dropdown">
 
-    <button class="filter-dropdown__btn">
+    <button class="filter-dropdown__btn ">
       <span class="filter-dropdown__title">Seed type</span>
       <svg class="filter-dropdown__icon">
         <use href="/seedra/images/sprites.svg#chevron-icon"></use>
       </svg>
     </button>
 
-    <div class="filter-dropdown__content">
+    <div class="filter-dropdown__content ">
       <div class="filter-dropdown__inner">
 
-        <!-- checkbox( title, value ) -->
+        <!-- checkbox( title, id, value, appearance ) -->
 		    
 
         <div class="filter-dropdown__option">
@@ -264,17 +269,17 @@
 						
 	<div class="filter-dropdown">
 
-    <button class="filter-dropdown__btn">
+    <button class="filter-dropdown__btn ">
       <span class="filter-dropdown__title">Featured</span>
       <svg class="filter-dropdown__icon">
         <use href="/seedra/images/sprites.svg#chevron-icon"></use>
       </svg>
     </button>
 
-    <div class="filter-dropdown__content">
+    <div class="filter-dropdown__content ">
       <div class="filter-dropdown__inner">
 
-        <!-- checkbox( title, value ) -->
+        <!-- checkbox( title, id, value, appearance ) -->
 		    
 
         <div class="filter-dropdown__option">
@@ -341,14 +346,14 @@
 						
 	<div class="filter-dropdown">
 
-    <button class="filter-dropdown__btn">
+    <button class="filter-dropdown__btn ">
       <span class="filter-dropdown__title">Price</span>
       <svg class="filter-dropdown__icon">
         <use href="/seedra/images/sprites.svg#chevron-icon"></use>
       </svg>
     </button>
 
-    <div class="filter-dropdown__content">
+    <div class="filter-dropdown__content ">
       <div class="filter-dropdown__inner">
 
        
@@ -362,17 +367,17 @@
 						
 	<div class="filter-dropdown">
 
-    <button class="filter-dropdown__btn">
+    <button class="filter-dropdown__btn ">
       <span class="filter-dropdown__title">Growing Conditions</span>
       <svg class="filter-dropdown__icon">
         <use href="/seedra/images/sprites.svg#chevron-icon"></use>
       </svg>
     </button>
 
-    <div class="filter-dropdown__content">
+    <div class="filter-dropdown__content ">
       <div class="filter-dropdown__inner">
 
-        <!-- checkbox( title, value ) -->
+        <!-- checkbox( title, id, value, appearance ) -->
 		    
 
         <div class="filter-dropdown__option">
@@ -439,23 +444,23 @@
 						
 	<div class="filter-dropdown">
 
-    <button class="filter-dropdown__btn">
+    <button class="filter-dropdown__btn ">
       <span class="filter-dropdown__title">Use</span>
       <svg class="filter-dropdown__icon">
         <use href="/seedra/images/sprites.svg#chevron-icon"></use>
       </svg>
     </button>
 
-    <div class="filter-dropdown__content">
+    <div class="filter-dropdown__content ">
       <div class="filter-dropdown__inner">
 
-        <!-- checkbox( title, value ) -->
+        <!-- checkbox( title, id, value, appearance ) -->
 		    
 
         <div class="filter-dropdown__option">
           
   <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <input type="checkbox" class="checkbox__input" id="at-home" value="at-home" />
     <div class="checkbox__box">
       <svg class="checkbox__icon">
         <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
@@ -469,7 +474,7 @@
         <div class="filter-dropdown__option">
           
   <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <input type="checkbox" class="checkbox__input" id="in-garden" value="in-garden" />
     <div class="checkbox__box">
       <svg class="checkbox__icon">
         <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
@@ -516,17 +521,17 @@
 						
 	<div class="filter-dropdown">
 
-    <button class="filter-dropdown__btn">
+    <button class="filter-dropdown__btn ">
       <span class="filter-dropdown__title">Additional Characteristic</span>
       <svg class="filter-dropdown__icon">
         <use href="/seedra/images/sprites.svg#chevron-icon"></use>
       </svg>
     </button>
 
-    <div class="filter-dropdown__content">
+    <div class="filter-dropdown__content ">
       <div class="filter-dropdown__inner">
 
-        <!-- checkbox( title, value ) -->
+        <!-- checkbox( title, id, value, appearance ) -->
 		    
 
         <div class="filter-dropdown__option">
@@ -620,11 +625,12 @@
 				</div>
 				<button class="products-content__open">open filters</button>
 			</div>
+		</main>
 
-			<!-- footer (  ) -->
-			<!-- prettier-ignore -->
-			
-			
+		<!-- footer (  ) -->
+		<!-- prettier-ignore -->
+		
+		
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
@@ -710,7 +716,450 @@
     </div>
   </footer>
 
-		</main>
+
+		<!-- modal-mobile-filter -->
+		<div class="mobile-filter" id="mobile-filter">
+			<h4 class="products-content__filters-title">Filters</h4>
+			<!-- filterDropdown( title, classBtn, classContent, appearance1, appearance2, appearance3, appearance4,
+													option1, id1, value1, option2, id2, value2, option3, id3, value3, option4, id4, value4 ) -->
+			<!-- filterDropdownPrice( title ) -->
+			<!-- prettier-ignore -->
+			
+			
+
+			
+	<div class="filter-dropdown">
+
+    <button class="filter-dropdown__btn filter-dropdown__btn_mobile">
+      <span class="filter-dropdown__title">Seed type</span>
+      <svg class="filter-dropdown__icon">
+        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
+      </svg>
+    </button>
+
+    <div class="filter-dropdown__content filter-dropdown__content_mobile">
+      <div class="filter-dropdown__inner">
+
+        <!-- checkbox( title, id, value, appearance ) -->
+		    
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="hybrid-mob" value="hybrid" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Hybrid</span>
+  </label>
+
+        </div>
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="pollinated-mob" value="pollinated" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Open Pollinated</span>
+  </label>
+
+        </div>
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="organic-mob" value="organic" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Organic Seeds, Plants, and Supplies</span>
+  </label>
+
+        </div>
+        
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="pelleted-mob" value="pelleted" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Pelleted See</span>
+  </label>
+
+        </div>
+      </div>
+    </div>
+
+	</div>
+
+
+			
+	<div class="filter-dropdown">
+
+    <button class="filter-dropdown__btn filter-dropdown__btn_mobile">
+      <span class="filter-dropdown__title">Featured</span>
+      <svg class="filter-dropdown__icon">
+        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
+      </svg>
+    </button>
+
+    <div class="filter-dropdown__content filter-dropdown__content_mobile">
+      <div class="filter-dropdown__inner">
+
+        <!-- checkbox( title, id, value, appearance ) -->
+		    
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Pack</span>
+  </label>
+
+        </div>
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Bag</span>
+  </label>
+
+        </div>
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Sack</span>
+  </label>
+
+        </div>
+        
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Barrel</span>
+  </label>
+
+        </div>
+      </div>
+    </div>
+
+	</div>
+
+
+			
+	<div class="filter-dropdown">
+
+    <button class="filter-dropdown__btn filter-dropdown__btn_mobile">
+      <span class="filter-dropdown__title">Price</span>
+      <svg class="filter-dropdown__icon">
+        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
+      </svg>
+    </button>
+
+    <div class="filter-dropdown__content filter-dropdown__content_mobile">
+      <div class="filter-dropdown__inner">
+
+       
+
+      </div>
+    </div>
+
+	</div>
+
+
+			
+	<div class="filter-dropdown">
+
+    <button class="filter-dropdown__btn filter-dropdown__btn_mobile">
+      <span class="filter-dropdown__title">Growing Conditions</span>
+      <svg class="filter-dropdown__icon">
+        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
+      </svg>
+    </button>
+
+    <div class="filter-dropdown__content filter-dropdown__content_mobile">
+      <div class="filter-dropdown__inner">
+
+        <!-- checkbox( title, id, value, appearance ) -->
+		    
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Slow</span>
+  </label>
+
+        </div>
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Normal</span>
+  </label>
+
+        </div>
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Fast</span>
+  </label>
+
+        </div>
+        
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox checkbox_none">
+    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text"></span>
+  </label>
+
+        </div>
+      </div>
+    </div>
+
+	</div>
+
+
+			
+	<div class="filter-dropdown">
+
+    <button class="filter-dropdown__btn filter-dropdown__btn_mobile">
+      <span class="filter-dropdown__title">Use</span>
+      <svg class="filter-dropdown__icon">
+        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
+      </svg>
+    </button>
+
+    <div class="filter-dropdown__content filter-dropdown__content_mobile">
+      <div class="filter-dropdown__inner">
+
+        <!-- checkbox( title, id, value, appearance ) -->
+		    
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="at-home-mob" value="at-home" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">At home</span>
+  </label>
+
+        </div>
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="in-garden-mob" value="in-garden" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">In garder</span>
+  </label>
+
+        </div>
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox checkbox_none">
+    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text"></span>
+  </label>
+
+        </div>
+        
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox checkbox_none">
+    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text"></span>
+  </label>
+
+        </div>
+      </div>
+    </div>
+
+	</div>
+
+
+			
+	<div class="filter-dropdown">
+
+    <button class="filter-dropdown__btn filter-dropdown__btn_mobile">
+      <span class="filter-dropdown__title">Additional Characteristic</span>
+      <svg class="filter-dropdown__icon">
+        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
+      </svg>
+    </button>
+
+    <div class="filter-dropdown__content filter-dropdown__content_mobile">
+      <div class="filter-dropdown__inner">
+
+        <!-- checkbox( title, id, value, appearance ) -->
+		    
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Sweet</span>
+  </label>
+
+        </div>
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Sour</span>
+  </label>
+
+        </div>
+
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox ">
+    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text">Bitter</span>
+  </label>
+
+        </div>
+        
+        <div class="filter-dropdown__option">
+          
+  <label class="checkbox checkbox_none">
+    <input type="checkbox" class="checkbox__input" id="" value="" />
+    <div class="checkbox__box">
+      <svg class="checkbox__icon">
+        <use xlink:href="/seedra/images/sprites.svg#checker-icon"></use>
+      </svg>
+    </div>
+    <span class="checkbox__text"></span>
+  </label>
+
+        </div>
+      </div>
+    </div>
+
+	</div>
+
+
+			<span class="triangle-pointer"></span>
+		</div>
+
+		<!-- modal-cart -->
+		<div class="modal-cart" id="modal-cart">
+			<div class="modal-cart__products">
+				<!-- products come from firebse -->
+			</div>
+			<div class="modal-cart__button-block">
+				<button class="modal-cart__clear" id="modal-cart__clear">Clear</button>
+				<div class="modal-cart__proceed">
+					<!-- discover ( classLink, titleLink, pathLink ) -->
+					<!-- prettier-ignore -->
+					
+					
+  <a class="discover discover_continue" href="/seedra/src/pages/cart/index.html">
+    Proceed to payment
+  </a>
+
+				</div>
+			</div>
+			<button class="modal-cart__close" id="close-modal-cart">
+				<svg class="modal-cart__close-icon">
+					<use href="/seedra/images/sprites.svg#close-modal-icon"></use>
+				</svg>
+			</button>
+		</div>
 
 	</body>
 </html>

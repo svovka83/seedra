@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Cart</title>
-		<script type="module" crossorigin src="/seedra/assets/main-D751tvzS.js"></script>
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-Bs3t9hbF.css">
+		<script type="module" crossorigin src="/seedra/assets/main-D8WtiC0F.js"></script>
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-DNsu_wzd.css">
 	</head>
 	<body style="display: grid; grid-template-rows: auto 1fr auto">
 		<!-- header (  ) -->
@@ -81,7 +81,7 @@
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
-    <img class="search__img" src="/seedra/images/icons/funnel.svg" alt="search icon funnel">
+    <img class="search__img" src="/seedra/images/icons/funnel.svg" id="" alt="search icon funnel">
   </div>
 
       </div>
@@ -90,19 +90,19 @@
       <div class="header__cart-block">
         <a class="header__cart-block-link" href="#!">
           <svg class="header__cart-block-icon">
-            <use xlink:href="/seedra/images/sprites.svg#heart-icon"></use>
+            <use href="/seedra/images/sprites.svg#heart-icon"></use>
           </svg>
         </a>
-        <a class="header__cart-block-link" href="/seedra/src/pages/cart/index.html">
+        <button class="header__cart-block-link" id="open-modal-cart">
           <svg class="header__cart-block-icon">
-            <use xlink:href="/seedra/images/sprites.svg#cart-icon"></use>
+            <use href="/seedra/images/sprites.svg#cart-icon"></use>
           </svg>
-        </a>
+        </button>
       </div>
 
       <button class="header__burger-menu">
         <svg class="header__burger-menu-icon">
-          <use xlink:href="/seedra/images/sprites.svg#burger-icon"></use>
+          <use href="/seedra/images/sprites.svg#burger-icon"></use>
         </svg>
       </button>
     </div>
@@ -129,16 +129,20 @@
 						<span class="cart-products__text">items</span>
 					</div>
 				</div>
+
 				<hr class="cart-products__hr" />
+
 				<div class="cart-products__headings">
 					<span class="cart-products__heading1">PRODUCT DETAILS</span>
 					<span class="cart-products__heading2">AMOUNT</span>
 					<span class="cart-products__heading3">PRICE</span>
 					<span class="cart-products__heading4">TOTAL</span>
 				</div>
+
 				<div class="cart-products__products">
 					<!-- products come from firebse -->
 				</div>
+
 				<div class="cart-products__shopping">
 					<!-- discover ( classLink, titleLink, pathLink ) -->
 					<!-- prettier-ignore -->
