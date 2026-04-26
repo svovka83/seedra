@@ -1,0 +1,52 @@
+@use "../../settings/variables.scss" as *;
+
+.one-product-dropdown {
+	width: 100%;
+	padding: 16px 30px;
+	border: 1px solid $light_grey_stroke;
+	border-radius: 8px;
+	&__btn {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		cursor: pointer;
+	}
+	&__title {
+		max-width: 502px;
+		font-size: 16px;
+		line-height: 25px;
+		letter-spacing: -4%;
+		text-align: start;
+	}
+	&__icon {
+		width: 24px;
+		height: 24px;
+		stroke: $text_secondary;
+		fill: $white;
+		pointer-events: none;
+		transition: transform 0.3s ease;
+		&_open {
+			stroke: $green-brand;
+			transform: rotate(180deg);
+		}
+	}
+	&__content {
+		display: grid;
+		grid-template-rows: 0fr; /* 🔥 закрито */
+		transition: grid-template-rows 0.3s ease;
+		will-change: grid-template-rows;
+	}
+	&__inner {
+		overflow: hidden;
+		min-height: 0; // 🔥 КРИТИЧНО
+	}
+	&__text {
+		font-weight: 300;
+		line-height: 28px;
+		margin-bottom: 8px;
+	}
+}
+
+.one-product-dropdown.open .one-product-dropdown__content {
+	grid-template-rows: 1fr; /* 🔥 відкрито */
+}

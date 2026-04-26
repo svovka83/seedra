@@ -14,6 +14,146 @@
 
 		<main class="one-product-main" id="go-to-top">
 			<!-- one-product-breadcrumbs -->
+			<!-- one-product-top -->
+
+			<!-- one-product-information -->
+			<section class="one-product-information container">
+				<div class="one-product-information__title">
+					<!-- title ( heading, title, classTitle ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/title.njk" import title %}
+					{{ title( "h2", "Product information.", "title_h2-weird") }}
+				</div>
+				<hr class="one-product-information__hr" />
+				<div class="one-product-information__content">
+					<ul class="one-product-information__list">
+						<li class="one-product-information__item">
+							EEDRA Cilantro Seeds - contains 300 seeds in 1 Pack and professional instructions created by
+							PhD Helga George
+						</li>
+						<li class="one-product-information__item">
+							Be sure of our quality - the freshest batches of this season. Non-GMO, Heirloom - our seeds
+							were tested and have the best germination ratings. Your easy growing experience is our
+							guarantee
+						</li>
+						<li class="one-product-information__item">
+							Cilantro common culinary uses: salsa, guacamole, pesto, salads, chutney, baked breads, pad
+							thai, pico de gallo, rice, grilled shrimp skewers, falafel, and more
+						</li>
+						<li class="one-product-information__item">
+							Proudly sourced in the USA - our garden seeds are grown, harvested, and packaged in the USA.
+							We support local farmers and are happy to produce this American-made product
+						</li>
+						<li class="one-product-information__item">
+							SEEDRA customer service - please contact us directly through Amazon with any questions or
+							concerns about our products. We care about each customer and do our best to provide you with
+							100% satisfaction
+						</li>
+					</ul>
+					<div class="one-product-information__frame">
+						<div class="one-product-information__frame-block">
+							<dt class="one-product-information__frame-term">Package Dimensions</dt>
+							<dd class="one-product-information__frame-definition">5.51 x 3.5 x 0.35 inches</dd>
+						</div>
+						<hr class="one-product-information__frame-hr" />
+						<div class="one-product-information__frame-block">
+							<dt class="one-product-information__frame-term">Item Weight</dt>
+							<dd class="one-product-information__frame-definition">0.317 ounces</dd>
+						</div>
+						<hr class="one-product-information__frame-hr" />
+						<div class="one-product-information__frame-block">
+							<dt class="one-product-information__frame-term">ASIN</dt>
+							<dd class="one-product-information__frame-definition">B08Z3HN5MP</dd>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- one-product-questions -->
+			<section class="one-product-questions container">
+				<div class="one-product-questions__title">
+					<!-- title ( heading, title, classTitle ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/title.njk" import title %}
+					{{ title( "h2", "Frequently asked questions.", "title_h2-weird") }}
+				</div>
+				<div class="one-product-questions__content">
+					<div class="one-product-questions__dropdowns">
+						<div class="one-product-dropdown">
+							<button class="one-product-dropdown__btn">
+								<span class="one-product-dropdown__title"
+									>For seller: are these seeds organic? it does matter if they are organic, seeds can
+									hold pesticides from the plant they grow from.</span
+								>
+								<svg class="one-product-dropdown__icon">
+									<use href="/images/sprites.svg#chevron-icon"></use>
+								</svg>
+							</button>
+
+							<div class="one-product-dropdown__content">
+								<div class="one-product-dropdown__inner">
+									<p class="one-product-dropdown__text">I have heat mats and artificial light.</p>
+									<p class="one-product-dropdown__text">
+										I planted them in all purpose potting soil. Moist not wet. Placed them on a heat
+										mat. If not available, somewhere where it's 72 degrees. Add natural light, but I
+										used artificial light. Takes 10- 15 days because of there hard shell on the
+										seed.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="one-product-dropdown">
+							<button class="one-product-dropdown__btn">
+								<span class="one-product-dropdown__title"
+									>For seller: are these seeds organic? it does matter if they are organic, seeds can
+									hold pesticides from the plant they grow from.</span
+								>
+								<svg class="one-product-dropdown__icon">
+									<use href="/images/sprites.svg#chevron-icon"></use>
+								</svg>
+							</button>
+
+							<div class="one-product-dropdown__content">
+								<div class="one-product-dropdown__inner">
+									<p class="one-product-dropdown__text">I have heat mats and artificial light.</p>
+									<p class="one-product-dropdown__text">
+										I planted them in all purpose potting soil. Moist not wet. Placed them on a heat
+										mat. If not available, somewhere where it's 72 degrees. Add natural light, but I
+										used artificial light. Takes 10- 15 days because of there hard shell on the
+										seed.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="one-product-questions__form">
+						<div class="one-product-questions__form-title">
+							<!-- title ( heading, title, classTitle ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/title.njk" import title %}
+							{{ title( "h3", "Didn’t find answer?", "title_h3") }}
+						</div>
+						<div class="one-product-questions__form-text">
+							<!-- text ( text, classText ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/text.njk" import text %}
+							{{ text( "Ask your own!", "text_light" ) }}
+						</div>
+						<div class="one-product-questions__form-textarea">
+							<!-- textarea( textareaLabel, placeholder, textareaId, textareaInput ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/textarea.njk" import textarea %}
+							{{ textarea( "", "Type here", "") }}
+						</div>
+						<div class="one-product-questions__form-button">
+							<!-- button ( classBtn, titleBtn, iconId ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/button.njk" import button %}
+							{{ button( "btn_text", "Send", "" ) }}
+						</div>
+					</div>
+				</div>
+			</section>
 		</main>
 
 		<!-- footer (  ) -->

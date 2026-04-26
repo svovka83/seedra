@@ -1,0 +1,26 @@
+@use "../../settings/variables.scss" as *;
+
+.one-product-questions {
+	&__title {
+	}
+	&__content {
+		display: flex;
+		justify-content: space-between;
+		column-gap: 30px;
+	}
+	&__dropdowns {
+		flex-basis: 730px;
+	}
+	&__form {
+		width: 350px;
+		padding: 26px 26px 26px 26px;
+		background-color: $light_green;
+		border-radius: 12px;
+		&-title {
+		}
+		&-text {
+		}
+		&-textarea {
+		}
+	}
+}

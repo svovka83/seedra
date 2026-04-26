@@ -1,6 +1,7 @@
 import { initDropdownList } from "./common/dropdown.js";
 import { showFilterSidebar } from "./common/show-filter-sidebar.js";
 import { filterDropdown } from "./common/filter-dropdown.js";
+import { oneProductDropdown } from "./components/one-product/one-product-dropdown.js";
 import { initFirebase } from "./firebase/db.js";
 import { productSlider } from "./sliders/product-slider.js";
 import { blogSlider } from "./sliders/blog-slider.js";
@@ -21,6 +22,7 @@ priceRange();
 
 openMobileFilter();
 openModalCart();
+oneProductDropdown();
 
 // sliders
 
@@ -33,3 +35,5 @@ reviewSlider();
 initDropdownList();
 showFilterSidebar();
 filterDropdown();
+
+// temporary event is here

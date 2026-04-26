@@ -40,6 +40,7 @@
 @use "./components/checkout/checkout-cart.scss";
 @use "./components/utils/cart-navigator.scss";
 @use "./components/modal-cart-product.scss";
+@use "./components/one-product/one-product-dropdown.scss";
 
 // main
 
@@ -54,6 +55,11 @@
 
 @use "./pages/products/products-search.scss";
 @use "./pages/products/products-content.scss";
+
+// one product
+
+@use "./pages/one-product/one-product-information.scss";
+@use "./pages/one-product/one-product-questions.scss";
 
 // blogs
 

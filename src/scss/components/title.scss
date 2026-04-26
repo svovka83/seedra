@@ -49,6 +49,18 @@
 			letter-spacing: -2%;
 		}
 	}
+	&_h2-weird {
+		font-weight: 600;
+		font-size: 36px;
+		line-height: 54px;
+		letter-spacing: -5%;
+		@media (max-width: 680px) {
+			font-weight: 700;
+			font-size: 18px;
+			line-height: 28px;
+			letter-spacing: -1%;
+		}
+	}
 	&_h3 {
 		font-weight: 600;
 		font-size: 24px;

@@ -1,7 +1,5 @@
 @use "../settings/variables.scss" as *;
 
-// Navigate to Frame 15, Animate instant
-
 .product-card {
 	container-type: inline-size;
 	position: relative;
@@ -11,6 +9,11 @@
 	padding: 26px 26px 22px 26px;
 	border: 2px solid $light_grey_stroke;
 	border-radius: 8px;
+	.product-card__link {
+		position: absolute;
+		inset: 0;
+		z-index: 100;
+	}
 	.product-card__img {
 		border-radius: 12px;
 		margin-bottom: 25px;
@@ -98,7 +101,9 @@
 		}
 	}
 	.product-card__button {
+		position: relative;
 		margin-left: auto;
+		z-index: 200;
 	}
 }
 
