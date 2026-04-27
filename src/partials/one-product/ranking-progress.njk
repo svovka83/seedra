@@ -1,0 +1,17 @@
+{% macro rankingProgress ( rankingNumber, rankingImgPath, rankingQuantity ) %}
+  <div class="ranking-progress">
+
+    <span class="ranking-progress__number">{{ rankingNumber }}</span>
+
+    <svg class="ranking-progress__star">
+      <use xlink:href="/images/sprites.svg#star-full-icon"></use>
+    </svg>
+
+    <div class="ranking-progress__line-gray">
+      <img class="ranking-progress__line-yellow" src="/images/ranking-progress/{{ rankingImgPath }}" alt="ranking postgress" />
+    </div>
+
+    <span class="ranking-progress__quantity">{{ rankingQuantity }}</span>
+
+  </div>
+{% endmacro %}

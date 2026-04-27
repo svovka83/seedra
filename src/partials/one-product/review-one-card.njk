@@ -1,0 +1,52 @@
+{% macro oneReviewCard( name, data, content, size, packs, blockImg ) %}
+  <div class="review-one-card">
+    <div class="review-one-card__top">
+      <img class="review-one-card__top-img" src="/images/avatars/avatar_1.png" alt="avatar" />
+
+      <div class="review-one-card__top-title-block">
+        <!-- text ( text, classText ) -->
+        {% from "src/partials/text.njk" import text %}
+
+        {{ text( name, "text_medium-18" ) }}
+
+        {{ text( data, "text_regular-14" ) }}
+      </div>
+
+      <div class="review-one-card__top-ranking">
+      	<!-- ranking ( classIcon ) -->
+				{% from "src/partials/ranking.njk" import ranking %}
+				{{ ranking( "ranking__icon-star_review" ) }}					
+      </div>
+    </div>
+
+    <div class="review-one-card__content">
+      <!-- text ( text, classText ) -->
+      {% from "src/partials/text.njk" import text %}
+      {{ text( content, "text_light" ) }}
+    </div>
+
+    <div class="review-one-card__img-block {{ blockImg }}">
+      <img class="review-one-card__img-block-img" src="/images/one-product/one-product.jpg" alt="rc" />
+      <img class="review-one-card__img-block-img" src="/images/one-product/one-product.jpg" alt="rc" />
+    </div>
+
+    <hr class="review-one-card__hr" />
+
+    <div class="review-one-card__bottom">
+      <span class="review-one-card__bottom-size">
+        {{ text( size, "text_regular-14" ) }}
+      </span>
+
+      <span class="review-one-card__bottom-pack">
+        {{ text( packs, "text_medium-16 text_medium-16-primary" ) }}
+      </span>
+
+      <button class="review-one-card__bottom-button">
+        <svg class="review-one-card__bottom-button-icon">
+	        <use href="/images/sprites.svg#checked-icon"></use>
+        </svg>
+        <span class="review-one-card__bottom-button-text">VERIFIED</span>
+      <button/>
+    </div>
+  </div>
+{% endmacro %}

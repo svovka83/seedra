@@ -2,7 +2,11 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 import { getCategories } from "./services/get-categories";
-import { getProductStaticCards, getProductSliderCards } from "./services/get-products-main";
+import {
+	getProductStaticCards,
+	getProductStaticCardsOnePage,
+	getProductSliderCards,
+} from "./services/get-products-main";
 import { getProducts } from "./services/products/get-products";
 import { productFiltration } from "./services/products/product-filtration";
 import { productFiltrationMob } from "./services/products/product-filtration-mob";
@@ -47,6 +51,7 @@ export async function initFirebase() {
 	getCategories(db);
 
 	getProductStaticCards(db);
+	getProductStaticCardsOnePage(db);
 	getProductSliderCards(db);
 	getProducts(db);
 	productFiltration(db);

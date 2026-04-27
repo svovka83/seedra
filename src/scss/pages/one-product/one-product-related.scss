@@ -1,0 +1,14 @@
+@use "../../settings/variables.scss" as *;
+
+.one-product-related {
+	margin-bottom: 32px;
+	@media (max-width: 768px) {
+		margin-bottom: 7px;
+	}
+	&__title {
+		margin-bottom: 40px;
+		@media (max-width: 768px) {
+			margin-bottom: 21px;
+		}
+	}
+}

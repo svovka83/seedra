@@ -1,11 +1,36 @@
 import { onSnapshot, collection, query, limit } from "firebase/firestore";
 import { productCard } from "../../components/product/product-card";
 
+// main page
 export async function getProductStaticCards(db) {
 	const productList = document.querySelector(".our-products__product-cards-static");
 	if (!productList) return;
 
 	const q = query(collection(db, "products"), limit(6));
+
+	onSnapshot(q, (snapshot) => {
+		let html = "";
+
+		snapshot.forEach((product) => {
+			html += productCard(
+				product.id,
+				product.data().checked,
+				product.data().name,
+				product.data().price,
+				product.data().imageUrl,
+				product.data().isFire
+			);
+		});
+
+		productList.innerHTML = html;
+	});
+}
+// one product page
+export async function getProductStaticCardsOnePage(db) {
+	const productList = document.querySelector(".our-products__product-cards-static.one-product-related");
+	if (!productList) return;
+
+	const q = query(collection(db, "products"), limit(3));
 
 	onSnapshot(q, (snapshot) => {
 		let html = "";

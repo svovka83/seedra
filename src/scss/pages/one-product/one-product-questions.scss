@@ -1,26 +1,66 @@
 @use "../../settings/variables.scss" as *;
 
 .one-product-questions {
+	margin-bottom: 87px;
+	@media (max-width: 680px) {
+		margin-bottom: 24px;
+	}
 	&__title {
+		margin-bottom: 20px;
 	}
 	&__content {
 		display: flex;
 		justify-content: space-between;
 		column-gap: 30px;
+		@media (max-width: 1024px) {
+			flex-direction: column;
+			row-gap: 24px;
+		}
 	}
 	&__dropdowns {
 		flex-basis: 730px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 10px;
+		@media (max-width: 1024px) {
+			flex-basis: unset;
+		}
 	}
 	&__form {
-		width: 350px;
-		padding: 26px 26px 26px 26px;
+		position: relative;
+		overflow: hidden;
+		min-width: 350px;
+		height: 438px;
+		padding: 138px 26px 26px 26px;
 		background-color: $light_green;
 		border-radius: 12px;
 		&-title {
+			margin-bottom: 5px;
 		}
 		&-text {
+			margin-bottom: 17px;
 		}
 		&-textarea {
+			margin-bottom: 8px;
 		}
+	}
+}
+
+.question-leaves {
+	position: absolute;
+	&_leaf-1 {
+		top: -47px;
+		left: 76px;
+		transform: rotate(171deg) scale(0.8);
+	}
+	&_leaf-2 {
+		top: -54px;
+		left: -71px;
+		transform: rotate(144deg) scale(0.6);
+	}
+	&_leaf-4 {
+		top: -11px;
+		right: -48px;
+		transform: rotate(236deg) scale(0.7);
 	}
 }

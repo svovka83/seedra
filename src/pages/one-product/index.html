@@ -15,6 +15,7 @@
 		<main class="one-product-main" id="go-to-top">
 			<!-- one-product-breadcrumbs -->
 			<!-- one-product-top -->
+			<section class="one-product-top container"></section>
 
 			<!-- one-product-information -->
 			<section class="one-product-information container">
@@ -85,13 +86,14 @@
 									>For seller: are these seeds organic? it does matter if they are organic, seeds can
 									hold pesticides from the plant they grow from.</span
 								>
-								<svg class="one-product-dropdown__icon">
-									<use href="/images/sprites.svg#chevron-icon"></use>
-								</svg>
+
+								<span class="one-product-dropdown__icon1 one-product-dropdown__desktop"></span>
+								<span class="one-product-dropdown__icon2 one-product-dropdown__desktop"></span>
 							</button>
 
 							<div class="one-product-dropdown__content">
 								<div class="one-product-dropdown__inner">
+									<hr class="one-product-dropdown__hr" />
 									<p class="one-product-dropdown__text">I have heat mats and artificial light.</p>
 									<p class="one-product-dropdown__text">
 										I planted them in all purpose potting soil. Moist not wet. Placed them on a heat
@@ -100,21 +102,48 @@
 										seed.
 									</p>
 								</div>
+
+								<span class="one-product-dropdown__icon3 one-product-dropdown__mobile"></span>
+								<span class="one-product-dropdown__icon4 one-product-dropdown__mobile"></span>
+							</div>
+						</div>
+						<div class="one-product-dropdown">
+							<button class="one-product-dropdown__btn">
+								<span class="one-product-dropdown__title">Can they be grown on hydroponic systems</span>
+
+								<span class="one-product-dropdown__icon1 one-product-dropdown__desktop"></span>
+								<span class="one-product-dropdown__icon2 one-product-dropdown__desktop"></span>
+							</button>
+
+							<div class="one-product-dropdown__content">
+								<div class="one-product-dropdown__inner">
+									<hr class="one-product-dropdown__hr" />
+									<p class="one-product-dropdown__text">I have heat mats and artificial light.</p>
+									<p class="one-product-dropdown__text">
+										I planted them in all purpose potting soil. Moist not wet. Placed them on a heat
+										mat. If not available, somewhere where it's 72 degrees. Add natural light, but I
+										used artificial light. Takes 10- 15 days because of there hard shell on the
+										seed.
+									</p>
+								</div>
+
+								<span class="one-product-dropdown__icon3 one-product-dropdown__mobile"></span>
+								<span class="one-product-dropdown__icon4 one-product-dropdown__mobile"></span>
 							</div>
 						</div>
 						<div class="one-product-dropdown">
 							<button class="one-product-dropdown__btn">
 								<span class="one-product-dropdown__title"
-									>For seller: are these seeds organic? it does matter if they are organic, seeds can
-									hold pesticides from the plant they grow from.</span
+									>They did not germinate even when i followed directions. What should i do?</span
 								>
-								<svg class="one-product-dropdown__icon">
-									<use href="/images/sprites.svg#chevron-icon"></use>
-								</svg>
+
+								<span class="one-product-dropdown__icon1 one-product-dropdown__desktop"></span>
+								<span class="one-product-dropdown__icon2 one-product-dropdown__desktop"></span>
 							</button>
 
 							<div class="one-product-dropdown__content">
 								<div class="one-product-dropdown__inner">
+									<hr class="one-product-dropdown__hr" />
 									<p class="one-product-dropdown__text">I have heat mats and artificial light.</p>
 									<p class="one-product-dropdown__text">
 										I planted them in all purpose potting soil. Moist not wet. Placed them on a heat
@@ -123,9 +152,13 @@
 										seed.
 									</p>
 								</div>
+
+								<span class="one-product-dropdown__icon3 one-product-dropdown__mobile"></span>
+								<span class="one-product-dropdown__icon4 one-product-dropdown__mobile"></span>
 							</div>
 						</div>
 					</div>
+
 					<div class="one-product-questions__form">
 						<div class="one-product-questions__form-title">
 							<!-- title ( heading, title, classTitle ) -->
@@ -152,10 +185,114 @@
 							{{ button( "btn_text", "Send", "" ) }}
 						</div>
 
-						<!-- <img class="question__leaves question__leaves_leaf-1" src="/images/top/leaf_1.png" alt="leaf" />
-						<img class="question__leaves question__leaves_leaf-2" src="/images/top/leaf_2.png" alt="leaf" />
-						<img class="question__leaves question__leaves_leaf-3" src="/images/top/leaf_3.png" alt="leaf" />
-						<img class="question__leaves question__leaves_leaf-4" src="/images/top/leaf_4.png" alt="leaf" /> -->
+						<img class="question-leaves question-leaves_leaf-1" src="/images/top/leaf_1.png" alt="leaf" />
+						<img class="question-leaves question-leaves_leaf-2" src="/images/top/leaf_2.png" alt="leaf" />
+						<img class="question-leaves question-leaves_leaf-4" src="/images/top/leaf_4.png" alt="leaf" />
+					</div>
+				</div>
+			</section>
+
+			<!-- one-product-reviews -->
+			<section class="one-product-reviews container">
+				<div class="one-product-reviews__title-block">
+					<!-- title ( heading, title, classTitle ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/title.njk" import title %}
+					{{ title( "h2", "Customer reviews.", "title_h2-weird") }}
+
+					<!-- button ( classBtn, titleBtn, iconId ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/button.njk" import button %}
+					{{ button( "btn_view", "Make review", "" ) }}
+				</div>
+
+				<div class="one-product-reviews__content">
+					<div class="one-product-reviews__info">
+						<div class="ranking-block">
+							<div class="ranking-block__top">
+								<span class="ranking-block__top-ranking">4,1</span>
+								<div class="ranking-block__top-stars-block">
+									<p class="ranking-block__top-reviews">124 reviews</p>
+									<div class="ranking-block__top-stars">
+										<!-- ranking ( classIcon ) -->
+										<!-- prettier-ignore -->
+										{% from "src/partials/ranking.njk" import ranking %}
+										{{ ranking( "" ) }}
+									</div>
+								</div>
+							</div>
+
+							<hr class="ranking-block__hr" />
+
+							<div class="ranking-block__bottom">
+								<!-- rankingProgress ( rankingNumber, rankingImgPath, rankingQuantity ) -->
+								<!-- prettier-ignore -->
+								{% from "src/partials/one-product/ranking-progress.njk" import rankingProgress %}
+								{{ rankingProgress( "5", "line_5.png", "81" ) }}
+								{{ rankingProgress( "4", "line_4.png", "45" ) }}
+								{{ rankingProgress( "3", "line_3.png", "32" ) }}
+								{{ rankingProgress( "2", "line_2.png", "1" ) }}
+								{{ rankingProgress( "1", "line_1.png", "1" ) }}
+							</div>
+						</div>
+						<div class="photo-block">
+							<div class="photo-block__top">
+								<div class="photo-block__top-title-block">
+									<p class="photo-block__top-reviews">124 reviews</p>
+									<h4 class="photo-block__top-title">Photo&Video review</h4>
+								</div>
+								<button class="photo-block__top-view">View</button>
+							</div>
+							<div class="photo-block__grid-img">
+								<img class="photo-block__img" src="/images/one-product/one-product.jpg" alt="review" />
+								<img class="photo-block__img" src="/images/one-product/one-product.jpg" alt="review" />
+								<img class="photo-block__img" src="/images/one-product/one-product.jpg" alt="review" />
+								<img class="photo-block__img" src="/images/one-product/one-product.jpg" alt="review" />
+							</div>
+						</div>
+					</div>
+
+					<div class="one-product-reviews__users">
+						<!-- oneReviewCard ( name, data, content, size, blockImg ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/one-product/review-one-card.njk" import oneReviewCard %}
+						{{ oneReviewCard( "Carla Samantoes-Diego",
+						"Reviewed in the United States on June 18, 2021",
+						"SEEDRA Spinach Seeds - contains 600 seeds in 2 Packs and professional instructions created by PhD Helga George
+						Be sure of our quality - the freshest batches of this season. Non-GMO, Heirloom - our seeds were tested and have the best germination ratings.",
+						"Size",
+						"2 PACK",
+						"review-one-card__img-block_none"
+						) }}
+
+						{{ oneReviewCard( "Carla Samantoes-Diego",
+						"Reviewed in the United States on June 18, 2021",
+						"Eine sehr aromatische Sorte, wollte die Himbeere gerade noch einmal bestellen, derzeit nicht verfügbar. So süße Früchte und das jetzt im Oktober, unglaublich",
+						"Size",
+						"2 PACK",
+						""
+						) }}
+					</div>
+				</div>
+			</section>
+
+			<!-- one-product-related -->
+			<section class="one-product-related container">
+				<div class="one-product-related__title">
+					<!-- title ( heading, title, classTitle ) -->
+					<!-- prettier-ignore -->
+					{% from "src/partials/title.njk" import title %}
+					{{ title( "h2", "Related products.", "title_h2-weird") }}
+				</div>
+
+				<div class="our-products__product-cards">
+					<div class="our-products__product-cards-static one-product-related">
+						<!-- our-products__product-cards getting from firebase -->
+					</div>
+					<div class="our-products__product-cards-slider">
+						<div class="swiper-wrapper our-products__wrapper">
+							<!-- our-products__product-cards getting from firebase -->
+						</div>
 					</div>
 				</div>
 			</section>

@@ -1,0 +1,28 @@
+@use "../../settings/variables.scss" as *;
+
+.ranking-progress {
+	display: flex;
+	align-items: center;
+	&__number {
+		font-size: 14px;
+		color: $text_secondary;
+		margin-right: 4px;
+	}
+	&__star {
+		width: 16px;
+		height: 16px;
+		fill: $yellow;
+		margin-right: 12px;
+	}
+	&__line-gray {
+		width: 173px;
+		height: 9px;
+		background-color: $light_grey_stroke;
+		border-radius: 5px;
+		margin-right: 9px;
+	}
+	&__quantity {
+		font-size: 14px;
+		color: $text_secondary;
+	}
+}

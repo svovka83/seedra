@@ -41,6 +41,8 @@
 @use "./components/utils/cart-navigator.scss";
 @use "./components/modal-cart-product.scss";
 @use "./components/one-product/one-product-dropdown.scss";
+@use "./components/one-product/ranking-progress.scss";
+@use "./components/one-product/review-one-card.scss";
 
 // main
 
@@ -60,6 +62,8 @@
 
 @use "./pages/one-product/one-product-information.scss";
 @use "./pages/one-product/one-product-questions.scss";
+@use "./pages/one-product/one-product-reviews.scss";
+@use "./pages/one-product/one-product-related.scss";
 
 // blogs
 

@@ -1,0 +1,100 @@
+@use "../../settings/variables.scss" as *;
+
+.review-one-card {
+	max-width: 730px;
+	padding: 34px 43px 28px 33px;
+	border: 1px solid $light_grey_stroke;
+	border-radius: 12px;
+	@media (max-width: 768px) {
+		padding: 18px 12px 21px 21px;
+		display: flex;
+		flex-direction: column;
+	}
+	&__top {
+		display: flex;
+		align-items: center;
+		margin-bottom: 27px;
+		@media (max-width: 1024px) {
+			flex-wrap: wrap;
+			row-gap: 23px;
+			margin-bottom: 9px;
+		}
+		&-img {
+			@media (max-width: 768px) {
+				width: 40px;
+				height: 40px;
+			}
+		}
+		&-title-block {
+			margin-left: 24px;
+			margin-right: auto;
+			@media (max-width: 1024px) {
+				max-width: 202px;
+				margin-left: 17px;
+			}
+		}
+		&-ranking {
+			translate: 0 4px;
+		}
+	}
+	&__content {
+		margin-bottom: 13px;
+	}
+	&__img-block {
+		display: flex;
+		column-gap: 7px;
+		margin-bottom: 25px;
+		@media (max-width: 768px) {
+			display: none;
+		}
+		&-img {
+			width: 106px;
+			height: 106px;
+			border-radius: 4px;
+		}
+		&_none {
+			display: none;
+		}
+	}
+	&__hr {
+		border: 1px solid $light_grey_stroke;
+		margin-top: 20px;
+		margin-bottom: 18px;
+		@media (max-width: 768px) {
+			margin-top: auto;
+		}
+	}
+	&__bottom {
+		display: flex;
+		align-items: center;
+		&-size {
+			margin-right: 10px;
+		}
+		&-pack {
+			margin-right: 36px;
+			@media (max-width: 768px) {
+				width: 54px;
+				margin-right: 23px;
+				margin-bottom: 8px;
+			}
+		}
+		&-button {
+			display: flex;
+			justify-content: center;
+			column-gap: 9px;
+			padding: 6px 25px 6px 18px;
+			background-color: $invisible_green;
+			border-radius: 20px;
+			&-icon {
+				width: 24px;
+				height: 24px;
+				fill: $invisible_green;
+				stroke: $color_primary;
+			}
+			&-text {
+				font-size: 14px;
+				color: $color_primary;
+			}
+		}
+	}
+}
