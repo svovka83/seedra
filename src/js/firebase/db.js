@@ -11,6 +11,9 @@ import { getProducts } from "./services/products/get-products";
 import { productFiltration } from "./services/products/product-filtration";
 import { productFiltrationMob } from "./services/products/product-filtration-mob";
 
+import { getProductImage } from "./services/one-product/get-product-img";
+import { getProductTitle } from "./services/one-product/get-product-title";
+
 import { getBlogStaticCards, getBlogSliderCards } from "./services/get-blogs";
 import { getFilterBlogs } from "./services/get-filter-blogs";
 import { getReviewCards } from "./services/get-reviews";
@@ -56,6 +59,9 @@ export async function initFirebase() {
 	getProducts(db);
 	productFiltration(db);
 	productFiltrationMob(db);
+
+	getProductImage(db);
+	getProductTitle(db);
 
 	getBlogStaticCards(db);
 	getBlogSliderCards(db);

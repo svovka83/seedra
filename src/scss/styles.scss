@@ -60,6 +60,8 @@
 
 // one product
 
+@use "./pages/one-product/one-product-breadcrumbs.scss";
+@use "./pages/one-product/one-product-top.scss";
 @use "./pages/one-product/one-product-information.scss";
 @use "./pages/one-product/one-product-questions.scss";
 @use "./pages/one-product/one-product-reviews.scss";
