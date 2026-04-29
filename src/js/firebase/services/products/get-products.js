@@ -7,7 +7,7 @@ export async function getProducts(
 	selectedTypes = [],
 	selectedUses = [],
 	oneProductId = "",
-	viewAllProducts = ""
+	categoryId = ""
 ) {
 	const productList = document.querySelector(".products-content__products");
 	if (!productList) return;
@@ -33,8 +33,8 @@ export async function getProducts(
 	}
 
 	// sort by view all products
-	if (viewAllProducts) {
-		constraints.push(where("category", "==", viewAllProducts));
+	if (categoryId) {
+		constraints.push(where("categoryId", "==", categoryId));
 	}
 
 	const q = query(collection(db, "products"), ...constraints);

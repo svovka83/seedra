@@ -54,7 +54,38 @@
 				</div>
 
 				<!-- one-product-top-content -->
-				<div class="one-product-top-content"></div>
+				<div class="one-product-top-content">
+					<div class="one-product-top-content__top">
+						<span class="one-product-top-content__top-size">Size</span>
+						<span class="one-product-top-content__top-quantity">
+							<!-- product quantity comes from firebase -->
+						</span>
+						<span class="one-product-top-content__top-pack">PACK</span>
+						<span class="one-product-top-content__top-counter">
+							<!-- function counter component -->
+						</span>
+					</div>
+
+					<div class="one-product-top-content__packs">
+						<!-- packs come from firebase -->
+					</div>
+
+					<div class="one-product-top-content__bottom">
+						<div class="one-product-top-content__bottom-discount-block">
+							<p class="one-product-top-content__bottom-discount">$15.56</p>
+							<p class="one-product-top-content__bottom-price">$12.56</p>
+						</div>
+						<svg class="one-product-top-content__bottom-heart">
+							<use href="/images/sprites.svg#heart-icon"></use>
+						</svg>
+						<div class="one-product-top-content__bottom-button-add">
+							<!-- button ( classBtn, titleBtn, iconId ) -->
+							<!-- prettier-ignore -->
+							{% from "src/partials/button.njk" import button %}
+							{{ button( "btn_text", "Add to cart", "" ) }}
+						</div>
+					</div>
+				</div>
 			</section>
 
 			<!-- one-product-information -->
@@ -342,6 +373,7 @@
 		<!-- prettier-ignore -->
 		{% from "src/partials/footer.njk" import footer %}
 		{{ footer(  ) }}
+
 		<script type="module" src="../../js/main.js"></script>
 	</body>
 </html>

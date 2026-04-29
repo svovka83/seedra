@@ -128,12 +128,12 @@ export function productFiltration(db) {
 		const allProducts = e.target.closest(".modal-category__view-all");
 		if (!allProducts) return;
 
-		const viewAllProducts = allProducts.querySelector(".modal-category__view-all-text").textContent;
+		const categoryId = allProducts.querySelector(".modal-category__view-all-text").id;
 
 		const modalWindow = document.getElementById("modal-category-list");
 		if (!modalWindow) return;
 
-		getProducts(db, currentSortOrder, selectedTypes, selectedUses, "", viewAllProducts);
+		getProducts(db, currentSortOrder, selectedTypes, selectedUses, "", categoryId);
 		modalWindow.classList.remove("products-content__modal_open");
 	});
 }

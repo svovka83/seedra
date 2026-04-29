@@ -13,6 +13,10 @@ import { productFiltrationMob } from "./services/products/product-filtration-mob
 
 import { getProductImage } from "./services/one-product/get-product-img";
 import { getProductTitle } from "./services/one-product/get-product-title";
+import { getProductCategory } from "./services/one-product/get-product-category";
+import { getProductQuantity } from "./services/one-product/get-product-quantity";
+import { initCounterBlock } from "./services/one-product/counter-block";
+import { getProductPacks } from "./services/one-product/get-one-product-packs";
 
 import { getBlogStaticCards, getBlogSliderCards } from "./services/get-blogs";
 import { getFilterBlogs } from "./services/get-filter-blogs";
@@ -62,6 +66,10 @@ export async function initFirebase() {
 
 	getProductImage(db);
 	getProductTitle(db);
+	getProductCategory(db);
+	getProductQuantity(db);
+	initCounterBlock(db);
+	getProductPacks(db);
 
 	getBlogStaticCards(db);
 	getBlogSliderCards(db);

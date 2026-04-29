@@ -1,4 +1,4 @@
-import { collection, doc, getDoc, query, limit } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 
 import { title } from "../../../components/title";
 

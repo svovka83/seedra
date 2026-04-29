@@ -14,7 +14,7 @@ export async function getModalCategoryList(db, categoryId) {
 	if (categoryName === "all") {
 		q = query(collection(db, "products"));
 	} else {
-		q = query(collection(db, "products"), where("category", "==", categoryName));
+		q = query(collection(db, "products"), where("categoryId", "==", categoryId));
 	}
 
 	const products = await getDocs(q);
@@ -22,5 +22,5 @@ export async function getModalCategoryList(db, categoryId) {
 	modalCategoryList.innerHTML = "";
 
 	modalCategoryList.innerHTML += `<span class="products-content__modal-triangle-pointer"></span>`;
-	modalCategoryList.innerHTML += modalCategory(category.data().name, products);
+	modalCategoryList.innerHTML += modalCategory(category.id, category.data().name, products);
 }
