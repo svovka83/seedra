@@ -13,6 +13,11 @@
     {{ header(  ) }}
 
 		<main class="products-main" id="go-to-top">
+			<!-- burgerMenu() -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/modals/burger-menu.njk" import burgerMenu %}
+			{{ burgerMenu() }}
+
 			<!-- products-search -->
 			<div class="products-search container">
 				<div class="products-search__search">
@@ -103,11 +108,16 @@
 		{% from "src/partials/footer.njk" import footer %}
 		{{ footer(  ) }}
 
+		<!-- modalCart() -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/modals/modal-cart.njk" import modalCart %}
+    {{ modalCart() }}
+
 		<!-- modal-mobile-filter -->
 		<div class="mobile-filter" id="mobile-filter">
 			<h4 class="products-content__filters-title">Filters</h4>
 			<!-- filterDropdown( title, classBtn, classContent, appearance1, appearance2, appearance3, appearance4,
-													option1, id1, value1, option2, id2, value2, option3, id3, value3, option4, id4, value4 ) -->
+															option1, id1, value1, option2, id2, value2, option3, id3, value3, option4, id4, value4 ) -->
 			<!-- filterDropdownPrice( title ) -->
 			<!-- prettier-ignore -->
 			{% from "src/partials/filters/filter-dropdown.njk" import filterDropdown %}
@@ -126,27 +136,6 @@
 			{{ filterDropdown( "Additional Characteristic", "filter-dropdown__btn_mobile", "filter-dropdown__content_mobile", "", "", "", "checkbox_none", "Sweet", "", "", "Sour", "", "", "Bitter", "", "" ) }}
 
 			<span class="triangle-pointer"></span>
-		</div>
-
-		<!-- modal-cart -->
-		<div class="modal-cart" id="modal-cart">
-			<div class="modal-cart__products">
-				<!-- products come from firebse -->
-			</div>
-			<div class="modal-cart__button-block">
-				<button class="modal-cart__clear" id="modal-cart__clear">Clear</button>
-				<div class="modal-cart__proceed">
-					<!-- discover ( classLink, titleLink, pathLink ) -->
-					<!-- prettier-ignore -->
-					{% from "src/partials/discover.njk" import discover %}
-					{{ discover( "discover_continue", "Proceed to payment", "/seedra/src/pages/cart/index.html" ) }}
-				</div>
-			</div>
-			<button class="modal-cart__close" id="close-modal-cart">
-				<svg class="modal-cart__close-icon">
-					<use href="/images/sprites.svg#close-modal-icon"></use>
-				</svg>
-			</button>
 		</div>
 
 		<script type="module" src="../../js/main.js"></script>

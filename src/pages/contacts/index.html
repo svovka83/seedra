@@ -7,12 +7,17 @@
 		<link rel="stylesheet" href="../../scss/styles.scss" />
 	</head>
 	<body style="display: grid; grid-template-rows: auto 1fr auto">
-		<!-- header (  ) -->
+		<!-- header () -->
 		<!-- prettier-ignore -->
 		{% from "src/partials/header.njk" import header %}
-    {{ header(  ) }}
+    {{ header() }}
 
 		<main class="contacts-main container" id="go-to-top">
+			<!-- burgerMenu() -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/modals/burger-menu.njk" import burgerMenu %}
+			{{ burgerMenu() }}
+
 			<!-- contacts section -->
 			<section class="contacts">
 				<!-- contacts-content -->
@@ -93,10 +98,15 @@
 			</section>
 		</main>
 
-		<!-- footer (  ) -->
+		<!-- footer () -->
 		<!-- prettier-ignore -->
 		{% from "src/partials/footer.njk" import footer %}
-		{{ footer(  ) }}
+		{{ footer() }}
+
+		<!-- modalCart() -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/modals/modal-cart.njk" import modalCart %}
+    {{ modalCart() }}
 
 		<script type="module" src="../../js/main.js"></script>
 	</body>

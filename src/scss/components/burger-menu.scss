@@ -1,0 +1,132 @@
+@use "../settings/variables.scss" as *;
+
+.modal-blur {
+	display: none;
+	position: fixed;
+	inset: 0;
+	backdrop-filter: blur(2px);
+	z-index: 600;
+	&_open {
+		display: block;
+	}
+}
+
+.burger-menu {
+	position: fixed;
+	padding: 15px 16px 13px 23px;
+	top: 72px;
+	right: -300px;
+	width: 280px;
+	height: calc(100vh - 72px);
+	overflow-y: auto;
+	background-color: $white;
+	box-shadow: $shadow_burger-menu;
+	z-index: 700;
+	transition: right 0.5s ease;
+	&_open {
+		right: 0;
+	}
+	&__search {
+		margin-bottom: 16px;
+	}
+	&__dropdowns {
+		display: flex;
+		flex-direction: column;
+		row-gap: 8px;
+	}
+	&__hr {
+		width: calc(100% + 39px);
+		transform: translate(-23px, 0px);
+		border: 1px solid #cfcfcf;
+	}
+}
+
+// dropdowns start
+.burger-menu-dropdown {
+	&__btn {
+		width: 241px;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding-top: 6px;
+		padding-bottom: 7px;
+		border-top: 1px solid $light_grey_stroke;
+		cursor: pointer;
+		&_mobile {
+			width: unset;
+			width: 100%;
+		}
+	}
+	&__title {
+		font-weight: 500;
+		letter-spacing: -3.5%;
+	}
+	&__icon {
+		width: 24px;
+		height: 24px;
+		stroke: $text_secondary;
+		fill: $white;
+		transition: transform 0.3s ease;
+		&_open {
+			stroke: $green-brand;
+			transform: rotate(180deg);
+		}
+	}
+	&__content {
+		display: grid;
+		grid-template-rows: 0fr; /* 🔥 закрито */
+		transition: grid-template-rows 0.3s ease, padding-top 0.3s ease;
+	}
+	&__inner {
+		overflow: hidden;
+		padding-left: 32px;
+		display: flex;
+		flex-direction: column;
+		row-gap: 16px;
+	}
+	&__option {
+		margin-bottom: 8px;
+	}
+	&__inner-burger {
+		font-weight: 300;
+		line-height: 28px;
+		color: $text_secondary;
+	}
+}
+
+.burger-menu-dropdown.open .burger-menu-dropdown__content {
+	grid-template-rows: 1fr; /* 🔥 відкрито */
+	width: 241px;
+	padding-top: 16px;
+	padding-bottom: 16px;
+	border-top: 1px solid $light_grey_stroke;
+}
+
+.burger-menu-dropdown.open .burger-menu-dropdown__title {
+	color: $color_primary;
+}
+// dropdowns end
+.burger-menu-nav {
+	&__list {
+		display: flex;
+		flex-direction: column;
+		row-gap: 14px;
+	}
+	&__item {
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 178%;
+		letter-spacing: -3.5%;
+		color: $text_primary;
+	}
+	&__link {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	&__icon {
+		width: 20px;
+		height: 20px;
+		fill: $green_brand;
+	}
+}

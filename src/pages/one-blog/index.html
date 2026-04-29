@@ -7,12 +7,17 @@
 		<link rel="stylesheet" href="../../scss/styles.scss" />
 	</head>
 	<body>
-		<!-- header (  ) -->
+		<!-- header () -->
 		<!-- prettier-ignore -->
 		{% from "src/partials/header.njk" import header %}
-    {{ header(  ) }}
+    {{ header() }}
 
 		<main class="one-blog-main" id="go-to-top">
+			<!-- burgerMenu() -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/modals/burger-menu.njk" import burgerMenu %}
+			{{ burgerMenu() }}
+
 			<!-- one-blog-top -->
 			<section class="one-blog-top container">
 				<div class="one-blog-top__inner">
@@ -166,10 +171,15 @@
 			</div>
 		</main>
 
-		<!-- footer (  ) -->
+		<!-- footer () -->
 		<!-- prettier-ignore -->
 		{% from "src/partials/footer.njk" import footer %}
-		{{ footer(  ) }}
+		{{ footer() }}
+
+		<!-- modalCart() -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/modals/modal-cart.njk" import modalCart %}
+    {{ modalCart() }}
 
 		<script type="module" src="../../js/main.js"></script>
 	</body>

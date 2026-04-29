@@ -2,6 +2,9 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 import { getCategories } from "./services/get-categories";
+
+import { getBurgerMenuDropdowns } from "../burger-menu/get-burger-menu-dropdowns";
+
 import {
 	getProductStaticCards,
 	getProductStaticCardsOnePage,
@@ -58,6 +61,8 @@ export async function initFirebase() {
 	const db = getFirestore(app);
 
 	getCategories(db);
+
+	getBurgerMenuDropdowns(db);
 
 	getProductStaticCards(db);
 	getProductStaticCardsOnePage(db);

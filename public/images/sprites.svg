@@ -140,10 +140,13 @@
   <symbol id="close-modal-icon" viewBox="0 0 24 24">
     <path d="M7 7L17 17M7 17L17 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
+  <symbol id="burger-menu-arrow-icon" viewBox="0 0 20 20">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.66669 9.99999C1.66669 5.39762 5.39765 1.66666 10 1.66666C14.6024 1.66666 18.3334 5.39762 18.3334 9.99999C18.3334 14.6024 14.6024 18.3333 10 18.3333C5.39765 18.3333 1.66669 14.6024 1.66669 9.99999ZM8.57741 11.9107C8.25197 12.2362 8.25197 12.7638 8.57741 13.0893C8.90285 13.4147 9.43048 13.4147 9.75592 13.0893L12.2559 10.5893C12.5814 10.2638 12.5814 9.73618 12.2559 9.41074L9.75592 6.91074C9.43049 6.58531 8.90285 6.58531 8.57741 6.91074C8.25197 7.23618 8.25197 7.76382 8.57741 8.08926L10.4882 10L8.57741 11.9107Z"/>
+  </symbol>
   <!-- <symbol id="name-icon" viewBox="0 0 24 24">
   </symbol> -->
 </svg>
 
 <!-- <svg class="class-icon">
-	<use href="/images/sprites.svg#id-icon"></use>
-</svg>  stroke="#70737C" -->
+	<use href="/images/sprites.svg#burger-menu-arrow-icon"></use>
+</svg>  fill="#359740" -->

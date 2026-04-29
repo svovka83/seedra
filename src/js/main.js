@@ -12,9 +12,15 @@ import { openModalCart } from "./modals/open-modal-cart.js";
 import { contactsValidation } from "./validation/contacts-validation.js";
 import { checkoutValidation } from "./validation/checkout-validation.js";
 import { paymentValidation } from "./validation/payment-validation.js";
+import { openBurgerMenu } from "./burger-menu/open-burger-menu.js";
+import { openBurgerMenuDropdown } from "./burger-menu/open-burger-menu-dropdown.js";
 
 // firebase
 initFirebase();
+
+// burger-menu
+openBurgerMenu();
+openBurgerMenuDropdown();
 
 // range
 priceRange();

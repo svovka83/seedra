@@ -80,7 +80,13 @@
 		display: block;
 		margin-top: -1px;
 	}
-	.header__burger-menu-icon {
+	&-icon {
+		width: 24px;
+		height: 24px;
+		stroke: $text_secondary;
+	}
+	&-icon-close {
+		display: none;
 		width: 24px;
 		height: 24px;
 		stroke: $text_secondary;

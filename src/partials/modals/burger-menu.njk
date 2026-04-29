@@ -1,0 +1,62 @@
+{% macro burgerMenu() %}
+  <div class="burger-menu" id="burger-menu">
+    <div class="burger-menu__search">
+      <!-- search ( classSearch ) -->
+      <!-- prettier-ignore -->
+      {% from "src/partials/search.njk" import search %}
+      {{ search( "search_header" ) }}
+    </div>
+
+    <div class="burger-menu__dropdowns">
+      <!-- burger-menu-dropdowns come from firebase -->
+    </div>
+
+    <hr class="burger-menu__hr" />
+
+    <nav class="burger-menu-nav">
+      <ul class="burger-menu-nav__list">
+        <li class="burger-menu-nav__item">
+          <a class="burger-menu-nav__link" href="/seedra/src/pages/products/index.html"
+            >All products
+            <svg class="burger-menu-nav__icon">
+              <use href="/images/sprites.svg#burger-menu-arrow-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="burger-menu-nav__item">
+          <a class="burger-menu-nav__link" href="/seedra/src/pages/blogs/index.html"
+            >Our blog
+            <svg class="burger-menu-nav__icon">
+              <use href="/images/sprites.svg#burger-menu-arrow-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="burger-menu-nav__item">
+          <a class="burger-menu-nav__link" href="/seedra/src/pages/about/index.html"
+            >About Seedra
+            <svg class="burger-menu-nav__icon">
+              <use href="/images/sprites.svg#burger-menu-arrow-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="burger-menu-nav__item">
+          <a class="burger-menu-nav__link" href="/seedra/src/pages/contacts/index.html"
+            >Contacts
+            <svg class="burger-menu-nav__icon">
+              <use href="/images/sprites.svg#burger-menu-arrow-icon"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <hr class="burger-menu__hr" />
+
+    <!-- socials ( classSocials ) -->
+    {% from "src/partials/layout/socials.njk" import socials %}
+    {{ socials( "socials_header" ) }}
+  </div>
+
+  <!-- modal-blur -->
+  <div class="modal-blur" id="modal-blur"></div>
+{% endmacro %}
