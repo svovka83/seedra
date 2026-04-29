@@ -4,11 +4,11 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Checkout</title>
-		<script type="module" crossorigin src="/seedra/assets/main-BtvDe_hV.js"></script>
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-CZPpetE_.css">
+		<script type="module" crossorigin src="/seedra/assets/main-D39SI-M2.js"></script>
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-BrD5rWfX.css">
 	</head>
 	<body style="display: grid; grid-template-rows: auto 1fr auto">
-		<!-- header (  ) -->
+		<!-- header () -->
 		<!-- prettier-ignore -->
 		
     
@@ -100,9 +100,12 @@
         </button>
       </div>
 
-      <button class="header__burger-menu">
+      <button class="header__burger-menu" id="header__burger-menu">
         <svg class="header__burger-menu-icon">
           <use href="/seedra/images/sprites.svg#burger-icon"></use>
+        </svg>
+        <svg class="header__burger-menu-icon-close">
+          <use href="/seedra/images/sprites.svg#close-modal-icon"></use>
         </svg>
       </button>
     </div>
@@ -110,6 +113,94 @@
 
 
 		<main class="checkout-main container" id="go-to-top">
+			<!-- burgerMenu() -->
+			<!-- prettier-ignore -->
+			
+			
+  <div class="burger-menu" id="burger-menu">
+    <div class="burger-menu__search">
+      <!-- search ( classSearch ) -->
+      <!-- prettier-ignore -->
+      
+      
+  <div class="search search_header">
+    <input class="search__input" type="text" placeholder="Search">
+    <svg class="search__icon">
+	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
+    </svg>
+    <img class="search__img" src="/seedra/images/icons/funnel.svg" id="" alt="search icon funnel">
+  </div>
+
+    </div>
+
+    <div class="burger-menu__dropdowns">
+      <!-- burger-menu-dropdowns come from firebase -->
+    </div>
+
+    <hr class="burger-menu__hr" />
+
+    <nav class="burger-menu-nav">
+      <ul class="burger-menu-nav__list">
+        <li class="burger-menu-nav__item">
+          <a class="burger-menu-nav__link" href="/seedra/src/pages/products/index.html"
+            >All products
+            <svg class="burger-menu-nav__icon">
+              <use href="/seedra/images/sprites.svg#burger-menu-arrow-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="burger-menu-nav__item">
+          <a class="burger-menu-nav__link" href="/seedra/src/pages/blogs/index.html"
+            >Our blog
+            <svg class="burger-menu-nav__icon">
+              <use href="/seedra/images/sprites.svg#burger-menu-arrow-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="burger-menu-nav__item">
+          <a class="burger-menu-nav__link" href="/seedra/src/pages/about/index.html"
+            >About Seedra
+            <svg class="burger-menu-nav__icon">
+              <use href="/seedra/images/sprites.svg#burger-menu-arrow-icon"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="burger-menu-nav__item">
+          <a class="burger-menu-nav__link" href="/seedra/src/pages/contacts/index.html"
+            >Contacts
+            <svg class="burger-menu-nav__icon">
+              <use href="/seedra/images/sprites.svg#burger-menu-arrow-icon"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <hr class="burger-menu__hr" />
+
+    <!-- socials ( classSocials ) -->
+    
+    
+  <div class="socials socials_header">
+    <a class="socials__link" href="#!">
+      <svg class="socials__icon">
+        <use xlink:href="/seedra/images/sprites.svg#instagram-icon"></use>
+      </svg>
+    </a>
+    <a class="socials__link" href="#!">
+      <svg class="socials__icon">
+        <use xlink:href="/seedra/images/sprites.svg#facebook-icon"></use>
+      </svg>
+    </a>
+  </div>
+
+  </div>
+
+  <!-- modal-blur -->
+  <div class="modal-blur" id="modal-blur"></div>
+
+
+			<!-- checkout -->
 			<section class="checkout">
 				<!-- checkout-form -->
 				<div class="checkout-form">
@@ -245,7 +336,7 @@
 			</section>
 		</main>
 
-		<!-- footer (  ) -->
+		<!-- footer () -->
 		<!-- prettier-ignore -->
 		
 		
@@ -333,6 +424,35 @@
       </div>
     </div>
   </footer>
+
+
+		<!-- modalCart() -->
+		<!-- prettier-ignore -->
+		
+    
+  <div class="modal-cart" id="modal-cart">
+    <div class="modal-cart__products">
+      <!-- products come from firebse -->
+    </div>
+    <div class="modal-cart__button-block">
+      <button class="modal-cart__clear" id="modal-cart__clear">Clear</button>
+      <div class="modal-cart__proceed">
+        <!-- discover ( classLink, titleLink, pathLink ) -->
+        <!-- prettier-ignore -->
+        
+        
+  <a class="discover discover_continue" href="/seedra/src/pages/cart/index.html">
+    Proceed to payment
+  </a>
+
+      </div>
+    </div>
+    <button class="modal-cart__close" id="close-modal-cart">
+      <svg class="modal-cart__close-icon">
+        <use href="/seedra/images/sprites.svg#close-modal-icon"></use>
+      </svg>
+    </button>
+  </div>
 
 
 	</body>
