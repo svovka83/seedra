@@ -43,11 +43,10 @@
 		background-color: $green_brand;
 		border-radius: 2px;
 		margin-left: auto;
-		translate: 16px 0;
-		transform: rotate(90deg);
+		transform: rotate(90deg) translate(0px, -16px);
 		transition: transform 0.3s ease;
 		&_open {
-			transform: rotate(0deg);
+			transform: rotate(0deg) translate(16px, 0px);
 		}
 	}
 	&__icon2 {
@@ -69,11 +68,10 @@
 		margin-inline: auto;
 		background-color: $green_brand;
 		border-radius: 2px;
-		translate: 0 35px;
-		transform: rotate(0deg);
+		transform: rotate(0deg) translate(0px, 35px);
 		transition: transform 0.3s ease;
 		&_open {
-			transform: rotate(0deg);
+			transform: rotate(0deg) translate(0px, 35px);
 		}
 	}
 	&__icon4 {
@@ -82,9 +80,8 @@
 		margin-inline: auto;
 		background-color: $green_brand;
 		border-radius: 2px;
-		translate: 0 32px;
 		opacity: 1;
-		transform: rotate(90deg);
+		transform: rotate(90deg) translate(32px, 0px);
 		transition: opacity 0s ease 0.3s;
 		&_open {
 			opacity: 0;
