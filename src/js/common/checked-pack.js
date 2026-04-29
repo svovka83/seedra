@@ -1,22 +1,32 @@
-export function checkedPack() {
-	document.addEventListener("click", (e) => {
+import { doc, updateDoc } from "firebase/firestore";
+
+const params = new URLSearchParams(window.location.search);
+const productId = params.get("id");
+
+export function checkedPack(db) {
+	document.addEventListener("click", async (e) => {
 		const pack = e.target.closest(".pack");
-		// const radio = pack.querySelector(".pack__input");
-		// const radios = pack.querySelectorAll(".pack__input");
-		// if (!pack) return;
+		const radios = document.querySelectorAll(".pack__input");
+		if (!pack) return;
+		if (!radios) return;
 
-		// const current = radio.checked;
+		radios.forEach((radio) => {
+			if (radio.checked) {
+				radio.parentElement.classList.add("pack_checked");
+			} else {
+				radio.parentElement.classList.remove("pack_checked");
+			}
+		});
 
-		// if (current) {
-		// 	pack.classList.add("pack_checked");
-		// }
+		try {
+			const quantity = pack.querySelector(".pack__quantity").textContent;
+			const quantityNumber = Number(quantity);
 
-		// radios
-		// 	.filter((radio) => !radio.checked)
-		// 	.forEach((radio) => {
-		// 		const radio = pack.querySelector(".pack__input");
-		// 		radio.checked = false;
-		// 		pack.classList.remove("pack_checked");
-		// 	});
+			await updateDoc(doc(db, "products", productId), {
+				quantity: quantityNumber,
+			});
+		} catch (e) {
+			console.log(e);
+		}
 	});
 }

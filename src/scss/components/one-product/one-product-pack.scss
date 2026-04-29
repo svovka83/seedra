@@ -14,7 +14,13 @@
 		accent-color: $green_brand;
 		margin-right: 14px;
 	}
-	&__quantity-pack {
+	&__quantity {
+		font-weight: 400;
+		font-size: 14px;
+		color: $text_primary;
+		margin-right: 4px;
+	}
+	&__pack {
 		font-weight: 400;
 		font-size: 14px;
 		color: $text_primary;

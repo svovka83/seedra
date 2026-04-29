@@ -4,8 +4,6 @@ const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 
 export async function getProductImage(db) {
-	// const base = import.meta.env.BASE_URL;
-
 	const productImg = document.querySelector(".one-product-top-images__product");
 
 	const docRef = doc(db, "products", productId);

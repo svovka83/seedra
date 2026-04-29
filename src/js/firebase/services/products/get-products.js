@@ -1,4 +1,4 @@
-import { collection, getDocs, query, orderBy, where, limit, onSnapshot, addDoc } from "firebase/firestore";
+import { collection, query, onSnapshot, orderBy, where } from "firebase/firestore";
 import { productCard } from "../../../components/product/product-card";
 
 export async function getProducts(

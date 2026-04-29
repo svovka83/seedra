@@ -14,7 +14,7 @@ export async function getProductPacks(db) {
 	let html = "";
 
 	for (let i = 1; i <= 5; i++) {
-		html += oneProductPack(productData.data().quantity + i - 1, productData.data().price * i, i);
+		html += oneProductPack(i, productData.data().price * i);
 	}
 
 	productPacks.innerHTML = html;

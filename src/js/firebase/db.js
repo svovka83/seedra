@@ -17,6 +17,7 @@ import { getProductCategory } from "./services/one-product/get-product-category"
 import { getProductQuantity } from "./services/one-product/get-product-quantity";
 import { initCounterBlock } from "./services/one-product/counter-block";
 import { getProductPacks } from "./services/one-product/get-one-product-packs";
+import { checkedPack } from "../common/checked-pack";
 
 import { getBlogStaticCards, getBlogSliderCards } from "./services/get-blogs";
 import { getFilterBlogs } from "./services/get-filter-blogs";
@@ -70,6 +71,7 @@ export async function initFirebase() {
 	getProductQuantity(db);
 	initCounterBlock(db);
 	getProductPacks(db);
+	checkedPack(db);
 
 	getBlogStaticCards(db);
 	getBlogSliderCards(db);
