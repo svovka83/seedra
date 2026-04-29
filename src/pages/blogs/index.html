@@ -3,11 +3,11 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Payment</title>
+		<title>Our Blogs</title>
 		<script type="module" crossorigin src="/seedra/assets/main-BCm9-fua.js"></script>
 		<link rel="stylesheet" crossorigin href="/seedra/assets/main-DUkbxX-5.css">
 	</head>
-	<body style="display: grid; grid-template-rows: auto 1fr auto">
+	<body>
 		<!-- header (  ) -->
 		<!-- prettier-ignore -->
 		
@@ -109,137 +109,101 @@
   </header>
 
 
-		<main class="payment-main container" id="go-to-top">
-			<!-- payment-info -->
-			<section class="payment-info">
-				<div class="payment-info__top">
-					<a class="payment-info__link" href="/seedra/src/pages/checkout/index.html">
-						<svg class="payment-info__top-icon">
-							<use href="/seedra/images/sprites.svg#arrow-back"></use>
-						</svg>
-					</a>
-					<div class="payment-info__top-title">
-						<!-- title ( heading, title, classTitle ) -->
-						<!-- prettier-ignore -->
-						
-						
-  <h2 class="title title_h2">Payment info</h2>
+		<main class="blogs-main" id="go-to-top">
+			<!-- blogs-top -->
+			<section class="blogs-top container">
+				<!-- top( topTitle, topText, classTop ) -->
+				<!-- prettier-ignore -->
+				
+        
+  <div class="top top_blogs">
 
-					</div>
-					<div class="payment-info__top-navigation">
-						<!-- cartNavigator( classCheckout, classPayment ) -->
-						<!-- prettier-ignore -->
-						
-						
-  <div class="cart-navigator">
-    <a href="/seedra/src/pages/checkout/index.html" class="cart-navigator__point cart-navigator__point_not-active"></a>
-    <a href="/seedra/src/pages/payment/index.html" class="cart-navigator__point "></a>
+    <div class="top__title">
+			<!-- title ( heading, title, classTitle ) -->
+			
+			
+  <h1 class="title title_h1">Welcome to our blog</h1>
+
+    </div>
+
+    <div class="top__text">
+			<!-- text ( text, classText ) -->
+			
+			
+  <p class="text text_light">Here you can find a lot of interesting and useful information that you need in gardening and creating a beautiful garden</p>
+
+    </div>
+
+    <img class="top__leaves top__leaves_leaf-1" src="/seedra/images/top/leaf_1.png" alt="top background">
+    <img class="top__leaves top__leaves_leaf-2" src="/seedra/images/top/leaf_2.png" alt="top background">
+    <img class="top__leaves top__leaves_leaf-3" src="/seedra/images/top/leaf_3.png" alt="top background">
+    <img class="top__leaves top__leaves_leaf-4" src="/seedra/images/top/leaf_4.png" alt="top background">
+    <img class="top__leaves top__leaves_leaf-5" src="/seedra/images/top/leaf_5.png" alt="top background">
+
   </div>
 
-					</div>
-				</div>
-				<div class="payment-info__title">
-					<!-- title ( heading, title, classTitle ) -->
+			</section>
+
+			<!-- blogs-search -->
+			<div class="blogs-search container">
+				<div class="blogs-search__search">
+					<!-- search ( classSearch ) -->
 					<!-- prettier-ignore -->
 					
-					
-  <h3 class="title title_h3 title_h3-mobile-checkout">Personal info</h3>
+          
+  <div class="search search_banner">
+    <input class="search__input" type="text" placeholder="Search">
+    <svg class="search__icon">
+	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
+    </svg>
+    <img class="search__img" src="/seedra/images/icons/funnel.svg" id="" alt="search icon funnel">
+  </div>
 
 				</div>
-				<form class="payment-info__payment-form" action="#!" id="payment-form">
-					<div class="payment-info__type">
-						<!-- text ( text, classText ) -->
-						<!-- prettier-ignore -->
-						
-						
-  <p class="text text_regular-14">Card type</p>
 
-					</div>
-					<div class="payment-info__cards">
-						<label class="payment-info__cards-block">
-							<input type="radio" name="payment-card" />
-							<div class="payment-info__cards-item">
-								<img
-									class="payment-info__cards-img"
-									src="/seedra/images/payment/apple.png"
-									alt="payment card" />
-							</div>
-						</label>
-						<label class="payment-info__cards-block">
-							<input type="radio" name="payment-card" />
-							<div class="payment-info__cards-item">
-								<img
-									class="payment-info__cards-img"
-									src="/seedra/images/payment/visa.png"
-									alt="payment card" />
-							</div>
-						</label>
-						<label class="payment-info__cards-block">
-							<input type="radio" name="payment-card" />
-							<div class="payment-info__cards-item">
-								<img
-									class="payment-info__cards-img"
-									src="/seedra/images/payment/mastercard.png"
-									alt="payment card" />
-							</div>
-						</label>
-						<label class="payment-info__cards-block">
-							<input type="radio" name="payment-card" />
-							<div class="payment-info__cards-item">
-								<img
-									class="payment-info__cards-img"
-									src="/seedra/images/payment/paypal.png"
-									alt="payment card" />
-							</div>
-						</label>
-					</div>
-					<div class="payment-info__form">
-						<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
-						<!-- prettier-ignore -->
-						
-						
-  <div class="input-block">
-    <label class="label" for="payment-card">Card number</label>
-    <input class="input " id="payment-card" type="text" placeholder="0000 0000 0000 0000" />
-    <p class="validation"></p>
-  </div>
+				<div class="blogs-search__dropdown">
+					<!-- dropdown( title, initial ) -->
+					<!-- prettier-ignore -->
+					
+          
+  <div class="dropdown">
+    <div class="dropdown__control">
+      <div class="dropdown__title-block">
+        <p class="dropdown__title">Sort by</p>
+        <p class="dropdown__initial" id="">Recently</p>
+      </div>
+      <svg class="dropdown__icon">
+        <use xlink:href="/seedra/images/sprites.svg#chevron-icon"></use>
+      </svg>
+    </div>
+    
+    <div class="dropdown__list" id="">
+      <div class="dropdown__option">
+        <span class="dropdown__value"></span>
+        <span class="dropdown__price ">+$0</span>
+      </div>
+      <div class="dropdown__option">
+        <span class="dropdown__value"></span>
+        <span class="dropdown__price ">+$20</span>
+      </div>
+      <div class="dropdown__option">
+        <span class="dropdown__value"></span>
+        <span class="dropdown__price ">+$50</span>
+      </div>
+      <div class="dropdown__option">
+        <span class="dropdown__value"></span>
+        <span class="dropdown__price ">+$100</span>
+      </div>
+    </div>
+	</div>
 
-						
-  <div class="input-block">
-    <label class="label" for="payment-date">Expiring date</label>
-    <input class="input " id="payment-date" type="text" placeholder="01/01" />
-    <p class="validation"></p>
-  </div>
+				</div>
+			</div>
 
-						
-  <div class="input-block">
-    <label class="label" for="payment-ccv">CCV</label>
-    <input class="input " id="payment-ccv" type="text" placeholder="123" />
-    <p class="validation"></p>
-  </div>
-
-					</div>
-					<hr class="payment-info__hr" />
-					<!-- it might be a component -->
-					<div class="cart-summary__amount-block">
-						<span class="cart-summary__text">Total amount</span>
-						<p class="cart-summary__amount">
-							$<span id="cart-summary__amount1"><!-- quantity comes from firebse --></span>
-						</p>
-					</div>
-					<button class="payment-info__button payment-info__button_disabled">
-						<p class="payment-info__button-amount">
-							$<span id="cart-summary__amount2"><!-- quantity comes from firebse --></span>
-						</p>
-						<span class="payment-info__button-text">Continue</span>
-						<a class="payment-info__button-link" href="/seedra/src/pages/checkout/index.html">
-							<svg class="payment-info__button-icon">
-								<use href="/seedra/images/sprites.svg#arrow-back"></use>
-							</svg>
-						</a>
-					</button>
-				</form>
-			</section>
+			<!-- blogs-content -->
+			<div class="blogs-content container">
+				<!-- blogs are getting from firebase -->
+			</div>
 		</main>
 
 		<!-- footer (  ) -->
@@ -330,7 +294,6 @@
       </div>
     </div>
   </footer>
-
 
 	</body>
 </html>

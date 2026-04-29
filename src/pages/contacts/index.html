@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Payment</title>
+		<title>Contact us</title>
 		<script type="module" crossorigin src="/seedra/assets/main-BCm9-fua.js"></script>
 		<link rel="stylesheet" crossorigin href="/seedra/assets/main-DUkbxX-5.css">
 	</head>
@@ -109,136 +109,129 @@
   </header>
 
 
-		<main class="payment-main container" id="go-to-top">
-			<!-- payment-info -->
-			<section class="payment-info">
-				<div class="payment-info__top">
-					<a class="payment-info__link" href="/seedra/src/pages/checkout/index.html">
-						<svg class="payment-info__top-icon">
-							<use href="/seedra/images/sprites.svg#arrow-back"></use>
-						</svg>
-					</a>
-					<div class="payment-info__top-title">
+		<main class="contacts-main container" id="go-to-top">
+			<!-- contacts section -->
+			<section class="contacts">
+				<!-- contacts-content -->
+				<div class="contacts-content">
+					<div class="contacts-content__title">
 						<!-- title ( heading, title, classTitle ) -->
 						<!-- prettier-ignore -->
 						
 						
-  <h2 class="title title_h2">Payment info</h2>
+  <h1 class="title title_h1">Contact us</h1>
 
 					</div>
-					<div class="payment-info__top-navigation">
-						<!-- cartNavigator( classCheckout, classPayment ) -->
-						<!-- prettier-ignore -->
-						
-						
-  <div class="cart-navigator">
-    <a href="/seedra/src/pages/checkout/index.html" class="cart-navigator__point cart-navigator__point_not-active"></a>
-    <a href="/seedra/src/pages/payment/index.html" class="cart-navigator__point "></a>
-  </div>
 
-					</div>
-				</div>
-				<div class="payment-info__title">
-					<!-- title ( heading, title, classTitle ) -->
-					<!-- prettier-ignore -->
-					
-					
-  <h3 class="title title_h3 title_h3-mobile-checkout">Personal info</h3>
-
-				</div>
-				<form class="payment-info__payment-form" action="#!" id="payment-form">
-					<div class="payment-info__type">
+					<div class="contacts-content__text">
 						<!-- text ( text, classText ) -->
 						<!-- prettier-ignore -->
 						
 						
-  <p class="text text_regular-14">Card type</p>
+  <p class="text text_light">Send for us your request and we will get in touch with you as soon as possible</p>
 
 					</div>
-					<div class="payment-info__cards">
-						<label class="payment-info__cards-block">
-							<input type="radio" name="payment-card" />
-							<div class="payment-info__cards-item">
-								<img
-									class="payment-info__cards-img"
-									src="/seedra/images/payment/apple.png"
-									alt="payment card" />
-							</div>
-						</label>
-						<label class="payment-info__cards-block">
-							<input type="radio" name="payment-card" />
-							<div class="payment-info__cards-item">
-								<img
-									class="payment-info__cards-img"
-									src="/seedra/images/payment/visa.png"
-									alt="payment card" />
-							</div>
-						</label>
-						<label class="payment-info__cards-block">
-							<input type="radio" name="payment-card" />
-							<div class="payment-info__cards-item">
-								<img
-									class="payment-info__cards-img"
-									src="/seedra/images/payment/mastercard.png"
-									alt="payment card" />
-							</div>
-						</label>
-						<label class="payment-info__cards-block">
-							<input type="radio" name="payment-card" />
-							<div class="payment-info__cards-item">
-								<img
-									class="payment-info__cards-img"
-									src="/seedra/images/payment/paypal.png"
-									alt="payment card" />
-							</div>
-						</label>
+
+					<div class="contacts-content__info">
+						<!-- infoBtn( iconId, pathInfo ) -->
+						<!-- prettier-ignore -->
+						
+						
+  <a class="info" href="tel:+380987828223">
+    <svg class="info__icon">
+	    <use href="/seedra/images/sprites.svg#calling-icon"></use>
+    </svg>
+  </a>
+
+
+						<h3 class="contacts-content__info-title">+380 98 782 82 23</h3>
 					</div>
-					<div class="payment-info__form">
+					<div class="contacts-content__info">
+						<!-- infoBtn( iconId, pathInfo ) -->
+						<!-- prettier-ignore -->
+						
+						
+  <a class="info" href="mailto:mailmail@gmail.com">
+    <svg class="info__icon">
+	    <use href="/seedra/images/sprites.svg#message-icon"></use>
+    </svg>
+  </a>
+
+
+						<h3 class="contacts-content__info-title">mailmail@gmail.com</h3>
+					</div>
+				</div>
+
+				<!-- contacts-form -->
+				<form class="contacts-form" action="#!" id="contacts-form">
+					<div class="contacts-form__name">
 						<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
 						<!-- prettier-ignore -->
 						
 						
   <div class="input-block">
-    <label class="label" for="payment-card">Card number</label>
-    <input class="input " id="payment-card" type="text" placeholder="0000 0000 0000 0000" />
-    <p class="validation"></p>
-  </div>
-
-						
-  <div class="input-block">
-    <label class="label" for="payment-date">Expiring date</label>
-    <input class="input " id="payment-date" type="text" placeholder="01/01" />
-    <p class="validation"></p>
-  </div>
-
-						
-  <div class="input-block">
-    <label class="label" for="payment-ccv">CCV</label>
-    <input class="input " id="payment-ccv" type="text" placeholder="123" />
+    <label class="label" for="contacts-name">Name</label>
+    <input class="input " id="contacts-name" type="text" placeholder="Your name" />
     <p class="validation"></p>
   </div>
 
 					</div>
-					<hr class="payment-info__hr" />
-					<!-- it might be a component -->
-					<div class="cart-summary__amount-block">
-						<span class="cart-summary__text">Total amount</span>
-						<p class="cart-summary__amount">
-							$<span id="cart-summary__amount1"><!-- quantity comes from firebse --></span>
-						</p>
+					<div class="contacts-form__email">
+						<!-- input( inputLabel, placeholder, type, classInput, inputId ) -->
+						<!-- prettier-ignore -->
+						
+						
+  <div class="input-block">
+    <label class="label" for="contacts-email">E-mail</label>
+    <input class="input " id="contacts-email" type="text" placeholder="Your email" />
+    <p class="validation"></p>
+  </div>
+
 					</div>
-					<button class="payment-info__button payment-info__button_disabled">
-						<p class="payment-info__button-amount">
-							$<span id="cart-summary__amount2"><!-- quantity comes from firebse --></span>
-						</p>
-						<span class="payment-info__button-text">Continue</span>
-						<a class="payment-info__button-link" href="/seedra/src/pages/checkout/index.html">
-							<svg class="payment-info__button-icon">
-								<use href="/seedra/images/sprites.svg#arrow-back"></use>
-							</svg>
-						</a>
-					</button>
+					<div class="contacts-form__message">
+						<!-- textarea( textareaLabel, placeholder, textareaId ) -->
+						<!-- prettier-ignore -->
+						
+						
+  <div class="textarea-block">
+    <label class="textarea-label" for="contacts-comment">Message</label>
+    <textarea class="textarea-input" id="contacts-comment" placeholder="Your message"></textarea>
+    <p class="validation"></p>
+  </div>
+
+					</div>
+					<div class="contacts-form__bottom">
+						<div class="contacts-form__bottom-button">
+							<!-- button ( classBtn, titleBtn, iconId ) -->
+							<!-- prettier-ignore -->
+							
+							
+  <button class="btn btn_text btn_disabled">
+    <svg class="btn__icon">
+	    <use xlink:href="/seedra/images/sprites.svg#"></use>
+    </svg>
+    <span class="btn__title">
+      Send request
+    </span>
+  </button>
+
+						</div>
+
+						<div class="contacts-form__bottom-text">
+							<!-- text ( text, classText ) -->
+							<!-- prettier-ignore -->
+							
+							
+  <p class="text text_regular-14">By sending request you agree to out Pivacy&amp;Policy</p>
+
+						</div>
+					</div>
 				</form>
+
+				<img class="contacts__leaves contacts__leaves_leaf-1" src="/seedra/images/top/leaf_1.png" alt="leaf" />
+				<img class="contacts__leaves contacts__leaves_leaf-2" src="/seedra/images/top/leaf_2.png" alt="leaf" />
+				<img class="contacts__leaves contacts__leaves_leaf-3" src="/seedra/images/top/leaf_3.png" alt="leaf" />
+				<img class="contacts__leaves contacts__leaves_leaf-4" src="/seedra/images/top/leaf_4.png" alt="leaf" />
 			</section>
 		</main>
 

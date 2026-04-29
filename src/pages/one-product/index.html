@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>One product</title>
-		<script type="module" crossorigin src="/seedra/assets/main-CjysP5ek.js"></script>
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-B5CPokP1.css">
+		<script type="module" crossorigin src="/seedra/assets/main-BCm9-fua.js"></script>
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-DUkbxX-5.css">
 	</head>
 	<body>
 		<!-- header (  ) -->
@@ -151,7 +151,47 @@
 				</div>
 
 				<!-- one-product-top-content -->
-				<div class="one-product-top-content"></div>
+				<div class="one-product-top-content">
+					<div class="one-product-top-content__top">
+						<span class="one-product-top-content__top-size">Size</span>
+						<span class="one-product-top-content__top-quantity">
+							<!-- product quantity comes from firebase -->
+						</span>
+						<span class="one-product-top-content__top-pack">PACK</span>
+						<span class="one-product-top-content__top-counter">
+							<!-- function counter component -->
+						</span>
+					</div>
+
+					<div class="one-product-top-content__packs">
+						<!-- packs come from firebase -->
+					</div>
+
+					<div class="one-product-top-content__bottom">
+						<div class="one-product-top-content__bottom-discount-block">
+							<p class="one-product-top-content__bottom-discount">$15.56</p>
+							<p class="one-product-top-content__bottom-price">$12.56</p>
+						</div>
+						<svg class="one-product-top-content__bottom-heart">
+							<use href="/seedra/images/sprites.svg#heart-icon"></use>
+						</svg>
+						<div class="one-product-top-content__bottom-button-add">
+							<!-- button ( classBtn, titleBtn, iconId ) -->
+							<!-- prettier-ignore -->
+							
+							
+  <button class="btn btn_text">
+    <svg class="btn__icon">
+	    <use xlink:href="/seedra/images/sprites.svg#"></use>
+    </svg>
+    <span class="btn__title">
+      Add to cart
+    </span>
+  </button>
+
+						</div>
+					</div>
+				</div>
 			</section>
 
 			<!-- one-product-information -->
@@ -803,6 +843,7 @@
       </div>
     </div>
   </footer>
+
 
 	</body>
 </html>
