@@ -2,11 +2,11 @@ import { orderBy } from "firebase/firestore";
 import { getProducts } from "./get-products";
 
 export function productFiltrationMob(db) {
-	// sort by order inputs
+	// sort by order inputs without listener
 	const optionList = document.getElementById("filter-sort-list");
 	if (!optionList) return;
 
-	let currentSortOrder;
+	const currentSortOrder = orderBy("price", "desc");
 
 	// sort by type inputs
 	const checkboxHybrid = document.getElementById("hybrid-mob");
@@ -46,30 +46,6 @@ export function productFiltrationMob(db) {
 	const checkboxBitter = document.getElementById("bitter-mob");
 
 	const selectedAdditional = [];
-
-	// sort by order listener
-
-	optionList.addEventListener("click", (e) => {
-		const typeOptions = e.target.closest(".dropdown__option");
-		const typeOption = typeOptions.querySelector(".dropdown__value");
-		if (!typeOption) return;
-
-		const typeSortOrder = typeOption.textContent;
-
-		if (typeSortOrder === "Most expensive") currentSortOrder = orderBy("price", "desc");
-		if (typeSortOrder === "The cheapest") currentSortOrder = orderBy("price", "asc");
-		if (typeSortOrder === "Newly") currentSortOrder = orderBy("createdAt", "desc");
-		if (typeSortOrder === "Old") currentSortOrder = orderBy("createdAt", "asc");
-		getProducts(
-			db,
-			currentSortOrder,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
-	});
 
 	// sort by type listener
 

@@ -48,6 +48,7 @@
 	&__grid {
 		display: grid;
 		grid-template-columns: 285px auto;
+		align-items: start;
 		&_open {
 			display: block;
 		}
@@ -73,7 +74,6 @@
 	&__products {
 		display: grid;
 		grid-template-columns: repeat(3, 1fr);
-		align-items: stretch;
 		gap: 30px;
 		@media (max-width: 1024px) {
 			grid-template-columns: repeat(2, 1fr);

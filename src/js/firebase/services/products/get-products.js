@@ -15,8 +15,6 @@ export async function getProducts(
 	const productList = document.querySelector(".products-content__products");
 	if (!productList) return;
 
-	console.log(currentSortOrder, selectedTypes, selectedFeatured, selectedGrowing, selectedUses, selectedAdditional);
-
 	const constraints = [];
 
 	// sort by order

@@ -2,7 +2,7 @@
 
 .search {
 	position: relative;
-	.search__input {
+	&__input {
 		font-weight: 500;
 		line-height: 178%;
 		letter-spacing: -3.5%;
@@ -20,7 +20,7 @@
 			-webkit-text-fill-color: $text_primary;
 		}
 	}
-	.search__icon {
+	&__icon {
 		position: absolute;
 		width: 24px;
 		height: 24px;
