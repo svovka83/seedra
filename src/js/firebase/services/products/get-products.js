@@ -5,12 +5,17 @@ export async function getProducts(
 	db,
 	currentSortOrder = orderBy("price", "desc"),
 	selectedTypes = [],
+	selectedFeatured = [],
+	selectedGrowing = [],
 	selectedUses = [],
+	selectedAdditional = [],
 	oneProductId = "",
 	categoryId = ""
 ) {
 	const productList = document.querySelector(".products-content__products");
 	if (!productList) return;
+
+	console.log(currentSortOrder, selectedTypes, selectedFeatured, selectedGrowing, selectedUses, selectedAdditional);
 
 	const constraints = [];
 
@@ -22,9 +27,24 @@ export async function getProducts(
 		constraints.push(where("type", "in", selectedTypes));
 	}
 
+	// sort by featured
+	if (selectedFeatured.length) {
+		constraints.push(where("featured", "in", selectedFeatured));
+	}
+
+	// sort by growing
+	if (selectedGrowing.length) {
+		constraints.push(where("growing", "in", selectedGrowing));
+	}
+
 	// sort by use
 	if (selectedUses.length) {
 		constraints.push(where("use", "in", selectedUses));
+	}
+
+	// sort by additional
+	if (selectedAdditional.length) {
+		constraints.push(where("additional", "in", selectedAdditional));
 	}
 
 	// sort by one product id
