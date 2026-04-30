@@ -23,6 +23,12 @@ export function openModalCategory(db) {
 			modalWindow.classList.remove("products-content__modal_open");
 		}
 
+		document.addEventListener("click", (e) => {
+			if (!e.target.closest(".btn.btn_icon-text")) {
+				modalWindow.classList.remove("products-content__modal_open");
+			}
+		});
+
 		window.addEventListener("resize", () => {
 			if (modalWindow.classList.contains("products-content__modal_open")) {
 				modalWindow.classList.remove("products-content__modal_open");

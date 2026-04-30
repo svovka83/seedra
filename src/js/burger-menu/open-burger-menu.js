@@ -30,6 +30,18 @@ export function openBurgerMenu() {
 		}
 	});
 
+	burgerBgBlur.addEventListener("click", () => {
+		if (burgerBgBlur.classList.contains("modal-blur_open")) {
+			burgerBgBlur.classList.remove("modal-blur_open");
+		}
+		if (burgerMenu.classList.contains("burger-menu_open")) {
+			burgerMenu.classList.remove("burger-menu_open");
+			close.style.display = "none";
+			open.style.display = "block";
+			enablePageScroll();
+		}
+	});
+
 	window.addEventListener("resize", () => {
 		if (burgerBgBlur.classList.contains("modal-blur_open")) {
 			burgerBgBlur.classList.remove("modal-blur_open");

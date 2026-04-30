@@ -3,6 +3,7 @@ export function openModalCart() {
 	const closeBtn = document.getElementById("close-modal-cart");
 	const modalCart = document.getElementById("modal-cart");
 	if (!openBtn) return;
+	if (!closeBtn) return;
 	if (!modalCart) return;
 
 	openBtn.addEventListener("click", () => {
