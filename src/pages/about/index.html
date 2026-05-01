@@ -4,8 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>About Seedra</title>
-		<script type="module" crossorigin src="/seedra/assets/main-Cca1RCxp.js"></script>
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-D9ryGOmD.css">
+		<script type="module" crossorigin src="/seedra/assets/main-nyKLCVo-.js"></script>
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-CdneTRxR.css">
 	</head>
 	<body>
 		<!-- header (  ) -->
@@ -72,12 +72,12 @@
       </div>
 
       <div class="header__search">
-        <!-- search ( classSearch ) -->
+        <!-- search( classSearch, searchFunnelId, searchInputId ) -->
         <!-- prettier-ignore -->
         
         
   <div class="search search_header">
-    <input class="search__input" type="text" placeholder="Search">
+    <input class="search__input" type="text" id="search-header-product" placeholder="Search">
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
@@ -112,6 +112,13 @@
   </header>
 
 
+		<!-- modal-header-search -->
+		<div class="modal-header-search" id="modal-header-search">
+			<div class="modal-header-search__inner">
+				<!-- products come from firebase -->
+			</div>
+		</div>
+
 		<main class="about-main" id="go-to-top">
 			<!-- burgerMenu() -->
 			<!-- prettier-ignore -->
@@ -124,7 +131,7 @@
       
       
   <div class="search search_header">
-    <input class="search__input" type="text" placeholder="Search">
+    <input class="search__input" type="text" id="" placeholder="Search">
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
