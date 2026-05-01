@@ -2,6 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
 import { getCategories } from "./services/get-categories";
+import { getModalHeaderProducts } from "./services/modals/get-modal-header-search";
 
 import { getBurgerMenuDropdowns } from "../burger-menu/get-burger-menu-dropdowns";
 
@@ -46,6 +47,7 @@ import { getCheckout } from "./services/checkout/get-checkout";
 import { getPayment } from "./services/payment/get-payment";
 
 import { openModalCategory } from "../modals/open-modal-category";
+import { openModalCart } from "../modals/open-modal-cart.js";
 
 export async function initFirebase() {
 	const firebaseConfig = {
@@ -63,6 +65,7 @@ export async function initFirebase() {
 	getCategories(db);
 
 	getBurgerMenuDropdowns(db);
+	getModalHeaderProducts(db);
 
 	getProductStaticCards(db);
 	getProductStaticCardsOnePage(db);
@@ -104,4 +107,5 @@ export async function initFirebase() {
 	getPayment(db);
 
 	openModalCategory(db);
+	openModalCart(db);
 }

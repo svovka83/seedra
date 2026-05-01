@@ -8,6 +8,12 @@ export function productFiltration(db) {
 
 	let currentSortOrder;
 
+	// sort by name inputs
+
+	const inputBannerSearch = document.getElementById("search-banner-product");
+
+	let search;
+
 	// sort by type inputs
 	const checkboxHybrid = document.getElementById("hybrid");
 	const checkboxPollinated = document.getElementById("pollinated");
@@ -64,6 +70,23 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
+			selectedTypes,
+			selectedFeatured,
+			selectedGrowing,
+			selectedUses,
+			selectedAdditional
+		);
+	});
+
+	// sort by name ( input search ) listener
+
+	inputBannerSearch.addEventListener("input", (e) => {
+		search = e.target.value.toLowerCase().trim();
+		getProducts(
+			db,
+			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -84,6 +107,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -101,6 +125,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -118,6 +143,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -135,6 +161,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -155,6 +182,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -172,6 +200,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -189,6 +218,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -206,6 +236,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -226,6 +257,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -243,6 +275,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -260,6 +293,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -317,6 +351,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -334,6 +369,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -351,6 +387,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -373,6 +410,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -390,6 +428,7 @@ export function productFiltration(db) {
 		if (!allProducts) return;
 
 		const categoryId = allProducts.querySelector(".modal-category__view-all-text").id;
+		console.log(categoryId);
 
 		const modalWindow = document.getElementById("modal-category-list");
 		if (!modalWindow) return;
@@ -397,6 +436,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,

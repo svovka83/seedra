@@ -5,6 +5,7 @@ const productId = params.get("id");
 
 export async function getProductImage(db) {
 	const productImg = document.querySelector(".one-product-top-images__product");
+	if (!productImg) return;
 
 	const docRef = doc(db, "products", productId);
 	const productData = await getDoc(docRef);

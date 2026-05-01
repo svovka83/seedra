@@ -7,6 +7,7 @@ const productId = params.get("id");
 
 export async function initCounterBlock(db) {
 	const productQuantity = document.querySelector(".one-product-top-content__top-counter");
+	if (!productQuantity) return;
 
 	const docRef = doc(db, "products", productId);
 

@@ -7,6 +7,7 @@ const productId = params.get("id");
 
 export async function getProductPacks(db) {
 	const productPacks = document.querySelector(".one-product-top-content__packs");
+	if (!productPacks) return;
 
 	const docRef = doc(db, "products", productId);
 	const productData = await getDoc(docRef);

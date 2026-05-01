@@ -6,13 +6,6 @@ export async function getModalCart(db) {
 	const cartList = document.querySelector(".modal-cart__products");
 	if (!cartList) return;
 
-	const cart = await getDocs(collection(db, "cart"));
-
-	if (cart.empty) {
-		cartList.innerHTML = emptyCart();
-		return;
-	}
-
 	const q = query(collection(db, "cart"));
 
 	onSnapshot(q, (snapshot) => {

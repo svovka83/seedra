@@ -10,8 +10,6 @@ export function priceRange() {
 
 	const progress = container.querySelector(".price-range__progress");
 
-	console.log(minInput.value, maxInput.value, minRange.value, maxRange.value);
-
 	const min = +container.dataset.min;
 	const max = +container.dataset.max;
 

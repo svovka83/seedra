@@ -1,0 +1,44 @@
+@use "../../settings/variables.scss" as *;
+
+.modal-header-search {
+	display: none;
+	&_open {
+		position: fixed;
+		inset: 0;
+		backdrop-filter: blur(3px);
+		z-index: 550;
+		display: block;
+	}
+	&__inner {
+		position: absolute;
+		top: 65px;
+		left: 50%;
+		transform: translate(-10%, 0);
+		width: 550px;
+		max-height: 80vh;
+		padding-block: 24px;
+		padding-inline: 16px;
+		background-color: $white;
+		border: 1px solid $light_grey_stroke;
+		border-radius: 8px;
+		box-shadow: $shadow_input;
+		overflow: auto;
+		display: flex;
+		flex-direction: column;
+		row-gap: 12px;
+	}
+	&__product {
+		font-size: 14px;
+		line-height: 120%;
+		color: $text_secondary;
+		cursor: pointer;
+		&:hover {
+			color: $green_brand;
+		}
+	}
+	&__product-none {
+		font-size: 14px;
+		line-height: 120%;
+		color: $danger;
+	}
+}

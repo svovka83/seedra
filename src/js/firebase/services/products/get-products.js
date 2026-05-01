@@ -1,9 +1,10 @@
-import { collection, query, onSnapshot, orderBy, where } from "firebase/firestore";
+import { collection, query, onSnapshot, orderBy, where, getDocs } from "firebase/firestore";
 import { productCard } from "../../../components/product/product-card";
 
 export async function getProducts(
 	db,
 	currentSortOrder = orderBy("price", "desc"),
+	search = "",
 	selectedTypes = [],
 	selectedFeatured = [],
 	selectedGrowing = [],
@@ -19,6 +20,11 @@ export async function getProducts(
 
 	// sort by order
 	constraints.push(currentSortOrder);
+
+	// sort by name ( input search )
+	if (search !== "") {
+		constraints.push(where("nameSearch", ">=", search), where("nameSearch", "<=", search + "\uf8ff"));
+	}
 
 	// sort by type
 	if (selectedTypes.length) {
@@ -56,6 +62,13 @@ export async function getProducts(
 	}
 
 	const q = query(collection(db, "products"), ...constraints);
+	const snap = await getDocs(q);
+
+	if (snap.docChanges().length === 0) {
+		let productsString = "";
+		productsString = `<p class="modal-header-search__product-none">Product not found</p>`;
+		return (productList.innerHTML = productsString);
+	}
 
 	onSnapshot(q, (snapshot) => {
 		let productsString = "";

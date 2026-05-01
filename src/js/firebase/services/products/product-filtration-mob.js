@@ -3,16 +3,19 @@ import { getProducts } from "./get-products";
 
 export function productFiltrationMob(db) {
 	// sort by order inputs without listener
-	const optionList = document.getElementById("filter-sort-list");
-	if (!optionList) return;
 
 	const currentSortOrder = orderBy("price", "desc");
+
+	// sort by name inputs
+
+	const search = "";
 
 	// sort by type inputs
 	const checkboxHybrid = document.getElementById("hybrid-mob");
 	const checkboxPollinated = document.getElementById("pollinated-mob");
 	const checkboxOrganic = document.getElementById("organic-mob");
 	const checkboxPelleted = document.getElementById("pelleted-mob");
+	if (!checkboxHybrid) return;
 
 	const selectedTypes = [];
 
@@ -59,6 +62,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -76,6 +80,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -93,6 +98,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -110,6 +116,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -130,6 +137,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -147,6 +155,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -164,6 +173,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -181,6 +191,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -201,6 +212,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -218,6 +230,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -235,6 +248,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -255,6 +269,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -272,6 +287,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -292,6 +308,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -309,6 +326,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -326,6 +344,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
+			search,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,

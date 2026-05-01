@@ -7,6 +7,7 @@ export async function getProductCategory(db) {
 	const base = import.meta.env.BASE_URL;
 
 	const productCategory = document.querySelector(".one-product-top-header__category");
+	if (!productCategory) return;
 
 	const docRefProduct = doc(db, "products", productId);
 	const productData = await getDoc(docRefProduct);

@@ -11,6 +11,9 @@ export function addOneToCart(db) {
 
 	addBtn.addEventListener("click", async () => {
 		try {
+			const radios = document.querySelectorAll(".pack__input");
+			if (!radios) return;
+
 			const refProduct = doc(db, "products", productId);
 			const snapshotProduct = await getDoc(refProduct);
 			const checker = snapshotProduct.data().checked;
@@ -19,6 +22,14 @@ export function addOneToCart(db) {
 
 			const refTotal = doc(db, "total", "14");
 			const snapshotTotal = await getDoc(refTotal);
+
+			// remove all checkers
+			radios.forEach((radio) => {
+				if (radio.checked) {
+					radio.parentElement.classList.remove("pack_checked");
+					radio.checked = false;
+				}
+			});
 
 			if (!checker) {
 				await setDoc(doc(db, "cart", productId), {

@@ -5,7 +5,6 @@ import "toastify-js/src/toastify.css";
 export function addModalQuantity(db) {
 	document.addEventListener("click", async (e) => {
 		const btn = e.target.closest(".product-counter__plus");
-
 		if (!btn) return;
 
 		const product = btn.closest(".modal-cart-product");

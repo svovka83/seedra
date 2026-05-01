@@ -7,10 +7,17 @@
 		<link rel="stylesheet" href="../../scss/styles.scss" />
 	</head>
 	<body>
-		<!-- header (  ) -->
+		<!-- header () -->
 		<!-- prettier-ignore -->
 		{% from "src/partials/header.njk" import header %}
-    {{ header(  ) }}
+    {{ header() }}
+
+		<!-- modal-header-search -->
+		<div class="modal-header-search" id="modal-header-search">
+			<div class="modal-header-search__inner">
+				<!-- products come from firebase -->
+			</div>
+		</div>
 
 		<main class="products-main" id="go-to-top">
 			<!-- burgerMenu() -->
@@ -21,10 +28,10 @@
 			<!-- products-search -->
 			<div class="products-search container">
 				<div class="products-search__search">
-					<!-- search ( classSearch, searchId ) -->
+					<!-- search ( classSearch, searchFunnelId, searchInputId ) -->
 					<!-- prettier-ignore -->
 					{% from "src/partials/search.njk" import search %}
-          {{ search( "search_banner", "open-mobile-filter" ) }}
+          {{ search( "search_banner", "open-mobile-filter", "search-banner-product" ) }}
 				</div>
 
 				<div class="products-search__dropdown">

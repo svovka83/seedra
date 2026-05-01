@@ -9,6 +9,7 @@ export async function oneBlogTop(db) {
 
 	const topOneBlog = document.querySelector(".one-blog-top__inner");
 	const timeOneBlog = document.querySelector(".one-blog-timeline__inner");
+	if (!topOneBlog) return;
 
 	const docRef = doc(db, "blogs", blogId);
 	const blog = await getDoc(docRef);

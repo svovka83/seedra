@@ -23,10 +23,10 @@
       </div>
 
       <div class="header__search">
-        <!-- search ( classSearch ) -->
+        <!-- search( classSearch, searchFunnelId, searchInputId ) -->
         <!-- prettier-ignore -->
         {% from "src/partials/search.njk" import search %}
-        {{ search( "search_header" ) }}
+        {{ search( "search_header", "", "search-header-product" ) }}
       </div>
 
       <!-- cart-block -->
