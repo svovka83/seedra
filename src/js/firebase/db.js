@@ -70,9 +70,9 @@ export async function initFirebase() {
 	getProductStaticCards(db);
 	getProductStaticCardsOnePage(db);
 	getProductSliderCards(db);
-	getProducts(db);
 	productFiltration(db);
 	productFiltrationMob(db);
+	getProducts(db);
 
 	getProductImage(db);
 	getProductTitle(db);

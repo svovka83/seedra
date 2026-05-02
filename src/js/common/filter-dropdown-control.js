@@ -1,4 +1,4 @@
-export function filterDropdown() {
+export function filterDropdownControl() {
 	const dropdowns = document.querySelectorAll(".filter-dropdown");
 
 	dropdowns.forEach((dropdown) => {

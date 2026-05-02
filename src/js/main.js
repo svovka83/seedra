@@ -1,6 +1,6 @@
 import { initDropdownList } from "./common/dropdown.js";
 import { showFilterSidebar } from "./common/show-filter-sidebar.js";
-import { filterDropdown } from "./common/filter-dropdown.js";
+import { filterDropdownControl } from "./common/filter-dropdown-control.js";
 import { oneProductDropdown } from "./components/one-product/one-product-dropdown.js";
 import { initFirebase } from "./firebase/db.js";
 import { productSlider } from "./sliders/product-slider.js";
@@ -14,6 +14,10 @@ import { checkoutValidation } from "./validation/checkout-validation.js";
 import { paymentValidation } from "./validation/payment-validation.js";
 import { openBurgerMenu } from "./burger-menu/open-burger-menu.js";
 import { openBurgerMenuDropdown } from "./burger-menu/open-burger-menu-dropdown.js";
+import { filterSide } from "./pages/products/filter-side.js";
+
+// products
+filterSide();
 
 // firebase
 initFirebase();
@@ -45,4 +49,4 @@ reviewSlider();
 // common
 initDropdownList();
 showFilterSidebar();
-filterDropdown();
+filterDropdownControl();

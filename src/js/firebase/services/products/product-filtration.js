@@ -19,6 +19,7 @@ export function productFiltration(db) {
 	const checkboxPollinated = document.getElementById("pollinated");
 	const checkboxOrganic = document.getElementById("organic");
 	const checkboxPelleted = document.getElementById("pelleted");
+	// if (!checkboxHybrid) return;
 
 	const selectedTypes = [];
 

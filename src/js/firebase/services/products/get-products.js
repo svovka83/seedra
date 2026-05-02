@@ -13,6 +13,16 @@ export async function getProducts(
 	oneProductId = "",
 	categoryId = ""
 ) {
+	// url params
+	// const params = new URLSearchParams(window.location.search);
+	// if (selectedTypes.length) {
+	// 	params.set("selectedTypes", selectedTypes.join(","));
+	// }
+
+	// const newUrl = `${window.location.pathname}?${params.toString()}`;
+	// window.history.pushState({}, "", newUrl);
+
+	// filter sorting
 	const productList = document.querySelector(".products-content__products");
 	if (!productList) return;
 

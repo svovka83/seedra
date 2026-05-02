@@ -59,14 +59,16 @@
 					<!-- products filter -->
 					<div class="products-content__filters">
 						<h4 class="products-content__filters-title">Filters</h4>
-						<!-- filterDropdown( title, classBtn, classContent, appearance1, appearance2, appearance3, appearance4,
-																option1, id1, value1, option2, id2, value2, option3, id3, value3, option4, id4, value4 ) -->
+
+						<div class="products-content__filters-dropdown">
+							<!-- filterSide() -->
+						</div>
+
+						<!-- filterDropdown( title, classBtn, classContent, appearance1, appearance2, appearance3, appearance4, option1, id1, value1, option2, id2, value2, option3, id3, value3, option4, id4, value4 ) -->
 						<!-- filterDropdownPrice( title ) -->
 						<!-- prettier-ignore -->
 						{% from "src/partials/filters/filter-dropdown.njk" import filterDropdown %}
 						{% from "src/partials/filters/filter-dropdown-price.njk" import filterDropdownPrice %}
-
-						{{ filterDropdown( "Seed type", "", "", "", "", "", "", "Hybrid", "hybrid", "hybrid", "Open Pollinated", "pollinated", "pollinated", "Organic Seeds, Plants, and Supplies", "organic", "organic", "Pelleted See", "pelleted", "pelleted" ) }}
 
 						{{ filterDropdown( "Featured", "", "", "", "", "", "", "Pack", "pack", "pack", "Bag", "bag", "bag", "Sack", "sack", "sack", "Barrel", "barrel", "barrel" ) }}
 
