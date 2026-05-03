@@ -15,7 +15,7 @@
 	border: 1px solid $light_grey_stroke;
 	border-radius: 32px;
 	background-color: $white;
-	z-index: 200;
+	z-index: 250;
 	transition: box-shadow 0.2s ease;
 	&:hover {
 		box-shadow: $shadow_dropdown_hover;
@@ -65,7 +65,7 @@
 	border: 1px solid $light_grey_stroke;
 	border-bottom-right-radius: 25px;
 	border-bottom-left-radius: 25px;
-	z-index: 150;
+	z-index: 200;
 	&_open {
 		display: flex;
 	}
@@ -75,6 +75,9 @@
 		align-items: center;
 		padding: 8px 16px;
 		border-radius: 16px;
+		&_without {
+			display: none;
+		}
 		&:hover {
 			background-color: $light_grey_stroke;
 		}

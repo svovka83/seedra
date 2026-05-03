@@ -20,6 +20,7 @@
 		"firebase": "^12.12.0",
 		"imask": "^7.6.1",
 		"libphonenumber-js": "^1.12.42",
+		"nouislider": "^15.8.1",
 		"swiper": "^12.1.3",
 		"toastify-js": "^1.12.0",
 		"validator": "^13.15.35"

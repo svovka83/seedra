@@ -38,7 +38,7 @@ export function productFiltrationMob(db) {
 
 	// sort by use inputs
 	const checkboxAtHome = document.getElementById("at-home-mob");
-	const checkboxInGarder = document.getElementById("in-garden-mob");
+	const checkboxInGarden = document.getElementById("in-garden-mob");
 
 	const selectedUses = [];
 
@@ -277,11 +277,11 @@ export function productFiltrationMob(db) {
 			selectedAdditional
 		);
 	});
-	checkboxInGarder.addEventListener("click", () => {
-		if (checkboxInGarder.checked) {
-			selectedUses.push(checkboxInGarder.value);
+	checkboxInGarden.addEventListener("click", () => {
+		if (checkboxInGarden.checked) {
+			selectedUses.push(checkboxInGarden.value);
 		} else {
-			const currentIndex = selectedUses.indexOf(checkboxInGarder.value);
+			const currentIndex = selectedUses.indexOf(checkboxInGarden.value);
 			selectedUses.splice(currentIndex, 1);
 		}
 		getProducts(

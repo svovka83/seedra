@@ -1,5 +1,7 @@
 import { orderBy } from "firebase/firestore";
 import { getProducts } from "./get-products";
+import { filters } from "../../../url-filter-params/state-filters";
+import { debounce } from "../../../utils/debounce";
 
 export function productFiltration(db) {
 	// sort by order inputs
@@ -9,19 +11,24 @@ export function productFiltration(db) {
 	let currentSortOrder;
 
 	// sort by name inputs
-
 	const inputBannerSearch = document.getElementById("search-banner-product");
 
 	let search;
+
+	// sort by price inputs
+	const minPrice = document.getElementById("min-range");
+	const maxPrice = document.getElementById("max-range");
+
+	let minValue = 10;
+	let maxValue = 1000;
 
 	// sort by type inputs
 	const checkboxHybrid = document.getElementById("hybrid");
 	const checkboxPollinated = document.getElementById("pollinated");
 	const checkboxOrganic = document.getElementById("organic");
 	const checkboxPelleted = document.getElementById("pelleted");
-	// if (!checkboxHybrid) return;
 
-	const selectedTypes = [];
+	const selectedTypes = filters.types;
 
 	// sort by featured inputs
 
@@ -30,7 +37,7 @@ export function productFiltration(db) {
 	const checkboxSack = document.getElementById("sack");
 	const checkboxBarrel = document.getElementById("barrel");
 
-	const selectedFeatured = [];
+	const selectedFeatured = filters.featured;
 
 	// sort by growing inputs
 
@@ -38,13 +45,13 @@ export function productFiltration(db) {
 	const checkboxNormal = document.getElementById("normal");
 	const checkboxFast = document.getElementById("fast");
 
-	const selectedGrowing = [];
+	const selectedGrowing = filters.growing;
 
 	// sort by use inputs
 	const checkboxAtHome = document.getElementById("at-home");
-	const checkboxInGarder = document.getElementById("in-garden");
+	const checkboxInGarden = document.getElementById("in-garden");
 
-	const selectedUses = [];
+	const selectedUses = filters.use;
 
 	// sort by additional inputs
 
@@ -52,7 +59,26 @@ export function productFiltration(db) {
 	const checkboxSour = document.getElementById("sour");
 	const checkboxBitter = document.getElementById("bitter");
 
-	const selectedAdditional = [];
+	const selectedAdditional = filters.additional;
+
+	// debouncedGetProducts() - needs to figure out with this function
+
+	const debouncedGetProducts = debounce(() => {
+		getProducts(
+			db,
+			currentSortOrder,
+			search,
+			minValue,
+			maxValue,
+			selectedTypes,
+			selectedFeatured,
+			selectedGrowing,
+			selectedUses,
+			selectedAdditional
+		);
+	}, 1000);
+
+	// ADD sort by modal one product id inputs and sort by modal all products inputs
 
 	// sort by order listener
 
@@ -68,32 +94,26 @@ export function productFiltration(db) {
 		if (typeSortOrder === "Newly") currentSortOrder = orderBy("createdAt", "desc");
 		if (typeSortOrder === "Old") currentSortOrder = orderBy("createdAt", "asc");
 
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		debouncedGetProducts();
 	});
 
 	// sort by name ( input search ) listener
 
 	inputBannerSearch.addEventListener("input", (e) => {
 		search = e.target.value.toLowerCase().trim();
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		debouncedGetProducts();
+	});
+
+	// sort by price listener - with debounce, but without react on scroll!
+	minPrice.addEventListener("input", () => {
+		minValue = Number(minPrice.value);
+		maxValue = Number(maxPrice.value);
+		debouncedGetProducts();
+	});
+	maxPrice.addEventListener("input", () => {
+		minValue = Number(minPrice.value);
+		maxValue = Number(maxPrice.value);
+		debouncedGetProducts();
 	});
 
 	// sort by type listener
@@ -105,16 +125,8 @@ export function productFiltration(db) {
 			const currentIndex = selectedTypes.indexOf(checkboxHybrid.value);
 			selectedTypes.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.types = selectedTypes;
+		debouncedGetProducts();
 	});
 	checkboxPollinated.addEventListener("click", () => {
 		if (checkboxPollinated.checked) {
@@ -123,16 +135,8 @@ export function productFiltration(db) {
 			const currentIndex = selectedTypes.indexOf(checkboxPollinated.value);
 			selectedTypes.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.types = selectedTypes;
+		debouncedGetProducts();
 	});
 	checkboxOrganic.addEventListener("click", () => {
 		if (checkboxOrganic.checked) {
@@ -141,16 +145,8 @@ export function productFiltration(db) {
 			const currentIndex = selectedTypes.indexOf(checkboxOrganic.value);
 			selectedTypes.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.types = selectedTypes;
+		debouncedGetProducts();
 	});
 	checkboxPelleted.addEventListener("click", () => {
 		if (checkboxPelleted.checked) {
@@ -159,16 +155,8 @@ export function productFiltration(db) {
 			const currentIndex = selectedTypes.indexOf(checkboxPelleted.value);
 			selectedTypes.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.types = selectedTypes;
+		debouncedGetProducts();
 	});
 
 	// sort by featured listener
@@ -180,16 +168,8 @@ export function productFiltration(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxPack.value);
 			selectedFeatured.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.featured = selectedFeatured;
+		debouncedGetProducts();
 	});
 	checkboxBag.addEventListener("click", () => {
 		if (checkboxBag.checked) {
@@ -198,16 +178,8 @@ export function productFiltration(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxBag.value);
 			selectedFeatured.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.featured = selectedFeatured;
+		debouncedGetProducts();
 	});
 	checkboxSack.addEventListener("click", () => {
 		if (checkboxSack.checked) {
@@ -216,16 +188,8 @@ export function productFiltration(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxSack.value);
 			selectedFeatured.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.featured = selectedFeatured;
+		debouncedGetProducts();
 	});
 	checkboxBarrel.addEventListener("click", () => {
 		if (checkboxBarrel.checked) {
@@ -234,16 +198,8 @@ export function productFiltration(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxBarrel.value);
 			selectedFeatured.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.featured = selectedFeatured;
+		debouncedGetProducts();
 	});
 
 	// sort by growing listener
@@ -255,16 +211,8 @@ export function productFiltration(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxSlow.value);
 			selectedGrowing.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.growing = selectedGrowing;
+		debouncedGetProducts();
 	});
 	checkboxNormal.addEventListener("click", () => {
 		if (checkboxNormal.checked) {
@@ -273,16 +221,8 @@ export function productFiltration(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxNormal.value);
 			selectedGrowing.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.growing = selectedGrowing;
+		debouncedGetProducts();
 	});
 	checkboxFast.addEventListener("click", () => {
 		if (checkboxFast.checked) {
@@ -291,16 +231,8 @@ export function productFiltration(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxFast.value);
 			selectedGrowing.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.growing = selectedGrowing;
+		debouncedGetProducts();
 	});
 
 	// sort by uses listener
@@ -312,32 +244,18 @@ export function productFiltration(db) {
 			const currentIndex = selectedUses.indexOf(checkboxAtHome.value);
 			selectedUses.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.use = selectedUses;
+		debouncedGetProducts();
 	});
-	checkboxInGarder.addEventListener("click", () => {
-		if (checkboxInGarder.checked) {
-			selectedUses.push(checkboxInGarder.value);
+	checkboxInGarden.addEventListener("click", () => {
+		if (checkboxInGarden.checked) {
+			selectedUses.push(checkboxInGarden.value);
 		} else {
-			const currentIndex = selectedUses.indexOf(checkboxInGarder.value);
+			const currentIndex = selectedUses.indexOf(checkboxInGarden.value);
 			selectedUses.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.use = selectedUses;
+		debouncedGetProducts();
 	});
 
 	// sort by additional listener
@@ -349,16 +267,8 @@ export function productFiltration(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxSweet.value);
 			selectedAdditional.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.additional = selectedAdditional;
+		debouncedGetProducts();
 	});
 	checkboxSour.addEventListener("click", () => {
 		if (checkboxSour.checked) {
@@ -367,16 +277,8 @@ export function productFiltration(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxSour.value);
 			selectedAdditional.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.additional = selectedAdditional;
+		debouncedGetProducts();
 	});
 	checkboxBitter.addEventListener("click", () => {
 		if (checkboxBitter.checked) {
@@ -385,16 +287,8 @@ export function productFiltration(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxBitter.value);
 			selectedAdditional.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.additional = selectedAdditional;
+		debouncedGetProducts();
 	});
 
 	// sort by modal one product id listener
@@ -412,6 +306,8 @@ export function productFiltration(db) {
 			db,
 			currentSortOrder,
 			search,
+			minValue,
+			maxValue,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -438,6 +334,8 @@ export function productFiltration(db) {
 			db,
 			currentSortOrder,
 			search,
+			minValue,
+			maxValue,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,

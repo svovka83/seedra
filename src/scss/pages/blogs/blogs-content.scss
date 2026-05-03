@@ -1,8 +1,16 @@
+@use "../../settings/variables.scss";
+
 .blogs-content {
 	margin-bottom: 83px;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 30px;
+	&__not-found {
+		font-size: 48px;
+		padding-top: 32px;
+		margin: 0 auto;
+		color: #70737c;
+	}
 	div:first-of-type {
 		grid-column: 1 / 3;
 	}

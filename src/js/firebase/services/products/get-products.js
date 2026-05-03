@@ -1,26 +1,24 @@
 import { collection, query, onSnapshot, orderBy, where, getDocs } from "firebase/firestore";
 import { productCard } from "../../../components/product/product-card";
+import { filters } from "../../../url-filter-params/state-filters";
+import { updateFilterUrl } from "../../../url-filter-params/update-filter-url";
 
 export async function getProducts(
 	db,
 	currentSortOrder = orderBy("price", "desc"),
 	search = "",
-	selectedTypes = [],
-	selectedFeatured = [],
-	selectedGrowing = [],
-	selectedUses = [],
-	selectedAdditional = [],
+	minPrice = 10,
+	maxPrice = 1000,
+	selectedTypes,
+	selectedFeatured,
+	selectedGrowing,
+	selectedUse,
+	selectedAdditional,
 	oneProductId = "",
 	categoryId = ""
 ) {
-	// url params
-	// const params = new URLSearchParams(window.location.search);
-	// if (selectedTypes.length) {
-	// 	params.set("selectedTypes", selectedTypes.join(","));
-	// }
-
-	// const newUrl = `${window.location.pathname}?${params.toString()}`;
-	// window.history.pushState({}, "", newUrl);
+	// update url params
+	updateFilterUrl(filters);
 
 	// filter sorting
 	const productList = document.querySelector(".products-content__products");
@@ -35,6 +33,9 @@ export async function getProducts(
 	if (search !== "") {
 		constraints.push(where("nameSearch", ">=", search), where("nameSearch", "<=", search + "\uf8ff"));
 	}
+
+	// sort by price
+	constraints.push(where("price", ">=", minPrice * 100), where("price", "<=", maxPrice * 100));
 
 	// sort by type
 	if (selectedTypes.length) {
@@ -52,8 +53,8 @@ export async function getProducts(
 	}
 
 	// sort by use
-	if (selectedUses.length) {
-		constraints.push(where("use", "in", selectedUses));
+	if (selectedUse.length) {
+		constraints.push(where("use", "in", selectedUse));
 	}
 
 	// sort by additional
@@ -76,7 +77,7 @@ export async function getProducts(
 
 	if (snap.docChanges().length === 0) {
 		let productsString = "";
-		productsString = `<p class="modal-header-search__product-none">Product not found</p>`;
+		productsString = `<p class="products-content__not-found">Product not found</p>`;
 		return (productList.innerHTML = productsString);
 	}
 

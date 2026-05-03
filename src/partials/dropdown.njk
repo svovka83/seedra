@@ -1,4 +1,4 @@
-{% macro dropdown( title, initial, initialID, listID, classPrice, option1, option2, option3, option4 ) %}
+{% macro dropdown( title, initial, initialID, listID, classPrice, option1, option2, option3, option4, classNoOption ) %}
   <div class="dropdown">
     <div class="dropdown__control">
       <div class="dropdown__title-block">
@@ -19,11 +19,11 @@
         <span class="dropdown__value">{{ option2 }}</span>
         <span class="dropdown__price {{classPrice}}">+$20</span>
       </div>
-      <div class="dropdown__option">
+      <div class="dropdown__option {{classNoOption}}">
         <span class="dropdown__value">{{ option3 }}</span>
         <span class="dropdown__price {{classPrice}}">+$50</span>
       </div>
-      <div class="dropdown__option">
+      <div class="dropdown__option {{classNoOption}}">
         <span class="dropdown__value">{{ option4 }}</span>
         <span class="dropdown__price {{classPrice}}">+$100</span>
       </div>

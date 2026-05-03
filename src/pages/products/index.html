@@ -6,7 +6,7 @@
 		<title>Products</title>
 		<link rel="stylesheet" href="../../scss/styles.scss" />
 	</head>
-	<body>
+	<body style="display: grid; grid-template-rows: auto 1fr auto">
 		<!-- header () -->
 		<!-- prettier-ignore -->
 		{% from "src/partials/header.njk" import header %}
@@ -35,11 +35,11 @@
 				</div>
 
 				<div class="products-search__dropdown">
-					<!-- dropdown( title, initial, initialID, listID, classPrice, option1, option2, option3, option4 ) -->
+					<!-- dropdown( title, initial, initialID, listID, classPrice, option1, option2, option3, option4, classNoOption ) -->
 					<!-- prettier-ignore -->
 					{% from "src/partials/dropdown.njk" import dropdown %}
           {{ dropdown( "Sort by", "Most expensive", "filter-sort", "filter-sort-list", "dropdown__price_without",
-					"Most expensive", "The cheapest", "Newly", "Old" ) }}
+					"Most expensive", "The cheapest", "Newly", "Old", "" ) }}
 				</div>
 			</div>
 
@@ -60,49 +60,66 @@
 					<div class="products-content__filters">
 						<h4 class="products-content__filters-title">Filters</h4>
 
-						<div class="products-content__filters-dropdown">
+						<div class="products-content__filters-dropdown-type">
+							<!-- filterSide() -->
+						</div>
+						<div class="products-content__filters-dropdown-featured">
 							<!-- filterSide() -->
 						</div>
 
-						<!-- filterDropdown( title, classBtn, classContent, appearance1, appearance2, appearance3, appearance4, option1, id1, value1, option2, id2, value2, option3, id3, value3, option4, id4, value4 ) -->
 						<!-- filterDropdownPrice( title ) -->
 						<!-- prettier-ignore -->
-						{% from "src/partials/filters/filter-dropdown.njk" import filterDropdown %}
 						{% from "src/partials/filters/filter-dropdown-price.njk" import filterDropdownPrice %}
-
-						{{ filterDropdown( "Featured", "", "", "", "", "", "", "Pack", "pack", "pack", "Bag", "bag", "bag", "Sack", "sack", "sack", "Barrel", "barrel", "barrel" ) }}
-
 						{{ filterDropdownPrice( "Price" ) }}
 
-						{{ filterDropdown( "Growing Conditions", "", "", "", "", "", "checkbox_none", "Slow", "slow", "slow", "Normal", "normal", "normal", "Fast", "fast", "fast" ) }}
-
-						{{ filterDropdown( "Use", "", "", "", "", "checkbox_none", "checkbox_none", "At home", "at-home", "at-home", "In garder", "in-garden", "in-garden" ) }}
-
-						{{ filterDropdown( "Additional Characteristic", "", "", "", "", "", "checkbox_none", "Sweet", "sweet", "sweet", "Sour", "sour", "sour", "Bitter", "bitter", "bitter" ) }}
+						<div class="products-content__filters-dropdown-growing">
+							<!-- filterSide() -->
+						</div>
+						<div class="products-content__filters-dropdown-use">
+							<!-- filterSide() -->
+						</div>
+						<div class="products-content__filters-dropdown-additional">
+							<!-- filterSide() -->
+						</div>
 
 						<!-- price-range -->
-						<div class="price-range" data-min="0" data-max="1000">
-							<div class="price-range__inputs">
-								<div class="price-range__field">
-									<span class="price-range__label">From</span>
-									<input type="number" class="price-range__input price-range__input--min" />
+						<div class="price-range">
+							<div class="price-range-inputs">
+								<div class="price-range-inputs__field">
+									<span class="price-range-inputs__label">From</span>
+									<label for="min-range">
+										<span class="price-range-inputs__dollar">$</span>
+										<input
+											class="price-range-inputs__input"
+											id="min-range"
+											type="number"
+											min="10"
+											max="1000"
+											placeholder="10" />
+									</label>
 								</div>
-								<span class="price-range__separator"></span>
-								<div class="price-range__field">
-									<span class="price-range__label">To</span>
-									<input type="number" class="price-range__input price-range__input--max" />
+
+								<span class="price-range-inputs__separator"></span>
+
+								<div class="price-range-inputs__field">
+									<span class="price-range-inputs__label">To</span>
+									<label for="max-range">
+										<span class="price-range-inputs__dollar">$</span>
+										<input
+											class="price-range-inputs__input"
+											id="max-range"
+											type="number"
+											min="10"
+											max="1000"
+											placeholder="1000" />
+									</label>
 								</div>
 							</div>
 
-							<div class="price-range__slider">
-								<div class="price-range__track"></div>
-								<div class="price-range__progress"></div>
-
-								<input type="range" class="price-range__range price-range__range--min" />
-								<input type="range" class="price-range__range price-range__range--max" />
-							</div>
+							<div class="price-range-slider" id="price-range-slider"></div>
 						</div>
 					</div>
+
 					<!-- products content -->
 					<div class="products-content__products">
 						<!-- products getting from firebase -->
@@ -144,9 +161,47 @@
 
 			{{ filterDropdown( "Additional Characteristic", "filter-dropdown__btn_mobile", "filter-dropdown__content_mobile", "", "", "", "checkbox_none", "Sweet", "sweet-mob", "sweet", "Sour", "sour-mob", "sour", "Bitter", "bitter-mob", "bitter" ) }}
 
+			<!-- price-range -->
+			<!-- <div class="price-range">
+				<div class="price-range-inputs">
+					<div class="price-range-inputs__field">
+						<span class="price-range-inputs__label">From</span>
+						<label for="min-range">
+							<span class="price-range-inputs__dollar">$</span>
+							<input
+								class="price-range-inputs__input"
+								id="min-range"
+								type="number"
+								min="10"
+								max="1000"
+								placeholder="10" />
+						</label>
+					</div>
+
+					<span class="price-range-inputs__separator"></span>
+
+					<div class="price-range-inputs__field">
+						<span class="price-range-inputs__label">To</span>
+						<label for="max-range">
+							<span class="price-range-inputs__dollar">$</span>
+							<input
+								class="price-range-inputs__input"
+								id="max-range"
+								type="number"
+								min="10"
+								max="1000"
+								placeholder="1000" />
+						</label>
+					</div>
+				</div>
+
+				<div class="price-range-slider" id="price-range-slider"></div>
+			</div> -->
+
 			<span class="triangle-pointer"></span>
 		</div>
 
 		<script type="module" src="../../js/main.js"></script>
+		<script type="module" src="../../js/pages/products/products-scripts.js"></script>
 	</body>
 </html>

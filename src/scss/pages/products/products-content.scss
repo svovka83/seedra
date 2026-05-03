@@ -3,6 +3,12 @@
 .products-content {
 	position: relative;
 	margin-bottom: 81px;
+	&__not-found {
+		font-size: 54px;
+		line-height: 64px;
+		padding-top: 32px;
+		color: #70737c;
+	}
 	@media (max-width: 768px) {
 		margin-bottom: 48px;
 	}

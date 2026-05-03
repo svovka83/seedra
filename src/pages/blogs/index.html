@@ -6,7 +6,7 @@
 		<title>Our Blogs</title>
 		<link rel="stylesheet" href="../../scss/styles.scss" />
 	</head>
-	<body>
+	<body style="display: grid; grid-template-rows: auto 1fr auto">
 		<!-- header () -->
 		<!-- prettier-ignore -->
 		{% from "src/partials/header.njk" import header %}
@@ -37,17 +37,17 @@
 			<!-- blogs-search -->
 			<div class="blogs-search container">
 				<div class="blogs-search__search">
-					<!-- search ( classSearch ) -->
+					<!-- search ( classSearch, searchFunnelId, searchInputId ) -->
 					<!-- prettier-ignore -->
 					{% from "src/partials/search.njk" import search %}
-          {{ search( "search_banner" ) }}
+          {{ search( "search_banner", "open-mobile-filter", "search-banner-blog" ) }}
 				</div>
 
 				<div class="blogs-search__dropdown">
-					<!-- dropdown( title, initial ) -->
+					<!-- dropdown( title, initial, initialID, listID, classPrice, option1, option2, option3, option4, classNoOption ) -->
 					<!-- prettier-ignore -->
 					{% from "src/partials/dropdown.njk" import dropdown %}
-          {{ dropdown( "Sort by", "Recently" ) }}
+          {{ dropdown( "Sort by", "Recently", "blog-sort", "blog-sort-list", "dropdown__price_without", "Recently", "Older", "", "", "dropdown__option_without" ) }}
 				</div>
 			</div>
 

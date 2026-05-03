@@ -1,3 +1,5 @@
+import { orderBy } from "firebase/firestore";
+
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
@@ -24,8 +26,9 @@ import { getProductPacks } from "./services/one-product/get-one-product-packs";
 import { checkedPack } from "./services/one-product/checked-pack";
 import { addOneToCart } from "./services/one-product/add-one-to-cart";
 
-import { getBlogStaticCards, getBlogSliderCards } from "./services/get-blogs";
-import { getFilterBlogs } from "./services/get-filter-blogs";
+import { getBlogStaticCards, getBlogSliderCards } from "./services/get-blogs-main.js";
+import { getBlogs } from "./services/blogs/get-blogs.js";
+import { blogFiltration } from "./services/blogs/blog-filtration";
 import { getReviewCards } from "./services/get-reviews";
 import { oneBlogTop } from "../pages/one-blog";
 
@@ -49,6 +52,10 @@ import { getPayment } from "./services/payment/get-payment";
 import { openModalCategory } from "../modals/open-modal-category";
 import { openModalCart } from "../modals/open-modal-cart.js";
 
+import { filters } from "../url-filter-params/state-filters.js";
+import { initFromUrl } from "../url-filter-params/init-from-url.js";
+import { applyFiltersToUI } from "../url-filter-params/apply-filters-to-ui.js";
+
 export async function initFirebase() {
 	const firebaseConfig = {
 		apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
@@ -67,13 +74,36 @@ export async function initFirebase() {
 	getBurgerMenuDropdowns(db);
 	getModalHeaderProducts(db);
 
+	// main page
 	getProductStaticCards(db);
 	getProductStaticCardsOnePage(db);
 	getProductSliderCards(db);
+
+	getBlogStaticCards(db);
+	getBlogSliderCards(db);
+
+	getReviewCards(db);
+
+	// params products after reload
+	initFromUrl(); // ← reading URL params
+	applyFiltersToUI(); // ← update UI
+	getProducts(
+		db,
+		orderBy("price", "desc"),
+		"",
+		10,
+		1000,
+		filters.types,
+		filters.featured,
+		filters.growing,
+		filters.use,
+		filters.additional
+	);
+
 	productFiltration(db);
 	productFiltrationMob(db);
-	getProducts(db);
 
+	// one product page
 	getProductImage(db);
 	getProductTitle(db);
 	getProductCategory(db);
@@ -83,10 +113,11 @@ export async function initFirebase() {
 	checkedPack(db);
 	addOneToCart(db);
 
-	getBlogStaticCards(db);
-	getBlogSliderCards(db);
-	getFilterBlogs(db);
-	getReviewCards(db);
+	// params blogs after reload
+	getBlogs(db, orderBy("createdAt", "desc"));
+
+	blogFiltration(db);
+
 	oneBlogTop(db);
 
 	getCart(db);
