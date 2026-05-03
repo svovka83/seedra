@@ -4,10 +4,10 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Our Blogs</title>
-		<script type="module" crossorigin src="/seedra/assets/main-DHn1jmDF.js"></script>
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-DEEPhNQg.css">
+		<script type="module" crossorigin src="/seedra/assets/main-7gEDxJgO.js"></script>
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-BIFhjabK.css">
 	</head>
-	<body>
+	<body style="display: grid; grid-template-rows: auto 1fr auto">
 		<!-- header () -->
 		<!-- prettier-ignore -->
 		
@@ -244,22 +244,22 @@
 			<!-- blogs-search -->
 			<div class="blogs-search container">
 				<div class="blogs-search__search">
-					<!-- search ( classSearch ) -->
+					<!-- search ( classSearch, searchFunnelId, searchInputId ) -->
 					<!-- prettier-ignore -->
 					
           
   <div class="search search_banner">
-    <input class="search__input" type="text" id="" placeholder="Search">
+    <input class="search__input" type="text" id="search-banner-blog" placeholder="Search">
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
-    <img class="search__img" src="/seedra/images/icons/funnel.svg" id="" alt="search icon funnel">
+    <img class="search__img" src="/seedra/images/icons/funnel.svg" id="open-mobile-filter" alt="search icon funnel">
   </div>
 
 				</div>
 
 				<div class="blogs-search__dropdown">
-					<!-- dropdown( title, initial ) -->
+					<!-- dropdown( title, initial, initialID, listID, classPrice, option1, option2, option3, option4, classNoOption ) -->
 					<!-- prettier-ignore -->
 					
           
@@ -267,29 +267,29 @@
     <div class="dropdown__control">
       <div class="dropdown__title-block">
         <p class="dropdown__title">Sort by</p>
-        <p class="dropdown__initial" id="">Recently</p>
+        <p class="dropdown__initial" id="blog-sort">Recently</p>
       </div>
       <svg class="dropdown__icon">
         <use xlink:href="/seedra/images/sprites.svg#chevron-icon"></use>
       </svg>
     </div>
     
-    <div class="dropdown__list" id="">
+    <div class="dropdown__list" id="blog-sort-list">
       <div class="dropdown__option">
-        <span class="dropdown__value"></span>
-        <span class="dropdown__price ">+$0</span>
+        <span class="dropdown__value">Recently</span>
+        <span class="dropdown__price dropdown__price_without">+$0</span>
       </div>
       <div class="dropdown__option">
-        <span class="dropdown__value"></span>
-        <span class="dropdown__price ">+$20</span>
+        <span class="dropdown__value">Older</span>
+        <span class="dropdown__price dropdown__price_without">+$20</span>
       </div>
-      <div class="dropdown__option">
+      <div class="dropdown__option dropdown__option_without">
         <span class="dropdown__value"></span>
-        <span class="dropdown__price ">+$50</span>
+        <span class="dropdown__price dropdown__price_without">+$50</span>
       </div>
-      <div class="dropdown__option">
+      <div class="dropdown__option dropdown__option_without">
         <span class="dropdown__value"></span>
-        <span class="dropdown__price ">+$100</span>
+        <span class="dropdown__price dropdown__price_without">+$100</span>
       </div>
     </div>
 	</div>
