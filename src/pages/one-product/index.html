@@ -4,8 +4,11 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>One product</title>
-		<script type="module" crossorigin src="/seedra/assets/main-7gEDxJgO.js"></script>
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-BIFhjabK.css">
+		<script type="module" crossorigin src="/seedra/assets/oneProduct-BWKpTy_l.js"></script>
+		<link rel="modulepreload" crossorigin href="/seedra/assets/index.esm-CV_qY3sG.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/index.esm-jqcHiiUG.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/main-Oi4a1nQr.js">
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-DSpFVPhF.css">
 	</head>
 	<body>
 		<!-- header () -->
@@ -208,7 +211,25 @@
 
 
 			<!-- one-product-breadcrumbs -->
-			<div class="one-product-breadcrumbs"></div>
+			<div class="one-product-breadcrumbs container">
+				<ul class="one-product-breadcrumbs__list">
+					<li class="one-product-breadcrumbs__item">
+						<a class="one-product-breadcrumbs__link" href="#!">Main</a>
+					</li>
+					<li class="one-product-breadcrumbs__item">
+						<a class="one-product-breadcrumbs__link" href="#!">Cataloug</a>
+					</li>
+					<li class="one-product-breadcrumbs__item one-product-breadcrumbs__category">
+						<!-- nav category comes from firebase -->
+					</li>
+					<li class="one-product-breadcrumbs__item">
+						<a class="one-product-breadcrumbs__link" href="#!">Cucumber</a>
+					</li>
+					<li class="one-product-breadcrumbs__item one-product-breadcrumbs__current">
+						<!-- nav title comes from firebase -->
+					</li>
+				</ul>
+			</div>
 
 			<!-- one-product-top -->
 			<section class="one-product-top container">
@@ -970,6 +991,6 @@
     </button>
   </div>
 
-
+
 	</body>
 </html>
