@@ -9,23 +9,33 @@ export function applyFiltersToUI() {
 	// maxPrice.value = filters.max;
 
 	filters.types.forEach((type) => {
-		const el = document.querySelector(`input[value="${type}"]`);
-		if (el) el.checked = true;
+		const elems = document.querySelectorAll(`input[value="${type}"]`);
+		if (elems) {
+			elems.forEach((el) => (el.checked = true));
+		}
 	});
 	filters.featured.forEach((type) => {
-		const el = document.querySelector(`input[value="${type}"]`);
-		if (el) el.checked = true;
+		const elems = document.querySelectorAll(`input[value="${type}"]`);
+		if (elems) {
+			elems.forEach((el) => (el.checked = true));
+		}
 	});
 	filters.growing.forEach((type) => {
-		const el = document.querySelector(`input[value="${type}"]`);
-		if (el) el.checked = true;
+		const elems = document.querySelectorAll(`input[value="${type}"]`);
+		if (elems) {
+			elems.forEach((el) => (el.checked = true));
+		}
 	});
 	filters.use.forEach((type) => {
-		const el = document.querySelector(`input[value="${type}"]`);
-		if (el) el.checked = true;
+		const elems = document.querySelectorAll(`input[value="${type}"]`);
+		if (elems) {
+			elems.forEach((el) => (el.checked = true));
+		}
 	});
 	filters.additional.forEach((type) => {
-		const el = document.querySelector(`input[value="${type}"]`);
-		if (el) el.checked = true;
+		const elems = document.querySelectorAll(`input[value="${type}"]`);
+		if (elems) {
+			elems.forEach((el) => (el.checked = true));
+		}
 	});
 }

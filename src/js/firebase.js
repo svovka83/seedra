@@ -21,15 +21,3 @@ export function getFirebase() {
 
 	return { app, db };
 }
-
-// in current script - example
-
-// if (document.querySelector(".checkout-page")) {
-// 	const { getFirebase } = await import("../../firebase.js");
-
-// 	const { getCheckout } = await import("./get-checkout.js");
-
-// 	const { db } = getFirebase();
-
-// 	getCheckout(db);
-// }

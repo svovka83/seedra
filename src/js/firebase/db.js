@@ -14,8 +14,6 @@ import {
 	getProductSliderCards,
 } from "./services/get-products-main";
 
-import { productFiltrationMob } from "./services/products/product-filtration-mob";
-
 import { getBlogStaticCards, getBlogSliderCards } from "./services/get-blogs-main.js";
 import { getBlogs } from "./services/blogs/get-blogs.js";
 import { blogFiltration } from "./services/blogs/blog-filtration";
@@ -67,8 +65,6 @@ export async function initFirebase() {
 	getBlogSliderCards(db);
 
 	getReviewCards(db);
-
-	productFiltrationMob(db);
 
 	// params blogs after reload
 	getBlogs(db, orderBy("createdAt", "desc"));

@@ -142,24 +142,28 @@
 		<!-- modal-mobile-filter -->
 		<div class="mobile-filter" id="mobile-filter">
 			<h4 class="products-content__filters-title">Filters</h4>
-			<!-- filterDropdown( title, classBtn, classContent, appearance1, appearance2, appearance3, appearance4,
-															option1, id1, value1, option2, id2, value2, option3, id3, value3, option4, id4, value4 ) -->
+
+			<div class="products-content__filters-dropdown-type-mob">
+				<!-- filterSide() -->
+			</div>
+			<div class="products-content__filters-dropdown-featured-mob">
+				<!-- filterSide() -->
+			</div>
+
 			<!-- filterDropdownPrice( title ) -->
 			<!-- prettier-ignore -->
-			{% from "src/partials/filters/filter-dropdown.njk" import filterDropdown %}
 			{% from "src/partials/filters/filter-dropdown-price.njk" import filterDropdownPrice %}
-
-			{{ filterDropdown( "Seed type", "filter-dropdown__btn_mobile", "filter-dropdown__content_mobile", "", "", "", "", "Hybrid", "hybrid-mob", "hybrid", "Open Pollinated", "pollinated-mob", "pollinated", "Organic Seeds, Plants, and Supplies", "organic-mob", "organic", "Pelleted See", "pelleted-mob", "pelleted" ) }}
-
-			{{ filterDropdown( "Featured", "filter-dropdown__btn_mobile", "filter-dropdown__content_mobile", "", "", "", "", "Pack", "pack-mob", "pack", "Bag", "bag-mob", "bag", "Sack", "sack-mob", "sack", "Barrel", "barrel-mob", "barrel" ) }}
-
 			{{ filterDropdownPrice( "Price", "filter-dropdown__btn_mobile", "filter-dropdown__content_mobile" ) }}
 
-			{{ filterDropdown( "Growing Conditions", "filter-dropdown__btn_mobile", "filter-dropdown__content_mobile", "", "", "", "checkbox_none", "Slow", "slow-mob", "slow", "Normal", "normal-mob", "normal", "Fast", "fast-mob", "fast" ) }}
-
-			{{ filterDropdown( "Use", "filter-dropdown__btn_mobile", "filter-dropdown__content_mobile", "", "", "checkbox_none", "checkbox_none", "At home", "at-home-mob", "at-home", "In garder", "in-garden-mob", "in-garden" ) }}
-
-			{{ filterDropdown( "Additional Characteristic", "filter-dropdown__btn_mobile", "filter-dropdown__content_mobile", "", "", "", "checkbox_none", "Sweet", "sweet-mob", "sweet", "Sour", "sour-mob", "sour", "Bitter", "bitter-mob", "bitter" ) }}
+			<div class="products-content__filters-dropdown-growing-mob">
+				<!-- filterSide() -->
+			</div>
+			<div class="products-content__filters-dropdown-use-mob">
+				<!-- filterSide() -->
+			</div>
+			<div class="products-content__filters-dropdown-additional-mob">
+				<!-- filterSide() -->
+			</div>
 
 			<!-- price-range -->
 			<!-- <div class="price-range">

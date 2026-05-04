@@ -1,7 +1,10 @@
 import { orderBy } from "firebase/firestore";
-import { getProducts } from "../../../pages/products/get-products";
+import { getProducts } from "./get-products";
+import { filters } from "../../url-filter-params/state-filters";
+import { debounce } from "../../utils/debounce";
 
 export function productFiltrationMob(db) {
+	console.log(filters);
 	// sort by order inputs without listener
 
 	const currentSortOrder = orderBy("price", "desc");
@@ -10,6 +13,13 @@ export function productFiltrationMob(db) {
 
 	const search = "";
 
+	// sort by price inputs
+	// const minPrice = document.getElementById("min-range");
+	// const maxPrice = document.getElementById("max-range");
+
+	let minValue = 10;
+	let maxValue = 1000;
+
 	// sort by type inputs
 	const checkboxHybrid = document.getElementById("hybrid-mob");
 	const checkboxPollinated = document.getElementById("pollinated-mob");
@@ -17,7 +27,7 @@ export function productFiltrationMob(db) {
 	const checkboxPelleted = document.getElementById("pelleted-mob");
 	if (!checkboxHybrid) return;
 
-	const selectedTypes = [];
+	const selectedTypes = filters.types;
 
 	// sort by featured inputs
 
@@ -26,7 +36,7 @@ export function productFiltrationMob(db) {
 	const checkboxSack = document.getElementById("sack-mob");
 	const checkboxBarrel = document.getElementById("barrel-mob");
 
-	const selectedFeatured = [];
+	const selectedFeatured = filters.featured;
 
 	// sort by growing inputs
 
@@ -34,13 +44,13 @@ export function productFiltrationMob(db) {
 	const checkboxNormal = document.getElementById("normal-mob");
 	const checkboxFast = document.getElementById("fast-mob");
 
-	const selectedGrowing = [];
+	const selectedGrowing = filters.growing;
 
 	// sort by use inputs
 	const checkboxAtHome = document.getElementById("at-home-mob");
 	const checkboxInGarden = document.getElementById("in-garden-mob");
 
-	const selectedUses = [];
+	const selectedUses = filters.use;
 
 	// sort by additional inputs
 
@@ -48,7 +58,24 @@ export function productFiltrationMob(db) {
 	const checkboxSour = document.getElementById("sour-mob");
 	const checkboxBitter = document.getElementById("bitter-mob");
 
-	const selectedAdditional = [];
+	const selectedAdditional = filters.additional;
+
+	// debouncedGetProducts() - needs to figure out with this function
+
+	const debouncedGetProducts = debounce(() => {
+		getProducts(
+			db,
+			currentSortOrder,
+			search,
+			minValue,
+			maxValue,
+			selectedTypes,
+			selectedFeatured,
+			selectedGrowing,
+			selectedUses,
+			selectedAdditional
+		);
+	}, 1000);
 
 	// sort by type listener
 
@@ -59,16 +86,8 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedTypes.indexOf(checkboxHybrid.value);
 			selectedTypes.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.types = selectedTypes;
+		debouncedGetProducts();
 	});
 	checkboxPollinated.addEventListener("click", () => {
 		if (checkboxPollinated.checked) {
@@ -77,16 +96,8 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedTypes.indexOf(checkboxPollinated.value);
 			selectedTypes.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.types = selectedTypes;
+		debouncedGetProducts();
 	});
 	checkboxOrganic.addEventListener("click", () => {
 		if (checkboxOrganic.checked) {
@@ -95,16 +106,8 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedTypes.indexOf(checkboxOrganic.value);
 			selectedTypes.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.types = selectedTypes;
+		debouncedGetProducts();
 	});
 	checkboxPelleted.addEventListener("click", () => {
 		if (checkboxPelleted.checked) {
@@ -113,16 +116,8 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedTypes.indexOf(checkboxPelleted.value);
 			selectedTypes.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.types = selectedTypes;
+		debouncedGetProducts();
 	});
 
 	// sort by featured listener
@@ -134,16 +129,8 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxPack.value);
 			selectedFeatured.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.featured = selectedFeatured;
+		debouncedGetProducts();
 	});
 	checkboxBag.addEventListener("click", () => {
 		if (checkboxBag.checked) {
@@ -152,16 +139,8 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxBag.value);
 			selectedFeatured.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.featured = selectedFeatured;
+		debouncedGetProducts();
 	});
 	checkboxSack.addEventListener("click", () => {
 		if (checkboxSack.checked) {
@@ -170,16 +149,8 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxSack.value);
 			selectedFeatured.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.featured = selectedFeatured;
+		debouncedGetProducts();
 	});
 	checkboxBarrel.addEventListener("click", () => {
 		if (checkboxBarrel.checked) {
@@ -188,16 +159,8 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxBarrel.value);
 			selectedFeatured.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.featured = selectedFeatured;
+		debouncedGetProducts();
 	});
 
 	// sort by growing listener
@@ -209,16 +172,8 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxSlow.value);
 			selectedGrowing.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.growing = selectedGrowing;
+		debouncedGetProducts();
 	});
 	checkboxNormal.addEventListener("click", () => {
 		if (checkboxNormal.checked) {
@@ -227,16 +182,8 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxNormal.value);
 			selectedGrowing.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.growing = selectedGrowing;
+		debouncedGetProducts();
 	});
 	checkboxFast.addEventListener("click", () => {
 		if (checkboxFast.checked) {
@@ -245,16 +192,8 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxFast.value);
 			selectedGrowing.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.growing = selectedGrowing;
+		debouncedGetProducts();
 	});
 
 	// sort by uses listener
@@ -266,16 +205,8 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedUses.indexOf(checkboxAtHome.value);
 			selectedUses.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.use = selectedUses;
+		debouncedGetProducts();
 	});
 	checkboxInGarden.addEventListener("click", () => {
 		if (checkboxInGarden.checked) {
@@ -284,16 +215,8 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedUses.indexOf(checkboxInGarden.value);
 			selectedUses.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.use = selectedUses;
+		debouncedGetProducts();
 	});
 
 	// sort by additional listener
@@ -305,16 +228,8 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxSweet.value);
 			selectedAdditional.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.additional = selectedAdditional;
+		debouncedGetProducts();
 	});
 	checkboxSour.addEventListener("click", () => {
 		if (checkboxSour.checked) {
@@ -323,16 +238,8 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxSour.value);
 			selectedAdditional.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.additional = selectedAdditional;
+		debouncedGetProducts();
 	});
 	checkboxBitter.addEventListener("click", () => {
 		if (checkboxBitter.checked) {
@@ -341,15 +248,7 @@ export function productFiltrationMob(db) {
 			const currentIndex = selectedFeatured.indexOf(checkboxBitter.value);
 			selectedAdditional.splice(currentIndex, 1);
 		}
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional
-		);
+		filters.additional = selectedAdditional;
+		debouncedGetProducts();
 	});
 }
