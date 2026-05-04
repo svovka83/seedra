@@ -1,7 +1,7 @@
 import { collection, query, onSnapshot, orderBy, where, getDocs } from "firebase/firestore";
-import { productCard } from "../../../components/product/product-card";
-import { filters } from "../../../url-filter-params/state-filters";
-import { updateFilterUrl } from "../../../url-filter-params/update-filter-url";
+import { productCard } from "../../components/product/product-card";
+import { filters } from "../../url-filter-params/state-filters";
+import { updateFilterUrl } from "../../url-filter-params/update-filter-url";
 
 export async function getProducts(
 	db,

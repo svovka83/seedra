@@ -6,7 +6,7 @@
 		<title>One product</title>
 		<link rel="stylesheet" href="../../scss/styles.scss" />
 	</head>
-	<body>
+	<body class="one-product-page">
 		<!-- header () -->
 		<!-- prettier-ignore -->
 		{% from "src/partials/header.njk" import header %}
@@ -26,7 +26,25 @@
 			{{ burgerMenu() }}
 
 			<!-- one-product-breadcrumbs -->
-			<div class="one-product-breadcrumbs"></div>
+			<div class="one-product-breadcrumbs container">
+				<ul class="one-product-breadcrumbs__list">
+					<li class="one-product-breadcrumbs__item">
+						<a class="one-product-breadcrumbs__link" href="#!">Main</a>
+					</li>
+					<li class="one-product-breadcrumbs__item">
+						<a class="one-product-breadcrumbs__link" href="#!">Cataloug</a>
+					</li>
+					<li class="one-product-breadcrumbs__item one-product-breadcrumbs__category">
+						<!-- nav category comes from firebase -->
+					</li>
+					<li class="one-product-breadcrumbs__item">
+						<a class="one-product-breadcrumbs__link" href="#!">Cucumber</a>
+					</li>
+					<li class="one-product-breadcrumbs__item one-product-breadcrumbs__current">
+						<!-- nav title comes from firebase -->
+					</li>
+				</ul>
+			</div>
 
 			<!-- one-product-top -->
 			<section class="one-product-top container">
@@ -392,5 +410,6 @@
     {{ modalCart() }}
 
 		<script type="module" src="../../js/main.js"></script>
+		<script type="module" src="../../js/pages/one-product/scripts.js"></script>
 	</body>
 </html>

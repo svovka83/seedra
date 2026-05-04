@@ -1,6 +1,6 @@
 import { isEmpty, isLength } from "validator";
 import { isValidPhoneNumber, AsYouType } from "libphonenumber-js";
-import { displayError, setSuccess, clearErrorText } from "./message-validation";
+import { displayError, setSuccess, clearErrorText } from "../../utils/message-validation";
 
 export function checkoutValidation() {
 	const form = document.getElementById("checkout-form");

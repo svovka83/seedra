@@ -2,7 +2,8 @@
 
 .pack {
 	width: 100%;
-	display: flex;
+	display: grid;
+	grid-template-columns: 30px 11px 1fr 80px 60px;
 	padding: 7px 11px;
 	border: 1px solid $light_grey_stroke;
 	border-radius: 8px;
@@ -12,13 +13,11 @@
 	&__input {
 		width: 16px;
 		accent-color: $green_brand;
-		margin-right: 14px;
 	}
 	&__quantity {
 		font-weight: 400;
 		font-size: 14px;
 		color: $text_primary;
-		margin-right: 4px;
 	}
 	&__pack {
 		font-weight: 400;
@@ -29,8 +28,6 @@
 		font-weight: 400;
 		font-size: 14px;
 		color: $text_secondary;
-		margin-left: auto;
-		margin-right: 7px;
 	}
 	&__price {
 		font-weight: 500;

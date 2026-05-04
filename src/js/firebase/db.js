@@ -1,7 +1,7 @@
-import { orderBy } from "firebase/firestore";
-
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+
+import { orderBy } from "firebase/firestore";
 
 import { getCategories } from "./services/get-categories";
 import { getModalHeaderProducts } from "./services/modals/get-modal-header-search";
@@ -13,18 +13,8 @@ import {
 	getProductStaticCardsOnePage,
 	getProductSliderCards,
 } from "./services/get-products-main";
-import { getProducts } from "./services/products/get-products";
-import { productFiltration } from "./services/products/product-filtration";
-import { productFiltrationMob } from "./services/products/product-filtration-mob";
 
-import { getProductImage } from "./services/one-product/get-product-img";
-import { getProductTitle } from "./services/one-product/get-product-title";
-import { getProductCategory } from "./services/one-product/get-product-category";
-import { getProductQuantity } from "./services/one-product/get-product-quantity";
-import { initCounterBlock } from "./services/one-product/counter-block";
-import { getProductPacks } from "./services/one-product/get-one-product-packs";
-import { checkedPack } from "./services/one-product/checked-pack";
-import { addOneToCart } from "./services/one-product/add-one-to-cart";
+import { productFiltrationMob } from "./services/products/product-filtration-mob";
 
 import { getBlogStaticCards, getBlogSliderCards } from "./services/get-blogs-main.js";
 import { getBlogs } from "./services/blogs/get-blogs.js";
@@ -46,15 +36,8 @@ import { addShipping } from "../components/cart/add-shipping";
 import { promocode } from "../components/cart/promocode";
 import { clearAllCart } from "./services/cart/clear-all-cart";
 
-import { getCheckout } from "./services/checkout/get-checkout";
-import { getPayment } from "./services/payment/get-payment";
-
 import { openModalCategory } from "../modals/open-modal-category";
 import { openModalCart } from "../modals/open-modal-cart.js";
-
-import { filters } from "../url-filter-params/state-filters.js";
-import { initFromUrl } from "../url-filter-params/init-from-url.js";
-import { applyFiltersToUI } from "../url-filter-params/apply-filters-to-ui.js";
 
 export async function initFirebase() {
 	const firebaseConfig = {
@@ -79,43 +62,16 @@ export async function initFirebase() {
 	getProductStaticCardsOnePage(db);
 	getProductSliderCards(db);
 
+	// main blog
 	getBlogStaticCards(db);
 	getBlogSliderCards(db);
 
 	getReviewCards(db);
 
-	// params products after reload
-	initFromUrl(); // ← reading URL params
-	applyFiltersToUI(); // ← update UI
-	getProducts(
-		db,
-		orderBy("price", "desc"),
-		"",
-		10,
-		1000,
-		filters.types,
-		filters.featured,
-		filters.growing,
-		filters.use,
-		filters.additional
-	);
-
-	productFiltration(db);
 	productFiltrationMob(db);
-
-	// one product page
-	getProductImage(db);
-	getProductTitle(db);
-	getProductCategory(db);
-	getProductQuantity(db);
-	initCounterBlock(db);
-	getProductPacks(db);
-	checkedPack(db);
-	addOneToCart(db);
 
 	// params blogs after reload
 	getBlogs(db, orderBy("createdAt", "desc"));
-
 	blogFiltration(db);
 
 	oneBlogTop(db);
@@ -133,9 +89,6 @@ export async function initFirebase() {
 	addShipping(db);
 	promocode(db);
 	clearAllCart(db);
-
-	getCheckout(db);
-	getPayment(db);
 
 	openModalCategory(db);
 	openModalCart(db);

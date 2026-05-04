@@ -1,5 +1,5 @@
 import { collection, getDocs, getDoc, doc } from "firebase/firestore";
-import { checkoutCart } from "../../../components/checkout/checkout-cart";
+import { checkoutCart } from "../../components/checkout/checkout-cart";
 
 export async function getCheckout(db) {
 	const cartList = document.querySelector(".checkout-carts__products");
@@ -8,7 +8,7 @@ export async function getCheckout(db) {
 	if (!checkoutAmount) return;
 
 	const ref = doc(db, "total", "14");
-	console.log(checkoutAmount, ref);
+
 	const total = await getDoc(ref);
 	checkoutAmount.innerHTML = total.data().amount / 100;
 

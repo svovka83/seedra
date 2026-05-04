@@ -1,5 +1,5 @@
 import { orderBy } from "firebase/firestore";
-import { getProducts } from "./get-products";
+import { getProducts } from "../../../pages/products/get-products";
 
 export function productFiltrationMob(db) {
 	// sort by order inputs without listener

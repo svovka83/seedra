@@ -1,5 +1,5 @@
 import { isEmpty, isEmail } from "validator";
-import { displayError, setSuccess, clearErrorText } from "./message-validation";
+import { displayError, setSuccess, clearErrorText } from "../../utils/message-validation";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 

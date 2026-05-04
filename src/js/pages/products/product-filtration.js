@@ -1,7 +1,7 @@
 import { orderBy } from "firebase/firestore";
 import { getProducts } from "./get-products";
-import { filters } from "../../../url-filter-params/state-filters";
-import { debounce } from "../../../utils/debounce";
+import { filters } from "../../url-filter-params/state-filters";
+import { debounce } from "../../utils/debounce";
 
 export function productFiltration(db) {
 	// sort by order inputs
