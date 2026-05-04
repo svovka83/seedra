@@ -1,0 +1,1 @@
+import{W as e,f as t}from"./index.esm-Bwpb2Ko_.js";async function n(n){let r=document.getElementById(`cart-summary__amount1`),i=document.getElementById(`cart-summary__amount2`);if(!r||!i)return;let a=await t(e(n,`total`,`14`));r.innerHTML=a.data().amount/100,i.innerHTML=a.data().amount/100}export{n as getPayment};

@@ -1,1 +1,0 @@
-import{_ as e}from"./index.esm-CV_qY3sG.js";e(`firebase`,`12.12.0`,`app`);

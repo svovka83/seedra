@@ -1,0 +1,1 @@
+function e(e,t,n){return`<${e} class="title ${n}">${t}</${e}>`}export{e as t};

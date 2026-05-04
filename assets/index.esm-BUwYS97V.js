@@ -1,0 +1,1 @@
+import{X as e}from"./index.esm-Bwpb2Ko_.js";e(`firebase`,`12.12.0`,`app`);
