@@ -5,9 +5,10 @@ export function initFromUrl() {
 
 	// filters.currentSortOrder = params.get("order") || "";
 
-	// filters.search = params.get("search") || "";
-	// filters.min = Number(params.get("min")) || 10;
-	// filters.max = Number(params.get("max")) || 1000;
+	filters.search = params.get("search") || "";
+
+	filters.minPrice = Number(params.get("minPrice")) || 0;
+	filters.maxPrice = Number(params.get("maxPrice")) || 1000;
 
 	filters.types = params.get("types") ? params.get("types").split(",") : [];
 	filters.featured = params.get("featured") ? params.get("featured").split(",") : [];

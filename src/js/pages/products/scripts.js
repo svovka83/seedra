@@ -10,6 +10,7 @@ if (document.querySelector(".products-page")) {
 	const { productFiltrationMob } = await import("./product-filtration-mob.js");
 	const { filterSide } = await import("./filter-side.js");
 	const { priceRange } = await import("../../common/price-range.js");
+	const { priceRangeMob } = await import("../../common/price-range-mob.js");
 	const { filterDropdownControl } = await import("./filter-dropdown-control.js");
 	const { openMobileFilter } = await import("./open-mobile-filter.js");
 
@@ -17,15 +18,18 @@ if (document.querySelector(".products-page")) {
 
 	filterSide();
 
+	priceRange(db);
+	priceRangeMob(db);
+
 	// params products after reload
 	initFromUrl();
 	applyFiltersToUI();
 	getProducts(
 		db,
 		orderBy("price", "desc"),
-		"",
-		10,
-		1000,
+		filters.search,
+		filters.minPrice,
+		filters.maxPrice,
 		filters.types,
 		filters.featured,
 		filters.growing,
@@ -35,8 +39,6 @@ if (document.querySelector(".products-page")) {
 
 	productFiltration(db);
 	productFiltrationMob(db);
-
-	priceRange();
 
 	filterDropdownControl();
 	openMobileFilter();

@@ -61,62 +61,27 @@
 						<h4 class="products-content__filters-title">Filters</h4>
 
 						<div class="products-content__filters-dropdown-type">
-							<!-- filterSide() -->
-						</div>
-						<div class="products-content__filters-dropdown-featured">
-							<!-- filterSide() -->
+							<!-- filterSide() -> filterDropdownCheckboxes() -->
 						</div>
 
-						<!-- filterDropdownPrice( title ) -->
-						<!-- prettier-ignore -->
-						{% from "src/partials/filters/filter-dropdown-price.njk" import filterDropdownPrice %}
-						{{ filterDropdownPrice( "Price" ) }}
+						<div class="products-content__filters-dropdown-featured">
+							<!-- filterSide() -> filterDropdownCheckboxes() -->
+						</div>
 
 						<div class="products-content__filters-dropdown-growing">
-							<!-- filterSide() -->
+							<!-- filterSide() -> filterDropdownCheckboxes() -->
 						</div>
+
+						<div class="products-content__filters-dropdown-range">
+							<!-- filterSide() -> filterDropdownRange() -->
+						</div>
+
 						<div class="products-content__filters-dropdown-use">
-							<!-- filterSide() -->
+							<!-- filterSide() -> filterDropdownCheckboxes() -->
 						</div>
+
 						<div class="products-content__filters-dropdown-additional">
-							<!-- filterSide() -->
-						</div>
-
-						<!-- price-range -->
-						<div class="price-range">
-							<div class="price-range-inputs">
-								<div class="price-range-inputs__field">
-									<span class="price-range-inputs__label">From</span>
-									<label for="min-range">
-										<span class="price-range-inputs__dollar">$</span>
-										<input
-											class="price-range-inputs__input"
-											id="min-range"
-											type="number"
-											min="10"
-											max="1000"
-											placeholder="10" />
-									</label>
-								</div>
-
-								<span class="price-range-inputs__separator"></span>
-
-								<div class="price-range-inputs__field">
-									<span class="price-range-inputs__label">To</span>
-									<label for="max-range">
-										<span class="price-range-inputs__dollar">$</span>
-										<input
-											class="price-range-inputs__input"
-											id="max-range"
-											type="number"
-											min="10"
-											max="1000"
-											placeholder="1000" />
-									</label>
-								</div>
-							</div>
-
-							<div class="price-range-slider" id="price-range-slider"></div>
+							<!-- filterSide() -> filterDropdownCheckboxes() -->
 						</div>
 					</div>
 
@@ -144,63 +109,28 @@
 			<h4 class="products-content__filters-title">Filters</h4>
 
 			<div class="products-content__filters-dropdown-type-mob">
-				<!-- filterSide() -->
-			</div>
-			<div class="products-content__filters-dropdown-featured-mob">
-				<!-- filterSide() -->
+				<!-- filterSide() -> filterDropdownCheckboxes() -->
 			</div>
 
-			<!-- filterDropdownPrice( title ) -->
-			<!-- prettier-ignore -->
-			{% from "src/partials/filters/filter-dropdown-price.njk" import filterDropdownPrice %}
-			{{ filterDropdownPrice( "Price", "filter-dropdown__btn_mobile", "filter-dropdown__content_mobile" ) }}
+			<div class="products-content__filters-dropdown-featured-mob">
+				<!-- filterSide() -> filterDropdownCheckboxes() -->
+			</div>
 
 			<div class="products-content__filters-dropdown-growing-mob">
-				<!-- filterSide() -->
+				<!-- filterSide() -> filterDropdownCheckboxes() -->
 			</div>
+
+			<div class="products-content__filters-dropdown-range-mob">
+				<!-- filterSide() -> filterDropdownRange() -->
+			</div>
+
 			<div class="products-content__filters-dropdown-use-mob">
-				<!-- filterSide() -->
+				<!-- filterSide() -> filterDropdownCheckboxes() -->
 			</div>
+
 			<div class="products-content__filters-dropdown-additional-mob">
-				<!-- filterSide() -->
+				<!-- filterSide() -> filterDropdownCheckboxes() -->
 			</div>
-
-			<!-- price-range -->
-			<!-- <div class="price-range">
-				<div class="price-range-inputs">
-					<div class="price-range-inputs__field">
-						<span class="price-range-inputs__label">From</span>
-						<label for="min-range">
-							<span class="price-range-inputs__dollar">$</span>
-							<input
-								class="price-range-inputs__input"
-								id="min-range"
-								type="number"
-								min="10"
-								max="1000"
-								placeholder="10" />
-						</label>
-					</div>
-
-					<span class="price-range-inputs__separator"></span>
-
-					<div class="price-range-inputs__field">
-						<span class="price-range-inputs__label">To</span>
-						<label for="max-range">
-							<span class="price-range-inputs__dollar">$</span>
-							<input
-								class="price-range-inputs__input"
-								id="max-range"
-								type="number"
-								min="10"
-								max="1000"
-								placeholder="1000" />
-						</label>
-					</div>
-				</div>
-
-				<div class="price-range-slider" id="price-range-slider"></div>
-			</div> -->
 
 			<span class="triangle-pointer"></span>
 		</div>

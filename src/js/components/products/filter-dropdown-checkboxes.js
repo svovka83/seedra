@@ -1,6 +1,6 @@
 import { checkbox } from "../checkbox";
 
-export function filterDropdown(
+export function filterDropdownCheckboxes(
 	title,
 	classBtn,
 	classContent,

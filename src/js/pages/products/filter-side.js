@@ -1,6 +1,7 @@
-import { filterDropdown } from "../../components/products/filter-dropdown";
+import { filterDropdownCheckboxes } from "../../components/products/filter-dropdown-checkboxes";
 // filterDropdown( title, classBtn, classContent, appearance1, appearance2, appearance3, appearance4,
 //  option1, id1, value1, option2, id2, value2, option3, id3, value3, option4, id4, value4 )
+import { filterDropdownRange } from "../../components/products/filter-dropdown-range";
 
 export function filterSide() {
 	const dropdownType = document.querySelector(".products-content__filters-dropdown-type");
@@ -9,6 +10,8 @@ export function filterSide() {
 	const dropdownFeaturedMob = document.querySelector(".products-content__filters-dropdown-featured-mob");
 	const dropdownGrowing = document.querySelector(".products-content__filters-dropdown-growing");
 	const dropdownGrowingMob = document.querySelector(".products-content__filters-dropdown-growing-mob");
+	const dropdownPrice = document.querySelector(".products-content__filters-dropdown-range");
+	const dropdownPriceMob = document.querySelector(".products-content__filters-dropdown-range-mob");
 	const dropdownUse = document.querySelector(".products-content__filters-dropdown-use");
 	const dropdownUseMob = document.querySelector(".products-content__filters-dropdown-use-mob");
 	const dropdownAdditional = document.querySelector(".products-content__filters-dropdown-additional");
@@ -20,14 +23,16 @@ export function filterSide() {
 	if (!dropdownFeaturedMob) return;
 	if (!dropdownGrowing) return;
 	if (!dropdownGrowingMob) return;
+	if (!dropdownPrice) return;
+	if (!dropdownPriceMob) return;
 	if (!dropdownUse) return;
 	if (!dropdownUseMob) return;
 	if (!dropdownAdditional) return;
 	if (!dropdownAdditionalMob) return;
 
-	// console.log("connect");
+	console.log("connect from filter-side");
 
-	dropdownType.innerHTML = filterDropdown(
+	dropdownType.innerHTML = filterDropdownCheckboxes(
 		"Seed type",
 		"",
 		"",
@@ -48,7 +53,7 @@ export function filterSide() {
 		"pelleted",
 		"pelleted"
 	);
-	dropdownTypeMob.innerHTML = filterDropdown(
+	dropdownTypeMob.innerHTML = filterDropdownCheckboxes(
 		"Seed type",
 		"filter-dropdown__btn_mobile",
 		"filter-dropdown__content_mobile",
@@ -69,7 +74,7 @@ export function filterSide() {
 		"pelleted-mob",
 		"pelleted"
 	);
-	dropdownFeatured.innerHTML = filterDropdown(
+	dropdownFeatured.innerHTML = filterDropdownCheckboxes(
 		"Featured",
 		"",
 		"",
@@ -90,7 +95,7 @@ export function filterSide() {
 		"barrel",
 		"barrel"
 	);
-	dropdownFeaturedMob.innerHTML = filterDropdown(
+	dropdownFeaturedMob.innerHTML = filterDropdownCheckboxes(
 		"Featured",
 		"filter-dropdown__btn_mobile",
 		"filter-dropdown__content_mobile",
@@ -111,7 +116,7 @@ export function filterSide() {
 		"barrel-mob",
 		"barrel"
 	);
-	dropdownGrowing.innerHTML = filterDropdown(
+	dropdownGrowing.innerHTML = filterDropdownCheckboxes(
 		"Growing Conditions",
 		"",
 		"",
@@ -129,7 +134,7 @@ export function filterSide() {
 		"fast",
 		"fast"
 	);
-	dropdownGrowingMob.innerHTML = filterDropdown(
+	dropdownGrowingMob.innerHTML = filterDropdownCheckboxes(
 		"Growing Conditions",
 		"filter-dropdown__btn_mobile",
 		"filter-dropdown__content_mobile",
@@ -147,7 +152,16 @@ export function filterSide() {
 		"fast-mob",
 		"fast"
 	);
-	dropdownUse.innerHTML = filterDropdown(
+	dropdownPrice.innerHTML = filterDropdownRange("Price", "", "", "min-range", "max-range", "price-range-slider");
+	dropdownPriceMob.innerHTML = filterDropdownRange(
+		"Price",
+		"filter-dropdown__btn_mobile",
+		"filter-dropdown__content_mobile",
+		"min-range-mob",
+		"max-range-mob",
+		"price-range-slider-mob"
+	);
+	dropdownUse.innerHTML = filterDropdownCheckboxes(
 		"Use",
 		"",
 		"",
@@ -162,7 +176,7 @@ export function filterSide() {
 		"in-garden",
 		"in-garden"
 	);
-	dropdownUseMob.innerHTML = filterDropdown(
+	dropdownUseMob.innerHTML = filterDropdownCheckboxes(
 		"Use",
 		"filter-dropdown__btn_mobile",
 		"filter-dropdown__content_mobile",
@@ -177,7 +191,7 @@ export function filterSide() {
 		"in-garden-mob",
 		"in-garden"
 	);
-	dropdownAdditional.innerHTML = filterDropdown(
+	dropdownAdditional.innerHTML = filterDropdownCheckboxes(
 		"Additional Characteristic",
 		"",
 		"",
@@ -195,7 +209,7 @@ export function filterSide() {
 		"bitter",
 		"bitter"
 	);
-	dropdownAdditionalMob.innerHTML = filterDropdown(
+	dropdownAdditionalMob.innerHTML = filterDropdownCheckboxes(
 		"Additional Characteristic",
 		"filter-dropdown__btn_mobile",
 		"filter-dropdown__content_mobile",

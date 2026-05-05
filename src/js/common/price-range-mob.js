@@ -6,8 +6,8 @@ import { filters } from "../url-filter-params/state-filters";
 import { getProducts } from "../pages/products/get-products";
 import { debounce } from "../utils/debounce";
 
-export function priceRange(db) {
-	const priceRangeSlider = document.querySelector("#price-range-slider");
+export function priceRangeMob(db) {
+	const priceRangeSlider = document.querySelector("#price-range-slider-mob");
 	if (!priceRangeSlider) return;
 
 	noUiSlider.create(priceRangeSlider, {
@@ -20,8 +20,8 @@ export function priceRange(db) {
 		},
 	});
 
-	const input0 = document.getElementById("min-range");
-	const input1 = document.getElementById("max-range");
+	const input0 = document.getElementById("min-range-mob");
+	const input1 = document.getElementById("max-range-mob");
 	const inputs = [input0, input1];
 
 	const debouncedGetPrice = debounce(() => {

@@ -3,7 +3,10 @@ export function updateFilterUrl(filters) {
 
 	// if (filters.currentSortOrder) params.set("order", filters.currentSortOrder);
 
-	// if (filters.search) params.set("search", filters.search);
+	if (filters.search) params.set("search", filters.search);
+
+	if (filters.minPrice > 0) params.set("minPrice", filters.minPrice);
+	if (filters.maxPrice > 0 && filters.maxPrice <= 1000) params.set("maxPrice", filters.maxPrice);
 
 	if (filters.types?.length) {
 		params.set("types", filters.types.join(","));

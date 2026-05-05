@@ -4,6 +4,7 @@ import { filters } from "../../url-filter-params/state-filters";
 import { debounce } from "../../utils/debounce";
 
 export function productFiltration(db) {
+	console.log("desktop", filters);
 	// sort by order inputs
 	const optionList = document.getElementById("filter-sort-list");
 	if (!optionList) return;
@@ -13,14 +14,11 @@ export function productFiltration(db) {
 	// sort by name inputs
 	const inputBannerSearch = document.getElementById("search-banner-product");
 
-	let search;
+	let inputSearch = filters.search;
 
 	// sort by price inputs
-	const minPrice = document.getElementById("min-range");
-	const maxPrice = document.getElementById("max-range");
-
-	let minValue = 10;
-	let maxValue = 1000;
+	const minValue = filters.minPrice;
+	const maxValue = filters.maxPrice;
 
 	// sort by type inputs
 	const checkboxHybrid = document.getElementById("hybrid");
@@ -67,7 +65,7 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
-			search,
+			inputSearch,
 			minValue,
 			maxValue,
 			selectedTypes,
@@ -76,7 +74,7 @@ export function productFiltration(db) {
 			selectedUses,
 			selectedAdditional
 		);
-	}, 1000);
+	}, 2000);
 
 	// ADD sort by modal one product id inputs and sort by modal all products inputs
 
@@ -100,19 +98,8 @@ export function productFiltration(db) {
 	// sort by name ( input search ) listener
 
 	inputBannerSearch.addEventListener("input", (e) => {
-		search = e.target.value.toLowerCase().trim();
-		debouncedGetProducts();
-	});
-
-	// sort by price listener - with debounce, but without react on scroll!
-	minPrice.addEventListener("input", () => {
-		minValue = Number(minPrice.value);
-		maxValue = Number(maxPrice.value);
-		debouncedGetProducts();
-	});
-	maxPrice.addEventListener("input", () => {
-		minValue = Number(minPrice.value);
-		maxValue = Number(maxPrice.value);
+		inputSearch = e.target.value.toLowerCase().trim();
+		filters.search = inputSearch;
 		debouncedGetProducts();
 	});
 

@@ -4,21 +4,19 @@ import { filters } from "../../url-filter-params/state-filters";
 import { debounce } from "../../utils/debounce";
 
 export function productFiltrationMob(db) {
-	console.log(filters);
+	console.log("mobile", filters);
 	// sort by order inputs without listener
 
 	const currentSortOrder = orderBy("price", "desc");
 
 	// sort by name inputs
+	const inputBannerSearch = document.getElementById("search-banner-product");
 
-	const search = "";
+	let inputSearch = filters.search;
 
 	// sort by price inputs
-	// const minPrice = document.getElementById("min-range");
-	// const maxPrice = document.getElementById("max-range");
-
-	let minValue = 10;
-	let maxValue = 1000;
+	const minValue = filters.minPrice;
+	const maxValue = filters.maxPrice;
 
 	// sort by type inputs
 	const checkboxHybrid = document.getElementById("hybrid-mob");
@@ -66,7 +64,7 @@ export function productFiltrationMob(db) {
 		getProducts(
 			db,
 			currentSortOrder,
-			search,
+			inputSearch,
 			minValue,
 			maxValue,
 			selectedTypes,
@@ -76,6 +74,14 @@ export function productFiltrationMob(db) {
 			selectedAdditional
 		);
 	}, 1000);
+
+	// sort by name ( input search ) listener
+
+	inputBannerSearch.addEventListener("input", (e) => {
+		inputSearch = e.target.value.toLowerCase().trim();
+		filters.search = inputSearch;
+		debouncedGetProducts();
+	});
 
 	// sort by type listener
 
