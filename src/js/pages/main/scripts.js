@@ -7,6 +7,7 @@ if (document.querySelector(".main-body-page")) {
 	);
 	const { getBlogStaticCards, getBlogSliderCards } = await import("./get-blogs-main.js");
 	const { getReviewCards } = await import("./get-reviews.js");
+	const { addProductFromTop } = await import("./add-product-from-top.js");
 	const { addRemoveProduct } = await import("../../firebase/services/cart/add-remove-product.js");
 	const { productSlider } = await import("../../sliders/product-slider.js");
 	const { blogSlider } = await import("../../sliders/blog-slider.js");
@@ -32,6 +33,7 @@ if (document.querySelector(".main-body-page")) {
 	getBlogSliderCards(db);
 	getReviewCards(db);
 
+	addProductFromTop(db);
 	addRemoveProduct(db);
 
 	productSlider();

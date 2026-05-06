@@ -49,15 +49,15 @@
 							<span class="main-top__old-price">$15.56</span>
 						</div>
 						<div class="main-top__buttons">
-							<!-- button ( classBtn, titleBtn, iconId ) -->
+							<!-- button ( classBtn, titleBtn, iconId, btnId ) -->
 							<!-- prettier-ignore -->
 							{% from "src/partials/button.njk" import button %}
-							{{ button( "btn_text btn_adaptive", "Add to card", "" ) }}
+							{{ button( "btn_text btn_adaptive", "Add to card", "", "main-top-add-btn" ) }}
 
 							<!-- discover ( classLink, titleLink, pathLink ) -->
 							<!-- prettier-ignore -->
 							{% from "src/partials/discover.njk" import discover %}
-							{{ discover( "discover_adaptive", "Discover", "#!" ) }}
+							{{ discover( "discover_adaptive", "Discover", "/seedra/src/pages/one-product/index.html?id=1" ) }}
 						</div>
 					</div>
 
