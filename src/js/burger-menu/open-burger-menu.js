@@ -4,11 +4,12 @@ export function openBurgerMenu() {
 	const burgerBtn = document.getElementById("header__burger-menu");
 	const burgerMenu = document.getElementById("burger-menu");
 	const burgerBgBlur = document.getElementById("modal-blur");
-	const open = burgerBtn.querySelector(".header__burger-menu-icon");
-	const close = burgerBtn.querySelector(".header__burger-menu-icon-close");
 	if (!burgerBtn) return;
 	if (!burgerMenu) return;
 	if (!burgerBgBlur) return;
+
+	const open = burgerBtn.querySelector(".header__burger-menu-icon");
+	const close = burgerBtn.querySelector(".header__burger-menu-icon-close");
 
 	burgerBtn.addEventListener("click", () => {
 		if (!burgerBgBlur.classList.contains("modal-blur_open")) {

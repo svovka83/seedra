@@ -6,7 +6,7 @@
 		<title>Our Blogs</title>
 		<link rel="stylesheet" href="../../scss/styles.scss" />
 	</head>
-	<body style="display: grid; grid-template-rows: auto 1fr auto">
+	<body class="blogs-page" style="display: grid; grid-template-rows: auto 1fr auto">
 		<!-- header () -->
 		<!-- prettier-ignore -->
 		{% from "src/partials/header.njk" import header %}
@@ -67,5 +67,6 @@
 		{% from "src/partials/modals/modal-cart.njk" import modalCart %}
     {{ modalCart() }}
 		<script type="module" src="../../js/main.js"></script>
+		<script type="module" src="../../js/pages/blogs/scripts.js"></script>
 	</body>
 </html>

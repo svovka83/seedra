@@ -1,7 +1,5 @@
-if (document.querySelector(".contacts-page")) {
+if (document.querySelector(".about-page")) {
 	const { getFirebase } = await import("../../firebase.js");
-
-	const { contactsValidation } = await import("./contacts-validation");
 
 	// genaral
 	const { getBurgerMenuDropdowns } = await import("../../burger-menu/get-burger-menu-dropdowns.js");
@@ -15,8 +13,6 @@ if (document.querySelector(".contacts-page")) {
 	const { openModalCart } = await import("../../modals/open-modal-cart.js");
 
 	const { db } = getFirebase();
-
-	contactsValidation();
 
 	// genaral
 	getBurgerMenuDropdowns(db);

@@ -1,7 +1,16 @@
-if (document.querySelector(".contacts-page")) {
+if (document.querySelector(".main-body-page")) {
 	const { getFirebase } = await import("../../firebase.js");
 
-	const { contactsValidation } = await import("./contacts-validation");
+	const { getCategories } = await import("../../firebase/services/get-categories.js");
+	const { getProductStaticCards, getProductSliderCards } = await import(
+		"../../firebase/services/get-products-main.js"
+	);
+	const { getBlogStaticCards, getBlogSliderCards } = await import("./get-blogs-main.js");
+	const { getReviewCards } = await import("./get-reviews.js");
+	const { addRemoveProduct } = await import("../../firebase/services/cart/add-remove-product.js");
+	const { productSlider } = await import("../../sliders/product-slider.js");
+	const { blogSlider } = await import("../../sliders/blog-slider.js");
+	const { reviewSlider } = await import("../../sliders/review-slider.js");
 
 	// genaral
 	const { getBurgerMenuDropdowns } = await import("../../burger-menu/get-burger-menu-dropdowns.js");
@@ -16,7 +25,18 @@ if (document.querySelector(".contacts-page")) {
 
 	const { db } = getFirebase();
 
-	contactsValidation();
+	getCategories(db);
+	getProductStaticCards(db);
+	getProductSliderCards(db);
+	getBlogStaticCards(db);
+	getBlogSliderCards(db);
+	getReviewCards(db);
+
+	addRemoveProduct(db);
+
+	productSlider();
+	blogSlider();
+	reviewSlider();
 
 	// genaral
 	getBurgerMenuDropdowns(db);

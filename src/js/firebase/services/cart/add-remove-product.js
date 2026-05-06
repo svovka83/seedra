@@ -40,7 +40,7 @@ export function addRemoveProduct(db) {
 					amount: newAmount,
 				});
 				Toastify({
-					text: `Product ${productId} added to cart. 🛒`,
+					text: `Product ${snapshotProduct.data().name.slice(0, 24)} added to cart. 🛒`,
 					duration: 4000,
 					gravity: "bottom",
 					position: "right",
@@ -67,7 +67,7 @@ export function addRemoveProduct(db) {
 					amount: newAmount,
 				});
 				Toastify({
-					text: `Product ${productId} removed from cart. 🛒`,
+					text: `Product ${snapshotProduct.data().name.slice(0, 24)} removed from cart. 🛒`,
 					duration: 4000,
 					gravity: "bottom",
 					position: "right",

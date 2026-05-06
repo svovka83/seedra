@@ -1,6 +1,6 @@
 import { collection, query, onSnapshot, orderBy, where, getDocs } from "firebase/firestore";
-import { blogCard } from "../../../components/blog-card";
-import { getDate } from "../../../common/get-date";
+import { blogCard } from "../../components/blog-card";
+import { getDate } from "../../common/get-date";
 
 export async function getBlogs(db, currentSortOrder = orderBy("createdAt", "desc"), search = "") {
 	const blogList = document.querySelector(".blogs-content");

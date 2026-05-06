@@ -6,7 +6,7 @@
 		<title>Cart</title>
 		<link rel="stylesheet" href="../../scss/styles.scss" />
 	</head>
-	<body style="display: grid; grid-template-rows: auto 1fr auto">
+	<body class="cart-page" style="display: grid; grid-template-rows: auto 1fr auto">
 		<!-- header () -->
 		<!-- prettier-ignore -->
 		{% from "src/partials/header.njk" import header %}
@@ -122,5 +122,6 @@
     {{ modalCart() }}
 
 		<script type="module" src="../../js/main.js"></script>
+		<script type="module" src="../../js/pages/cart/scripts.js"></script>
 	</body>
 </html>

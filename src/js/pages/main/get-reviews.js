@@ -1,4 +1,4 @@
-import { collection, getDocs, addDoc } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 import { getDate } from "../../common/get-date";
 
@@ -17,5 +17,3 @@ export async function getReviewCards(db) {
     </div>`;
 	});
 }
-
-// avatarUrl, name, date, content

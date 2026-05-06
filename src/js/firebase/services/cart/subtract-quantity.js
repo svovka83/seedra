@@ -5,11 +5,11 @@ import "toastify-js/src/toastify.css";
 export function subtractQuantity(db) {
 	document.addEventListener("click", async (e) => {
 		const btn = e.target.closest(".product-counter__minus");
-
 		if (!btn) return;
 
-		const product = btn.closest(".cart-product");
-		const productId = product.id;
+		const product = btn.closest(".cart-product, .modal-cart-product");
+		const productId = product?.dataset.id;
+		console.log(product, productId);
 
 		try {
 			const refCart = doc(db, "cart", productId);

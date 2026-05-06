@@ -1,6 +1,6 @@
 import { collection, onSnapshot, query, getDocs } from "firebase/firestore";
-import { cartProduct } from "../../../components/cart/cart-product";
-import { emptyCart } from "../../../utils/empty-cart";
+import { cartProduct } from "../../components/cart/cart-product";
+import { emptyCart } from "../../utils/empty-cart";
 
 export async function getCart(db) {
 	const cartList = document.querySelector(".cart-products__products");

@@ -1,5 +1,5 @@
 import { doc, getDoc } from "firebase/firestore";
-import { getDate } from "../common/get-date";
+import { getDate } from "../../common/get-date";
 
 const params = new URLSearchParams(window.location.search);
 const blogId = params.get("id");

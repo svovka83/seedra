@@ -5,11 +5,10 @@ import "toastify-js/src/toastify.css";
 export function addQuantity(db) {
 	document.addEventListener("click", async (e) => {
 		const btn = e.target.closest(".product-counter__plus");
-
 		if (!btn) return;
 
-		const product = btn.closest(".cart-product");
-		const productId = product.id;
+		const product = btn.closest(".cart-product, .modal-cart-product");
+		const productId = product?.dataset.id;
 
 		try {
 			const refCart = doc(db, "cart", productId);

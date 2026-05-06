@@ -2,7 +2,7 @@ import { productCounter } from "./product-counter";
 
 export function modalCartProduct(id, name, imageUrl, quantity, price) {
 	return `
-  <div class="modal-cart-product" id="${id}">
+  <div class="modal-cart-product" data-id="${id}">
 
     <div class="modal-cart-product__title-block">
       <img class="modal-cart-product__img" src="${imageUrl}" alt="cart product image" />

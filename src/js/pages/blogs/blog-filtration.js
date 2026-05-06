@@ -1,6 +1,6 @@
 import { orderBy } from "firebase/firestore";
 import { getBlogs } from "./get-blogs";
-import { debounce } from "../../../utils/debounce";
+import { debounce } from "../../utils/debounce";
 
 export function blogFiltration(db) {
 	// sort by order inputs

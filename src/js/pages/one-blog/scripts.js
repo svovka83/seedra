@@ -1,7 +1,8 @@
-if (document.querySelector(".contacts-page")) {
+if (document.querySelector(".one-blog-page")) {
 	const { getFirebase } = await import("../../firebase.js");
 
-	const { contactsValidation } = await import("./contacts-validation");
+	const { oneBlogTop } = await import("./one-blog-top.js");
+	const { blogSlider } = await import("../../sliders/blog-slider.js");
 
 	// genaral
 	const { getBurgerMenuDropdowns } = await import("../../burger-menu/get-burger-menu-dropdowns.js");
@@ -16,7 +17,8 @@ if (document.querySelector(".contacts-page")) {
 
 	const { db } = getFirebase();
 
-	contactsValidation();
+	oneBlogTop(db);
+	blogSlider();
 
 	// genaral
 	getBurgerMenuDropdowns(db);

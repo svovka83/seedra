@@ -6,7 +6,7 @@
 		<title>Seedra</title>
 		<link rel="stylesheet" href="src/scss/styles.scss" />
 	</head>
-	<body>
+	<body class="main-body-page">
 		<!-- header () -->
 		<!-- prettier-ignore -->
 		{% from "src/partials/header.njk" import header %}
@@ -198,5 +198,6 @@
     {{ modalCart() }}
 
 		<script type="module" src="src/js/main.js"></script>
+		<script type="module" src="./src/js/pages/main/scripts.js"></script>
 	</body>
 </html>

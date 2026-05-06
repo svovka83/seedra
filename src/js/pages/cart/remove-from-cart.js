@@ -2,13 +2,12 @@ import { doc, getDoc, deleteDoc, updateDoc } from "firebase/firestore";
 import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
-export function deleteFromCart(db) {
+export function removeFromCart(db) {
 	document.addEventListener("click", async (e) => {
 		const btn = e.target.closest(".cart-product__delete");
-
 		if (!btn) return;
 
-		const productId = btn.parentElement.id;
+		const productId = btn.parentElement.dataset.id;
 
 		try {
 			const refCart = doc(db, "cart", productId);
@@ -31,7 +30,7 @@ export function deleteFromCart(db) {
 				amount: newAmount,
 			});
 			Toastify({
-				text: `Product ${productId} removed from cart. 🛒`,
+				text: `Product ${snapshotCart.data().name.slice(0, 24)} removed from cart. 🛒`,
 				duration: 4000,
 				gravity: "bottom",
 				position: "right",

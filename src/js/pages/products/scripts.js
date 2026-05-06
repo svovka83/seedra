@@ -14,7 +14,22 @@ if (document.querySelector(".products-page")) {
 	const { filterDropdownControl } = await import("./filter-dropdown-control.js");
 	const { openModalCategory } = await import("./open-modal-category.js");
 	const { openMobileFilter } = await import("./open-mobile-filter.js");
+	const { addRemoveProduct } = await import("../../firebase/services/cart/add-remove-product.js");
 	const { searchFilterControl } = await import("./search-filter-control.js");
+	const { getCategories } = await import("../../firebase/services/get-categories.js");
+	const { initDropdownList } = await import("../../common/dropdown.js");
+	const { showFilterSidebar } = await import("../../common/show-filter-sidebar.js");
+
+	// genaral
+	const { getBurgerMenuDropdowns } = await import("../../burger-menu/get-burger-menu-dropdowns.js");
+	const { getModalHeaderProducts } = await import("../../firebase/services/modals/get-modal-header-search.js");
+	const { getBurgerMenuSearchProducts } = await import("../../burger-menu/get-burger-menu-search-modal.js");
+	const { burgerMenuSearchControl } = await import("../../burger-menu/burger-menu-search-control.js");
+	const { addQuantity } = await import("../../firebase/services/cart/add-quantity.js");
+	const { subtractQuantity } = await import("../../firebase/services/cart/subtract-quantity.js");
+	const { getModalCart } = await import("../../firebase/services/cart/get-modal-cart.js");
+	const { clearAllCart } = await import("../../firebase/services/cart/clear-all-cart.js");
+	const { openModalCart } = await import("../../modals/open-modal-cart.js");
 
 	const { db } = getFirebase();
 
@@ -42,8 +57,25 @@ if (document.querySelector(".products-page")) {
 	productFiltration(db);
 	productFiltrationMob(db);
 
+	getCategories(db);
+
+	addRemoveProduct(db);
+
 	searchFilterControl(db);
 	filterDropdownControl();
 	openModalCategory(db);
 	openMobileFilter();
+	initDropdownList();
+	showFilterSidebar();
+
+	// genaral
+	getBurgerMenuDropdowns(db);
+	getModalHeaderProducts(db);
+	getBurgerMenuSearchProducts(db);
+	burgerMenuSearchControl(db);
+	addQuantity(db);
+	subtractQuantity(db);
+	getModalCart(db);
+	clearAllCart(db);
+	openModalCart(db);
 }

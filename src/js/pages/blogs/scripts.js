@@ -1,9 +1,11 @@
-if (document.querySelector(".contacts-page")) {
+if (document.querySelector(".blogs-page")) {
 	const { getFirebase } = await import("../../firebase.js");
+	const { orderBy } = await import("firebase/firestore");
 
-	const { contactsValidation } = await import("./contacts-validation");
+	const { getBlogs } = await import("./get-blogs.js");
+	const { blogFiltration } = await import("./blog-filtration.js");
+	const { initDropdownList } = await import("../../common/dropdown.js");
 
-	// genaral
 	const { getBurgerMenuDropdowns } = await import("../../burger-menu/get-burger-menu-dropdowns.js");
 	const { getModalHeaderProducts } = await import("../../firebase/services/modals/get-modal-header-search.js");
 	const { getBurgerMenuSearchProducts } = await import("../../burger-menu/get-burger-menu-search-modal.js");
@@ -16,7 +18,11 @@ if (document.querySelector(".contacts-page")) {
 
 	const { db } = getFirebase();
 
-	contactsValidation();
+	// params blogs after reload
+	getBlogs(db, orderBy("createdAt", "desc"));
+	blogFiltration(db);
+
+	initDropdownList();
 
 	// genaral
 	getBurgerMenuDropdowns(db);
