@@ -1,0 +1,1 @@
+import{H as e,h as t,p as n}from"./index.esm-Bwpb2Ko_.js";async function r(r){let i=document.querySelector(`.cart-products__quantity`),a=document.querySelector(`.cart-summary__quantity`);i&&a&&(await n(e(r,`cart`)),t(e(r,`cart`),e=>{i.innerHTML=e.size,a.innerHTML=e.size}))}export{r as itemsQuantity};

@@ -1,0 +1,1 @@
+import{t as e}from"./get-products-7zp9fW1r.js";export{e as getProducts};

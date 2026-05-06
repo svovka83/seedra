@@ -1,0 +1,1 @@
+function e(e){let t=e.seconds,n=new Date(t*1e3),r=n.getDate(),i=n.getMonth()+1,a=n.getFullYear();return String(i).length===1&&(i=`0${i}`),`${r}.${i}.${a}`}export{e as t};

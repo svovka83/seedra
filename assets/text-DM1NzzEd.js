@@ -1,0 +1,1 @@
+function e(e,t){return`<p class="text ${t}">${e}</p>`}export{e as t};

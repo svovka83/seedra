@@ -1,0 +1,1 @@
+function e(){let e=document.querySelector(`.products-content__open`),t=document.querySelector(`.products-content__filters`),n=document.querySelector(`.products-content__grid`);e&&e.addEventListener(`click`,()=>{n.classList.toggle(`products-content__grid_open`),t.classList.toggle(`products-content__filters_open`)})}export{e as showFilterSidebar};
