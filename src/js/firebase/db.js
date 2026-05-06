@@ -6,13 +6,11 @@ import { orderBy } from "firebase/firestore";
 import { getCategories } from "./services/get-categories";
 import { getModalHeaderProducts } from "./services/modals/get-modal-header-search";
 
+import { getBurgerMenuSearchProducts } from "../burger-menu/get-burger-menu-search-modal";
 import { getBurgerMenuDropdowns } from "../burger-menu/get-burger-menu-dropdowns";
+import { burgerMenuSearchControl } from "../burger-menu/burger-menu-search-control.js";
 
-import {
-	getProductStaticCards,
-	getProductStaticCardsOnePage,
-	getProductSliderCards,
-} from "./services/get-products-main";
+import { getProductStaticCards, getProductSliderCards } from "./services/get-products-main";
 
 import { getBlogStaticCards, getBlogSliderCards } from "./services/get-blogs-main.js";
 import { getBlogs } from "./services/blogs/get-blogs.js";
@@ -34,7 +32,6 @@ import { addShipping } from "../components/cart/add-shipping";
 import { promocode } from "../components/cart/promocode";
 import { clearAllCart } from "./services/cart/clear-all-cart";
 
-import { openModalCategory } from "../modals/open-modal-category";
 import { openModalCart } from "../modals/open-modal-cart.js";
 
 export async function initFirebase() {
@@ -54,10 +51,12 @@ export async function initFirebase() {
 
 	getBurgerMenuDropdowns(db);
 	getModalHeaderProducts(db);
+	getBurgerMenuSearchProducts(db);
+	burgerMenuSearchControl(db);
 
 	// main page
 	getProductStaticCards(db);
-	getProductStaticCardsOnePage(db);
+	// main page and one product
 	getProductSliderCards(db);
 
 	// main blog
@@ -86,6 +85,5 @@ export async function initFirebase() {
 	promocode(db);
 	clearAllCart(db);
 
-	openModalCategory(db);
 	openModalCart(db);
 }

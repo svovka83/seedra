@@ -7,9 +7,9 @@ export function modalCategory(categoryId, categoryName, products) {
         ${products.docs
 			.map(
 				(product) =>
-					`<hr class="modal-category__hr-mobile"/><span class="modal-category__item" id="${product.id}">${
-						product.data().name
-					}</span>`
+					`<hr class="modal-category__hr-mobile"/><span class="modal-category__item" id="${
+						product.id
+					}">${product.data().name.slice(0, 24)}</span>`
 			)
 			.join("")}
       </div>

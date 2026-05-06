@@ -4,19 +4,13 @@ import { filters } from "../../url-filter-params/state-filters";
 import { debounce } from "../../utils/debounce";
 
 export function productFiltrationMob(db) {
-	console.log("mobile", filters);
 	// sort by order inputs without listener
-
 	const currentSortOrder = orderBy("price", "desc");
 
 	// sort by name inputs
 	const inputBannerSearch = document.getElementById("search-banner-product");
 
 	let inputSearch = filters.search;
-
-	// sort by price inputs
-	const minValue = filters.minPrice;
-	const maxValue = filters.maxPrice;
 
 	// sort by type inputs
 	const checkboxHybrid = document.getElementById("hybrid-mob");
@@ -65,8 +59,8 @@ export function productFiltrationMob(db) {
 			db,
 			currentSortOrder,
 			inputSearch,
-			minValue,
-			maxValue,
+			filters.minPrice,
+			filters.maxPrice,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,

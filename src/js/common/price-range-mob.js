@@ -11,7 +11,7 @@ export function priceRangeMob(db) {
 	if (!priceRangeSlider) return;
 
 	noUiSlider.create(priceRangeSlider, {
-		start: [0, 1000],
+		start: [filters.minPrice, filters.maxPrice],
 		connect: true,
 		step: 1,
 		range: {

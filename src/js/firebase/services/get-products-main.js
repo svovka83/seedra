@@ -63,7 +63,7 @@ export async function getProductSliderCards(db) {
 			html += `<div class="swiper-slide">${productCard(
 				product.id,
 				product.data().checked,
-				product.data().name,
+				product.data().name.slice(0, 24),
 				product.data().price,
 				product.data().imageUrl,
 				product.data().isFire,

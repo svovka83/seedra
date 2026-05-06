@@ -1,4 +1,4 @@
-import { getModalCategoryList } from "../firebase/services/modals/get-modal-category-list";
+import { getModalCategoryList } from "../../firebase/services/modals/get-modal-category-list";
 
 export function openModalCategory(db) {
 	let currentId;

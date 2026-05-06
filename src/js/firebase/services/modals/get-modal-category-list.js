@@ -21,6 +21,6 @@ export async function getModalCategoryList(db, categoryId) {
 
 	modalCategoryList.innerHTML = "";
 
-	modalCategoryList.innerHTML += `<span class="products-content__modal-triangle-pointer"></span>`;
-	modalCategoryList.innerHTML += modalCategory(category.id, category.data().name, products);
+	modalCategoryList.innerHTML = `<span class="products-content__modal-triangle-pointer"></span>`;
+	modalCategoryList.innerHTML = modalCategory(category.id, category.data().name, products);
 }

@@ -1,11 +1,14 @@
 {% macro burgerMenu() %}
   <div class="burger-menu" id="burger-menu">
     <div class="burger-menu__search">
-      <!-- search ( classSearch ) -->
-      <!-- prettier-ignore -->
+      <!-- search ( classSearch, searchFunnelId, searchInputId ) -->
       {% from "src/partials/search.njk" import search %}
-      {{ search( "search_header" ) }}
+      {{ search( "search_header", "", "search-burger-menu" ) }}
     </div>
+
+		<div class="modal-burger-search" id="modal-burger-search">
+				<!-- products come from firebase -->
+		</div>
 
     <div class="burger-menu__dropdowns">
       <!-- burger-menu-dropdowns come from firebase -->

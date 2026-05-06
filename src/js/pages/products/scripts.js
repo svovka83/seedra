@@ -12,7 +12,9 @@ if (document.querySelector(".products-page")) {
 	const { priceRange } = await import("../../common/price-range.js");
 	const { priceRangeMob } = await import("../../common/price-range-mob.js");
 	const { filterDropdownControl } = await import("./filter-dropdown-control.js");
+	const { openModalCategory } = await import("./open-modal-category.js");
 	const { openMobileFilter } = await import("./open-mobile-filter.js");
+	const { searchFilterControl } = await import("./search-filter-control.js");
 
 	const { db } = getFirebase();
 
@@ -23,7 +25,7 @@ if (document.querySelector(".products-page")) {
 
 	// params products after reload
 	initFromUrl();
-	applyFiltersToUI();
+	applyFiltersToUI(db);
 	getProducts(
 		db,
 		orderBy("price", "desc"),
@@ -40,6 +42,8 @@ if (document.querySelector(".products-page")) {
 	productFiltration(db);
 	productFiltrationMob(db);
 
+	searchFilterControl(db);
 	filterDropdownControl();
+	openModalCategory(db);
 	openMobileFilter();
 }

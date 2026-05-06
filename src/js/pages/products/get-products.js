@@ -6,7 +6,7 @@ import { updateFilterUrl } from "../../url-filter-params/update-filter-url";
 export async function getProducts(
 	db,
 	currentSortOrder = orderBy("price", "desc"),
-	search = "",
+	search,
 	minPrice,
 	maxPrice,
 	selectedTypes,
@@ -14,7 +14,6 @@ export async function getProducts(
 	selectedGrowing,
 	selectedUse,
 	selectedAdditional,
-	oneProductId = "",
 	categoryId = ""
 ) {
 	// update url params
@@ -60,11 +59,6 @@ export async function getProducts(
 	// sort by additional
 	if (selectedAdditional.length) {
 		constraints.push(where("additional", "in", selectedAdditional));
-	}
-
-	// sort by one product id
-	if (oneProductId) {
-		constraints.push(where("__name__", "==", oneProductId));
 	}
 
 	// sort by view all products

@@ -30,8 +30,6 @@ export function filterSide() {
 	if (!dropdownAdditional) return;
 	if (!dropdownAdditionalMob) return;
 
-	console.log("connect from filter-side");
-
 	dropdownType.innerHTML = filterDropdownCheckboxes(
 		"Seed type",
 		"",

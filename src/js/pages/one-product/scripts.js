@@ -10,6 +10,8 @@ if (document.querySelector(".one-product-page")) {
 	const { checkedPack } = await import("./top-elements/checked-pack.js");
 	const { addOneToCart } = await import("./top-elements/add-one-to-cart.js");
 
+	const { getProductStaticCardsOnePage } = await import("../../firebase/services/get-products-main.js");
+
 	const { oneProductDropdown } = await import("./one-product-dropdown");
 
 	const { db } = getFirebase();
@@ -22,6 +24,8 @@ if (document.querySelector(".one-product-page")) {
 	getProductPacks(db);
 	checkedPack(db);
 	addOneToCart(db);
+
+	getProductStaticCardsOnePage(db);
 
 	oneProductDropdown();
 }

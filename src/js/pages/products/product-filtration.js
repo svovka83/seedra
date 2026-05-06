@@ -1,10 +1,10 @@
 import { orderBy } from "firebase/firestore";
 import { getProducts } from "./get-products";
+import { getProductById } from "./get-product-by-id";
 import { filters } from "../../url-filter-params/state-filters";
 import { debounce } from "../../utils/debounce";
 
 export function productFiltration(db) {
-	console.log("desktop", filters);
 	// sort by order inputs
 	const optionList = document.getElementById("filter-sort-list");
 	if (!optionList) return;
@@ -15,10 +15,6 @@ export function productFiltration(db) {
 	const inputBannerSearch = document.getElementById("search-banner-product");
 
 	let inputSearch = filters.search;
-
-	// sort by price inputs
-	const minValue = filters.minPrice;
-	const maxValue = filters.maxPrice;
 
 	// sort by type inputs
 	const checkboxHybrid = document.getElementById("hybrid");
@@ -66,8 +62,8 @@ export function productFiltration(db) {
 			db,
 			currentSortOrder,
 			inputSearch,
-			minValue,
-			maxValue,
+			filters.minPrice,
+			filters.maxPrice,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
@@ -278,7 +274,7 @@ export function productFiltration(db) {
 		debouncedGetProducts();
 	});
 
-	// sort by modal one product id listener
+	// sort by modal one product id listener - white crow in this file
 
 	document.addEventListener("click", async (e) => {
 		const oneProduct = e.target.closest(".modal-category__item");
@@ -289,19 +285,7 @@ export function productFiltration(db) {
 		const modalWindow = document.getElementById("modal-category-list");
 		if (!modalWindow) return;
 
-		getProducts(
-			db,
-			currentSortOrder,
-			search,
-			minValue,
-			maxValue,
-			selectedTypes,
-			selectedFeatured,
-			selectedGrowing,
-			selectedUses,
-			selectedAdditional,
-			oneProductId
-		);
+		getProductById(db, oneProductId);
 		modalWindow.classList.remove("products-content__modal_open");
 	});
 
@@ -312,7 +296,6 @@ export function productFiltration(db) {
 		if (!allProducts) return;
 
 		const categoryId = allProducts.querySelector(".modal-category__view-all-text").id;
-		console.log(categoryId);
 
 		const modalWindow = document.getElementById("modal-category-list");
 		if (!modalWindow) return;
@@ -320,15 +303,14 @@ export function productFiltration(db) {
 		getProducts(
 			db,
 			currentSortOrder,
-			search,
-			minValue,
-			maxValue,
+			inputSearch,
+			filters.minPrice,
+			filters.maxPrice,
 			selectedTypes,
 			selectedFeatured,
 			selectedGrowing,
 			selectedUses,
 			selectedAdditional,
-			"",
 			categoryId
 		);
 		modalWindow.classList.remove("products-content__modal_open");

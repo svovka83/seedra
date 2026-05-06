@@ -1,0 +1,38 @@
+@use "../../settings/variables.scss" as *;
+
+.modal-burger-search {
+	display: none;
+	&_open {
+		z-index: 550;
+		display: block;
+		position: absolute;
+		top: 70px;
+		right: 10px;
+		width: 255px;
+		max-height: 60vh;
+		padding-block: 24px;
+		padding-inline: 16px;
+		background-color: $white;
+		border: 1px solid $light_grey_stroke;
+		border-radius: 8px;
+		box-shadow: $shadow_input;
+		overflow: auto;
+		display: flex;
+		flex-direction: column;
+		row-gap: 12px;
+	}
+	&__product {
+		font-size: 14px;
+		line-height: 120%;
+		color: $text_secondary;
+		cursor: pointer;
+		&:hover {
+			color: $green_brand;
+		}
+	}
+	&__product-none {
+		font-size: 14px;
+		line-height: 120%;
+		color: $danger;
+	}
+}
