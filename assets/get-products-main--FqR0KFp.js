@@ -1,0 +1,1 @@
+import{r as e}from"./get-products-main-BMmpW_Lh.js";export{e as getProductStaticCardsOnePage};

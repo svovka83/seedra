@@ -4,20 +4,20 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Checkout</title>
-		<script type="module" crossorigin src="/seedra/assets/checkout-D0c-orIf.js"></script>
+		<script type="module" crossorigin src="/seedra/assets/checkout-DbbjMB5c.js"></script>
 		<link rel="modulepreload" crossorigin href="/seedra/assets/chunk-Deb1DmFP.js">
 		<link rel="modulepreload" crossorigin href="/seedra/assets/index.esm-Bwpb2Ko_.js">
 		<link rel="modulepreload" crossorigin href="/seedra/assets/index.esm-BUwYS97V.js">
-		<link rel="modulepreload" crossorigin href="/seedra/assets/toastify-DErHL-4W.js">
-		<link rel="modulepreload" crossorigin href="/seedra/assets/product-counter-CYXnZNp3.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/toastify-B9_iREH7.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/product-counter-DAYTuq6b.js">
 		<link rel="modulepreload" crossorigin href="/seedra/assets/title-DQiau4so.js">
-		<link rel="modulepreload" crossorigin href="/seedra/assets/state-filters-YwoS1PV_.js">
-		<link rel="modulepreload" crossorigin href="/seedra/assets/get-products-m6FCxjLN.js">
-		<link rel="modulepreload" crossorigin href="/seedra/assets/debounce-DoPjl241.js">
-		<link rel="modulepreload" crossorigin href="/seedra/assets/main-5Pw_Y2ib.js">
-		<link rel="modulepreload" crossorigin href="/seedra/assets/preload-helper-C1yhJHaQ.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/product-card-jQMQKAF7.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/get-products-main-BMmpW_Lh.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/debounce-BYJCkGCb.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/main-D7wYYnCf.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/preload-helper-XLfM8EhA.js">
 		<link rel="stylesheet" crossorigin href="/seedra/assets/toastify-stDfeQAy.css">
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-BeuHGL4k.css">
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-VTprIeMJ.css">
 	</head>
 	<body class="checkout-page" style="display: grid; grid-template-rows: auto 1fr auto">
 		<!-- header () -->
@@ -90,6 +90,9 @@
         
   <div class="search search_header">
     <input class="search__input" type="text" id="search-header-product" placeholder="Search">
+    <svg class="search__close">
+	    <use xlink:href="/seedra/images/sprites.svg#close-icon"></use>
+    </svg>
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
@@ -138,12 +141,14 @@
 			
   <div class="burger-menu" id="burger-menu">
     <div class="burger-menu__search">
-      <!-- search ( classSearch ) -->
-      <!-- prettier-ignore -->
+      <!-- search ( classSearch, searchFunnelId, searchInputId ) -->
       
       
   <div class="search search_header">
-    <input class="search__input" type="text" id="" placeholder="Search">
+    <input class="search__input" type="text" id="search-burger-menu" placeholder="Search">
+    <svg class="search__close">
+	    <use xlink:href="/seedra/images/sprites.svg#close-icon"></use>
+    </svg>
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
@@ -151,6 +156,10 @@
   </div>
 
     </div>
+
+		<div class="modal-burger-search" id="modal-burger-search">
+				<!-- products come from firebase -->
+		</div>
 
     <div class="burger-menu__dropdowns">
       <!-- burger-menu-dropdowns come from firebase -->

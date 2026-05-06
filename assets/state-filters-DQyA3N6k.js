@@ -1,0 +1,1 @@
+var e={search:``,minPrice:0,maxPrice:1e3,types:[],featured:[],growing:[],use:[],additional:[]};export{e as t};

@@ -7,15 +7,15 @@
 		<script type="module" crossorigin src="/seedra/assets/chunk-Deb1DmFP.js"></script>
 		<script type="module" crossorigin src="/seedra/assets/index.esm-Bwpb2Ko_.js"></script>
 		<script type="module" crossorigin src="/seedra/assets/index.esm-BUwYS97V.js"></script>
-		<script type="module" crossorigin src="/seedra/assets/toastify-DErHL-4W.js"></script>
-		<script type="module" crossorigin src="/seedra/assets/product-counter-CYXnZNp3.js"></script>
+		<script type="module" crossorigin src="/seedra/assets/toastify-B9_iREH7.js"></script>
+		<script type="module" crossorigin src="/seedra/assets/product-counter-DAYTuq6b.js"></script>
 		<script type="module" crossorigin src="/seedra/assets/title-DQiau4so.js"></script>
-		<script type="module" crossorigin src="/seedra/assets/state-filters-YwoS1PV_.js"></script>
-		<script type="module" crossorigin src="/seedra/assets/get-products-m6FCxjLN.js"></script>
-		<script type="module" crossorigin src="/seedra/assets/debounce-DoPjl241.js"></script>
-		<script type="module" crossorigin src="/seedra/assets/main-5Pw_Y2ib.js"></script>
+		<script type="module" crossorigin src="/seedra/assets/product-card-jQMQKAF7.js"></script>
+		<script type="module" crossorigin src="/seedra/assets/get-products-main-BMmpW_Lh.js"></script>
+		<script type="module" crossorigin src="/seedra/assets/debounce-BYJCkGCb.js"></script>
+		<script type="module" crossorigin src="/seedra/assets/main-D7wYYnCf.js"></script>
 		<link rel="stylesheet" crossorigin href="/seedra/assets/toastify-stDfeQAy.css">
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-BeuHGL4k.css">
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-VTprIeMJ.css">
 	</head>
 	<body style="display: grid; grid-template-rows: auto 1fr auto">
 		<!-- header () -->
@@ -88,6 +88,9 @@
         
   <div class="search search_header">
     <input class="search__input" type="text" id="search-header-product" placeholder="Search">
+    <svg class="search__close">
+	    <use xlink:href="/seedra/images/sprites.svg#close-icon"></use>
+    </svg>
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
@@ -136,12 +139,14 @@
 			
   <div class="burger-menu" id="burger-menu">
     <div class="burger-menu__search">
-      <!-- search ( classSearch ) -->
-      <!-- prettier-ignore -->
+      <!-- search ( classSearch, searchFunnelId, searchInputId ) -->
       
       
   <div class="search search_header">
-    <input class="search__input" type="text" id="" placeholder="Search">
+    <input class="search__input" type="text" id="search-burger-menu" placeholder="Search">
+    <svg class="search__close">
+	    <use xlink:href="/seedra/images/sprites.svg#close-icon"></use>
+    </svg>
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
@@ -149,6 +154,10 @@
   </div>
 
     </div>
+
+		<div class="modal-burger-search" id="modal-burger-search">
+				<!-- products come from firebase -->
+		</div>
 
     <div class="burger-menu__dropdowns">
       <!-- burger-menu-dropdowns come from firebase -->

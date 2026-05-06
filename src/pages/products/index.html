@@ -4,20 +4,20 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Products</title>
-		<script type="module" crossorigin src="/seedra/assets/products-63vxVoxi.js"></script>
+		<script type="module" crossorigin src="/seedra/assets/products-DGffz6zR.js"></script>
 		<link rel="modulepreload" crossorigin href="/seedra/assets/chunk-Deb1DmFP.js">
 		<link rel="modulepreload" crossorigin href="/seedra/assets/index.esm-Bwpb2Ko_.js">
 		<link rel="modulepreload" crossorigin href="/seedra/assets/index.esm-BUwYS97V.js">
-		<link rel="modulepreload" crossorigin href="/seedra/assets/toastify-DErHL-4W.js">
-		<link rel="modulepreload" crossorigin href="/seedra/assets/product-counter-CYXnZNp3.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/toastify-B9_iREH7.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/product-counter-DAYTuq6b.js">
 		<link rel="modulepreload" crossorigin href="/seedra/assets/title-DQiau4so.js">
-		<link rel="modulepreload" crossorigin href="/seedra/assets/state-filters-YwoS1PV_.js">
-		<link rel="modulepreload" crossorigin href="/seedra/assets/get-products-m6FCxjLN.js">
-		<link rel="modulepreload" crossorigin href="/seedra/assets/debounce-DoPjl241.js">
-		<link rel="modulepreload" crossorigin href="/seedra/assets/main-5Pw_Y2ib.js">
-		<link rel="modulepreload" crossorigin href="/seedra/assets/preload-helper-C1yhJHaQ.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/product-card-jQMQKAF7.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/get-products-main-BMmpW_Lh.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/debounce-BYJCkGCb.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/main-D7wYYnCf.js">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/preload-helper-XLfM8EhA.js">
 		<link rel="stylesheet" crossorigin href="/seedra/assets/toastify-stDfeQAy.css">
-		<link rel="stylesheet" crossorigin href="/seedra/assets/main-BeuHGL4k.css">
+		<link rel="stylesheet" crossorigin href="/seedra/assets/main-VTprIeMJ.css">
 	</head>
 	<body class="products-page" style="display: grid; grid-template-rows: auto 1fr auto">
 		<!-- header () -->
@@ -90,6 +90,9 @@
         
   <div class="search search_header">
     <input class="search__input" type="text" id="search-header-product" placeholder="Search">
+    <svg class="search__close">
+	    <use xlink:href="/seedra/images/sprites.svg#close-icon"></use>
+    </svg>
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
@@ -138,12 +141,14 @@
 			
   <div class="burger-menu" id="burger-menu">
     <div class="burger-menu__search">
-      <!-- search ( classSearch ) -->
-      <!-- prettier-ignore -->
+      <!-- search ( classSearch, searchFunnelId, searchInputId ) -->
       
       
   <div class="search search_header">
-    <input class="search__input" type="text" id="" placeholder="Search">
+    <input class="search__input" type="text" id="search-burger-menu" placeholder="Search">
+    <svg class="search__close">
+	    <use xlink:href="/seedra/images/sprites.svg#close-icon"></use>
+    </svg>
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
@@ -151,6 +156,10 @@
   </div>
 
     </div>
+
+		<div class="modal-burger-search" id="modal-burger-search">
+				<!-- products come from firebase -->
+		</div>
 
     <div class="burger-menu__dropdowns">
       <!-- burger-menu-dropdowns come from firebase -->
@@ -228,6 +237,9 @@
           
   <div class="search search_banner">
     <input class="search__input" type="text" id="search-banner-product" placeholder="Search">
+    <svg class="search__close">
+	    <use xlink:href="/seedra/images/sprites.svg#close-icon"></use>
+    </svg>
     <svg class="search__icon">
 	    <use xlink:href="/seedra/images/sprites.svg#search-icon"></use>
     </svg>
@@ -293,81 +305,27 @@
 						<h4 class="products-content__filters-title">Filters</h4>
 
 						<div class="products-content__filters-dropdown-type">
-							<!-- filterSide() -->
+							<!-- filterSide() -> filterDropdownCheckboxes() -->
 						</div>
+
 						<div class="products-content__filters-dropdown-featured">
-							<!-- filterSide() -->
+							<!-- filterSide() -> filterDropdownCheckboxes() -->
 						</div>
-
-						<!-- filterDropdownPrice( title ) -->
-						<!-- prettier-ignore -->
-						
-						
-	<div class="filter-dropdown">
-
-    <button class="filter-dropdown__btn ">
-      <span class="filter-dropdown__title">Price</span>
-      <svg class="filter-dropdown__icon">
-        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
-      </svg>
-    </button>
-
-    <div class="filter-dropdown__content ">
-      <div class="filter-dropdown__inner">
-
-       
-
-      </div>
-    </div>
-
-	</div>
-
 
 						<div class="products-content__filters-dropdown-growing">
-							<!-- filterSide() -->
+							<!-- filterSide() -> filterDropdownCheckboxes() -->
 						</div>
+
+						<div class="products-content__filters-dropdown-range">
+							<!-- filterSide() -> filterDropdownRange() -->
+						</div>
+
 						<div class="products-content__filters-dropdown-use">
-							<!-- filterSide() -->
+							<!-- filterSide() -> filterDropdownCheckboxes() -->
 						</div>
+
 						<div class="products-content__filters-dropdown-additional">
-							<!-- filterSide() -->
-						</div>
-
-						<!-- price-range -->
-						<div class="price-range">
-							<div class="price-range-inputs">
-								<div class="price-range-inputs__field">
-									<span class="price-range-inputs__label">From</span>
-									<label for="min-range">
-										<span class="price-range-inputs__dollar">$</span>
-										<input
-											class="price-range-inputs__input"
-											id="min-range"
-											type="number"
-											min="10"
-											max="1000"
-											placeholder="10" />
-									</label>
-								</div>
-
-								<span class="price-range-inputs__separator"></span>
-
-								<div class="price-range-inputs__field">
-									<span class="price-range-inputs__label">To</span>
-									<label for="max-range">
-										<span class="price-range-inputs__dollar">$</span>
-										<input
-											class="price-range-inputs__input"
-											id="max-range"
-											type="number"
-											min="10"
-											max="1000"
-											placeholder="1000" />
-									</label>
-								</div>
-							</div>
-
-							<div class="price-range-slider" id="price-range-slider"></div>
+							<!-- filterSide() -> filterDropdownCheckboxes() -->
 						</div>
 					</div>
 
@@ -502,455 +460,30 @@
 		<!-- modal-mobile-filter -->
 		<div class="mobile-filter" id="mobile-filter">
 			<h4 class="products-content__filters-title">Filters</h4>
-			<!-- filterDropdown( title, classBtn, classContent, appearance1, appearance2, appearance3, appearance4,
-															option1, id1, value1, option2, id2, value2, option3, id3, value3, option4, id4, value4 ) -->
-			<!-- filterDropdownPrice( title ) -->
-			<!-- prettier-ignore -->
-			
-			
 
-			
-	<div class="filter-dropdown">
+			<div class="products-content__filters-dropdown-type-mob">
+				<!-- filterSide() -> filterDropdownCheckboxes() -->
+			</div>
 
-    <button class="filter-dropdown__btn filter-dropdown__btn_mobile">
-      <span class="filter-dropdown__title">Seed type</span>
-      <svg class="filter-dropdown__icon">
-        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
-      </svg>
-    </button>
+			<div class="products-content__filters-dropdown-featured-mob">
+				<!-- filterSide() -> filterDropdownCheckboxes() -->
+			</div>
 
-    <div class="filter-dropdown__content filter-dropdown__content_mobile">
-      <div class="filter-dropdown__inner">
+			<div class="products-content__filters-dropdown-growing-mob">
+				<!-- filterSide() -> filterDropdownCheckboxes() -->
+			</div>
 
-        <!-- checkbox( title, id, value, appearance ) -->
-		    
+			<div class="products-content__filters-dropdown-range-mob">
+				<!-- filterSide() -> filterDropdownRange() -->
+			</div>
 
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="hybrid-mob" value="hybrid" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">Hybrid</span>
-  </label>
+			<div class="products-content__filters-dropdown-use-mob">
+				<!-- filterSide() -> filterDropdownCheckboxes() -->
+			</div>
 
-        </div>
-
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="pollinated-mob" value="pollinated" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">Open Pollinated</span>
-  </label>
-
-        </div>
-
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="organic-mob" value="organic" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">Organic Seeds, Plants, and Supplies</span>
-  </label>
-
-        </div>
-        
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="pelleted-mob" value="pelleted" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">Pelleted See</span>
-  </label>
-
-        </div>
-      </div>
-    </div>
-
-	</div>
-
-
-			
-	<div class="filter-dropdown">
-
-    <button class="filter-dropdown__btn filter-dropdown__btn_mobile">
-      <span class="filter-dropdown__title">Featured</span>
-      <svg class="filter-dropdown__icon">
-        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
-      </svg>
-    </button>
-
-    <div class="filter-dropdown__content filter-dropdown__content_mobile">
-      <div class="filter-dropdown__inner">
-
-        <!-- checkbox( title, id, value, appearance ) -->
-		    
-
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="pack-mob" value="pack" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">Pack</span>
-  </label>
-
-        </div>
-
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="bag-mob" value="bag" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">Bag</span>
-  </label>
-
-        </div>
-
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="sack-mob" value="sack" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">Sack</span>
-  </label>
-
-        </div>
-        
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="barrel-mob" value="barrel" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">Barrel</span>
-  </label>
-
-        </div>
-      </div>
-    </div>
-
-	</div>
-
-
-			
-	<div class="filter-dropdown">
-
-    <button class="filter-dropdown__btn filter-dropdown__btn_mobile">
-      <span class="filter-dropdown__title">Price</span>
-      <svg class="filter-dropdown__icon">
-        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
-      </svg>
-    </button>
-
-    <div class="filter-dropdown__content filter-dropdown__content_mobile">
-      <div class="filter-dropdown__inner">
-
-       
-
-      </div>
-    </div>
-
-	</div>
-
-
-			
-	<div class="filter-dropdown">
-
-    <button class="filter-dropdown__btn filter-dropdown__btn_mobile">
-      <span class="filter-dropdown__title">Growing Conditions</span>
-      <svg class="filter-dropdown__icon">
-        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
-      </svg>
-    </button>
-
-    <div class="filter-dropdown__content filter-dropdown__content_mobile">
-      <div class="filter-dropdown__inner">
-
-        <!-- checkbox( title, id, value, appearance ) -->
-		    
-
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="slow-mob" value="slow" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">Slow</span>
-  </label>
-
-        </div>
-
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="normal-mob" value="normal" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">Normal</span>
-  </label>
-
-        </div>
-
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="fast-mob" value="fast" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">Fast</span>
-  </label>
-
-        </div>
-        
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox checkbox_none">
-    <input type="checkbox" class="checkbox__input" id="" value="" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text"></span>
-  </label>
-
-        </div>
-      </div>
-    </div>
-
-	</div>
-
-
-			
-	<div class="filter-dropdown">
-
-    <button class="filter-dropdown__btn filter-dropdown__btn_mobile">
-      <span class="filter-dropdown__title">Use</span>
-      <svg class="filter-dropdown__icon">
-        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
-      </svg>
-    </button>
-
-    <div class="filter-dropdown__content filter-dropdown__content_mobile">
-      <div class="filter-dropdown__inner">
-
-        <!-- checkbox( title, id, value, appearance ) -->
-		    
-
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="at-home-mob" value="at-home" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">At home</span>
-  </label>
-
-        </div>
-
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="in-garden-mob" value="in-garden" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">In garder</span>
-  </label>
-
-        </div>
-
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox checkbox_none">
-    <input type="checkbox" class="checkbox__input" id="" value="" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text"></span>
-  </label>
-
-        </div>
-        
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox checkbox_none">
-    <input type="checkbox" class="checkbox__input" id="" value="" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text"></span>
-  </label>
-
-        </div>
-      </div>
-    </div>
-
-	</div>
-
-
-			
-	<div class="filter-dropdown">
-
-    <button class="filter-dropdown__btn filter-dropdown__btn_mobile">
-      <span class="filter-dropdown__title">Additional Characteristic</span>
-      <svg class="filter-dropdown__icon">
-        <use href="/seedra/images/sprites.svg#chevron-icon"></use>
-      </svg>
-    </button>
-
-    <div class="filter-dropdown__content filter-dropdown__content_mobile">
-      <div class="filter-dropdown__inner">
-
-        <!-- checkbox( title, id, value, appearance ) -->
-		    
-
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="sweet-mob" value="sweet" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">Sweet</span>
-  </label>
-
-        </div>
-
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="sour-mob" value="sour" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">Sour</span>
-  </label>
-
-        </div>
-
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox ">
-    <input type="checkbox" class="checkbox__input" id="bitter-mob" value="bitter" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text">Bitter</span>
-  </label>
-
-        </div>
-        
-        <div class="filter-dropdown__option">
-          
-  <label class="checkbox checkbox_none">
-    <input type="checkbox" class="checkbox__input" id="" value="" />
-    <div class="checkbox__box">
-      <svg class="checkbox__icon">
-        <use href="/seedra/images/sprites.svg#checker-icon"></use>
-      </svg>
-    </div>
-    <span class="checkbox__text"></span>
-  </label>
-
-        </div>
-      </div>
-    </div>
-
-	</div>
-
-
-			<!-- price-range -->
-			<!-- <div class="price-range">
-				<div class="price-range-inputs">
-					<div class="price-range-inputs__field">
-						<span class="price-range-inputs__label">From</span>
-						<label for="min-range">
-							<span class="price-range-inputs__dollar">$</span>
-							<input
-								class="price-range-inputs__input"
-								id="min-range"
-								type="number"
-								min="10"
-								max="1000"
-								placeholder="10" />
-						</label>
-					</div>
-
-					<span class="price-range-inputs__separator"></span>
-
-					<div class="price-range-inputs__field">
-						<span class="price-range-inputs__label">To</span>
-						<label for="max-range">
-							<span class="price-range-inputs__dollar">$</span>
-							<input
-								class="price-range-inputs__input"
-								id="max-range"
-								type="number"
-								min="10"
-								max="1000"
-								placeholder="1000" />
-						</label>
-					</div>
-				</div>
-
-				<div class="price-range-slider" id="price-range-slider"></div>
-			</div> -->
+			<div class="products-content__filters-dropdown-additional-mob">
+				<!-- filterSide() -> filterDropdownCheckboxes() -->
+			</div>
 
 			<span class="triangle-pointer"></span>
 		</div>

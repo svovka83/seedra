@@ -1,1 +1,0 @@
-import{t as e}from"./get-products-m6FCxjLN.js";export{e as getProducts};

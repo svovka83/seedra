@@ -1,1 +1,0 @@
-var e={types:[],featured:[],growing:[],use:[],additional:[]};export{e as t};

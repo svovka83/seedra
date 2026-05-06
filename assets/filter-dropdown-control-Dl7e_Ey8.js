@@ -1,0 +1,1 @@
+function e(){document.querySelectorAll(`.filter-dropdown`).forEach(e=>{e.querySelector(`.filter-dropdown__btn`).addEventListener(`click`,()=>{e.classList.toggle(`open`),e.querySelector(`.filter-dropdown__icon`).classList.toggle(`filter-dropdown__icon_open`)})})}export{e as filterDropdownControl};
