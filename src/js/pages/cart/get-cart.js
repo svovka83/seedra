@@ -9,7 +9,7 @@ export async function getCart(db) {
 	const cart = await getDocs(collection(db, "cart"));
 
 	if (cart.empty) {
-		cartList.innerHTML = emptyCart();
+		cartList.innerHTML = emptyCart("cart", "cart-icon");
 		return;
 	}
 
@@ -31,6 +31,6 @@ export async function getCart(db) {
 
 		cartList.innerHTML = html;
 
-		if (cartList.innerHTML === "") cartList.innerHTML = emptyCart();
+		if (cartList.innerHTML === "") cartList.innerHTML = emptyCart("cart", "cart-icon");
 	});
 }
