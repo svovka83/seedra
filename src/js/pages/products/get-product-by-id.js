@@ -28,6 +28,7 @@ export async function getProductById(db, oneProductId) {
 			productsString += productCard(
 				product.id,
 				product.data().checked,
+				product.data().favorite,
 				product.data().name,
 				product.data().price,
 				product.data().imageUrl,
