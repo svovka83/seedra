@@ -38,4 +38,4 @@ import{H as e,_ as t,h as n,p as r}from"./index.esm-DIgIDhqE.js";import{t as i}f
       </svg>
     </button>
   </div>
-  `}async function s(i){let s=document.querySelector(`.cart-products__products`);if(s){if((await r(e(i,`cart`))).empty){s.innerHTML=a();return}n(t(e(i,`cart`)),e=>{let t=``;e.forEach(e=>{t+=o(e.id,e.data().name,e.data().imageUrl,e.data().quantity,e.data().price,e.data().total)}),s.innerHTML=t,s.innerHTML===``&&(s.innerHTML=a())})}}export{s as getCart};
+  `}async function s(i){let s=document.querySelector(`.cart-products__products`);if(s){if((await r(e(i,`cart`))).empty){s.innerHTML=a(`cart`,`cart-icon`);return}n(t(e(i,`cart`)),e=>{let t=``;e.forEach(e=>{t+=o(e.id,e.data().name,e.data().imageUrl,e.data().quantity,e.data().price,e.data().total)}),s.innerHTML=t,s.innerHTML===``&&(s.innerHTML=a(`cart`,`cart-icon`))})}}export{s as getCart};
