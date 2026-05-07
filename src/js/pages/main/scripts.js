@@ -1,6 +1,7 @@
 if (document.querySelector(".main-body-page")) {
 	const { getFirebase } = await import("../../firebase.js");
 
+	const { getAddTopButton } = await import("./get-add-top-button.js");
 	const { getCategories } = await import("../../firebase/services/get-categories.js");
 	const { getProductStaticCards, getProductSliderCards } = await import(
 		"../../firebase/services/get-products-main.js"
@@ -32,6 +33,7 @@ if (document.querySelector(".main-body-page")) {
 
 	const { db } = getFirebase();
 
+	getAddTopButton(db);
 	getCategories(db);
 	getProductStaticCards(db);
 	getProductSliderCards(db);
@@ -56,10 +58,8 @@ if (document.querySelector(".main-body-page")) {
 	subtractQuantity(db);
 	getModalCart(db);
 	clearAllCart(db);
-	// need to put into other pages
 	removeOneFavorite(db);
 	clearAllFavorite(db);
-
 	openModalCart(db);
 	openModalFavorite(db);
 }

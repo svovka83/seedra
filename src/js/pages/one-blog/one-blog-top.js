@@ -33,7 +33,7 @@ export async function oneBlogTop(db) {
     <svg class="one-blog-timeline__icon">
       <use xlink:href="${base}images/sprites.svg#clock-icon"></use>
     </svg>
-    <span class="one-blog-timeline__date">${getDate(blog.data().date)}</span>
+    <span class="one-blog-timeline__date">${getDate(blog.data().createdAt)}</span>
     <hr class="one-blog-timeline__hr" />
   `;
 }

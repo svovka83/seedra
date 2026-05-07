@@ -7,6 +7,7 @@ if (document.querySelector(".one-product-page")) {
 	const { getProductQuantity } = await import("./top-elements/get-product-quantity.js");
 	const { initCounterBlock } = await import("./top-elements/counter-block.js");
 	const { getProductPacks } = await import("./top-elements/get-one-product-packs.js");
+	const { getAddButton } = await import("./top-elements/get-add-button.js");
 	const { checkedPack } = await import("./top-elements/checked-pack.js");
 	const { addOneToCart } = await import("./top-elements/add-one-to-cart.js");
 	const { addRemoveProduct } = await import("../../firebase/services/cart/add-remove-product.js");
@@ -41,6 +42,7 @@ if (document.querySelector(".one-product-page")) {
 	getProductQuantity(db);
 	initCounterBlock(db);
 	getProductPacks(db);
+	getAddButton(db);
 	checkedPack(db);
 	addOneToCart(db);
 

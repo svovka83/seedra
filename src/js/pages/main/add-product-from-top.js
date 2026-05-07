@@ -3,19 +3,10 @@ import Toastify from "toastify-js";
 import "toastify-js/src/toastify.css";
 
 export async function addProductFromTop(db) {
-	const addBtn = document.getElementById("main-top-add-btn");
-	if (!addBtn) return;
+	document.addEventListener("click", async (e) => {
+		const addBtn = e.target.closest("#main-top-add-btn");
+		if (!addBtn) return;
 
-	const productId = "1";
-	const refProductTop = doc(db, "products", productId);
-	const snapshotProductTop = await getDoc(refProductTop);
-	const checkerTop = snapshotProductTop.data().checked;
-
-	if (checkerTop) {
-		addBtn.innerHTML = `<span class="btn__title">Remove from cart</span>`;
-	}
-
-	addBtn.addEventListener("click", async () => {
 		const productId = "1";
 
 		try {
@@ -48,8 +39,6 @@ export async function addProductFromTop(db) {
 					amount: newAmount,
 				});
 
-				addBtn.innerHTML = `<span class="btn__title">Remove from cart</span>`;
-
 				Toastify({
 					text: `Product ${snapshotProduct.data().name.slice(0, 24)} added to cart. 🛒`,
 					duration: 4000,
@@ -77,8 +66,6 @@ export async function addProductFromTop(db) {
 					price: newPrice,
 					amount: newAmount,
 				});
-
-				addBtn.innerHTML = `<span class="btn__title">Add to cart</span>`;
 
 				Toastify({
 					text: `Product ${snapshotProduct.data().name.slice(0, 24)} removed from cart. 🛒`,

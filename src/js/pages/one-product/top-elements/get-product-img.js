@@ -1,4 +1,4 @@
-import { collection, doc, getDoc, query, limit } from "firebase/firestore";
+import { doc, getDoc } from "firebase/firestore";
 
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
