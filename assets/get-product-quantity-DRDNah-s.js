@@ -1,1 +1,0 @@
-import{W as e,h as t}from"./index.esm-Bwpb2Ko_.js";var n=new URLSearchParams(window.location.search).get(`id`);async function r(r){let i=document.querySelector(`.one-product-top-content__top-quantity`);i&&t(e(r,`products`,n),e=>{e.exists()&&(i.innerHTML=e.data().quantity)})}export{r as getProductQuantity};

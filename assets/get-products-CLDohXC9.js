@@ -1,0 +1,1 @@
+import{t as e}from"./get-products-Dya_UvhC.js";export{e as getProducts};

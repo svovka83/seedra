@@ -1,1 +1,0 @@
-import{t as e}from"./get-modal-header-search-lkFZCBsD.js";export{e as getModalHeaderProducts};

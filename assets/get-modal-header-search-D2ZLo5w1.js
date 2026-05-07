@@ -1,0 +1,1 @@
+import{t as e}from"./get-modal-header-search-1LOJr-7x.js";export{e as getModalHeaderProducts};
