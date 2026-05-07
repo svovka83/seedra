@@ -1,0 +1,26 @@
+.favorite-main {
+	margin-block: 32px;
+}
+
+.favorite-products {
+	margin-top: 32px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+	@media (max-width: 1024px) {
+		grid-template-columns: repeat(2, 1fr);
+		gap: 20px;
+	}
+	@media (max-width: 640px) {
+		grid-template-columns: 1fr;
+		align-items: center;
+		gap: 16px;
+	}
+	&__not-found {
+		font-size: 48px;
+		line-height: 64px;
+		padding-top: 32px;
+		margin: 0 auto;
+		color: #70737c;
+	}
+}

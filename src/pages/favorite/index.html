@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Favorite</title>
+		<link rel="stylesheet" href="../../../src/scss/styles.scss" />
+	</head>
+	<body class="favorite-page" style="display: grid; grid-template-rows: auto 1fr auto">
+		<!-- header () -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/header.njk" import header %}
+    {{ header() }}
+
+		<!-- modal-header-search -->
+		<div class="modal-header-search" id="modal-header-search">
+			<div class="modal-header-search__inner">
+				<!-- products come from firebase -->
+			</div>
+		</div>
+
+		<main class="favorite-main" id="go-to-top">
+			<!-- burgerMenu() -->
+			<!-- prettier-ignore -->
+			{% from "src/partials/modals/burger-menu.njk" import burgerMenu %}
+			{{ burgerMenu() }}
+
+			<!-- main-under-top -->
+			<section class="main-under-top container">
+				<div class="main-under-top__inner">
+					<div class="main-under-top__title">
+						<!-- title ( heading, title, classTitle ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/title.njk" import title %}
+						{{ title( "h3", "Your favorite seeds", "title_h3") }}
+					</div>
+					<div class="main-under-top__text">
+						<!-- text ( text, classText ) -->
+						<!-- prettier-ignore -->
+						{% from "src/partials/text.njk" import text %}
+						{{ text( "that always sprout and gardening supplies which never break", "text_medium-16" ) }}
+					</div>
+
+					<img class="main-under-top__fruit fruit-1" src="/images/under-top/fruit_1.png" alt="fruit" />
+					<img class="main-under-top__fruit fruit-2" src="/images/under-top/fruit_2.png" alt="fruit" />
+					<img class="main-under-top__fruit fruit-3" src="/images/under-top/fruit_3.png" alt="fruit" />
+					<img class="main-under-top__fruit fruit-4" src="/images/under-top/fruit_4.png" alt="fruit" />
+					<img class="main-under-top__fruit fruit-5" src="/images/under-top/fruit_5.png" alt="fruit" />
+					<img class="main-under-top__fruit fruit-6" src="/images/under-top/fruit_6.png" alt="fruit" />
+					<img class="main-under-top__fruit fruit-7" src="/images/under-top/fruit_7.png" alt="fruit" />
+					<img class="main-under-top__fruit fruit-8" src="/images/under-top/fruit_8.png" alt="fruit" />
+				</div>
+			</section>
+
+			<!-- favorite-products -->
+			<div class="favorite-products container">
+				<!-- favoriteProducts() -->
+			</div>
+		</main>
+
+		<!-- footer () -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/footer.njk" import footer %}
+		{{ footer() }}
+
+		<!-- modalCart() -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/modals/modal-cart.njk" import modalCart %}
+    {{ modalCart() }}
+
+		<!-- modalFavorite() -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/modals/modal-favorite.njk" import modalFavorite %}
+    {{ modalFavorite() }}
+
+		<script type="module" src="../../js/main.js"></script>
+		<script type="module" src="../../js/pages/favorite/scripts.js"></script>
+	</body>
+</html>

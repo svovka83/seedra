@@ -23,6 +23,6 @@ export async function getModalCart(db) {
 
 		cartList.innerHTML = html;
 
-		if (cartList.innerHTML === "") cartList.innerHTML = emptyCart();
+		if (cartList.innerHTML === "") cartList.innerHTML = emptyCart("cart", "cart-icon");
 	});
 }

@@ -111,6 +111,10 @@
 @use "./pages/contacts/contacts-content.scss";
 @use "./pages/contacts/contacts-form.scss";
 
+// favorite
+
+@use "./pages/favorite/favorite-main.scss";
+
 // modals
 
 @use "./components/modals/mobile-filter.scss";

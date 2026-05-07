@@ -17,6 +17,7 @@ export default defineConfig({
 				oneBlog: resolve(__dirname, "src/pages/one-blog/index.html"),
 				about: resolve(__dirname, "src/pages/about/index.html"),
 				contacts: resolve(__dirname, "src/pages/contacts/index.html"),
+				favorite: resolve(__dirname, "src/pages/favorite/index.html"),
 			},
 		},
 	},

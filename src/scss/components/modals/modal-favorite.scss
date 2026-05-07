@@ -4,6 +4,7 @@
 	width: 529px;
 	max-height: 80vh;
 	overflow-y: auto;
+	overscroll-behavior: contain;
 	position: fixed;
 	top: -100%;
 	right: calc(50% - 555px);
