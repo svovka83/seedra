@@ -4,12 +4,12 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Cart</title>
-		<script type="module" crossorigin src="/seedra/assets/cart-BZ82paI7.js"></script>
+		<script type="module" crossorigin src="/seedra/assets/cart-Dhj-Q-s1.js"></script>
 		<link rel="modulepreload" crossorigin href="/seedra/assets/dist-C0iyawT9.js">
 		<link rel="modulepreload" crossorigin href="/seedra/assets/index.esm-Bwpb2Ko_.js">
 		<link rel="modulepreload" crossorigin href="/seedra/assets/get-modal-header-search-lkFZCBsD.js">
-		<link rel="modulepreload" crossorigin href="/seedra/assets/preload-helper-CjNUhNBw.js">
-		<link rel="stylesheet" crossorigin href="/seedra/assets/preload-helper-DKp0qAEr.css">
+		<link rel="modulepreload" crossorigin href="/seedra/assets/preload-helper-Pxkd-StK.js">
+		<link rel="stylesheet" crossorigin href="/seedra/assets/preload-helper-DJqamRfd.css">
 	</head>
 	<body class="cart-page" style="display: grid; grid-template-rows: auto 1fr auto">
 		<!-- header () -->
@@ -95,11 +95,12 @@
 
       <!-- cart-block -->
       <div class="header__cart-block">
-        <a class="header__cart-block-link" href="#!">
+        <button class="header__cart-block-link" id="open-modal-favorite">
           <svg class="header__cart-block-icon">
             <use href="/seedra/images/sprites.svg#heart-icon"></use>
           </svg>
-        </a>
+        </button>
+
         <button class="header__cart-block-link" id="open-modal-cart">
           <svg class="header__cart-block-icon">
             <use href="/seedra/images/sprites.svg#cart-icon"></use>
@@ -466,6 +467,34 @@
     </div>
     <button class="modal-cart__close" id="close-modal-cart">
       <svg class="modal-cart__close-icon">
+        <use href="/seedra/images/sprites.svg#close-modal-icon"></use>
+      </svg>
+    </button>
+  </div>
+
+
+		<!-- modalFavorite() -->
+		<!-- prettier-ignore -->
+		
+    
+  <div class="modal-favorite" id="modal-favorite">
+    <div class="modal-favorite__products">
+      <!-- products come from firebse -->
+    </div>
+    <div class="modal-favorite__button-block">
+      <button class="modal-favorite__clear" id="modal-favorite__clear">Clear</button>
+      <div class="modal-favorite__proceed">
+        <!-- discover ( classLink, titleLink, pathLink ) -->
+        
+        
+  <a class="discover discover_continue" href="/seedra/src/pages/favorite/index.html">
+    Go to your favorite
+  </a>
+
+      </div>
+    </div>
+    <button class="modal-favorite__close" id="close-modal-favorite">
+      <svg class="modal-favorite__close-icon">
         <use href="/seedra/images/sprites.svg#close-modal-icon"></use>
       </svg>
     </button>

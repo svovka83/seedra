@@ -1,0 +1,1 @@
+import{t as e}from"./get-products-CTSsGUq2.js";export{e as getProducts};
