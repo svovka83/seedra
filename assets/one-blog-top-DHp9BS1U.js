@@ -15,6 +15,6 @@ import{W as e,f as t}from"./index.esm-DIgIDhqE.js";import{t as n}from"./get-date
     <svg class="one-blog-timeline__icon">
       <use xlink:href="${a}images/sprites.svg#clock-icon"></use>
     </svg>
-    <span class="one-blog-timeline__date">${n(c.data().date)}</span>
+    <span class="one-blog-timeline__date">${n(c.data().createdAt)}</span>
     <hr class="one-blog-timeline__hr" />
   `}export{i as oneBlogTop};
