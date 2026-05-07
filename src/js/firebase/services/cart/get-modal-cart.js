@@ -1,4 +1,4 @@
-import { collection, onSnapshot, query, getDocs } from "firebase/firestore";
+import { collection, onSnapshot, query } from "firebase/firestore";
 import { modalCartProduct } from "../../../components/cart/modal-cart-product";
 import { emptyCart } from "../../../utils/empty-cart";
 

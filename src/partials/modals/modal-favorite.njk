@@ -1,0 +1,20 @@
+{% macro modalFavorite() %}
+  <div class="modal-favorite" id="modal-favorite">
+    <div class="modal-favorite__products">
+      <!-- products come from firebse -->
+    </div>
+    <div class="modal-favorite__button-block">
+      <button class="modal-favorite__clear" id="modal-favorite__clear">Clear</button>
+      <div class="modal-favorite__proceed">
+        <!-- discover ( classLink, titleLink, pathLink ) -->
+        {% from "src/partials/discover.njk" import discover %}
+        {{ discover( "discover_continue", "Go to your favorite", "/seedra/src/pages/favorite/index.html" ) }}
+      </div>
+    </div>
+    <button class="modal-favorite__close" id="close-modal-favorite">
+      <svg class="modal-favorite__close-icon">
+        <use href="/images/sprites.svg#close-modal-icon"></use>
+      </svg>
+    </button>
+  </div>
+{% endmacro %}

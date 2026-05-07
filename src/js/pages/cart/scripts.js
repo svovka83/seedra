@@ -18,7 +18,10 @@ if (document.querySelector(".cart-page")) {
 	const { subtractQuantity } = await import("../../firebase/services/cart/subtract-quantity.js");
 	const { getModalCart } = await import("../../firebase/services/cart/get-modal-cart.js");
 	const { clearAllCart } = await import("../../firebase/services/cart/clear-all-cart.js");
+	const { removeOneFavorite } = await import("../../firebase/services/cart/remove-one-favorite.js");
+	const { clearAllFavorite } = await import("../../firebase/services/cart/clear-all-favorite.js");
 	const { openModalCart } = await import("../../modals/open-modal-cart.js");
+	const { openModalFavorite } = await import("../../modals/open-modal-favorite.js");
 
 	const { db } = getFirebase();
 
@@ -40,5 +43,8 @@ if (document.querySelector(".cart-page")) {
 	subtractQuantity(db);
 	getModalCart(db);
 	clearAllCart(db);
+	removeOneFavorite(db);
+	clearAllFavorite(db);
 	openModalCart(db);
+	openModalFavorite(db);
 }

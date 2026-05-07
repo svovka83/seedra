@@ -9,6 +9,7 @@ if (document.querySelector(".main-body-page")) {
 	const { getReviewCards } = await import("./get-reviews.js");
 	const { addProductFromTop } = await import("./add-product-from-top.js");
 	const { addRemoveProduct } = await import("../../firebase/services/cart/add-remove-product.js");
+	const { addRemoveFavorite } = await import("../../firebase/services/cart/add-remove-favorite.js");
 	const { productSlider } = await import("../../sliders/product-slider.js");
 	const { blogSlider } = await import("../../sliders/blog-slider.js");
 	const { reviewSlider } = await import("../../sliders/review-slider.js");
@@ -22,7 +23,12 @@ if (document.querySelector(".main-body-page")) {
 	const { subtractQuantity } = await import("../../firebase/services/cart/subtract-quantity.js");
 	const { getModalCart } = await import("../../firebase/services/cart/get-modal-cart.js");
 	const { clearAllCart } = await import("../../firebase/services/cart/clear-all-cart.js");
+	// need to put into other pages
+	const { removeOneFavorite } = await import("../../firebase/services/cart/remove-one-favorite.js");
+	const { clearAllFavorite } = await import("../../firebase/services/cart/clear-all-favorite.js");
+
 	const { openModalCart } = await import("../../modals/open-modal-cart.js");
+	const { openModalFavorite } = await import("../../modals/open-modal-favorite.js");
 
 	const { db } = getFirebase();
 
@@ -35,6 +41,7 @@ if (document.querySelector(".main-body-page")) {
 
 	addProductFromTop(db);
 	addRemoveProduct(db);
+	addRemoveFavorite(db);
 
 	productSlider();
 	blogSlider();
@@ -49,5 +56,10 @@ if (document.querySelector(".main-body-page")) {
 	subtractQuantity(db);
 	getModalCart(db);
 	clearAllCart(db);
+	// need to put into other pages
+	removeOneFavorite(db);
+	clearAllFavorite(db);
+
 	openModalCart(db);
+	openModalFavorite(db);
 }

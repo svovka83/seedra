@@ -1,8 +1,9 @@
 import { title } from "../title";
 import { ranking } from "../ranking";
 import { buttonCard } from "./button-card";
+import { heartCard } from "./heart-card";
 
-export function productCard(id, checked, name, price, imageUrl, isFire, classCard, classHeart) {
+export function productCard(id, checked, favorite, name, price, imageUrl, isFire, classCard, classHeart) {
 	const base = import.meta.env.BASE_URL;
 
 	return `
@@ -36,11 +37,7 @@ export function productCard(id, checked, name, price, imageUrl, isFire, classCar
       </div>
     </div>
 
-    <div class="product-card__yellow-heart ${classHeart}">
-      <svg class="product-card__icon-heart">
-        <use xlink:href="${base}images/sprites.svg#heart-icon"></use>
-      </svg>
-    </div>
+    ${heartCard(favorite, classHeart)}
 
   </div>
   `;

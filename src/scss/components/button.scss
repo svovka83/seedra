@@ -41,11 +41,22 @@
 		.btn__title {
 			display: none;
 		}
+		&:hover {
+			background-color: $light_grey_stroke;
+		}
 		&-active {
 			border: 2px solid $green_brand;
 			background-color: $green_brand;
+			transition: opacity 0.3s ease;
 			.btn__icon {
 				stroke: $white;
+				&:hover {
+					stroke: $white;
+				}
+			}
+			&:hover {
+				background-color: $green_brand;
+				opacity: 0.8;
 			}
 		}
 	}

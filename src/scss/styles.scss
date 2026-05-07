@@ -40,6 +40,7 @@
 @use "./components/checkout/checkout-cart.scss";
 @use "./components/utils/cart-navigator.scss";
 @use "./components/modal-cart-product.scss";
+@use "./components/modal-favorite-product.scss";
 @use "./components/one-product/one-product-dropdown.scss";
 @use "./components/one-product/ranking-progress.scss";
 @use "./components/one-product/review-one-card.scss";
@@ -114,6 +115,7 @@
 
 @use "./components/modals/mobile-filter.scss";
 @use "./components/modals/modal-cart.scss";
+@use "./components/modals/modal-favorite.scss";
 @use "./components/modals/modal-caregory.scss";
 @use "./components/modals/modal-header-search.scss";
 @use "./components/modals/modal-burger-search.scss";

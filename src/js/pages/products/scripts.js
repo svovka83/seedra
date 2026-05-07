@@ -15,6 +15,7 @@ if (document.querySelector(".products-page")) {
 	const { openModalCategory } = await import("./open-modal-category.js");
 	const { openMobileFilter } = await import("./open-mobile-filter.js");
 	const { addRemoveProduct } = await import("../../firebase/services/cart/add-remove-product.js");
+	const { addRemoveFavorite } = await import("../../firebase/services/cart/add-remove-favorite.js");
 	const { searchFilterControl } = await import("./search-filter-control.js");
 	const { getCategories } = await import("../../firebase/services/get-categories.js");
 	const { initDropdownList } = await import("../../common/dropdown.js");
@@ -29,7 +30,10 @@ if (document.querySelector(".products-page")) {
 	const { subtractQuantity } = await import("../../firebase/services/cart/subtract-quantity.js");
 	const { getModalCart } = await import("../../firebase/services/cart/get-modal-cart.js");
 	const { clearAllCart } = await import("../../firebase/services/cart/clear-all-cart.js");
+	const { removeOneFavorite } = await import("../../firebase/services/cart/remove-one-favorite.js");
+	const { clearAllFavorite } = await import("../../firebase/services/cart/clear-all-favorite.js");
 	const { openModalCart } = await import("../../modals/open-modal-cart.js");
+	const { openModalFavorite } = await import("../../modals/open-modal-favorite.js");
 
 	const { db } = getFirebase();
 
@@ -60,6 +64,7 @@ if (document.querySelector(".products-page")) {
 	getCategories(db);
 
 	addRemoveProduct(db);
+	addRemoveFavorite(db);
 
 	searchFilterControl(db);
 	filterDropdownControl();
@@ -77,5 +82,8 @@ if (document.querySelector(".products-page")) {
 	subtractQuantity(db);
 	getModalCart(db);
 	clearAllCart(db);
+	removeOneFavorite(db);
+	clearAllFavorite(db);
 	openModalCart(db);
+	openModalFavorite(db);
 }

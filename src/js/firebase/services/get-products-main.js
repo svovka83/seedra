@@ -15,6 +15,7 @@ export async function getProductStaticCards(db) {
 			html += productCard(
 				product.id,
 				product.data().checked,
+				product.data().favorite,
 				product.data().name,
 				product.data().price,
 				product.data().imageUrl,
@@ -39,6 +40,7 @@ export async function getProductStaticCardsOnePage(db) {
 			html += productCard(
 				product.id,
 				product.data().checked,
+				product.data().favorite,
 				product.data().name,
 				product.data().price,
 				product.data().imageUrl,
@@ -63,6 +65,7 @@ export async function getProductSliderCards(db) {
 			html += `<div class="swiper-slide">${productCard(
 				product.id,
 				product.data().checked,
+				product.data().favorite,
 				product.data().name.slice(0, 24),
 				product.data().price,
 				product.data().imageUrl,

@@ -197,6 +197,11 @@
 		{% from "src/partials/modals/modal-cart.njk" import modalCart %}
     {{ modalCart() }}
 
+		<!-- modalFavorite() -->
+		<!-- prettier-ignore -->
+		{% from "src/partials/modals/modal-favorite.njk" import modalFavorite %}
+    {{ modalFavorite() }}
+
 		<script type="module" src="src/js/main.js"></script>
 		<script type="module" src="./src/js/pages/main/scripts.js"></script>
 	</body>

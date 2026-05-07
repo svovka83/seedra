@@ -5,7 +5,6 @@
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	// height: 100%;
 	padding: 26px 26px 22px 26px;
 	border: 2px solid $light_grey_stroke;
 	border-radius: 8px;
@@ -117,6 +116,12 @@
 	background-color: $white;
 	border: 1px solid $light_grey_stroke;
 	border-radius: 50%;
+	z-index: 200;
+	transition: border 0.3s ease;
+	cursor: pointer;
+	&:hover {
+		border: 1px solid $yellow;
+	}
 	&_slider {
 		@media (max-width: 680px) {
 			width: 22px;
@@ -127,5 +132,11 @@
 		width: 24px;
 		height: 24px;
 		fill: $yellow;
+	}
+	&-active {
+		border: 1px solid $yellow;
+		.product-card__icon-heart {
+			fill: $yellow;
+		}
 	}
 }
