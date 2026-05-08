@@ -20,22 +20,7 @@ if (document.querySelector(".products-page")) {
 	const { getCategories } = await import("../../firebase/services/get-categories.js");
 	const { initDropdownList } = await import("../../common/dropdown.js");
 	const { showFilterSidebar } = await import("../../common/show-filter-sidebar.js");
-
-	// genaral
-	const { getBurgerMenuDropdowns } = await import("../../burger-menu/get-burger-menu-dropdowns.js");
-	const { getModalHeaderProducts } = await import("../../firebase/services/modals/get-modal-header-search.js");
-	const { getBurgerMenuSearchProducts } = await import("../../burger-menu/get-burger-menu-search-modal.js");
-	const { burgerMenuSearchControl } = await import("../../burger-menu/burger-menu-search-control.js");
-	const { addQuantity } = await import("../../firebase/services/cart/add-quantity.js");
-	const { subtractQuantity } = await import("../../firebase/services/cart/subtract-quantity.js");
-	const { clearAllCart } = await import("../../firebase/services/cart/clear-all-cart.js");
-	const { removeOneFavorite } = await import("../../firebase/services/cart/remove-one-favorite.js");
-	const { clearAllFavorite } = await import("../../firebase/services/cart/clear-all-favorite.js");
-	const { openModalCart } = await import("../../modals/open-modal-cart.js");
-	const { openModalFavorite } = await import("../../modals/open-modal-favorite.js");
-
-	const { getModalCart } = await import("../../firebase/services/cart/get-modal-cart.js");
-	const { getModalFavorite } = await import("../../firebase/services/cart/get-modal-favorite.js");
+	const { initGeneral } = await import("../../init-general.js");
 
 	const { db } = getFirebase();
 
@@ -75,19 +60,5 @@ if (document.querySelector(".products-page")) {
 	initDropdownList();
 	showFilterSidebar();
 
-	// genaral
-	getBurgerMenuDropdowns(db);
-	getModalHeaderProducts(db);
-	getBurgerMenuSearchProducts(db);
-	burgerMenuSearchControl(db);
-	addQuantity(db);
-	subtractQuantity(db);
-	clearAllCart(db);
-	removeOneFavorite(db);
-	clearAllFavorite(db);
-	openModalCart(db);
-	openModalFavorite(db);
-
-	getModalCart(db);
-	getModalFavorite(db);
+	await initGeneral(db);
 }

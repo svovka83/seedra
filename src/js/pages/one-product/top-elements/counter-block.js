@@ -14,8 +14,8 @@ export async function initCounterBlock(db) {
 	onSnapshot(docRef, (snapshot) => {
 		if (!snapshot.exists()) return;
 
-		const data = snapshot.data();
+		const quantity = snapshot.data().quantity;
 
-		productQuantity.innerHTML = productCounter(data.quantity);
+		productQuantity.innerHTML = productCounter(quantity);
 	});
 }
