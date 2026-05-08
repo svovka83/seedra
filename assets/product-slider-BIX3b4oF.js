@@ -1,1 +1,0 @@
-import{t as e}from"./swiper-DPN3FtXl.js";function t(){new e(`.our-products__product-cards-slider`,{slidesPerView:1.08,spaceBetween:11,speed:500,breakpoints:{621:{slidesPerView:2},561:{slidesPerView:1.75},471:{slidesPerView:1.5},391:{slidesPerView:1.25}}})}export{t as productSlider};
