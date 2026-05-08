@@ -3,44 +3,36 @@
     <div class="header__inner container">
       <div class="header__logo">
         <!-- logo ( ( path, classIcon ) ) -->
-        <!-- prettier-ignore -->
         {% from "src/partials/layout/logo.njk" import logo %}
         {{ logo( "/seedra/", "logo-icon_header" ) }}
       </div>
 
       <div class="header__menu">
         <!-- menu ( classList, classItem ) -->
-        <!-- prettier-ignore -->
         {% from "src/partials/layout/menu.njk" import menu %}
         {{ menu( "menu__list_header" ) }}
       </div>
 
       <div class="header__socials">
         <!-- socials ( classSocials ) -->
-        <!-- prettier-ignore -->
         {% from "src/partials/layout/socials.njk" import socials %}
         {{ socials( "socials_header" ) }}
       </div>
 
       <div class="header__search">
         <!-- search( classSearch, searchFunnelId, searchInputId ) -->
-        <!-- prettier-ignore -->
         {% from "src/partials/search.njk" import search %}
         {{ search( "search_header", "", "search-header-product" ) }}
       </div>
 
       <!-- cart-block -->
       <div class="header__cart-block">
-        <button class="header__cart-block-link" id="open-modal-favorite">
-          <svg class="header__cart-block-icon">
-            <use href="/images/sprites.svg#heart-icon"></use>
-          </svg>
+        <button class="header__cart-block-button" id="open-modal-favorite">
+          <!-- getModalFavorite(db) -->
         </button>
 
-        <button class="header__cart-block-link" id="open-modal-cart">
-          <svg class="header__cart-block-icon">
-            <use href="/images/sprites.svg#cart-icon"></use>
-          </svg>
+        <button class="header__cart-block-button" id="open-modal-cart">
+          <!-- getModalCart(db) -->
         </button>
       </div>
 

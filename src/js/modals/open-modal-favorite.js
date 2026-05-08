@@ -28,7 +28,9 @@ export function openModalFavorite(db) {
 	document.addEventListener("click", (e) => {
 		if (
 			!modalFavorite.contains(e.target) &&
-			!e.target.closest(".product-card__button, .product-card__yellow-heart")
+			!e.target.closest(
+				".product-card__button, .product-card__yellow-heart, .one-product-top-content__bottom-heart"
+			)
 		) {
 			modalFavorite.classList.remove("modal-favorite_open");
 		}

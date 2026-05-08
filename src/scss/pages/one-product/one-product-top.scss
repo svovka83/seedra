@@ -176,9 +176,10 @@
 		&-heart {
 			width: 24px;
 			height: 24px;
-			stroke: $green_brand;
+			fill: $green_brand;
 			margin-left: auto;
 			margin-right: 14px;
+			cursor: pointer;
 		}
 		&-button-add {
 		}

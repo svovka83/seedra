@@ -26,7 +26,12 @@ export function openModalCart(db) {
 	});
 
 	document.addEventListener("click", (e) => {
-		if (!modalCart.contains(e.target) && !e.target.closest(".product-card__button, .product-card__yellow-heart")) {
+		if (
+			!modalCart.contains(e.target) &&
+			!e.target.closest(
+				".product-card__button, .product-card__yellow-heart, .one-product-top-content__bottom-button-add, .main-top__buttons-add"
+			)
+		) {
 			modalCart.classList.remove("modal-cart_open");
 		}
 	});

@@ -1,5 +1,5 @@
 import { collection, getDocs, getDoc, doc, query, where } from "firebase/firestore";
-import { modalCategory } from "../../../components/modals/modal-category";
+import { modalCategory } from "../../../components/modal-category";
 
 export async function getModalCategoryList(db, categoryId) {
 	const modalCategoryList = document.querySelector(".products-content__modal");

@@ -55,7 +55,8 @@
 		margin-top: -9px;
 		translate: 0 0;
 	}
-	.header__cart-block-link {
+	.header__cart-block-button {
+		position: relative;
 		width: 40px;
 		height: 40px;
 		padding: 8px;
@@ -67,7 +68,16 @@
 		.header__cart-block-icon {
 			width: 24px;
 			height: 24px;
-			stroke: $green_brand;
+			fill: $green_brand;
+		}
+		.header__cart-block-circle {
+			position: absolute;
+			right: 6px;
+			width: 10px;
+			height: 10px;
+			border: 2px solid $white;
+			border-radius: 5px;
+			background-color: $green_brand;
 		}
 	}
 }
