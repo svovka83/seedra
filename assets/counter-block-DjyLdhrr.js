@@ -1,0 +1,1 @@
+import{W as e,h as t}from"./index.esm-DIgIDhqE.js";import{t as n}from"./product-counter-Bvu0In2i.js";var r=new URLSearchParams(window.location.search).get(`id`);async function i(i){let a=document.querySelector(`.one-product-top-content__top-counter`);a&&t(e(i,`products`,r),e=>{if(!e.exists())return;let t=e.data().quantity;a.innerHTML=n(t)})}export{i as initCounterBlock};

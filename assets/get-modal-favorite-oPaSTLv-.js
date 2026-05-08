@@ -1,1 +1,0 @@
-import{t as e}from"./get-modal-favorite-K312AT1r.js";export{e as getModalFavorite};

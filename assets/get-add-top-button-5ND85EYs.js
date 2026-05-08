@@ -1,0 +1,1 @@
+import{W as e,h as t}from"./index.esm-DIgIDhqE.js";import{t as n}from"./button-add-iMF_j1QY.js";async function r(r){let i=document.querySelector(`.main-top__buttons-add`);i&&t(e(r,`products`,`1`),e=>{if(!e.exists())return;let t=e.data().checked;i.innerHTML=n(`btn_text btn_adaptive`,t,``,`main-top-add-btn`)})}export{r as getAddTopButton};

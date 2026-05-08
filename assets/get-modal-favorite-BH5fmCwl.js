@@ -1,0 +1,1 @@
+import{t as e}from"./get-modal-favorite-B2xI0o0H.js";export{e as getModalFavorite};
