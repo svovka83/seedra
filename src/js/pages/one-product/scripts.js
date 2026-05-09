@@ -6,10 +6,10 @@ if (document.querySelector(".one-product-page")) {
 	const { getProductCategory } = await import("./top-elements/get-product-category.js");
 	const { getProductQuantity } = await import("./top-elements/get-product-quantity.js");
 	const { initCounterBlock } = await import("./top-elements/counter-block.js");
-	const { getProductPacks } = await import("./top-elements/get-one-product-packs.js");
+	const { getProductPacks } = await import("./top-elements/get-product-packs.js");
 	const { getAddButton } = await import("./top-elements/get-add-button.js");
 	const { getAddFavorite } = await import("./top-elements/get-add-favorite.js");
-	const { checkedPack } = await import("./top-elements/checked-pack.js");
+	const { checkedPackByRadio } = await import("./top-elements/checked-pack-by-radio.js");
 	const { addOneToCart } = await import("./top-elements/add-one-to-cart.js");
 	const { addOneToFavorite } = await import("./top-elements/add-one-to-favorite.js");
 	const { getDiscountBlock } = await import("./top-elements/get-discount-block.js");
@@ -33,7 +33,7 @@ if (document.querySelector(".one-product-page")) {
 	getProductPacks(db);
 	getAddButton(db);
 	getAddFavorite(db);
-	checkedPack(db);
+	checkedPackByRadio(db);
 	addOneToCart(db);
 	addOneToFavorite(db);
 	getDiscountBlock(db);

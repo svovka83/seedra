@@ -3,7 +3,7 @@ import { doc, updateDoc } from "firebase/firestore";
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
 
-export function checkedPack(db) {
+export function checkedPackByRadio(db) {
 	document.addEventListener("click", async (e) => {
 		const pack = e.target.closest(".pack");
 		const radios = document.querySelectorAll(".pack__input");

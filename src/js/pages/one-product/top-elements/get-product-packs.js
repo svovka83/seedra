@@ -1,6 +1,6 @@
 import { doc, getDoc } from "firebase/firestore";
 
-import { oneProductPack } from "../../../components/one-product/one-product-pack.js";
+import { oneProductPack } from "../one-product-pack.js";
 
 const params = new URLSearchParams(window.location.search);
 const productId = params.get("id");
