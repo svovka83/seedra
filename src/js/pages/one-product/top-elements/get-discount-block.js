@@ -19,7 +19,7 @@ export async function getDiscountBlock(db) {
 
 		if (isFire) {
 			discountBlock.innerHTML = `
-        <p class="one-product-top-content__bottom-discount">$${(price / 100) * 1.2}</p>
+        <p class="one-product-top-content__bottom-discount">$${((price / 100) * 1.2).toFixed(2)}</p>
         <p class="one-product-top-content__bottom-price">$${price / 100}</p>
       `;
 		} else {
